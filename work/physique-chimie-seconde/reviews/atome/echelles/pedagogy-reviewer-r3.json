@@ -1,0 +1,23 @@
+{
+ "reviewer": "pedagogy-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 3,
+ "findings": [
+  {
+   "id": "pr-1",
+   "severity": "AMBIGUOUS",
+   "category": "pedagogy",
+   "location": "echelles/s1/callout",
+   "quote": "Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même colonne du tableau périodique de PubChem.",
+   "problem": "Read as a column (family) of the periodic table, implying H, C, Na share a column (false); the periodic table is introduced only in lesson tableau-valence.",
+   "evidence": "Style guide: « never use a notion before it is introduced »; echelles prerequisites exclude the periodic table; source note says « AtomicRadius column » of a CSV.",
+   "fix": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même base de données (PubChem), avec la même définition du rayon."
+  }
+ ],
+ "verified": [
+  "All calculations recomputed.",
+  "s2 sphere sizes match the ratio.",
+  "All four plan misconceptions addressed."
+ ],
+ "unverifiable": []
+}

@@ -4,15 +4,19 @@ Input: inputs/example-physics-chemistry-fr.yaml · Referential: BO spécial n° 
 
 <!-- status -->
 Calibration run on lesson 1 only (« echelles »), plan=auto: the plan was NOT reviewed by you yet.
-Lesson 1 is in arbitration round 1: the writer is applying 3 ERROR and 6 AMBIGUOUS merged findings. The built course below is the version BEFORE these fixes.
+Lesson 1 finished its 3 review rounds with 0 ERROR. The built course is the final version.
+Open AMBIGUOUS items (rounds exhausted, your call):
+• s1 callout « une même colonne du tableau périodique de PubChem » reads as a periodic-table column (3 reviewers). Proposed: « … dans une même série de données, celle de PubChem. »
+• s7, its counter and q3 state « 1 km » as exact; with the lesson's values it is ≈ 1,4 km. Proposed: « de l’ordre de 1 km ».
 Decisions needed from you:
-1. Plan: 9 lessons instead of your 6 hints (reasons in the plan section). Approve or adjust.
-2. Escalated (plan, round 3, sc-1): lesson 7 « tableau-valence » uses the noble-gas family before lesson 8 introduces it. Proposed fix: place helium above neon « as given », explained in lesson 8.
-3. Unverified: no primary source confirms the 2019 programme is in force for 2026-2027 (education.gouv.fr, eduscol, Légifrance return 403 here). Please confirm.
+1. Plan: 9 lessons instead of your 6 hints. Approve or adjust.
+2. Escalated (plan, round 3): lesson 7 uses the noble-gas family before lesson 8 introduces it. Proposed fix: helium placed above neon « as given », explained in lesson 8.
+3. Unverified: no primary source confirms the 2019 programme is in force for 2026-2027 (official sites return 403 here). Please confirm.
+4. Apply the two AMBIGUOUS fixes above?
 <!-- /status -->
 
 ## atome
 Plan: NOT reviewed by the owner (plan=auto). Syllabus review: 3 rounds; round 3 left 1 ERROR (escalated).
 
 ### echelles
-Status: in arbitration, round 1 → 2.
+Status: shipped for owner review after 3 rounds (0 ERROR, 2 open AMBIGUOUS groups).

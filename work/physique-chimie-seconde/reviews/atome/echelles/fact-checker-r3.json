@@ -1,0 +1,56 @@
+{
+ "reviewer": "fact-checker",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 3,
+ "findings": [
+  {
+   "id": "fc-1",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/s1/callout",
+   "quote": "cette leçon prend tous leurs rayons dans une même colonne du tableau périodique de PubChem.",
+   "problem": "Read as a periodic-table column (family): false for H, C, Na.",
+   "evidence": "PubChem CSV GroupBlock: Na « Alkali metal », C « Nonmetal».",
+   "fix": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons selon une même définition, dans une même série de données de PubChem."
+  },
+  {
+   "id": "fc-2",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/s7/text",
+   "quote": "…soit 1 km. Une bille au centre d’une sphère d’un kilomètre de rayon",
+   "problem": "1 km stated as exact; it is an order of magnitude (≈ 1,4 km).",
+   "evidence": "Recomputed with PubChem H 120 pm and CODATA r_p 8.4075 × 10⁻¹⁶ m (both fetched 2026-11-25): 1 cm × 1,43 × 10⁵ = 1,43 km.",
+   "fix": "« …serait de l’ordre de $10^{5}$ fois plus grand … soit de l’ordre de 1 km. Une bille au centre d’une sphère d’environ un kilomètre de rayon… »"
+  },
+  {
+   "id": "fc-3",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/s7/counters",
+   "quote": "Rayon de l’atome agrandi = 1 km",
+   "problem": "Exact value for an order of magnitude; scene labels too.",
+   "evidence": "Recomputed with PubChem H 120 pm and CODATA r_p 8.4075 × 10⁻¹⁶ m (both fetched 2026-11-25): 1 cm × 1,43 × 10⁵ = 1,43 km.",
+   "fix": "value « ∼ 1 »; scene texts valeur-atome and borne-haut « ∼ 1 km »; sceneDescription accordingly."
+  },
+  {
+   "id": "fc-4",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/quiz/q3/explanation",
+   "quote": "avec un noyau de 1 cm de rayon, l’atome d’hydrogène aurait 1 km de rayon.",
+   "problem": "Same exactness issue.",
+   "evidence": "Recomputed with PubChem H 120 pm and CODATA r_p 8.4075 × 10⁻¹⁶ m (both fetched 2026-11-25): 1 cm × 1,43 × 10⁵ = 1,43 km.",
+   "fix": "L’image du fruit est fausse : avec un noyau de 1 cm de rayon, l’atome d’hydrogène aurait un rayon de l’ordre de 1 km."
+  }
+ ],
+ "verified": [
+  "All values re-fetched and match: H, C, Na radii; proton radius; ¹H abundance; SI prefixes; referential quotes.",
+  "All calculations recomputed; quiz keys correct.",
+  "All 8 lesson sources load and support their claims."
+ ],
+ "unverifiable": [
+  "PubChem CSV radius unit inferred (pm).",
+  "Order-of-magnitude rule not defined by the referential; general s2 claim holds for all PubChem radii only under the linear rule."
+ ]
+}

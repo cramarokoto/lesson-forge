@@ -1,0 +1,27 @@
+{
+ "reviewer": "syllabus-checker",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 3,
+ "findings": [
+  {
+   "id": "sc-1",
+   "severity": "AMBIGUOUS",
+   "category": "order",
+   "location": "echelles/s1/callout",
+   "quote": "cette leçon prend tous leurs rayons dans une même colonne du tableau périodique de PubChem",
+   "problem": "Students read « colonne du tableau périodique » as a group, false for H, C, Na; the periodic table is introduced only in later lessons.",
+   "evidence": "Referential p. 6 « position dans le tableau périodique (blocs s et p) » (seconde notion); cycle 4 box p. 4 has no periodic table; PubChem CSV: C [He]2s2 2p2 vs H 1s1, Na [Ne]3s1.",
+   "fix": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même série de données, celle de PubChem."
+  }
+ ],
+ "verified": [
+  "Goal, s1–s7 and quiz in scope (p. 6 capacités exigibles and mathématiques, p. 4 intro, p. 2 analogies, p. 1).",
+  "« proton » is a cycle 4 notion.",
+  "∼ conflicts with no official notation.",
+  "Source referentiel-seconde-pc supports its claims."
+ ],
+ "unverifiable": [
+  "Programme in force for 2026-2027 not checked.",
+  "Collège knowledge of the periodic table: cycle 4 programme not fetched."
+ ]
+}
