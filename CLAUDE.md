@@ -15,6 +15,7 @@ Format inspired by Algo Lab (step-by-step animated diagram, notation panel, coun
 6. **No copying of protected designs or text.** Algo Lab inspires the format only: no code, assets, colors or wording.
 7. **Show before publishing.** Build and show the result; never deploy or publish a course, merge, or push to a shared branch without the owner's explicit yes. Committing and pushing to the session's own working branch is allowed: it is a backup, not a publication.
 8. **Target-language typography** (French: non-breaking space before `; : ! ?`, « guillemets », decimal comma).
+9. **Scan every third-party skill before installing it** with NVIDIA SkillSpector (`scripts/scan-skill.sh <dir>`), read every HIGH finding, install text-only parts when the rest runs code. Record the scan in the skill's NOTICE.md.
 
 Repo, prompts and code are in **English**. Course content is in the course's language.
 

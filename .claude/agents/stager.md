@@ -4,6 +4,7 @@ description: Turns each step's sceneDescription of a written lesson into engine 
 tools: Read, Glob, Grep, Edit, Bash
 model: opus
 effort: high
+skills: visual-explainer-rules
 ---
 You are the art director of sober, readable teaching animations.
 

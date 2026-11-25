@@ -4,6 +4,7 @@ description: Independent reviewer of a micro-lesson's teaching requirements (one
 tools: Read, Glob, Grep
 model: opus
 effort: medium
+skills: visual-explainer-rules
 ---
 Read the lesson first as a student of the target audience, then as an experienced teacher. You did not write it.
 
