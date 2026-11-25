@@ -20,7 +20,7 @@
       "text": "Voici un atome d’hydrogène, représenté par une sphère. Son rayon vaut environ $1{,}2 \\times 10^{-10}\\,\\mathrm{m}$, soit 0,000 000 000 12 m. Écrit en entier, ce nombre se lit mal et on se trompe vite dans les zéros. L’écriture scientifique, un nombre supérieur ou égal à 1 et strictement inférieur à 10, multiplié par une puissance de dix, rend ces tailles lisibles et faciles à comparer.",
       "callout": {
         "kind": "tip",
-        "text": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même colonne du tableau périodique de PubChem."
+        "text": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même série de données, celle de PubChem."
       },
       "sceneDescription": "An isometric board holds one large translucent sphere, the hydrogen atom, at its center. A scale bar runs from the sphere’s center to its surface, labeled « r ≈ 1,2 × 10⁻¹⁰ m ».",
       "scene": [
@@ -1008,8 +1008,8 @@
       "id": "s7",
       "tag": "imagine",
       "title": "Une bille au centre d’un kilomètre",
-      "text": "Agrandissons tout du même facteur. Si le noyau avait un rayon de 1 cm, celui de l’atome serait $10^{5}$ fois plus grand : $10^{5}\\,\\mathrm{cm} = 10^{3}\\,\\mathrm{m}$, soit 1 km. Une bille au centre d’une sphère d’un kilomètre de rayon : rien à voir avec un noyau de pêche dans son fruit. Presque tout l’espace de l’atome est très loin de son noyau.",
-      "sceneDescription": "Same objects, relabeled: the nucleus tag reads « noyau 1 cm », the atom scale bar and the upper mark read « 1 km », the lower mark « 1 cm »; the « × 10⁵ » arrow stays. The nucleus is the accent, a tiny bead at the center of the huge translucent sphere.",
+      "text": "Agrandissons tout du même facteur. Si le noyau avait un rayon de 1 cm, celui de l’atome serait de l’ordre de $10^{5}$ fois plus grand : $10^{5}\\,\\mathrm{cm} = 10^{3}\\,\\mathrm{m}$, soit de l’ordre de 1 km. Une bille au centre d’une sphère d’environ un kilomètre de rayon : rien à voir avec un noyau de pêche dans son fruit. Presque tout l’espace de l’atome est très loin de son noyau.",
+      "sceneDescription": "Same objects, relabeled: the nucleus tag reads « noyau 1 cm », the atom scale bar and the upper mark read « ∼ 1 km », the lower mark « 1 cm »; the « × 10⁵ » arrow stays. The nucleus is the accent, a tiny bead at the center of the huge translucent sphere.",
       "scene": [
         {
           "key": "atome-h",
@@ -1058,7 +1058,7 @@
             5.6736,
             2.4
           ],
-          "text": "1 km"
+          "text": "∼ 1 km"
         },
         {
           "key": "nom-atome",
@@ -1098,7 +1098,7 @@
             1.5944,
             4.6667
           ],
-          "text": "1 km"
+          "text": "∼ 1 km"
         },
         {
           "key": "borne-bas",
@@ -1152,7 +1152,7 @@
         {
           "key": "rayon-atome-agrandi",
           "label": "Rayon de l’atome agrandi",
-          "value": 1,
+          "value": "∼ 1",
           "unit": "km",
           "changed": true
         }
@@ -1195,7 +1195,7 @@
         "Peu importe : comme un noyau dans un fruit, le noyau remplit une bonne partie de l’atome."
       ],
       "answer": 1,
-      "explanation": "Comparer deux grandeurs, c’est en faire le quotient : $\\dfrac{10^{-10}}{10^{-15}} = 10^{5}$. La différence est tentante, car on l’utilise souvent pour comparer deux nombres, mais ici elle vaut $9{,}9999 \\times 10^{-11}\\,\\mathrm{m} \\approx 10^{-10}\\,\\mathrm{m}$, presque le rayon de l’atome : elle ne dit pas « combien de fois ». L’image du fruit est fausse : avec un noyau de 1 cm de rayon, l’atome d’hydrogène aurait 1 km de rayon."
+      "explanation": "Comparer deux grandeurs, c’est en faire le quotient : $\\dfrac{10^{-10}}{10^{-15}} = 10^{5}$. La différence est tentante, car on l’utilise souvent pour comparer deux nombres, mais ici elle vaut $9{,}9999 \\times 10^{-11}\\,\\mathrm{m} \\approx 10^{-10}\\,\\mathrm{m}$, presque le rayon de l’atome : elle ne dit pas « combien de fois ». L’image du fruit est fausse : avec un noyau de 1 cm de rayon, l’atome d’hydrogène aurait un rayon de l’ordre de 1 km."
     }
   ],
   "sources": [
@@ -1256,22 +1256,5 @@
       "supports": "r_p = 8.4075(64) × 10⁻¹⁶ m, so about 8,4 × 10⁻¹⁶ m, order of magnitude 10⁻¹⁵ m."
     }
   ],
-  "furtherReading": [
-    {
-      "title": "Chapitre 3 : Identité de la matière à l’échelle microscopique (synthèse du manuel Sirius 2de)",
-      "url": "https://lyceen.nathan.fr/sirius2019-2de/assets/chap-3-synthese-des-activites-dys/preview",
-      "provider": "Nathan (espace lycéen)",
-      "accessed": "2026-11-25",
-      "kind": "course",
-      "why": "Tu y retrouves, au niveau de la seconde, l’atome et son noyau, avec la comparaison de leurs tailles par un quotient, comme dans cette leçon."
-    },
-    {
-      "title": "Atome, noyau et cortège électronique (cours de seconde)",
-      "url": "https://mrmartinfontaine.github.io/physiquechimie/seconde/cours/chapitre_03.pdf",
-      "provider": "M. Fontaine, professeur de physique-chimie",
-      "accessed": "2026-11-25",
-      "kind": "course",
-      "why": "Ce cours de trois pages donne les ordres de grandeur du rayon du noyau et de l’atome, et leur rapport d’environ cent mille, pour réviser l’essentiel."
-    }
-  ]
+  "furtherReading": []
 }

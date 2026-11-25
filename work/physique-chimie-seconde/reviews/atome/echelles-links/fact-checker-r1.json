@@ -1,0 +1,56 @@
+{
+ "reviewer": "fact-checker",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json#furtherReading",
+ "round": 1,
+ "findings": [
+  {
+   "id": "fc-1",
+   "severity": "ERROR",
+   "category": "calculation",
+   "location": "echelles/furtherReading[0]/url",
+   "quote": "https://lyceen.nathan.fr/sirius2019-2de/assets/chap-3-synthese-des-activites-dys/preview",
+   "problem": "The PDF gets powers of ten wrong (p. 3: « 1 × 10^12 × 1 × 10^−12 soit 1 × 10^−10 »; atom size written as 0,000 000 0001 / 10 m = 10^−11 m).",
+   "evidence": "PDF fetched 2026-11-25, p. 3; recomputed with exact fractions.",
+   "fix": "Remove this entry from furtherReading."
+  },
+  {
+   "id": "fc-2",
+   "severity": "ERROR",
+   "category": "fact",
+   "location": "echelles/furtherReading[0]/url",
+   "quote": "Un noyau est composé de A nucléons (avec A un entier, A > 1)",
+   "problem": "Excludes the hydrogen-1 nucleus (A = 1), the lesson's central example.",
+   "evidence": "PDF p. 4; NIST H: mass number 1, abundance 0.999 885.",
+   "fix": "Remove this entry from furtherReading."
+  },
+  {
+   "id": "fc-3",
+   "severity": "ERROR",
+   "category": "fact",
+   "location": "echelles/furtherReading[1]/url",
+   "quote": "il comprend 6 protons (dont 6 électrons)",
+   "problem": "Puts electrons inside the nucleus.",
+   "evidence": "PDF p. 1 fetched 2026-11-25; referential p. 4 « constituants … du noyau (neutrons et protons) ».",
+   "fix": "Remove this entry from furtherReading."
+  }
+ ],
+ "verified": [
+  "Both links load (HTTP 200, PDF) and their why texts are accurate; the documents themselves contain the errors above."
+ ],
+ "sourcesChecked": [
+  {
+   "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=H",
+   "accessed": "2026-11-25",
+   "supports": "H: Z = 1, mass number 1, isotopic composition 0.999 885(70); D mass number 2, 0.000 115(70)"
+  },
+  {
+   "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
+   "accessed": "2026-11-25",
+   "supports": "p. 4 « constituants de l’atome (noyau et électrons) et du noyau (neutrons et protons) »; p. 6 capacités mathématiques (puissances de 10, écriture scientifique)"
+  }
+ ],
+ "unverifiable": [
+  "Ångström origin: only Wikipedia fetched (secondary).",
+  "Provider policy (public or non-profit): outside the fact-checker's lane."
+ ]
+}

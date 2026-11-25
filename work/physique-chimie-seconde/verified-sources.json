@@ -1,5 +1,11 @@
 [
   {
+    "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
+    "accessed": "2026-11-25",
+    "supports": "p. 4 « constituants de l’atome (noyau et électrons) et du noyau (neutrons et protons) »; p. 6 capacités mathématiques (puissances de 10, écriture scientifique)",
+    "by": "fact-checker"
+  },
+  {
     "url": "https://lyceen.nathan.fr/sirius2019-2de/assets/chap-3-synthese-des-activites-dys/preview",
     "accessed": "2026-11-25",
     "supports": "Free 5-page PDF, Nathan 2019 Sirius 2de chap. 3; p. 4: 10−10/10−15 = 10^5 = 100 000; no login, ads or sign-up.",
@@ -10,5 +16,11 @@
     "accessed": "2026-11-25",
     "supports": "Free 3-page PDF, Seconde, M. Fontaine; p. 2: noyau ~ 10-15 m, atome ~ 10-10 m, 10^5; no login, ads or links.",
     "by": "safety-reviewer"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=H",
+    "accessed": "2026-11-25",
+    "supports": "H: Z = 1, mass number 1, isotopic composition 0.999 885(70); D mass number 2, 0.000 115(70)",
+    "by": "fact-checker"
   }
 ]
