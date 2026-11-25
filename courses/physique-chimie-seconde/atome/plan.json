@@ -2,6 +2,7 @@
   "course": "physique-chimie-seconde",
   "chapter": "atome",
   "title": "L’atome",
+  "priorKnowledge": ["puissances-de-dix", "atome", "noyau", "electron", "proton", "neutron", "molecule", "ion", "formule-chimique", "symbole-chimique"],
   "referential": {
     "citation": "BO spécial n° 1 du 22 janvier 2019, annexe « Programme de physique-chimie de seconde générale et technologique »",
     "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
@@ -10,6 +11,8 @@
   "lessons": [
     {
       "id": "echelles",
+      "introduces": ["ecriture-scientifique", "ordre-de-grandeur", "taille-atome", "taille-noyau"],
+      "uses": ["puissances-de-dix", "atome", "noyau", "electron"],
       "title": "Échelles : l’atome et son noyau",
       "goal": "Citer l’ordre de grandeur de la taille d’un atome et calculer, par un quotient de puissances de dix, combien de fois un atome est plus grand que son noyau.",
       "prerequisites": [
@@ -33,6 +36,8 @@
     },
     {
       "id": "noyau",
+      "introduces": ["nucleon", "numero-atomique", "nombre-de-masse", "nombre-de-neutrons", "ecriture-conventionnelle"],
+      "uses": ["noyau", "proton", "neutron", "electron", "symbole-chimique", "taille-noyau"],
       "title": "Le noyau : nucléons et écriture conventionnelle",
       "goal": "Établir l’écriture conventionnelle $^{A}_{Z}\\mathrm{X}$ ou $^{A}\\mathrm{X}$ d’un noyau à partir de ses nombres de protons et de neutrons, et retrouver cette composition à partir de l’écriture, Z étant fourni dans le cas de $^{A}\\mathrm{X}$.",
       "prerequisites": [
@@ -56,6 +61,8 @@
     },
     {
       "id": "charges-ions",
+      "introduces": ["charge-elementaire", "charge-particules", "neutralite-atome", "cation", "anion"],
+      "uses": ["numero-atomique", "proton", "neutron", "electron", "atome", "ion", "molecule", "formule-chimique"],
       "title": "Charges : atome neutre, cation et anion",
       "goal": "Déterminer le nombre d’électrons d’un atome ou d’un ion monoatomique à partir de Z et de sa charge, et qualifier l’entité d’atome, de cation ou d’anion.",
       "prerequisites": [
@@ -77,6 +84,8 @@
     },
     {
       "id": "masse",
+      "introduces": ["masse-particules", "masse-atome"],
+      "uses": ["nucleon", "numero-atomique", "nombre-de-masse", "neutralite-atome", "ecriture-scientifique", "puissances-de-dix", "proton", "neutron", "electron", "noyau"],
       "title": "Masse : le noyau pèse presque tout",
       "goal": "Calculer le quotient de la masse d’un nucléon par celle d’un électron et en déduire que la masse d’un atome est pratiquement celle de son noyau.",
       "prerequisites": [
@@ -99,6 +108,8 @@
     },
     {
       "id": "element-isotopes",
+      "introduces": ["element-chimique", "isotopes"],
+      "uses": ["ecriture-conventionnelle", "numero-atomique", "nombre-de-masse", "nombre-de-neutrons", "atome", "cation", "anion"],
       "title": "Élément chimique et isotopes",
       "goal": "Reconnaître, à partir de leurs écritures, que des atomes et des ions de même numéro atomique Z appartiennent au même élément chimique, et identifier des isotopes.",
       "prerequisites": [
@@ -120,6 +131,8 @@
     },
     {
       "id": "configuration",
+      "introduces": ["etat-fondamental", "couche-electronique", "sous-couche", "configuration-electronique"],
+      "uses": ["neutralite-atome", "numero-atomique", "nombre-de-masse", "electron"],
       "title": "Configuration électronique de 1s à 3p",
       "goal": "Écrire la configuration électronique à l’état fondamental d’un atome de numéro atomique Z ⩽ 18.",
       "prerequisites": [
@@ -140,6 +153,8 @@
     },
     {
       "id": "tableau-valence",
+      "introduces": ["tableau-periodique", "blocs-s-p", "electrons-de-valence"],
+      "uses": ["configuration-electronique", "couche-electronique", "sous-couche", "etat-fondamental", "element-chimique", "numero-atomique", "gaz-nobles"],
       "title": "Tableau périodique et électrons de valence",
       "goal": "Situer un élément (Z ⩽ 18) dans les trois premières lignes du tableau périodique à partir de sa configuration électronique, en déduire ses électrons de valence, et inversement.",
       "prerequisites": [
@@ -161,6 +176,8 @@
     },
     {
       "id": "familles-gaz-nobles",
+      "introduces": ["famille-chimique", "gaz-nobles", "metaux-alcalins", "stabilite-chimique"],
+      "uses": ["tableau-periodique", "electrons-de-valence", "configuration-electronique", "element-chimique"],
       "title": "Familles chimiques et stabilité des gaz nobles",
       "goal": "Associer la notion de famille chimique à l’existence de propriétés communes, identifier la famille des gaz nobles dans le tableau et relier leur stabilité chimique à leur configuration électronique de valence.",
       "prerequisites": [
@@ -181,6 +198,8 @@
     },
     {
       "id": "ions-monoatomiques",
+      "introduces": ["ions-monoatomiques-courants"],
+      "uses": ["cation", "anion", "ion", "gaz-nobles", "stabilite-chimique", "electrons-de-valence", "configuration-electronique", "tableau-periodique", "famille-chimique", "metaux-alcalins", "formule-chimique"],
       "title": "Ions monoatomiques courants",
       "goal": "Prévoir, à partir de la position dans le tableau périodique, la charge des ions H⁺, Na⁺, K⁺, Ca²⁺, Mg²⁺, Cl⁻ et F⁻, nommer ces ions à partir de leur formule et écrire leur formule à partir de leur nom.",
       "prerequisites": [
