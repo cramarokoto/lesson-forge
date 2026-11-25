@@ -28,3 +28,5 @@ Your prompt lists screenshot paths (one PNG per step). Read every one. For each 
 1. Say in one line what a student sees without reading. If it does not convey `takeaway`, or suggests something false, that is an ERROR (category `pedagogy`, location `<lesson>/<step>/scene`), with a concrete fix: what to draw instead.
 2. Teach-back: summarise the step text as a 15-year-old would. If it differs from `takeaway`, or the takeaway is vague, that is an ERROR with a rewritten text or takeaway.
 3. Any word not explained at first use is an AMBIGUOUS finding (round 1).
+
+Even with no finding, `verified` must hold one line per step: "sN: without reading, a student sees … -> matches/does not match takeaway (sN.png)". A review without these lines is rejected.

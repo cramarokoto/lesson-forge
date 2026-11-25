@@ -1,0 +1,17 @@
+{
+ "reviewer": "pedagogy-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 2,
+ "findings": [],
+ "verified": [
+  "s1: faded decimal writing above the highlighted « r ≈ 1,2 × 10⁻¹⁰ m » under the radius arrow -> matches (s1.png)",
+  "s2: three spheres with their radii on one highlighted plinth « les trois rayons ∼ 10⁻¹⁰ m » -> matches (s2.png)",
+  "s3: tiny highlighted nucleus « noyau ∼ 10⁻¹⁵ m » in a large faint atom, « Pas à l’échelle » -> matches (s3.png)",
+  "s4: staircase shrinking from « 10⁻¹⁰ m » to the highlighted nucleus « 10⁻¹⁵ m », five « ÷ 10 » -> matches (s4.png)",
+  "s5: same staircase, five « × 10 », highlighted arrow « × 10⁵ » climbing to the atom -> matches (s5.png)",
+  "s6: difference bar « un écart en mètres » vs arrow « × 10⁵ : combien de fois » -> matches (s6.png)",
+  "s7: bead « noyau 1 cm » in a sphere « ∼ 1 km », « × 10⁵ » arrow -> matches (s7.png)"
+ ],
+ "sourcesChecked": [],
+ "unverifiable": []
+}
