@@ -1,0 +1,47 @@
+{
+  "reviewer": "syllabus-checker",
+  "target": "courses/physique-chimie-seconde/atome/plan.json",
+  "round": 1,
+  "findings": [
+    {"id": "sc-1", "severity": "ERROR", "category": "requirement", "location": "plan/lessons[1]/goal",
+     "quote": "Établir l’écriture conventionnelle $^{A}_{Z}\\mathrm{X}$ d’un noyau à partir de ses nombres de protons et de neutrons, et retrouver cette composition à partir de l’écriture.",
+     "problem": "The referential gives two conventional writings: the full form with A and Z, or the short form with A only. The plan covers only the full form. No lesson (noyau, element-isotopes) covers the short form $^{A}X$. The anchor quote stops just before it.",
+     "evidence": "Referential p. 6 (https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf, fetched 2026-11-25), 1.B, row « Le noyau de l’atome, siège de sa masse et de son identité », column Notions et contenus: « Numéro atomique, nombre de masse, écriture conventionnelle : $^{A}_{Z}X$ ou $^{A}X$. »",
+     "fix": "Établir l’écriture conventionnelle $^{A}_{Z}\\mathrm{X}$ ou $^{A}\\mathrm{X}$ d’un noyau à partir de ses nombres de protons et de neutrons, et retrouver cette composition à partir de l’écriture, Z étant fourni dans le cas de $^{A}\\mathrm{X}$."},
+    {"id": "sc-2", "severity": "ERROR", "category": "requirement", "location": "plan/lessons[7]/goal",
+     "quote": "Identifier la famille des gaz nobles dans le tableau et relier leur stabilité chimique à leur configuration électronique de valence.",
+     "problem": "The required skill has two parts, and the goal keeps only the second (identify the noble-gas family). Linking a chemical family to shared properties appears in no goal, diagramIdea or interactionIdea of any lesson. The diagramIdea defines a family only by its column and valence electrons. The plan's own unverified list also says no source was fetched for the shared properties of a family.",
+     "evidence": "Referential p. 6, 1.B, row « Le cortège électronique de l’atome définit ses propriétés chimiques », column Capacités exigibles: « Associer la notion de famille chimique à l’existence de propriétés communes et identifier la famille des gaz nobles. » Same row, Notions et contenus: « Familles chimiques. »",
+     "fix": "Associer la notion de famille chimique à l’existence de propriétés communes, identifier la famille des gaz nobles dans le tableau et relier leur stabilité chimique à leur configuration électronique de valence."},
+    {"id": "sc-3", "severity": "ERROR", "category": "requirement", "location": "plan/lessons[8]/goal",
+     "quote": "Prévoir, à partir de la position dans le tableau périodique, la charge des ions H⁺, Na⁺, K⁺, Ca²⁺, Mg²⁺, Cl⁻ et F⁻, et écrire leur formule à partir de leur nom.",
+     "problem": "The referential asks for both directions: name the seven ions (from formula to name) and write their formula from their name. The goal and the diagramIdea cover only name to formula, plus predicting the charge.",
+     "evidence": "Referential p. 6, 1.B, row « Vers des entités plus stables chimiquement », column Capacités exigibles: « Nommer les ions : H+, Na+, K+, Ca2+, Mg2+, Cl-, F- ; écrire leur formule à partir de leur nom. »",
+     "fix": "Prévoir, à partir de la position dans le tableau périodique, la charge des ions H⁺, Na⁺, K⁺, Ca²⁺, Mg²⁺, Cl⁻ et F⁻, nommer ces ions à partir de leur formule et écrire leur formule à partir de leur nom."},
+    {"id": "sc-4", "severity": "ERROR", "category": "order", "location": "plan/lessons[8]/diagramIdea",
+     "quote": "K⁺ and Ca²⁺ are read from their family (same column as Na and Mg) without writing any 4s configuration.",
+     "problem": "The lesson reuses the three-row grid (Z ⩽ 18). K (Z = 19) and Ca (Z = 20) are not on it, and no prerequisite lesson places them in a column or names their family. The learner is asked to read a position that was never shown.",
+     "evidence": "Referential p. 4: « le modèle du cortège électronique pour les trois premières lignes de la classification périodique »; p. 6: « Déterminer les électrons de valence d’un atome (Z ⩽ 18) » and « Nommer les ions : H+, Na+, K+, Ca2+, Mg2+, Cl-, F- ». PubChem periodic table CSV (https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV, fetched 2026-11-25): K, 19, [Ar]4s1, Alkali metal; Ca, 20, [Ar]4s2, Alkaline earth metal.",
+     "fix": "Before K⁺ and Ca²⁺, the grid gains a partial fourth row showing only K and Ca, given as data and placed under Na and Mg (same family), with no configuration written; their ion charge is then read from that family."},
+    {"id": "sc-5", "severity": "AMBIGUOUS", "category": "level", "location": "plan/lessons[7]/diagramIdea",
+     "quote": "(1s² for helium, ns² np⁶ for the others)",
+     "problem": "The general form ns² np⁶ is not in the official notation, which names only 1s, 2s, 2p, 3s, 3p; within three rows it covers only neon and argon, which can be written out.",
+     "evidence": "Referential p. 6: « Configuration électronique (1s, 2s, 2p, 3s, 3p) d’un atome à l’état fondamental ». Style guide, Notation panel: « 1–7 LaTeX lines, in the referential's official notation ».",
+     "fix": "(1s² for helium, 2s² 2p⁶ for neon, 3s² 3p⁶ for argon)"}
+  ],
+  "verified": [
+    "Referential fetched 2026-11-25 from https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf; chapter notions on pp. 4, 5, 6 and 8 (2.C Isotopes).",
+    "All anchors of all 9 lessons are verbatim at the stated locations (noyau's first anchor truncated before the short form, see sc-1).",
+    "Bringing Isotopes (2.C) into this chapter is allowed: p. 2 « La présentation du programme n’impose pas l’ordre de sa mise en œuvre par le professeur ».",
+    "Every outOfScope item is consistent with the referential; « duet » and « octet » do not occur on pp. 1–8.",
+    "Cycle 4 prerequisites match the p. 4 box.",
+    "Apart from sc-1, sc-2, sc-3, every required notion and skill of 1.B in the chapter notes, plus « Identifier des isotopes », is covered.",
+    "K: Z = 19, alkali metal; Ca: Z = 20, alkaline earth metal (PubChem CSV, fetched 2026-11-25)."
+  ],
+  "unverifiable": [
+    "Programme in force for 2026-2027: https://www.education.gouv.fr/bo/19/Special1/MENE1901634A.htm returned HTTP 403; only search snippets (not fetched) suggest only the seconde mathematics programme changed in 2026.",
+    "Plan citation « Arrêté du 17 janvier 2019 (NOR MENE1901634A) »: the annex PDF gives neither date nor NOR; the BO page returned 403.",
+    "Level of the terms « nucléon », « couche », « sous-couche » and the symbol N: absent from the referential; no source fetched on their use in seconde, so not flagged.",
+    "PDF quotes checked by reading the saved PDF pages; superscripts read from the rendered page."
+  ]
+}

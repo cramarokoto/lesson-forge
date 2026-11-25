@@ -1,0 +1,24 @@
+{
+  "reviewer": "syllabus-checker",
+  "target": "courses/physique-chimie-seconde/atome/plan.json",
+  "round": 3,
+  "findings": [
+    {
+      "id": "sc-1",
+      "severity": "ERROR",
+      "category": "order",
+      "location": "plan/lessons[6]/diagramIdea",
+      "quote": "Helium is shown as the special case placed with the noble gases.",
+      "problem": "Lesson tableau-valence (7th) uses the noble-gas family before lesson familles-gaz-nobles (8th), whose goal is to introduce it. Its prerequisites (configuration, element-isotopes) and the collège list do not introduce it. Its misconception « L’hélium (1s²) se place dans la même colonne que le béryllium. » can only be corrected with that family argument.",
+      "evidence": "Style guide line 9: « Order of notions: never use a notion before it is introduced, in this lesson or in a prerequisite lesson of the plan. » Referential p. 6: « Associer la notion de famille chimique à l’existence de propriétés communes et identifier la famille des gaz nobles. » anchored by the plan to lessons[7]; p. 4 collège notions list no noble gases.",
+      "fix": "Helium is shown as the special case: its tile sits at the top of the last column, above neon, and not next to beryllium; the step states this placement as given and announces that lesson familles-gaz-nobles explains it."
+    }
+  ],
+  "verified": [
+    "[condensed by the orchestrator] Referential fetched live 2026-11-25, all 13 pages read as images; all anchors of all 9 lessons verbatim at stated locations; full requirement coverage of 1.B rows in the chapter notes and « Identifier des isotopes » (p. 8); outOfScope items consistent; notation matches the referential."
+  ],
+  "unverifiable": [
+    "Programme in force for 2026-2027: not confirmed from a primary source; one web search (snippets only) showed no new seconde physique-chimie programme.",
+    "Citation « BO spécial n° 1 du 22 janvier 2019 »: not printed in the annex; only the URL path segment « SP1-MEN-22-1-2019 » is consistent with it."
+  ]
+}

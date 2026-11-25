@@ -1,0 +1,41 @@
+{
+  "reviewer": "syllabus-checker",
+  "target": "courses/physique-chimie-seconde/atome/plan.json",
+  "round": 2,
+  "findings": [
+    {
+      "id": "sc-1",
+      "severity": "ERROR",
+      "category": "order",
+      "location": "plan/lessons[2]/diagramIdea",
+      "quote": "The last steps put a whole atom (nucleus plus Z electrons) against its nucleus alone",
+      "problem": "Lesson masse is third in the plan. Both its diagram and its goal (« en déduire que la masse d’un atome est pratiquement celle de son noyau ») depend on a neutral atom having Z electrons. That notion is only introduced in charges-ions, which comes fourth and is not one of masse's prerequisites (noyau, echelles). The plan itself says so: configuration lists « Un atome neutre possède Z électrons (leçon charges-ions) » as a prerequisite.",
+      "evidence": "Referential PDF p. 6, row « Le noyau de l’atome, siège de sa masse et de son identité. », Notions et contenus: « Masse et charge électrique d’un électron, d’un proton et d’un neutron, charge électrique élémentaire, neutralité de l’atome. » The cycle 4 box (p. 4) only says « constituants de l’atome (noyau et électrons) et du noyau (neutrons et protons) ». Rules: style-guide « never use a notion before it is introduced, in this lesson or in a prerequisite lesson of the plan ».",
+      "fix": "Placer la leçon masse juste après charges-ions (ordre : echelles, noyau, charges-ions, masse, element-isotopes, configuration, tableau-valence, familles-gaz-nobles, ions-monoatomiques) et ajouter à ses prérequis : « Un atome neutre possède Z électrons (leçon charges-ions) »."
+    },
+    {
+      "id": "sc-2",
+      "severity": "ERROR",
+      "category": "order",
+      "location": "plan/lessons[6]/prerequisites",
+      "quote": "Configuration électronique de 1s à 3p (leçon configuration)",
+      "problem": "The goal of tableau-valence (« Situer un élément (Z ⩽ 18) dans les trois premières lignes du tableau périodique ») uses the notion of chemical element, introduced only in element-isotopes, which is not in its prerequisite chain (configuration → charges-ions → noyau → echelles). familles-gaz-nobles and ions-monoatomiques inherit the gap.",
+      "evidence": "Referential PDF p. 6, row « Le noyau de l’atome… », Notions et contenus: « Élément chimique. » Absent from the cycle 4 box (p. 4). The plan anchors it only in element-isotopes (lessons[4]).",
+      "fix": "Ajouter aux prérequis de tableau-valence : « Élément chimique, caractérisé par son numéro atomique Z (leçon element-isotopes) »."
+    }
+  ],
+  "verified": [
+    "[condensed by the orchestrator] Referential fetched 2026-11-25 from https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf, reported as a 13-page PDF, all pages read.",
+    "All anchors of all 9 lessons found word for word at the stated locations (pp. 4, 6, 8).",
+    "Requirement coverage: every notion and capacity of the p. 6 rows « Le noyau de l’atome… » and « Le cortège électronique… », the ion part of « Vers des entités plus stables chimiquement. », « Utiliser le terme adapté parmi molécule, atome, anion et cation… » and « Identifier des isotopes. » are covered.",
+    "outOfScope items consistent with the annex; « duet » and « octet » absent from 1.B; orbitals, quantum numbers, atomic mass unit and mass defect absent from all pages.",
+    "Cycle 4 prerequisites match the p. 4 box; notation and vocabulary match the annex.",
+    "K⁺ and Ca²⁺ placed by family without configuration: fits both p. 4 and p. 6."
+  ],
+  "unverifiable": [
+    "Programme in force for 2026-2027: no primary source (BO, eduscol, legifrance 403). Substitute: https://groupe-reussite.fr/ressources/programmes-lycee/ (fetched, undated, secondary) says only maths changed in BO of 2 April 2026 and « Les autres disciplines restent sur les textes de 2019 et 2020 », without naming physique-chimie.",
+    "Citation « BO spécial n° 1 du 22 janvier 2019 » not printed in the annex PDF; supported only by the URL path and a search-result title.",
+    "Terms « nucléon », « couche », « sous-couche » and symbol N absent from the annex; not checked against an official seconde resource; not flagged.",
+    "echelles prerequisite « Puissances de dix et écriture scientifique (collège) »: cycle 4 maths programme not fetched; no order problem since écriture scientifique is anchored in echelles itself."
+  ]
+}
