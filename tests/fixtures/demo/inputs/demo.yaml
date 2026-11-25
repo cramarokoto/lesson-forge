@@ -1,0 +1,10 @@
+# Engine test fixture. Not real teaching content.
+slug: demo
+subject: Engine demo
+audience: test fixture
+language: en
+referential: { name: none, reference: test fixture }
+chapters:
+  - id: basics
+    title: Basics
+publication: { humanApproval: true }

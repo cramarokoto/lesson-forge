@@ -1,0 +1,368 @@
+/* lesson-forge engine runtime. No dependencies. Data comes pre-rendered from scripts/build.mjs. */
+(() => {
+  'use strict';
+  const D = JSON.parse(document.getElementById('course-data').textContent);
+  const T = D.ui;
+  const $ = (sel, el = document) => el.querySelector(sel);
+  const h = (tag, attrs = {}, ...kids) => {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v == null || v === false) continue;
+      if (k === 'html') el.innerHTML = v;
+      else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? '' : v);
+    }
+    for (const k of kids.flat()) if (k != null) el.append(k.nodeType ? k : document.createTextNode(k));
+    return el;
+  };
+  const SVG = 'http://www.w3.org/2000/svg';
+  const s = (tag, attrs = {}) => {
+    const el = document.createElementNS(SVG, tag);
+    for (const [k, v] of Object.entries(attrs)) if (v != null) el.setAttribute(k, v);
+    return el;
+  };
+
+  // ---------- storage (best effort) ----------
+  const KEY = `lesson-forge:${D.course.slug}`;
+  const store = (() => {
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; }
+  })();
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch { /* private mode */ } };
+  store.seen ??= {}; store.quiz ??= {};
+
+  // ---------- theme ----------
+  const THEMES = ['auto', 'light', 'dark'];
+  const applyTheme = () => {
+    const t = store.theme || 'auto';
+    if (t === 'auto') document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', t);
+    const btn = $('#theme');
+    const sep = D.course.language.startsWith('fr') ? ' : ' : ': ';
+    if (btn) btn.textContent = `${T.theme}${sep}${T['theme' + t[0].toUpperCase() + t.slice(1)]}`;
+  };
+  const isDark = () => {
+    const t = document.documentElement.getAttribute('data-theme');
+    return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+  const roleColor = (role) => (D.palette[role] || D.palette.neutral)[isDark() ? 'dark' : 'light'];
+
+  // ---------- model ----------
+  const lessons = D.chapters.flatMap((c) => c.lessons.map((l) => ({ ...l, chapter: c.id })));
+  const available = lessons.filter((l) => l.available);
+  const find = (ch, id) => available.find((l) => l.chapter === ch && l.id === id);
+  let cur = { lesson: null, step: 0 }; // step === lesson.steps.length means quiz
+
+  function parseHash() {
+    const [ch, id, st] = location.hash.replace(/^#\/?/, '').split('/');
+    const lesson = find(ch, id) || available[0] || null;
+    if (!lesson) return { lesson: null, step: 0 };
+    let step = st === 'quiz' ? lesson.steps.length : Math.max(0, (parseInt(st, 10) || 1) - 1);
+    step = Math.min(step, lesson.steps.length);
+    return { lesson, step };
+  }
+  const go = (lesson, step) => {
+    const st = step >= lesson.steps.length ? 'quiz' : String(step + 1);
+    location.hash = `#/${lesson.chapter}/${lesson.id}/${st}`;
+  };
+
+  // ---------- layout ----------
+  const app = h('div', { class: 'app' });
+  const header = h('header', { class: 'top' },
+    h('button', { class: 'btn menu-btn', id: 'menu', 'aria-expanded': 'false', onclick: () => {
+      const open = tree.classList.toggle('open');
+      $('#menu').setAttribute('aria-expanded', String(open));
+    } }, T.menu),
+    h('div', { class: 'brand' }, D.course.title, h('small', {}, D.course.subtitle || '')),
+    h('div', { class: 'spacer' }),
+    h('button', { class: 'btn', id: 'theme', onclick: () => {
+      store.theme = THEMES[(THEMES.indexOf(store.theme || 'auto') + 1) % THEMES.length];
+      save(); applyTheme(); render();
+    } }));
+  const tree = h('nav', { class: 'tree', 'aria-label': T.menu });
+  const stageCol = h('main', { class: 'stage-col' });
+  const panels = h('aside', { class: 'panels' });
+  app.append(header, tree, stageCol, panels);
+  document.body.append(app);
+
+  // ---------- tree ----------
+  const search = h('input', { class: 'search', type: 'search', placeholder: T.search, 'aria-label': T.search, oninput: () => renderTree() });
+  function progressOf(l) {
+    const seen = (store.seen[`${l.chapter}/${l.id}`] || []).length;
+    return { seen, total: l.steps.length, done: !!store.quiz[`${l.chapter}/${l.id}`]?.done };
+  }
+  function renderTree() {
+    const q = search.value.trim().toLowerCase();
+    tree.replaceChildren(search);
+    let n = 0;
+    for (const c of D.chapters) {
+      const items = c.lessons.filter((l) => !q || l.search.includes(q));
+      if (!items.length) continue;
+      tree.append(h('div', { class: 'chapter' }, h('h2', {}, c.title), ...items.map((l) => {
+        n++;
+        const p = l.available ? progressOf({ ...l, chapter: c.id }) : null;
+        const active = cur.lesson && cur.lesson.id === l.id && cur.lesson.chapter === c.id;
+        return h('button', {
+          class: 'lesson-link', disabled: !l.available, 'aria-current': active ? 'true' : null,
+          onclick: () => { tree.classList.remove('open'); go(find(c.id, l.id), 0); },
+        },
+        h('span', { class: `num${p?.done ? ' done' : ''}` }, p?.done ? '✓' : String(l.index)),
+        h('span', {}, l.title,
+          h('span', { class: 'meta' }, l.available ? `${p.seen}/${p.total}` : T.soon),
+          l.available ? h('span', { class: 'bar' }, h('i', { style: `width:${(100 * p.seen) / p.total}%` })) : null));
+      })));
+    }
+    return n;
+  }
+
+  // ---------- scene ----------
+  const U = 30;
+  const C30 = Math.cos(Math.PI / 6), S30 = 0.5;
+  const proj = ([x, y, z]) => [(x - y) * C30 * U, (x + y) * S30 * U - z * U];
+  const svg = s('svg', { viewBox: `${-9.4 * U} ${-6.6 * U} ${18.8 * U} ${17.4 * U}`, role: 'img', preserveAspectRatio: 'xMidYMid meet' });
+  const grid = s('g');
+  for (let i = 0; i <= 10; i += 1) {
+    const st = { stroke: 'var(--stage-grid)', 'stroke-width': 1, 'vector-effect': 'non-scaling-stroke' };
+    const [a, b] = [proj([i, 0, 0]), proj([i, 10, 0])];
+    const [c, d] = [proj([0, i, 0]), proj([10, i, 0])];
+    grid.append(s('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], ...st }), s('line', { x1: c[0], y1: c[1], x2: d[0], y2: d[1], ...st }));
+  }
+  const layer = s('g');
+  const defs = s('defs');
+  const marker = s('marker', { id: 'arrowhead', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' });
+  marker.append(s('path', { d: 'M0,0 L10,5 L0,10 z', fill: 'context-stroke' }));
+  defs.append(marker);
+  svg.append(defs, grid, layer);
+  const nodes = new Map(); // key -> { el, type, timer }
+
+  const rhombus = (sz, z = 0) => [[0, 0, z], [sz, 0, z], [sz, sz, z], [0, sz, z]].map((p) => proj(p.map((v, i) => (i < 2 ? v - sz / 2 : v))).join(',')).join(' ');
+  function shapeFor(o) {
+    const g = s('g', { class: 'shape' });
+    const color = roleColor(o.role);
+    const size = o.size ?? 1;
+    switch (o.type) {
+      case 'sphere':
+        g.append(s('circle', { class: 'fill', r: (size * U) / 2, fill: color }),
+          s('circle', { r: (size * U) / 7, cx: -(size * U) / 6, cy: -(size * U) / 6, fill: '#fff', 'fill-opacity': 0.35 }));
+        break;
+      case 'cube': {
+        const e = size;
+        const P = (x, y, z) => proj([x - e / 2, y - e / 2, z]).join(',');
+        const top = [P(0, 0, e), P(e, 0, e), P(e, e, e), P(0, e, e)].join(' ');
+        const left = [P(0, e, e), P(e, e, e), P(e, e, 0), P(0, e, 0)].join(' ');
+        const right = [P(e, 0, e), P(e, e, e), P(e, e, 0), P(e, 0, 0)].join(' ');
+        for (const [pts, shade] of [[left, 0.22], [right, 0.1], [top, 0]]) {
+          g.append(s('polygon', { class: 'fill edge', points: pts, fill: color }));
+          if (shade) g.append(s('polygon', { points: pts, fill: '#000', 'fill-opacity': shade }));
+        }
+        break;
+      }
+      case 'tile':
+        g.append(s('polygon', { class: 'fill edge', points: rhombus(size), fill: color }));
+        break;
+      case 'board':
+        g.append(s('polygon', { class: 'fill edge', points: rhombus(size), fill: color, 'fill-opacity': 0.35 }));
+        break;
+      case 'ring':
+        g.append(s('ellipse', { class: 'ring', rx: size * Math.SQRT2 * C30 * U, ry: size * Math.SQRT2 * S30 * U, stroke: color }));
+        break;
+      case 'arrow': {
+        const [x1, y1] = proj(o.pos), [x2, y2] = proj(o.to);
+        g.append(s('line', { class: 'arrow', x1: 0, y1: 0, x2: x2 - x1, y2: y2 - y1, 'marker-end': 'url(#arrowhead)' }));
+        break;
+      }
+      case 'label': {
+        g.append(s('circle', { class: 'dot', r: 2.5 }), s('line', { x1: 0, y1: 0, x2: 0, y2: -14, stroke: 'currentColor', 'stroke-opacity': 0.4 }));
+        const t = s('text', { y: -19, 'text-anchor': 'middle' }); t.textContent = o.text; g.append(t);
+        break;
+      }
+      case 'text': {
+        const t = s('text', { 'text-anchor': 'middle', 'dominant-baseline': 'middle' }); t.textContent = o.text; g.append(t);
+        break;
+      }
+      default: break;
+    }
+    return g;
+  }
+  const signature = (o) => JSON.stringify([o.type, o.role, o.size, o.text, o.to && o.pos && proj(o.to).map((v, i) => v - proj(o.pos)[i])]);
+  const typeRank = { board: 0, tile: 1, ring: 2, cube: 3, sphere: 3, arrow: 4, text: 5, label: 6 };
+
+  // Frame the whole lesson once, so the camera stays still between steps.
+  const frames = new WeakMap();
+  function frameLesson(lesson) {
+    if (frames.has(lesson)) return frames.get(lesson);
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    const add = ([x, y], r = 0) => { x0 = Math.min(x0, x - r); x1 = Math.max(x1, x + r); y0 = Math.min(y0, y - r); y1 = Math.max(y1, y + r); };
+    for (const st of lesson.steps) {
+      const byKey = new Map(st.scene.map((o) => [o.key, o]));
+      for (const o of st.scene) {
+        if (o.type === 'group') continue;
+        const off = (o.parent && byKey.get(o.parent)?.pos) || [0, 0, 0];
+        const at = (p) => p.map((v, i) => v + off[i]);
+        const p = at(o.pos || [5, 5, 0]);
+        const r = (o.size ?? 1) * U * (o.type === 'ring' || o.type === 'board' || o.type === 'tile' ? 1.25 : 0.75);
+        add(proj(p), o.type === 'label' || o.type === 'text' ? 0 : r);
+        if (o.type === 'label') add([proj(p)[0], proj(p)[1] - 30], 0);
+        if (o.type === 'label' || o.type === 'text') { const w = (o.text || '').length * 4.5; add([proj(p)[0] - w, proj(p)[1]]); add([proj(p)[0] + w, proj(p)[1]]); }
+        if (o.to) add(proj(at(o.to)));
+      }
+    }
+    if (!isFinite(x0)) { x0 = -9.4 * U; y0 = -6.6 * U; x1 = 9.4 * U; y1 = 10.8 * U; }
+    const pad = 24, minW = 8 * U, minH = 6 * U;
+    let w = Math.max(x1 - x0, minW), hh = Math.max(y1 - y0, minH);
+    const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    const box = `${cx - w / 2 - pad} ${cy - hh / 2 - pad} ${w + 2 * pad} ${hh + 2 * pad}`;
+    frames.set(lesson, box);
+    return box;
+  }
+
+  function renderScene(step, lesson) {
+    svg.setAttribute('viewBox', frameLesson(lesson));
+    svg.setAttribute('aria-label', step.sceneDescription || '');
+    const byKey = new Map(step.scene.map((o) => [o.key, o]));
+    // resolve group offsets
+    const abs = (o) => {
+      let p = o.pos || [5, 5, 0];
+      const g = o.parent && byKey.get(o.parent);
+      if (g && g.pos) p = p.map((v, i) => v + g.pos[i]);
+      return p;
+    };
+    const visible = step.scene.filter((o) => o.type !== 'group')
+      .map((o) => ({ ...o, abs: abs(o), to: o.to && o.parent && byKey.get(o.parent)?.pos ? o.to.map((v, i) => v + byKey.get(o.parent).pos[i]) : o.to }))
+      .sort((a, b) => (typeRank[a.type] ?? 3) - (typeRank[b.type] ?? 3) || (a.abs[0] + a.abs[1] + a.abs[2]) - (b.abs[0] + b.abs[1] + b.abs[2]));
+
+    for (const [key, n] of nodes) {
+      if (!visible.some((o) => o.key === key)) {
+        n.el.style.opacity = '0';
+        clearTimeout(n.timer);
+        n.timer = setTimeout(() => { n.el.remove(); nodes.delete(key); }, 480);
+      }
+    }
+    visible.forEach((o, i) => {
+      const [x, y] = proj(o.abs);
+      let n = nodes.get(o.key);
+      const sig = signature({ ...o, pos: o.abs });
+      if (n && n.sig !== sig) { n.el.replaceChildren(shapeFor({ ...o, pos: o.abs })); n.sig = sig; }
+      if (!n) {
+        const el = s('g', { class: `obj t-${o.type}`, 'data-key': o.key });
+        el.append(shapeFor({ ...o, pos: o.abs }));
+        el.style.transform = `translate(${x}px, ${y}px)`;
+        el.style.opacity = '0';
+        n = { el, sig };
+        nodes.set(o.key, n);
+        requestAnimationFrame(() => requestAnimationFrame(() => { el.style.opacity = String(o.opacity ?? 1); }));
+      } else {
+        clearTimeout(n.timer);
+        n.el.style.opacity = String(o.opacity ?? 1);
+        n.el.style.transform = `translate(${x}px, ${y}px)`;
+      }
+      n.el.classList.toggle('accent', !!o.accent);
+      for (const f of n.el.querySelectorAll('.fill')) f.setAttribute('fill', roleColor(o.role));
+      for (const r of n.el.querySelectorAll('.ring')) r.setAttribute('stroke', roleColor(o.role));
+      if (layer.children[i] !== n.el) layer.insertBefore(n.el, layer.children[i] || null);
+    });
+  }
+
+  // ---------- panels ----------
+  function sourcesBlock(lesson, ids) {
+    const list = lesson.sources.filter((x) => ids.includes(x.id));
+    if (!list.length) return null;
+    return h('div', { class: 'sources' }, T.sources,
+      h('ul', {}, list.map((x) => h('li', {}, h('a', { href: x.url, target: '_blank', rel: 'noopener' }, x.title), ` (${T.accessed} ${x.accessed})`))));
+  }
+
+  function stepCard(lesson, i) {
+    const st = lesson.steps[i];
+    const last = i === lesson.steps.length - 1;
+    return h('section', { class: 'card', 'aria-live': 'polite', 'data-step': st.id },
+      h('span', { class: `tag ${st.tag}` }, T.tags[st.tag]),
+      h('h3', { html: st.titleHtml }),
+      h('p', { class: 'step-text', html: st.textHtml }),
+      st.callout ? h('div', { class: `callout ${st.callout.kind}` }, h('b', {}, T.callouts[st.callout.kind]), h('span', { html: st.callout.html })) : null,
+      sourcesBlock(lesson, st.sourceIds || []),
+      h('div', { class: 'nav' },
+        h('button', { class: 'btn', id: 'prev', disabled: i === 0, onclick: () => go(lesson, i - 1) }, `← ${T.prev}`),
+        h('button', { class: 'btn primary', id: 'next', onclick: () => go(lesson, i + 1) }, last ? `${T.toQuiz} →` : `${T.next} →`)));
+  }
+
+  function quizCard(lesson) {
+    const k = `${lesson.chapter}/${lesson.id}`;
+    const state = (store.quiz[k] ??= { answers: {}, done: false });
+    const card = h('section', { class: 'card quiz', 'data-step': 'quiz' }, h('span', { class: 'tag' }, T.quiz));
+    lesson.quiz.forEach((q, qi) => {
+      const name = `q-${q.id}`;
+      const fb = h('div', { class: 'feedback', 'aria-live': 'polite' });
+      const opts = q.optionsHtml.map((html, oi) => h('label', { class: 'opt' },
+        h('input', { type: 'radio', name, value: oi, checked: state.answers[q.id] === oi }), h('span', { html })));
+      const show = () => {
+        const a = state.answers[q.id];
+        if (a == null) return;
+        opts.forEach((el, oi) => { el.classList.toggle('right', oi === q.answer); el.classList.toggle('wrong', oi === a && a !== q.answer); });
+        fb.innerHTML = '';
+        fb.append(h('b', { class: a === q.answer ? 'ok' : 'ko' }, a === q.answer ? T.correct : T.wrong), ' ', h('span', { html: q.explanationHtml }));
+      };
+      const check = h('button', { class: 'btn', onclick: () => {
+        const sel = card.querySelector(`input[name="${name}"]:checked`);
+        if (!sel) return;
+        state.answers[q.id] = Number(sel.value);
+        state.done = lesson.quiz.every((qq) => state.answers[qq.id] != null);
+        save(); show(); renderTree();
+      } }, T.check);
+      card.append(h('div', { class: 'q', 'data-q': q.id }, h('p', { html: q.questionHtml }), ...opts, check, fb));
+      show();
+    });
+    const idx = available.indexOf(lesson);
+    const nextL = available[idx + 1];
+    card.append(h('div', { class: 'nav' },
+      h('button', { class: 'btn', id: 'prev', onclick: () => go(lesson, lesson.steps.length - 1) }, `← ${T.prev}`),
+      nextL ? h('button', { class: 'btn primary', id: 'next', onclick: () => go(nextL, 0) }, `${T.nextLesson} →`) : h('span', { class: 'done-label' }, state.done ? T.done : '')));
+    return card;
+  }
+
+  function render() {
+    const { lesson, step } = cur;
+    renderTree();
+    if (!lesson) {
+      stageCol.replaceChildren(h('p', { class: 'empty' }, T.noLesson));
+      panels.replaceChildren();
+      return;
+    }
+    const quiz = step >= lesson.steps.length;
+    const shown = lesson.steps[Math.min(step, lesson.steps.length - 1)];
+    const k = `${lesson.chapter}/${lesson.id}`;
+    if (!quiz) {
+      const seen = new Set(store.seen[k] || []); seen.add(shown.id); store.seen[k] = [...seen]; save();
+      renderTree();
+    }
+    const seen = new Set(store.seen[k] || []);
+    const stage = h('div', { class: 'stage' }); stage.append(svg);
+    stageCol.replaceChildren(
+      h('div', { class: 'lesson-head' }, h('h1', {}, lesson.title), h('p', {}, lesson.goal)),
+      stage,
+      h('div', { class: 'timeline', role: 'group', 'aria-label': T.step },
+        lesson.steps.map((st, i) => h('button', {
+          class: seen.has(st.id) ? 'seen' : null, 'aria-current': !quiz && i === step ? 'true' : null,
+          'aria-label': `${T.step} ${i + 1}`, onclick: () => go(lesson, i),
+        }, String(i + 1))),
+        h('button', { class: 'quiz-dot', 'aria-current': quiz ? 'true' : null, onclick: () => go(lesson, lesson.steps.length) }, T.quiz)));
+    renderScene(shown, lesson);
+    const notation = h('section', { class: 'card notation' }, h('p', { class: 'panel-title' }, T.notation),
+      h('ol', {}, lesson.notationHtml.map((html, i) => h('li', { class: !quiz && shown.notationLine === i ? 'on' : null, html }))));
+    const counters = (shown.counters || []).length
+      ? h('section', { class: 'card counters' }, h('p', { class: 'panel-title' }, T.counters),
+        h('dl', {}, shown.counters.flatMap((c) => [h('dt', { html: c.labelHtml }), h('dd', { class: c.changed ? 'changed' : null }, `${c.value}${c.unit ? ' ' + c.unit : ''}`)])))
+      : null;
+    panels.replaceChildren(quiz ? quizCard(lesson) : stepCard(lesson, step), notation, counters || '');
+  }
+
+  addEventListener('hashchange', () => { cur = parseHash(); render(); });
+  addEventListener('keydown', (e) => {
+    if (!cur.lesson || e.target.closest('input, textarea')) return;
+    if (e.key === 'ArrowRight' && cur.step < cur.lesson.steps.length) go(cur.lesson, cur.step + 1);
+    if (e.key === 'ArrowLeft' && cur.step > 0) go(cur.lesson, cur.step - 1);
+  });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => render());
+
+  applyTheme();
+  cur = parseHash();
+  render();
+})();

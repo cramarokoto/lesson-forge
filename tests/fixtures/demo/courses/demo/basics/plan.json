@@ -1,0 +1,49 @@
+{
+ "course": "demo",
+ "chapter": "basics",
+ "title": "Basics",
+ "referential": {
+  "citation": "test fixture",
+  "url": "https://example.org/",
+  "accessed": "2026-11-25"
+ },
+ "lessons": [
+  {
+   "id": "shapes",
+   "title": "Shapes and motion",
+   "goal": "Watch every primitive move between steps.",
+   "prerequisites": [],
+   "misconceptions": [
+    "a",
+    "b"
+   ],
+   "anchors": [
+    {
+     "quote": "fixture",
+     "location": "none"
+    }
+   ]
+  },
+  {
+   "id": "later",
+   "title": "A lesson not written yet",
+   "goal": "g",
+   "prerequisites": [
+    "shapes"
+   ],
+   "misconceptions": [
+    "a",
+    "b"
+   ],
+   "anchors": [
+    {
+     "quote": "fixture",
+     "location": "none"
+    }
+   ]
+  }
+ ],
+ "outOfScope": [],
+ "sources": [],
+ "unverified": []
+}

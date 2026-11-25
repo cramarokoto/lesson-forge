@@ -1,0 +1,14 @@
+{
+  "_comment": "Semantic roles for scene objects. Same role = same meaning in the whole course. Add a role here before a stager may use it.",
+  "roles": {
+    "neutral":  { "light": "#9aa5b4", "dark": "#7d8899", "meaning": "context, unnamed object" },
+    "proton":   { "light": "#d0473f", "dark": "#e8675f", "meaning": "proton" },
+    "neutron":  { "light": "#8c96a6", "dark": "#a7b0bf", "meaning": "neutron" },
+    "electron": { "light": "#2c7bd1", "dark": "#5aa2ef", "meaning": "electron" },
+    "nucleus":  { "light": "#d99a26", "dark": "#efb84a", "meaning": "nucleus as a whole" },
+    "shell":    { "light": "#7f93ad", "dark": "#8fa6c4", "meaning": "electron shell / subshell" },
+    "atom":     { "light": "#b9c6d6", "dark": "#4a5a70", "meaning": "atom as a whole (cloud, boundary)" },
+    "ion":      { "light": "#2f9e72", "dark": "#4cc292", "meaning": "ion" },
+    "measure":  { "light": "#5b6675", "dark": "#b4bcc8", "meaning": "dimension line, scale bar, ruler" }
+  }
+}

@@ -39,7 +39,8 @@ Never weaken a check to make it pass.
 - `schema/course.schema.json`: contracts for input, plan, lesson, review. `scripts/validate.mjs` adds the rules JSON Schema cannot express.
 - `courses/<slug>/<chapter>/`: plan and lesson JSON (generated)
 - `work/<slug>/`: review reports, `report.md`, screenshots
-- `engine/`: static site renderer (not built yet)
+- `engine/`: static renderer (`app.js`, `style.css`, `palette.json` roles, `i18n.json`); see `engine/README.md`
+- `tests/`: Playwright suite + engine fixture course
 
 ## Status
 

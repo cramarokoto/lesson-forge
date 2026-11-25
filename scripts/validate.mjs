@@ -2,26 +2,31 @@
 // Validates every pipeline file against schema/course.schema.json, then runs
 // the rules JSON Schema cannot express. Exit code 1 if anything fails.
 //
-// Usage: node scripts/validate.mjs [--require-scenes]
+// Usage: node scripts/validate.mjs [--require-scenes] [--root <dir>]
 //   --require-scenes  every step must have a non-empty `scene` (use before build)
+//   --root            directory holding inputs/, courses/, work/ (default: repo root)
 
 import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
-import { join, relative, basename, dirname } from 'node:path';
+import { join, relative, basename, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
 import YAML from 'yaml';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const REPO = join(dirname(fileURLToPath(import.meta.url)), '..');
+const rootArg = process.argv.indexOf('--root');
+const ROOT = rootArg > -1 ? resolve(process.argv[rootArg + 1]) : REPO;
 const REQUIRE_SCENES = process.argv.includes('--require-scenes');
 const MAX_WORDS = 90;
+const ROLES = Object.keys(JSON.parse(readFileSync(join(REPO, 'engine/palette.json'), 'utf8')).roles);
+const WIDGETS = []; // widget types the engine implements; none yet
 
 const errors = [];
 const fail = (file, msg) => errors.push(`${relative(ROOT, file)}: ${msg}`);
 let checked = 0;
 
 // ---------- schema ----------
-const schema = JSON.parse(readFileSync(join(ROOT, 'schema/course.schema.json'), 'utf8'));
+const schema = JSON.parse(readFileSync(join(REPO, 'schema/course.schema.json'), 'utf8'));
 const ajv = new Ajv2020({ allErrors: true, strict: true, allowUnionTypes: true });
 addFormats(ajv);
 ajv.addSchema(schema);
@@ -160,7 +165,9 @@ for (const courseDir of listDirs(join(ROOT, 'courses'))) {
         const keys = scene.map((o) => o.key);
         for (const d of dupes(keys)) at(`${where}: duplicate scene key ${d}`);
         if (scene.filter((o) => o.accent).length > 1) at(`${where}: more than one accent object (one focus per step)`);
+        if (s.widget && !WIDGETS.includes(s.widget.type)) at(`${where}/widget: type ${s.widget.type} is not implemented by the engine (available: ${WIDGETS.join(', ') || 'none'})`);
         for (const o of scene) {
+          if (o.role && !ROLES.includes(o.role)) at(`${where}/scene/${o.key}: unknown role ${o.role} (engine/palette.json: ${ROLES.join(', ')})`);
           if (o.parent && !scene.some((g) => g.key === o.parent && g.type === 'group'))
             at(`${where}/scene/${o.key}: parent ${o.parent} is not a group in this step`);
           if (o.type === 'arrow' && !(o.pos && o.to)) at(`${where}/scene/${o.key}: arrow needs pos and to`);

@@ -1,0 +1,570 @@
+{
+ "course": "demo",
+ "chapter": "basics",
+ "id": "shapes",
+ "title": "Shapes and motion",
+ "goal": "Watch every primitive move between steps.",
+ "notation": [
+  "E = mc^2",
+  "{}^{12}_{6}\\mathrm{C}",
+  "1{,}6 \\times 10^{-19}\\,\\mathrm{C}"
+ ],
+ "steps": [
+  {
+   "id": "s1",
+   "tag": "observe",
+   "title": "Step 1 title",
+   "text": "Step 1 text with math $E = mc^2$ and $x_1$.",
+   "sceneDescription": "Scene 1.",
+   "scene": [
+    {
+     "key": "floor",
+     "type": "board",
+     "pos": [
+      5,
+      5,
+      0
+     ],
+     "size": 8,
+     "role": "neutral"
+    },
+    {
+     "key": "grp",
+     "type": "group",
+     "pos": [
+      0.0,
+      0,
+      0
+     ]
+    },
+    {
+     "key": "core",
+     "type": "sphere",
+     "pos": [
+      5,
+      5,
+      1
+     ],
+     "size": 1.4,
+     "role": "nucleus",
+     "parent": "grp",
+     "accent": true
+    },
+    {
+     "key": "orbit",
+     "type": "ring",
+     "pos": [
+      5,
+      5,
+      1
+     ],
+     "size": 3,
+     "role": "shell",
+     "parent": "grp"
+    },
+    {
+     "key": "box",
+     "type": "cube",
+     "pos": [
+      2,
+      8,
+      0
+     ],
+     "size": 1.2,
+     "role": "proton",
+     "accent": false
+    },
+    {
+     "key": "pad",
+     "type": "tile",
+     "pos": [
+      8,
+      2,
+      0
+     ],
+     "size": 1.5,
+     "role": "ion"
+    },
+    {
+     "key": "arr",
+     "type": "arrow",
+     "pos": [
+      2,
+      8,
+      1.5
+     ],
+     "to": [
+      5,
+      5,
+      1.5
+     ],
+     "role": "measure"
+    },
+    {
+     "key": "lab",
+     "type": "label",
+     "pos": [
+      2,
+      8,
+      1.4
+     ],
+     "text": "cube"
+    },
+    {
+     "key": "val",
+     "type": "text",
+     "pos": [
+      8,
+      2,
+      1.5
+     ],
+     "text": "x = 2"
+    }
+   ],
+   "notationLine": 0,
+   "counters": [
+    {
+     "key": "n",
+     "label": "Count",
+     "value": 1,
+     "changed": false
+    },
+    {
+     "key": "m",
+     "label": "Mass",
+     "value": "1.5",
+     "unit": "kg"
+    }
+   ],
+   "sourceIds": [
+    "ex"
+   ]
+  },
+  {
+   "id": "s2",
+   "tag": "concept",
+   "title": "Step 2 title",
+   "text": "Step 2 text with math $E = mc^2$ and $x_2$.",
+   "sceneDescription": "Scene 2.",
+   "scene": [
+    {
+     "key": "floor",
+     "type": "board",
+     "pos": [
+      5,
+      5,
+      0
+     ],
+     "size": 8,
+     "role": "neutral"
+    },
+    {
+     "key": "grp",
+     "type": "group",
+     "pos": [
+      0.8,
+      0,
+      0
+     ]
+    },
+    {
+     "key": "core",
+     "type": "sphere",
+     "pos": [
+      5,
+      5,
+      1
+     ],
+     "size": 1.4,
+     "role": "nucleus",
+     "parent": "grp",
+     "accent": false
+    },
+    {
+     "key": "orbit",
+     "type": "ring",
+     "pos": [
+      5,
+      5,
+      1
+     ],
+     "size": 3,
+     "role": "shell",
+     "parent": "grp"
+    },
+    {
+     "key": "box",
+     "type": "cube",
+     "pos": [
+      2,
+      8,
+      0
+     ],
+     "size": 1.2,
+     "role": "proton",
+     "accent": true
+    },
+    {
+     "key": "pad",
+     "type": "tile",
+     "pos": [
+      8,
+      2,
+      0
+     ],
+     "size": 1.5,
+     "role": "ion"
+    },
+    {
+     "key": "arr",
+     "type": "arrow",
+     "pos": [
+      2,
+      8,
+      1.5
+     ],
+     "to": [
+      5,
+      5,
+      1.5
+     ],
+     "role": "measure"
+    },
+    {
+     "key": "lab",
+     "type": "label",
+     "pos": [
+      2,
+      8,
+      1.4
+     ],
+     "text": "cube"
+    },
+    {
+     "key": "val",
+     "type": "text",
+     "pos": [
+      8,
+      2,
+      1.5
+     ],
+     "text": "x = 2"
+    }
+   ],
+   "notationLine": 1,
+   "counters": [
+    {
+     "key": "n",
+     "label": "Count",
+     "value": 2,
+     "changed": true
+    },
+    {
+     "key": "m",
+     "label": "Mass",
+     "value": "1.5",
+     "unit": "kg"
+    }
+   ],
+   "sourceIds": [
+    "ex"
+   ],
+   "callout": {
+    "kind": "pitfall",
+    "text": "A pitfall."
+   }
+  },
+  {
+   "id": "s3",
+   "tag": "calculate",
+   "title": "Step 3 title",
+   "text": "Step 3 text with math $E = mc^2$ and $x_3$.",
+   "sceneDescription": "Scene 3.",
+   "scene": [
+    {
+     "key": "floor",
+     "type": "board",
+     "pos": [
+      5,
+      5,
+      0
+     ],
+     "size": 8,
+     "role": "neutral"
+    },
+    {
+     "key": "grp",
+     "type": "group",
+     "pos": [
+      1.6,
+      0,
+      0
+     ]
+    },
+    {
+     "key": "core",
+     "type": "sphere",
+     "pos": [
+      5,
+      5,
+      1
+     ],
+     "size": 1.4,
+     "role": "nucleus",
+     "parent": "grp",
+     "accent": true
+    },
+    {
+     "key": "orbit",
+     "type": "ring",
+     "pos": [
+      5,
+      5,
+      1
+     ],
+     "size": 3,
+     "role": "shell",
+     "parent": "grp"
+    },
+    {
+     "key": "box",
+     "type": "cube",
+     "pos": [
+      2,
+      8,
+      0
+     ],
+     "size": 1.2,
+     "role": "proton",
+     "accent": false
+    },
+    {
+     "key": "pad",
+     "type": "tile",
+     "pos": [
+      8,
+      2,
+      0
+     ],
+     "size": 1.5,
+     "role": "ion"
+    },
+    {
+     "key": "arr",
+     "type": "arrow",
+     "pos": [
+      2,
+      8,
+      1.5
+     ],
+     "to": [
+      5,
+      5,
+      1.5
+     ],
+     "role": "measure"
+    },
+    {
+     "key": "lab",
+     "type": "label",
+     "pos": [
+      2,
+      8,
+      1.4
+     ],
+     "text": "cube"
+    },
+    {
+     "key": "val",
+     "type": "text",
+     "pos": [
+      8,
+      2,
+      1.5
+     ],
+     "text": "x = 2"
+    }
+   ],
+   "notationLine": 2,
+   "counters": [
+    {
+     "key": "n",
+     "label": "Count",
+     "value": 3,
+     "changed": true
+    },
+    {
+     "key": "m",
+     "label": "Mass",
+     "value": "1.5",
+     "unit": "kg"
+    }
+   ],
+   "sourceIds": [
+    "ex"
+   ]
+  },
+  {
+   "id": "s4",
+   "tag": "caution",
+   "title": "Step 4 title",
+   "text": "Step 4 text with math $E = mc^2$ and $x_4$.",
+   "sceneDescription": "Scene 4.",
+   "scene": [
+    {
+     "key": "floor",
+     "type": "board",
+     "pos": [
+      5,
+      5,
+      0
+     ],
+     "size": 8,
+     "role": "neutral"
+    },
+    {
+     "key": "grp",
+     "type": "group",
+     "pos": [
+      2.4000000000000004,
+      0,
+      0
+     ]
+    },
+    {
+     "key": "core",
+     "type": "sphere",
+     "pos": [
+      5,
+      5,
+      1
+     ],
+     "size": 1.4,
+     "role": "nucleus",
+     "parent": "grp",
+     "accent": false
+    },
+    {
+     "key": "orbit",
+     "type": "ring",
+     "pos": [
+      5,
+      5,
+      1
+     ],
+     "size": 3,
+     "role": "shell",
+     "parent": "grp"
+    },
+    {
+     "key": "box",
+     "type": "cube",
+     "pos": [
+      2,
+      8,
+      0
+     ],
+     "size": 1.2,
+     "role": "proton",
+     "accent": false
+    },
+    {
+     "key": "arr",
+     "type": "arrow",
+     "pos": [
+      2,
+      8,
+      1.5
+     ],
+     "to": [
+      5,
+      5,
+      1.5
+     ],
+     "role": "measure"
+    },
+    {
+     "key": "lab",
+     "type": "label",
+     "pos": [
+      2,
+      8,
+      1.4
+     ],
+     "text": "cube"
+    },
+    {
+     "key": "val",
+     "type": "text",
+     "pos": [
+      8,
+      2,
+      1.5
+     ],
+     "text": "x = 2"
+    }
+   ],
+   "notationLine": 0,
+   "counters": [
+    {
+     "key": "n",
+     "label": "Count",
+     "value": 4,
+     "changed": true
+    },
+    {
+     "key": "m",
+     "label": "Mass",
+     "value": "1.5",
+     "unit": "kg"
+    }
+   ],
+   "sourceIds": [
+    "ex"
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "id": "q1",
+   "question": "Question 1?",
+   "options": [
+    "first",
+    "second",
+    "third"
+   ],
+   "answer": 0,
+   "explanation": "Because 1."
+  },
+  {
+   "id": "q2",
+   "question": "Question 2?",
+   "options": [
+    "first",
+    "second",
+    "third"
+   ],
+   "answer": 1,
+   "explanation": "Because 2."
+  },
+  {
+   "id": "q3",
+   "question": "Question 3?",
+   "options": [
+    "first",
+    "second",
+    "third"
+   ],
+   "answer": 2,
+   "explanation": "Because 3."
+  }
+ ],
+ "sources": [
+  {
+   "id": "ex",
+   "title": "Example source",
+   "url": "https://example.org/",
+   "accessed": "2026-11-25"
+  }
+ ]
+}

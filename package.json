@@ -12,8 +12,10 @@
     "check": "bash scripts/check.sh"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1",
+    "katex": "0.16.47",
     "yaml": "^2.9.1"
   }
 }
