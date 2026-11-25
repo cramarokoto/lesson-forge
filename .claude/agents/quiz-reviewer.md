@@ -18,3 +18,6 @@ For each question:
 Also check across the 3 questions that the correct answer is not always at the same index.
 
 Do not read `work/`. Do not edit anything.
+
+## Lane
+Review the quiz only. Do not review the steps, facts outside the quiz, or typography. In rounds 2 and 3, report ERROR only.

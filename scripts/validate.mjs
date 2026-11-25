@@ -19,7 +19,7 @@ const ROOT = rootArg > -1 ? resolve(process.argv[rootArg + 1]) : REPO;
 const REQUIRE_SCENES = process.argv.includes('--require-scenes');
 const MAX_WORDS = 90;
 const ROLES = Object.keys(JSON.parse(readFileSync(join(REPO, 'engine/palette.json'), 'utf8')).roles);
-const WIDGETS = []; // widget types the engine implements; none yet
+const WIDGETS = ['atom-builder']; // widget types engine/app.js implements
 
 const errors = [];
 const fail = (file, msg) => errors.push(`${relative(ROOT, file)}: ${msg}`);
@@ -68,6 +68,7 @@ function frenchTypography(text) {
   if (/"/.test(plain)) issues.push('straight double quotes: use « … » with non-breaking spaces');
   if (/«(?![  ])|(?<![  ])»/u.test(plain)) issues.push('« » need non-breaking spaces inside');
   if (/\d\.\d/.test(plain)) issues.push('decimal point: use a decimal comma');
+  if (/[\d\u2070-\u2079\u00b9\u00b2\u00b3] (?:[pnµmckM]?m|[mk]?g|s|mol|C|K|J|W|V|A|Hz|%)(?![\p{L}])/u.test(plain)) issues.push('ordinary space between number and unit: use U+00A0');
   for (const m of text.match(MATH) || []) {
     if (/\d\.\d/.test(m)) issues.push(`decimal point in math ${m}: write {,} as in 1{,}6`);
   }
@@ -82,6 +83,7 @@ function displayTexts(lesson) {
     for (const c of s.counters || []) out.push([`steps/${s.id}/counters/${c.key}`, c.label]);
     for (const o of s.scene || []) if (o.text) out.push([`steps/${s.id}/scene/${o.key}`, o.text]);
   }
+  for (const r of lesson.furtherReading || []) out.push([`furtherReading/${r.url}/why`, r.why]);
   for (const q of lesson.quiz) {
     out.push([`quiz/${q.id}/question`, q.question], [`quiz/${q.id}/explanation`, q.explanation]);
     q.options.forEach((o, i) => out.push([`quiz/${q.id}/options/${i}`, o]));
@@ -129,6 +131,18 @@ for (const courseDir of listDirs(join(ROOT, 'courses'))) {
         if (p.course !== slug) fail(planFile, `course "${p.course}" != directory "${slug}"`);
         if (p.chapter !== chapter) fail(planFile, `chapter "${p.chapter}" != directory "${chapter}"`);
         for (const d of dupes(p.lessons.map((l) => l.id))) fail(planFile, `duplicate lesson id ${d}`);
+        // Notion order: every used notion is prior knowledge or introduced by an earlier lesson.
+        const known = new Set(p.priorKnowledge);
+        p.lessons.forEach((l, i) => {
+          for (const n of l.uses) if (!known.has(n) && !l.introduces.includes(n)) {
+            const later = p.lessons.slice(i + 1).find((m) => m.introduces.includes(n));
+            fail(planFile, `lessons/${l.id}: uses « ${n} » ${later ? `introduced later by ${later.id}` : 'introduced by no lesson and not prior knowledge'}`);
+          }
+          for (const n of l.introduces) {
+            if (known.has(n)) fail(planFile, `lessons/${l.id}: introduces « ${n} », already known`);
+            known.add(n);
+          }
+        });
         // Lesson titles are shown in the course tree before the lesson exists.
         if (lang.startsWith('fr')) {
           for (const l of p.lessons) for (const issue of frenchTypography(l.title)) fail(planFile, `lessons/${l.id}/title: ${issue}`);
@@ -159,6 +173,8 @@ for (const courseDir of listDirs(join(ROOT, 'courses'))) {
         const where = `steps/${s.id}`;
         const n = wordCount(s.text);
         if (n > MAX_WORDS) at(`${where}/text has ${n} words (max ${MAX_WORDS})`);
+        const sentences = (s.sceneDescription.replace(/\d[.,]\d/g, '0').match(/[.!?](\s|$)/g) || []).length;
+        if (sentences > 2) at(`${where}/sceneDescription has ${sentences} sentences (max 2)`);
         if (s.notationLine != null && s.notationLine >= lesson.notation.length)
           at(`${where}/notationLine ${s.notationLine} out of range (notation has ${lesson.notation.length} lines)`);
         for (const id of s.sourceIds || []) if (!sourceIds.includes(id)) at(`${where}/sourceIds: unknown source ${id}`);
@@ -178,6 +194,13 @@ for (const courseDir of listDirs(join(ROOT, 'courses'))) {
           if ((o.type === 'label' || o.type === 'text') && !o.text) at(`${where}/scene/${o.key}: ${o.type} needs text`);
         }
       }
+
+      const fr = lesson.furtherReading || [];
+      const policy = input?.learnerResources;
+      if (fr.length && !policy) at('furtherReading present but the input has no learnerResources policy');
+      if (policy?.maxPerLesson != null && fr.length > policy.maxPerLesson) at(`furtherReading has ${fr.length} links (max ${policy.maxPerLesson})`);
+      for (const d of dupes(fr.map((r) => r.url))) at(`furtherReading: duplicate url ${d}`);
+      for (const r of fr) if (sourceIds.length && lesson.sources.some((x) => x.url === r.url)) at(`furtherReading: ${r.url} is also a production source; keep the two lists apart`);
 
       for (const q of lesson.quiz) {
         if (q.answer >= q.options.length) at(`quiz/${q.id}: answer ${q.answer} out of range`);

@@ -65,6 +65,28 @@ for (const p of pages) {
       expect(errors).toEqual([]);
     });
 
+    test('steps carry no source links; annex lists production sources', async ({ page }) => {
+      const { data, lessons } = await open(page, p.url);
+      for (const l of lessons) {
+        await page.goto(`${p.url}#/${l.chapter}/${l.id}/1`);
+        for (let i = 0; i < l.steps.length; i++) {
+          expect(await page.locator('[data-step] a[href^="http"]').count(), `link in step ${l.steps[i].id}`).toBe(0);
+          await page.locator('#next').click();
+        }
+      }
+      await page.goto(`${p.url}#/sources`);
+      const n = lessons.reduce((a, l) => a + l.sources.length, 0) + (data.referentials || []).length;
+      await expect(page.locator('.annex a[href^="http"]')).toHaveCount(n);
+    });
+
+    test('further reading appears after the quiz', async ({ page }) => {
+      const { lessons } = await open(page, p.url);
+      for (const l of lessons) {
+        await page.goto(`${p.url}#/${l.chapter}/${l.id}/quiz`);
+        await expect(page.locator('.further li')).toHaveCount((l.furtherReading || []).length);
+      }
+    });
+
     test('formulas are pre-rendered MathML', async ({ page }) => {
       await open(page, p.url);
       expect(await page.locator('script[src]').count()).toBe(0);
@@ -100,6 +122,17 @@ for (const p of pages) {
     });
   });
 }
+
+test('atom-builder widget computes Z, A and charge', async ({ page }) => {
+  await page.goto(`file://${resolve('tests/.build/demo/index.html')}#/basics/shapes/3`);
+  const w = page.locator('[data-widget="atom-builder"]');
+  await expect(w.locator('.nuc')).toContainText('C');
+  await w.locator('.wrow').nth(0).getByRole('button', { name: /plus|more/ }).click(); // 7 protons
+  await expect(w.locator('.nuc')).toContainText('N');
+  await expect(w.locator('dd').nth(0)).toHaveText('7');
+  await expect(w.locator('dd').nth(1)).toHaveText('13');
+  await expect(w.locator('dd').nth(2)).toContainText('+1');
+});
 
 test('at least one page to test', () => {
   expect(pages.length).toBeGreaterThan(0);

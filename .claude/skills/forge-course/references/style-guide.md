@@ -17,11 +17,11 @@ Hard limits are also enforced by `scripts/validate.mjs`; the rest is checked by 
 | `title` | 3–7 words, ≤ 60 characters |
 | `text` | **≤ 90 words**, one new idea. Math inline as `$…$` |
 | `callout` | Optional, at most one: `analogy`, `pitfall`, `order-of-magnitude`, `tip`. Must add something the text does not say |
-| `sceneDescription` | 1–2 sentences: what appears, moves or is highlighted. Reuse the same objects from step to step |
+| `sceneDescription` | 1–2 sentences: what appears, moves or is highlighted. The writer drafts it; the stager rewrites it to match exactly what is drawn (it is also the diagram's screen-reader text) |
 | `notationLine` | Index of the notation line this step is about, or `null` |
 | `counters` | Quantities that matter at this step (`key` stable across steps, `label`, `value`, `unit`). Set `changed: true` on the ones that changed |
 | `widget` | Only when manipulating teaches better than reading |
-| `sourceIds` | Ids from `lesson.sources` backing every number or fact in the step |
+| `sourceIds` | Ids from `lesson.sources` backing every number or fact in the step. Not shown to learners: production sources appear only in the course annex |
 
 ## Notation panel
 
@@ -40,13 +40,17 @@ Hard limits are also enforced by `scripts/validate.mjs`; the rest is checked by 
 - Preferred: official bodies and reference databases (e.g. NIST/CODATA for constants, IUPAC, the official syllabus text). Wikipedia is not a primary source for numbers.
 - Round only as the source allows, and say "about" / "environ" when rounding.
 
+## Learner resources (`furtherReading`)
+
+Distinct from production sources. Chosen by the resource-curator for **this audience**, following the input's `learnerResources`: course language, free, no account if required, level-appropriate, no aggressive ads, durable providers (public broadcasters, institutions, non-profits) first. At most `maxPerLesson` (default 3). Each has a one-sentence `why` in the course language. A link only after a real fetch showing content that matches the lesson.
+
 ## Typography by language
 
 ### French (`fr`)
 - Non-breaking space before `; : ! ?` (U+202F narrow no-break space, or U+00A0) and inside `« »` (U+00A0).
 - Guillemets « … », never `"…"`.
 - Decimal comma: `0,1 nm`; in LaTeX write `1{,}6`.
-- Space between number and unit, non-breaking: `10⁻¹⁰ m` → `$10^{-10}\,\mathrm{m}$`.
+- Space between number and unit, non-breaking (U+00A0), also in counters and scene labels: `10⁻¹⁰ m` → `$10^{-10}\,\mathrm{m}$`.
 - Capitals keep their accents (`À`, `É`).
 
 ### English (`en`)

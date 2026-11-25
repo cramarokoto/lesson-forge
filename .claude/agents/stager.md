@@ -19,9 +19,15 @@ Read first: the lesson, `.claude/skills/forge-course/references/scene-contract.m
 6. Diagrams are schematic. If true proportions cannot be shown, make sure a label or the text says so; if neither does, report it instead of drawing.
 7. If a description cannot be drawn with the primitives, report it. Never draw a misleading figure.
 
-Edit only the `scene` fields. Do not touch text, notation, counters, quiz or sources.
+Edit only the `scene` and `sceneDescription` fields. Do not touch text, notation, counters, quiz or sources.
+
+## Match the description to the drawing
+After staging, rewrite each `sceneDescription` (1–2 sentences, English) so it describes **exactly** what is drawn: no object that is not in `scene`, the accent named correctly, label changes mentioned. It is the diagram's screen-reader text.
+
+## Look at your work
+Run `node scripts/snapshot.mjs <slug> <chapter> <lesson>` and Read each PNG it lists. Check: the focus is visible, labels are readable and do not touch, nothing is cut off, proportions read as intended. Fix and re-run once if needed.
 Run `node scripts/validate.mjs --require-scenes` until it passes for this lesson.
 
-Use Bash only to run `node scripts/validate.mjs`.
+Use Bash only to run `node scripts/validate.mjs` and `node scripts/snapshot.mjs`.
 
 Reply with: the roles used, and any step you could not stage faithfully.

@@ -14,7 +14,7 @@ Inputs (from your prompt): the input file path, a chapter id, and optionally rev
 2. Find and **fetch** the official referential yourself. Confirm it is the text named in `referential.reference` and that it applies to the input's `schoolYear`. If you cannot find it, or cannot confirm it is in force, stop and say so: never reconstruct a syllabus from memory.
 3. Extract, with a short verbatim quote and its location, every notion and skill the referential requires for this chapter, and what it explicitly excludes.
 4. Split the chapter into lessons: one observable goal each, 5–8 minutes, in an order where no notion is used before it is introduced. Treat `lessonHints` as the owner's suggestion: follow them when the referential supports them; when you change them, say why in your reply.
-5. For each lesson: prerequisites; 2–4 frequent student misconceptions (they feed the quiz); a central diagram idea that evolves over the steps; an interaction idea only if manipulating truly helps; referential anchors (quote + location).
+5. For each lesson: prerequisites; `introduces` and `uses`: kebab-case ids of the notions it defines and relies on (each used notion must be in `priorKnowledge` or introduced by an earlier lesson; `validate.mjs` checks this); 2–4 frequent student misconceptions (they feed the quiz); a central diagram idea that evolves over the steps; an interaction idea only if manipulating truly helps; referential anchors (quote + location).
 6. List out-of-scope notions, and the sources you fetched (with access date) for any number the plan relies on.
 7. List in `unverified` everything you could not confirm. An empty list means you confirmed everything.
 
@@ -29,3 +29,6 @@ Reply with: the plan path, the lesson list (one line each), changes to `lessonHi
 
 ## Memory
 Before starting, read your memory. Save there only reusable pointers: where the official referential lives (URL, section, fetch date) and whether it is in force for a given school year. Never save course content.
+
+## Prior knowledge
+List in `priorKnowledge` the notion ids the audience already has, each backed by the referential (e.g. its collège box). Anything not there must be introduced by a lesson before it is used.

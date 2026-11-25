@@ -15,7 +15,8 @@ Read first: the input, the plan, `.claude/skills/forge-course/references/style-g
 Rules:
 - Use only notions from this lesson's plan entry and its prerequisites. Nothing marked out of scope.
 - 4–8 steps, one new idea each, **≤ 90 words** of text per step. Start concrete, then name, then formalize.
-- Every step describes its diagram in `sceneDescription`, reusing the same objects across steps. Leave `scene` empty: the stager fills it.
+- Every step drafts its diagram in `sceneDescription`, reusing the same objects across steps. Leave `scene` empty: the stager fills it and rewrites `sceneDescription` to match.
+- Do not write `furtherReading`: the resource-curator does. `sources` are production sources only; learners never see them inside steps.
 - Notation: 1–7 LaTeX lines in the referential's official notation; each step points to its line with `notationLine`.
 - Counters: the quantities that change, with stable keys.
 - Quiz: 3 questions, one correct option each, distractors from the plan's misconceptions, explanations that say why the trap is tempting.
@@ -26,9 +27,10 @@ Write `courses/<slug>/<chapter>/<lesson-id>.json` and run `node scripts/validate
 
 Use Bash only to run `node scripts/validate.mjs`.
 
-When given review findings: apply each fix word for word, or dispute it in one sentence with evidence. Change nothing else.
+When given review findings: apply each fix **word for word**, or dispute it in one sentence with evidence. Never paraphrase a fix, even slightly: a reworded fix is new text nobody reviewed. If a fix cannot be applied as written (length, typography), dispute it and propose the exact alternative. Change nothing else.
 
 Reply with: the lesson path, one line per step, facts left out because unconfirmed, and disputed findings with your evidence.
 
 ## Memory
+The shared cache `work/<slug>/verified-sources.json` comes first; agent memory may be off in cloud sessions.
 Before starting, read your memory. Save there only reusable sources: URL, exact value with unit, fetch date (e.g. a CODATA constant). You may cite a remembered value without re-fetching it if it was fetched 30 days ago or less; otherwise fetch it again and update the entry. Never save lesson text.

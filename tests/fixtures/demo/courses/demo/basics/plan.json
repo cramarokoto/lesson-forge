@@ -22,6 +22,12 @@
      "quote": "fixture",
      "location": "none"
     }
+   ],
+   "introduces": [
+    "shapes"
+   ],
+   "uses": [
+    "counting"
    ]
   },
   {
@@ -40,10 +46,19 @@
      "quote": "fixture",
      "location": "none"
     }
+   ],
+   "introduces": [
+    "motion"
+   ],
+   "uses": [
+    "shapes"
    ]
   }
  ],
  "outOfScope": [],
  "sources": [],
- "unverified": []
+ "unverified": [],
+ "priorKnowledge": [
+  "counting"
+ ]
 }

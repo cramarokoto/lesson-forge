@@ -276,7 +276,7 @@
   },
   {
    "id": "s3",
-   "tag": "calculate",
+   "tag": "try",
    "title": "Step 3 title",
    "text": "Step 3 text with math $E = mc^2$ and $x_3$.",
    "sceneDescription": "Scene 3.",
@@ -402,7 +402,15 @@
    ],
    "sourceIds": [
     "ex"
-   ]
+   ],
+   "widget": {
+    "type": "atom-builder",
+    "params": {
+     "protons": 6,
+     "neutrons": 6,
+     "electrons": 6
+    }
+   }
   },
   {
    "id": "s4",
@@ -565,6 +573,16 @@
    "title": "Example source",
    "url": "https://example.org/",
    "accessed": "2026-11-25"
+  }
+ ],
+ "furtherReading": [
+  {
+   "title": "Example course",
+   "url": "https://example.com/course",
+   "provider": "Example",
+   "accessed": "2026-11-25",
+   "why": "A second explanation with exercises.",
+   "kind": "course"
   }
  ]
 }

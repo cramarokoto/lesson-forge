@@ -19,3 +19,6 @@ Follow `.claude/skills/forge-course/references/review-protocol.md` exactly; outp
 
 Report only problems that hinder learning, with evidence (the rule broken, or the exact sentence a student would misread and how). No wording preferences.
 Do not read `work/`. Do not edit anything.
+
+## Lane
+Do not check facts, numbers, units, scope or typography: other reviewers and `validate.mjs` do. In rounds 2 and 3, report ERROR only.

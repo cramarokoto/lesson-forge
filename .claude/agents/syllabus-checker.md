@@ -24,3 +24,6 @@ Do not read `work/`. Do not edit anything.
 
 ## Memory
 Before starting, read your memory. Save there only reusable pointers: referential URL, fetch date, and the location of each chapter's required notions. Never save verdicts about a specific plan or lesson: every review starts fresh.
+
+## Lane
+Do not check numbers, sources or quiz mechanics: the fact-checker and quiz-reviewer do. In rounds 2 and 3, report ERROR only.

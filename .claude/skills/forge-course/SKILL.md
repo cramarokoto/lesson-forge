@@ -36,6 +36,7 @@ Review rules and arbitration: [review-protocol.md](references/review-protocol.md
 ## 1. Framing
 - Agent `framer` with: input path, chapter id. Output: `plan.json`.
 - Gate: agent `syllabus-checker` on the plan (round 1). Arbitrate as in step 5, with the framer as author.
+- `validate.mjs` checks the notion order mechanically (`priorKnowledge`, `introduces`, `uses`): fix those failures with the framer before spending a review.
 - Continue only when the plan has **0 ERROR**.
 - Then **stop and ask the owner to approve the plan** (lesson list, goals, out-of-scope, unverified items). On approval, record `Plan approved by the owner on <date>` in the report.
   On a later run, skip framing for a chapter whose plan is recorded as approved and unchanged.
@@ -45,8 +46,9 @@ Review rules and arbitration: [review-protocol.md](references/review-protocol.md
 - One `writer` per selected lesson. Lessons may be written **in parallel**: the plan's prerequisites define the order of notions, not the order of writing.
 - Give each writer: input path, plan path, lesson id. Nothing else.
 
-## 3. Staging
-- One `stager` per lesson, after its writer. It fills `scene` on every step and touches nothing else.
+## 3. Staging and learner resources
+- One `stager` per lesson, after its writer. It fills `scene`, rewrites `sceneDescription` to match the drawing, and checks screenshots (`scripts/snapshot.mjs`).
+- One `resource-curator` per lesson, in parallel with the stager: it fills `furtherReading` following the input's `learnerResources`.
 - Run `node scripts/validate.mjs --require-scenes`. A format failure goes back to the writer or stager who produced it.
 
 ## 4. Independent review (parallel, fresh contexts)
@@ -58,12 +60,13 @@ Never pass the writer's messages, reasoning, earlier findings or other reviewers
 - `quiz-reviewer`: one correct answer, wrong distractors, explanations.
 - `safety-reviewer`: activities, lab-safety statements, age-appropriateness.
 
-Each returns one JSON object (`review` in the schema). Save it as-is to `work/<slug>/reviews/...`; if it does not validate, ask the same reviewer once to resend valid JSON.
+Each returns one JSON object (`review` in the schema). Save it as-is to `work/<slug>/reviews/...`; if it does not validate, ask the same reviewer once to resend valid JSON. Then run `node scripts/sources-cache.mjs <slug>` so later fact-checks reuse confirmed pages.
+- Round 1: ERROR and AMBIGUOUS. Rounds 2–3: **ERROR only** (see review protocol).
 
 ## 5. Arbitration (at most 3 rounds per lesson)
 Follow [review-protocol.md](references/review-protocol.md):
 1. Merge findings; drop exact duplicates; keep the stronger evidence when two overlap.
-2. Send **every** ERROR and AMBIGUOUS finding to the writer (or framer), with quote, evidence and proposed fix.
+2. Resolve conflicts between reviewers, then send **every** ERROR and AMBIGUOUS finding to the writer (or framer) with the **exact replacement text**, in one merged file `work/<slug>/reviews/<chapter>/<target>/round<N>-merged.md`.
 3. The author applies each fix or disputes it in one sentence with evidence. You decide disputes on evidence only; if evidence is missing on both sides, escalate.
 4. Re-run, in fresh contexts, **only** the reviewers whose findings were raised, on the whole updated lesson, with `round` + 1.
 5. After round 3, any remaining ERROR stops that lesson: log it under "Escalated" in the report and tell the owner. Never work around it.
@@ -72,7 +75,7 @@ Follow [review-protocol.md](references/review-protocol.md):
 Agent `qa`: runs `scripts/check.sh`, builds, tests, captures screenshots. It fixes format only, never content.
 
 ## 7. Human validation
-Write `work/<slug>/report.md`. Then give the owner: one summary sentence, lessons produced, issues fixed, items **unverified** or **escalated**, the path of the built site, and the question "Publish?".
+Write `work/<slug>/report.md` (its `<!-- status -->` block feeds the review page), run `node scripts/review-page.mjs <slug>` and publish `work/<slug>/review/index.html` (with `course.html`) as a private artifact for the owner to comment on. Then give the owner: one summary sentence, lessons produced, issues fixed, items **unverified** or **escalated**, the path of the built site, and the question "Publish?".
 **Never publish, deploy or push without the owner's explicit yes in this conversation.**
 
 # Non-negotiable rules

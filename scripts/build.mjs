@@ -45,6 +45,7 @@ function buildCourse(input) {
   const lang = input.language.split('-')[0];
   const ui = i18n[lang] ?? i18n.en;
   const chapters = [];
+  const referentials = [];
   let index = 0;
   for (const ch of input.chapters) {
     const dir = join(ROOT, 'courses', input.slug, ch.id);
@@ -73,6 +74,7 @@ function buildCourse(input) {
           sceneDescription: st.sceneDescription,
           scene: st.scene,
           sourceIds: st.sourceIds || [],
+          widget: st.widget || null,
         })),
         quiz: l.quiz.map((q) => ({
           id: q.id, answer: q.answer,
@@ -80,10 +82,12 @@ function buildCourse(input) {
           optionsHtml: q.options.map((o, i) => rich(o, w(`quiz/${q.id}/${i}`))),
           explanationHtml: rich(q.explanation, w(`quiz/${q.id}/explanation`)),
         })),
-        sources: l.sources.map(({ id, title, url, accessed }) => ({ id, title, url, accessed })),
+        sources: l.sources.map(({ id, title, url, accessed, supports }) => ({ id, title, url, accessed, supports })),
+        furtherReading: (l.furtherReading || []).map(({ title, url, provider, why }) => ({ title, url, provider, why })),
       };
     });
     chapters.push({ id: ch.id, title: ch.title, lessons });
+    referentials.push(plan.referential);
   }
   if (!chapters.some((c) => c.lessons.some((l) => l.available))) {
     console.log(`build: ${input.slug}: no staged lesson yet, skipped`);
@@ -92,7 +96,7 @@ function buildCourse(input) {
 
   const data = {
     course: { slug: input.slug, title: input.subject, subtitle: input.chapters.length === 1 ? input.chapters[0].title : '', language: input.language },
-    ui, palette, chapters,
+    ui, palette, chapters, referentials: referentials.filter((r, i) => referentials.findIndex((x) => x.url === r.url) === i),
   };
   const json = JSON.stringify(data).replace(/</g, '\\u003c');
   return `<!doctype html>

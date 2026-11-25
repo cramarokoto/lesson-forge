@@ -32,5 +32,13 @@ chapters:
       - "Élément chimique, isotopes, ions monoatomiques"
       - "Configuration électronique de 1s à 3p, électrons de valence"
       - "Tableau périodique (3 premières lignes) : familles, stabilité (règles du duet et de l'octet)"
+learnerResources:
+  language: fr
+  free: true
+  noAccount: true
+  maxPerLesson: 3
+  notes: >-
+    For a seconde student working alone at home: short videos or course pages
+    from public or non-profit providers, in French, at seconde level.
 publication:
   humanApproval: true

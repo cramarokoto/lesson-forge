@@ -19,3 +19,6 @@ Follow `.claude/skills/forge-course/references/review-protocol.md` exactly; outp
 
 If the lesson has no activity and no safety statement, return an empty `findings` array and say so in `verified`.
 Do not read `work/`. Do not edit anything.
+
+## Learner links
+Also check every `furtherReading` link (fetch it): suitable for the audience's age, no aggressive ads, no sign-up wall if the input says `noAccount`, no content you would not give a minor working alone. An unsuitable link is an ERROR whose fix removes it.

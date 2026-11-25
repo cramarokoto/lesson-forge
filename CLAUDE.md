@@ -24,6 +24,9 @@ Repo, prompts and code are in **English**. Course content is in the course's lan
 npm ci                                   # once
 bash scripts/check.sh                    # the gate: validate, build, Playwright
 node scripts/validate.mjs [--require-scenes]
+node scripts/snapshot.mjs <slug> <chapter> <lesson>   # step screenshots for the stager
+node scripts/sources-cache.mjs <slug>                  # merge confirmed sources into the cache
+node scripts/review-page.mjs <slug>                    # owner review page in work/<slug>/review/
 ```
 
 In Claude Code: `/forge-course inputs/<file>.yaml [chapter=<id>] [lessons=first|all|<ids>] [plan=ask|auto]`
@@ -35,10 +38,10 @@ Never weaken a check to make it pass.
 ## Layout
 
 - `.claude/skills/forge-course/`: orchestrator `SKILL.md` + `references/` (style guide, review protocol, scene contract, report template)
-- `.claude/agents/`: framer, writer, stager · reviewers: syllabus-checker, fact-checker, pedagogy-reviewer, quiz-reviewer, safety-reviewer · qa
+- `.claude/agents/`: framer, writer, stager, resource-curator · reviewers: syllabus-checker, fact-checker, pedagogy-reviewer, quiz-reviewer, safety-reviewer · qa
 - `schema/course.schema.json`: contracts for input, plan, lesson, review. `scripts/validate.mjs` adds the rules JSON Schema cannot express.
 - `courses/<slug>/<chapter>/`: plan and lesson JSON (generated)
-- `work/<slug>/`: review reports, `report.md`, screenshots
+- `work/<slug>/`: review reports, `report.md`, `verified-sources.json` (fact-check cache), screenshots
 - `engine/`: static renderer (`app.js`, `style.css`, `palette.json` roles, `i18n.json`); see `engine/README.md`
 - `tests/`: Playwright suite + engine fixture course
 

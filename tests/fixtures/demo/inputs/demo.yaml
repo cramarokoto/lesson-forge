@@ -8,3 +8,4 @@ chapters:
   - id: basics
     title: Basics
 publication: { humanApproval: true }
+learnerResources: { language: en, free: true, noAccount: true, maxPerLesson: 3 }

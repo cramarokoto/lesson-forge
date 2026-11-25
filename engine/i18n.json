@@ -23,8 +23,39 @@
     "done": "Leçon terminée",
     "nextLesson": "Leçon suivante",
     "noLesson": "Aucune leçon disponible pour l’instant.",
-    "tags": { "concept": "Notion", "observe": "Observer", "calculate": "Calculer", "try": "Essayer", "caution": "Attention", "imagine": "Imaginer" },
-    "callouts": { "analogy": "Analogie", "pitfall": "Piège", "order-of-magnitude": "Ordre de grandeur", "tip": "Astuce" }
+    "tags": {
+      "concept": "Notion",
+      "observe": "Observer",
+      "calculate": "Calculer",
+      "try": "Essayer",
+      "caution": "Attention",
+      "imagine": "Imaginer"
+    },
+    "callouts": {
+      "analogy": "Analogie",
+      "pitfall": "Piège",
+      "order-of-magnitude": "Ordre de grandeur",
+      "tip": "Astuce"
+    },
+    "further": "Pour aller plus loin",
+    "annex": "Sources et méthode",
+    "annexIntro": "Ce cours a été rédigé et vérifié par des agents d’IA à partir des sources ci-dessous, consultées aux dates indiquées. Les liens « Pour aller plus loin » de chaque leçon sont des ressources gratuites choisies pour les élèves.",
+    "referential": "Programme officiel",
+    "back": "Retour au cours",
+    "w": {
+      "protons": "Protons",
+      "neutrons": "Neutrons",
+      "electrons": "Électrons",
+      "charge": "Charge",
+      "Z": "Numéro atomique Z",
+      "A": "Nombre de masse A",
+      "less": "moins",
+      "more": "plus",
+      "neutral": "atome neutre",
+      "cation": "cation",
+      "anion": "anion",
+      "unknown": "élément au-delà de Z = 20"
+    }
   },
   "en": {
     "search": "Search lessons",
@@ -49,7 +80,38 @@
     "done": "Lesson complete",
     "nextLesson": "Next lesson",
     "noLesson": "No lesson available yet.",
-    "tags": { "concept": "Concept", "observe": "Observe", "calculate": "Calculate", "try": "Try", "caution": "Caution", "imagine": "Imagine" },
-    "callouts": { "analogy": "Analogy", "pitfall": "Pitfall", "order-of-magnitude": "Order of magnitude", "tip": "Tip" }
+    "tags": {
+      "concept": "Concept",
+      "observe": "Observe",
+      "calculate": "Calculate",
+      "try": "Try",
+      "caution": "Caution",
+      "imagine": "Imagine"
+    },
+    "callouts": {
+      "analogy": "Analogy",
+      "pitfall": "Pitfall",
+      "order-of-magnitude": "Order of magnitude",
+      "tip": "Tip"
+    },
+    "further": "Further reading",
+    "annex": "Sources and method",
+    "annexIntro": "This course was written and checked by AI agents from the sources below, accessed on the dates shown. The further-reading links of each lesson are free resources chosen for learners.",
+    "referential": "Official syllabus",
+    "back": "Back to the course",
+    "w": {
+      "protons": "Protons",
+      "neutrons": "Neutrons",
+      "electrons": "Electrons",
+      "charge": "Charge",
+      "Z": "Atomic number Z",
+      "A": "Mass number A",
+      "less": "fewer",
+      "more": "more",
+      "neutral": "neutral atom",
+      "cation": "cation",
+      "anion": "anion",
+      "unknown": "element beyond Z = 20"
+    }
   }
 }

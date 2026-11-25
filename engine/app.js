@@ -74,6 +74,7 @@
     } }, T.menu),
     h('div', { class: 'brand' }, D.course.title, h('small', {}, D.course.subtitle || '')),
     h('div', { class: 'spacer' }),
+    h('a', { class: 'btn', href: '#/sources', id: 'annex-link' }, T.annex),
     h('button', { class: 'btn', id: 'theme', onclick: () => {
       store.theme = THEMES[(THEMES.indexOf(store.theme || 'auto') + 1) % THEMES.length];
       save(); applyTheme(); render();
@@ -263,13 +264,6 @@
   }
 
   // ---------- panels ----------
-  function sourcesBlock(lesson, ids) {
-    const list = lesson.sources.filter((x) => ids.includes(x.id));
-    if (!list.length) return null;
-    return h('div', { class: 'sources' }, T.sources,
-      h('ul', {}, list.map((x) => h('li', {}, h('a', { href: x.url, target: '_blank', rel: 'noopener' }, x.title), ` (${T.accessed} ${x.accessed})`))));
-  }
-
   function stepCard(lesson, i) {
     const st = lesson.steps[i];
     const last = i === lesson.steps.length - 1;
@@ -278,7 +272,7 @@
       h('h3', { html: st.titleHtml }),
       h('p', { class: 'step-text', html: st.textHtml }),
       st.callout ? h('div', { class: `callout ${st.callout.kind}` }, h('b', {}, T.callouts[st.callout.kind]), h('span', { html: st.callout.html })) : null,
-      sourcesBlock(lesson, st.sourceIds || []),
+      st.widget ? widget(st.widget) : null,
       h('div', { class: 'nav' },
         h('button', { class: 'btn', id: 'prev', disabled: i === 0, onclick: () => go(lesson, i - 1) }, `← ${T.prev}`),
         h('button', { class: 'btn primary', id: 'next', onclick: () => go(lesson, i + 1) }, last ? `${T.toQuiz} →` : `${T.next} →`)));
@@ -310,6 +304,11 @@
       card.append(h('div', { class: 'q', 'data-q': q.id }, h('p', { html: q.questionHtml }), ...opts, check, fb));
       show();
     });
+    if ((lesson.furtherReading || []).length) {
+      card.append(h('div', { class: 'further' }, h('p', { class: 'panel-title' }, T.further),
+        h('ul', {}, lesson.furtherReading.map((r) => h('li', {},
+          h('a', { href: r.url, target: '_blank', rel: 'noopener' }, r.title), ` — ${r.provider}`, h('br'), h('span', { class: 'why' }, r.why))))));
+    }
     const idx = available.indexOf(lesson);
     const nextL = available[idx + 1];
     card.append(h('div', { class: 'nav' },
@@ -318,7 +317,53 @@
     return card;
   }
 
+  // ---------- annex: production sources, never shown inside steps ----------
+  function renderAnnex() {
+    renderTree();
+    const blocks = D.chapters.flatMap((c) => c.lessons.filter((l) => l.available).map((l) => h('section', { class: 'card' },
+      h('h3', {}, l.title), h('ul', { class: 'src' }, l.sources.map((x) => h('li', {},
+        h('a', { href: x.url, target: '_blank', rel: 'noopener' }, x.title), ` (${T.accessed} ${x.accessed})`,
+        x.supports ? h('span', { class: 'why' }, ` — ${x.supports}`) : null))))));
+    stageCol.replaceChildren(h('div', { class: 'annex' },
+      h('h1', {}, T.annex), h('p', {}, T.annexIntro),
+      ...(D.referentials || []).map((r) => h('section', { class: 'card' }, h('h3', {}, T.referential),
+        h('p', {}, h('a', { href: r.url, target: '_blank', rel: 'noopener' }, r.citation), ` (${T.accessed} ${r.accessed})`))),
+      ...blocks,
+      h('p', {}, h('a', { href: '#/' }, `← ${T.back}`))));
+    panels.replaceChildren();
+  }
+
+  // ---------- widgets ----------
+  const SYMBOLS = ['H', 'He', 'Li', 'Be', 'B', 'C', 'N', 'O', 'F', 'Ne', 'Na', 'Mg', 'Al', 'Si', 'P', 'S', 'Cl', 'Ar', 'K', 'Ca'];
+  const sup = (n) => String(n).replace(/[0-9]/g, (d) => '⁰¹²³⁴⁵⁶⁷⁸⁹'[d]);
+  function widget(w) {
+    if (w.type !== 'atom-builder') return null;
+    const P = w.params || {};
+    const st = { p: P.protons ?? 1, n: P.neutrons ?? 0, e: P.electrons ?? 1 };
+    const max = { p: 20, n: 30, e: 20, ...(P.max || {}) };
+    const out = h('div', { class: 'wout', 'aria-live': 'polite' });
+    const row = (k) => {
+      const val = h('output', {}, String(st[k]));
+      const set = (d) => { st[k] = Math.max(0, Math.min(max[k], st[k] + d)); val.textContent = String(st[k]); show(); };
+      return h('div', { class: 'wrow' }, h('span', {}, T.w[k === 'p' ? 'protons' : k === 'n' ? 'neutrons' : 'electrons']),
+        h('button', { class: 'btn', 'aria-label': `${T.w.less}`, onclick: () => set(-1) }, '−'), val,
+        h('button', { class: 'btn', 'aria-label': `${T.w.more}`, onclick: () => set(1) }, '+'));
+    };
+    function show() {
+      const Z = st.p, A = st.p + st.n, q = st.p - st.e;
+      const X = SYMBOLS[Z - 1];
+      const charge = q === 0 ? '' : `${Math.abs(q) > 1 ? sup(Math.abs(q)) : ''}${q > 0 ? '⁺' : '⁻'}`;
+      out.replaceChildren(
+        Z && X ? h('span', { class: 'nuc' }, h('span', { class: 'ms' }, h('sup', {}, String(A)), h('sub', {}, String(Z))), X, charge) : h('span', {}, Z ? T.w.unknown : '—'),
+        h('dl', {}, h('dt', {}, T.w.Z), h('dd', {}, String(Z)), h('dt', {}, T.w.A), h('dd', {}, String(A)),
+          h('dt', {}, T.w.charge), h('dd', {}, q === 0 ? `0 (${T.w.neutral})` : `${q > 0 ? '+' : '−'}${Math.abs(q)} e (${q > 0 ? T.w.cation : T.w.anion})`)));
+    }
+    show();
+    return h('div', { class: 'widget', 'data-widget': w.type }, row('p'), row('n'), row('e'), out);
+  }
+
   function render() {
+    if (location.hash.startsWith('#/sources')) return renderAnnex();
     const { lesson, step } = cur;
     renderTree();
     if (!lesson) {
@@ -354,7 +399,7 @@
     panels.replaceChildren(quiz ? quizCard(lesson) : stepCard(lesson, step), notation, counters || '');
   }
 
-  addEventListener('hashchange', () => { cur = parseHash(); render(); });
+  addEventListener('hashchange', () => { if (!location.hash.startsWith('#/sources')) cur = parseHash(); render(); });
   addEventListener('keydown', (e) => {
     if (!cur.lesson || e.target.closest('input, textarea')) return;
     if (e.key === 'ArrowRight' && cur.step < cur.lesson.steps.length) go(cur.lesson, cur.step + 1);
