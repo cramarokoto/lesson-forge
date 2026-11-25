@@ -17,6 +17,7 @@
       "id": "s1",
       "tag": "observe",
       "title": "Le rayon d’un atome d’hydrogène",
+      "takeaway": "L’écriture scientifique, un nombre entre 1 (inclus) et 10 (exclu) fois une puissance de dix, rend lisible la taille d’un atome.",
       "text": "Voici un atome d’hydrogène, représenté par une sphère. Son rayon vaut environ $1{,}2 \\times 10^{-10}\\,\\mathrm{m}$, soit 0,000 000 000 12 m. Écrit en entier, ce nombre se lit mal et on se trompe vite dans les zéros. L’écriture scientifique, un nombre supérieur ou égal à 1 et strictement inférieur à 10, multiplié par une puissance de dix, rend ces tailles lisibles et faciles à comparer.",
       "callout": {
         "kind": "tip",
@@ -93,6 +94,7 @@
       "id": "s2",
       "tag": "concept",
       "title": "L’ordre de grandeur d’un atome",
+      "takeaway": "Pour H, C et Na, la puissance de dix la plus proche du rayon est $10^{-10}\\,\\mathrm{m}$ : c’est l’ordre de grandeur de la taille d’un atome.",
       "text": "D’autres atomes ont des rayons voisins : environ $1{,}7 \\times 10^{-10}\\,\\mathrm{m}$ pour le carbone, $2{,}3 \\times 10^{-10}\\,\\mathrm{m}$ pour le sodium. Les valeurs diffèrent, mais la puissance de dix la plus proche reste $10^{-10}$ : c’est l’ordre de grandeur. On retient que la taille d’un atome est de l’ordre de $10^{-10}\\,\\mathrm{m}$. On l’écrit $r_{\\mathrm{atome}} \\sim 10^{-10}\\,\\mathrm{m}$, où le signe $\\sim$ se lit « de l’ordre de ».",
       "sceneDescription": "Same atom sphere and scale bar; its label becomes « ∼ 10⁻¹⁰ m ». Two faded spheres labeled « C » and « Na » stand beside it, larger (radii in the ratio 1,2 : 1,7 : 2,3 for H, C, Na).",
       "scene": [
@@ -210,6 +212,7 @@
       "id": "s3",
       "tag": "observe",
       "title": "Zoom sur le noyau d’hydrogène",
+      "takeaway": "Le noyau de l’atome d’hydrogène, presque toujours un seul proton, a une taille de l’ordre de $10^{-15}\\,\\mathrm{m}$.",
       "text": "Zoomons vers le centre de l’atome. Dans presque tous les atomes d’hydrogène, le noyau est un seul proton. Son rayon vaut environ $8{,}4 \\times 10^{-16}\\,\\mathrm{m}$. Ce nombre est proche de $10 \\times 10^{-16} = 10^{-15}$ : l’ordre de grandeur de la taille de ce noyau est $10^{-15}\\,\\mathrm{m}$.",
       "sceneDescription": "The view zooms toward the atom’s center: the atom sphere becomes a faint backdrop and a small opaque sphere, the nucleus (one proton), appears at the center, tagged « noyau ∼ 10⁻¹⁵ m ». The atom’s scale bar stays visible, a note reads « Pas à l’échelle », and the C and Na spheres are gone.",
       "scene": [
@@ -318,8 +321,9 @@
       "id": "s4",
       "tag": "caution",
       "title": "Le piège des exposants négatifs",
+      "takeaway": "Un exposant négatif compte des divisions par 10 : $10^{-15}$, c’est $10^{-10}$ divisé encore cinq fois par 10, donc plus petit.",
       "text": "15 est plus grand que 10, et pourtant $10^{-15}$ est plus petit que $10^{-10}$. Un exposant négatif compte des divisions par 10 : $10^{-10}$, c’est 1 divisé dix fois par 10 ; $10^{-15}$, c’est 1 divisé quinze fois. Cinq divisions de plus : $10^{-15} = 10^{-10} \\times 10^{-5}$. Le noyau est donc bien plus petit que l’atome, et non l’inverse.",
-      "sceneDescription": "Same atom, nucleus and atom scale bar; beside them a column of five notches, each marked « ÷ 10 », leads from « 10⁻¹⁰ m » down to « 10⁻¹⁵ m ». The nucleus tag « noyau ∼ 10⁻¹⁵ m » is the accent.",
+      "sceneDescription": "A staircase runs down from the faded atom sphere, marked « 10⁻¹⁰ m », to the nucleus sphere, marked « 10⁻¹⁵ m »: four spheres in between shrink step by step, and each of the five steps down is a notch « ÷ 10 », every object ten times smaller than the one above it (drawn clearly smaller, not to scale). The nucleus, smallest object at the bottom of the staircase, is the accent; the note « Pas à l’échelle » stays.",
       "scene": [
         {
           "key": "atome-h",
@@ -546,6 +550,7 @@
     {
       "id": "s5",
       "tag": "calculate",
+      "takeaway": "Dans le quotient, on soustrait les exposants : $-10-(-15) = 5$, donc l’atome d’hydrogène est de l’ordre de $10^{5}$ fois plus grand que son noyau.",
       "title": "Combien de fois plus grand ?",
       "text": "Pour comparer deux tailles, on calcule leur quotient : $\\dfrac{r_{\\mathrm{atome}}}{r_{\\mathrm{noyau}}} \\sim \\dfrac{10^{-10}}{10^{-15}}$. Pour diviser deux puissances de dix, on soustrait les exposants, sans oublier le double signe moins : $-10 - (-15) = -10 + 15 = 5$. En remontant du noyau vers l’atome, les cinq crans « ÷ 10 » de l’étape précédente deviennent cinq multiplications par 10. Le quotient vaut $10^{5}$ : l’atome d’hydrogène est de l’ordre de 100 000 fois plus grand que son noyau. Additionner les exposants donnerait $10^{-25}$, inférieur à 1 : impossible, puisque l’atome est le plus grand des deux.",
       "callout": {
@@ -813,6 +818,7 @@
       "id": "s6",
       "tag": "caution",
       "title": "Comparer, c’est diviser",
+      "takeaway": "Une différence donne un écart en mètres ; pour dire « combien de fois plus grand », seul le quotient répond.",
       "text": "Et une soustraction ? $10^{-10}\\,\\mathrm{m} - 10^{-15}\\,\\mathrm{m} = 9{,}9999 \\times 10^{-11}\\,\\mathrm{m} \\approx 10^{-10}\\,\\mathrm{m}$ : presque le rayon de l’atome lui-même. Retrancher une longueur aussi petite ne change presque rien au résultat. Une différence donne un écart en mètres, pas un nombre de fois. Pour dire « combien de fois plus grand », seul le quotient répond : $10^{5}$.",
       "sceneDescription": "Same atom sphere, nucleus and « × 10⁵ » arrow; a second bar labeled « 10⁻¹⁰ − 10⁻¹⁵ » appears beside the atom scale bar, almost exactly as long, and is crossed out. The crossed-out bar is the accent.",
       "scene": [
@@ -1008,6 +1014,7 @@
       "id": "s7",
       "tag": "imagine",
       "title": "Une bille au centre d’un kilomètre",
+      "takeaway": "Si le noyau d’hydrogène avait 1 cm de rayon, l’atome aurait un rayon de l’ordre de 1 km : presque tout l’atome est loin de son noyau.",
       "text": "Agrandissons tout du même facteur. Si le noyau avait un rayon de 1 cm, celui de l’atome serait de l’ordre de $10^{5}$ fois plus grand : $10^{5}\\,\\mathrm{cm} = 10^{3}\\,\\mathrm{m}$, soit de l’ordre de 1 km. Une bille au centre d’une sphère d’environ un kilomètre de rayon : rien à voir avec un noyau de pêche dans son fruit. Presque tout l’espace de l’atome est très loin de son noyau.",
       "sceneDescription": "Same objects, relabeled: the nucleus tag reads « noyau 1 cm », the atom scale bar and the upper mark read « ∼ 1 km », the lower mark « 1 cm »; the « × 10⁵ » arrow stays. The nucleus is the accent, a tiny bead at the center of the huge translucent sphere.",
       "scene": [
