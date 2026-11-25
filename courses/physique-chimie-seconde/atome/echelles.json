@@ -23,42 +23,19 @@
         "kind": "tip",
         "text": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même série de données, celle de PubChem, une base de données publique de chimie."
       },
-      "sceneDescription": "An isometric board holds one large translucent sphere, the hydrogen atom, at its center. A scale bar runs from the sphere’s center to its surface, labeled « r ≈ 1,2 × 10⁻¹⁰ m ».",
+      "sceneDescription": "A large translucent sphere, the hydrogen atom, stands on a plinth, with a radius arrow from its center to its surface. Under the arrow, the faded decimal writing « r ≈ 0,000 000 000 12 m » sits above the accent scientific writing « r ≈ 1,2 × 10⁻¹⁰ m ».",
       "scene": [
-        {
-          "key": "atome-h",
-          "type": "sphere",
-          "role": "atom",
-          "pos": [
-            5,
-            5,
-            1.2
-          ],
-          "size": 2.4,
-          "opacity": 0.6
-        },
-        {
-          "key": "barre-atome",
-          "type": "arrow",
-          "role": "measure",
-          "pos": [
-            5,
-            5,
-            1.2
-          ],
-          "to": [
-            5.6928,
-            4.3072,
-            1.2
-          ]
-        },
+        { "key": "socle-rayons", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 5.6 },
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [5, 5, 2.9], "size": 5, "opacity": 0.95 },
+        { "key": "barre-atome", "type": "arrow", "role": "measure", "pos": [5, 5, 2.9], "to": [6.4423, 3.5577, 2.9] },
+        { "key": "valeur-decimale", "type": "text", "pos": [5.7212, 4.2788, 2.1], "text": "r ≈ 0,000 000 000 12 m", "opacity": 0.45 },
         {
           "key": "valeur-atome",
           "type": "text",
           "pos": [
-            5.3464,
-            4.6536,
-            0.6
+            5.7212,
+            4.2788,
+            1.3
           ],
           "text": "r ≈ 1,2 × 10⁻¹⁰ m",
           "accent": true
@@ -69,7 +46,7 @@
           "pos": [
             5,
             5,
-            2.4
+            5.4
           ],
           "text": "Atome d’hydrogène"
         }
@@ -96,100 +73,19 @@
       "title": "L’ordre de grandeur d’un atome",
       "takeaway": "Pour H, C et Na, la puissance de dix la plus proche du rayon est $10^{-10}\\,\\mathrm{m}$ : c’est l’ordre de grandeur de la taille d’un atome.",
       "text": "D’autres atomes ont des rayons voisins : environ $1{,}7 \\times 10^{-10}\\,\\mathrm{m}$ pour le carbone, $2{,}3 \\times 10^{-10}\\,\\mathrm{m}$ pour le sodium. Les valeurs diffèrent, mais la puissance de dix la plus proche reste $10^{-10}$ : c’est l’ordre de grandeur. On retient que la taille d’un atome, mesurée ici par son rayon, est de l’ordre de $10^{-10}\\,\\mathrm{m}$. On l’écrit $r_{\\mathrm{atome}} \\sim 10^{-10}\\,\\mathrm{m}$, où le signe $\\sim$ se lit « de l’ordre de ».",
-      "sceneDescription": "Same atom sphere and scale bar; its label becomes « ∼ 10⁻¹⁰ m ». Two faded spheres labeled « C » and « Na » stand beside it, larger (radii in the ratio 1,2 : 1,7 : 2,3 for H, C, Na).",
+      "sceneDescription": "Three spheres marked H, C and Na, sized in the ratio 1,2 : 1,7 : 2,3, stand in a row on one shared plinth, each topped by its radius: « 1,2 × 10⁻¹⁰ m », « 1,7 × 10⁻¹⁰ m », « 2,3 × 10⁻¹⁰ m ». The shared plinth is the accent and carries « les trois rayons ∼ 10⁻¹⁰ m ».",
       "scene": [
-        {
-          "key": "atome-h",
-          "type": "sphere",
-          "role": "atom",
-          "pos": [
-            2.2287,
-            7.7713,
-            1.2
-          ],
-          "size": 2.4,
-          "opacity": 0.6
-        },
-        {
-          "key": "barre-atome",
-          "type": "arrow",
-          "role": "measure",
-          "pos": [
-            2.2287,
-            7.7713,
-            1.2
-          ],
-          "to": [
-            2.9215,
-            7.0785,
-            1.2
-          ]
-        },
-        {
-          "key": "valeur-atome",
-          "type": "text",
-          "pos": [
-            2.5751,
-            7.4249,
-            0.6
-          ],
-          "text": "∼ 10⁻¹⁰ m",
-          "accent": true
-        },
-        {
-          "key": "nom-atome",
-          "type": "label",
-          "pos": [
-            2.2287,
-            7.7713,
-            2.4
-          ],
-          "text": "H"
-        },
-        {
-          "key": "atome-c",
-          "type": "sphere",
-          "role": "atom",
-          "pos": [
-            4.3649,
-            5.6351,
-            1.7
-          ],
-          "size": 3.4,
-          "opacity": 0.35
-        },
-        {
-          "key": "nom-c",
-          "type": "label",
-          "pos": [
-            4.3649,
-            5.6351,
-            3.4
-          ],
-          "text": "C"
-        },
-        {
-          "key": "atome-na",
-          "type": "sphere",
-          "role": "atom",
-          "pos": [
-            7.1362,
-            2.8638,
-            2.3
-          ],
-          "size": 4.6,
-          "opacity": 0.35
-        },
-        {
-          "key": "nom-na",
-          "type": "label",
-          "pos": [
-            7.1362,
-            2.8638,
-            4.6
-          ],
-          "text": "Na"
-        }
+        { "key": "socle-rayons", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 5.6, "accent": true },
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [3.0769, 6.9231, 1.12], "size": 1.44, "opacity": 0.6 },
+        { "key": "nom-atome", "type": "text", "pos": [3.0769, 6.9231, 1.12], "text": "H" },
+        { "key": "valeur-atome", "type": "text", "pos": [3.0769, 6.9231, 2.3733], "text": "1,2 × 10⁻¹⁰ m" },
+        { "key": "atome-c", "type": "sphere", "role": "atom", "pos": [4.9038, 5.0962, 1.42], "size": 2.04, "opacity": 0.6 },
+        { "key": "nom-c", "type": "text", "pos": [4.9038, 5.0962, 1.42], "text": "C" },
+        { "key": "valeur-c", "type": "text", "pos": [4.9038, 5.0962, 2.9733], "text": "1,7 × 10⁻¹⁰ m" },
+        { "key": "atome-na", "type": "sphere", "role": "atom", "pos": [6.7692, 3.2308, 1.78], "size": 2.76, "opacity": 0.6 },
+        { "key": "nom-na", "type": "text", "pos": [6.7692, 3.2308, 1.78], "text": "Na" },
+        { "key": "valeur-na", "type": "text", "pos": [6.7692, 3.2308, 3.6933], "text": "2,3 × 10⁻¹⁰ m" },
+        { "key": "ordre-commun", "type": "text", "pos": [6.1333, 6.1333, 0.4], "text": "les trois rayons ∼ 10⁻¹⁰ m" }
       ],
       "notationLine": 1,
       "counters": [
@@ -323,25 +219,28 @@
       "title": "Le piège des exposants négatifs",
       "takeaway": "Un exposant négatif compte des divisions par 10 : $10^{-15}$, c’est $10^{-10}$ divisé encore cinq fois par 10, donc plus petit.",
       "text": "15 est plus grand que 10, et pourtant $10^{-15}$ est plus petit que $10^{-10}$. Un exposant négatif compte des divisions par 10 : $10^{-10}$, c’est 1 divisé dix fois par 10 ; $10^{-15}$, c’est 1 divisé quinze fois. Cinq divisions de plus : $10^{-15} = 10^{-10} \\times 10^{-5}$. Le noyau est donc bien plus petit que l’atome, et non l’inverse.",
-      "sceneDescription": "Six spheres stand on plinths in a row that steps down to the right, each drawn clearly smaller than the one before (not to scale): the pale-blue atom sphere marked « 10⁻¹⁰ m », four grey spheres, then the nucleus sphere marked « 10⁻¹⁵ m », which is the accent. A « ÷ 10 » marks each of the five steps down, and the note « Pas à l’échelle » stays.",
+      "sceneDescription": "Six spheres in a row shrink step by step to the right (not to scale): the pale-blue atom marked « 10⁻¹⁰ m » and four grey spheres labeled « 10⁻¹¹ m » to « 10⁻¹⁴ m », each on a plinth, then the nucleus marked « 10⁻¹⁵ m » on the floor, which is the accent. A « ÷ 10 » marks each of the five steps down, and the note « Pas à l’échelle » stays.",
       "scene": [
         { "key": "socle-atome", "type": "board", "role": "neutral", "pos": [1.55, 4.5, 0], "size": 3 },
         { "key": "socle-1", "type": "board", "role": "neutral", "pos": [4.27, 4.5, 0], "size": 2.2 },
         { "key": "socle-2", "type": "board", "role": "neutral", "pos": [6.29, 4.5, 0], "size": 1.6 },
         { "key": "socle-3", "type": "board", "role": "neutral", "pos": [7.785, 4.5, 0], "size": 1.15 },
         { "key": "socle-4", "type": "board", "role": "neutral", "pos": [8.88, 4.5, 0], "size": 0.8 },
-        { "key": "socle-noyau", "type": "board", "role": "neutral", "pos": [9.675, 4.5, 0], "size": 0.55 },
         { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [1.55, 4.5, 1.9], "size": 3, "opacity": 0.85 },
         { "key": "palier-1", "type": "sphere", "role": "neutral", "pos": [4.27, 4.5, 1.5], "size": 2.2 },
         { "key": "palier-2", "type": "sphere", "role": "neutral", "pos": [6.29, 4.5, 1.2], "size": 1.6 },
         { "key": "palier-3", "type": "sphere", "role": "neutral", "pos": [7.785, 4.5, 0.975], "size": 1.15 },
         { "key": "palier-4", "type": "sphere", "role": "neutral", "pos": [8.88, 4.5, 0.8], "size": 0.8 },
-        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [9.675, 4.5, 0.675], "size": 0.55, "accent": true },
-        { "key": "txt-cran-1", "type": "text", "pos": [2.276, 3, 2.736], "text": "÷ 10" },
-        { "key": "txt-cran-2", "type": "text", "pos": [4.564, 3, 1.926], "text": "÷ 10" },
-        { "key": "txt-cran-3", "type": "text", "pos": [6.244, 3, 1.293], "text": "÷ 10" },
-        { "key": "txt-cran-4", "type": "text", "pos": [7.539, 3, 0.891], "text": "÷ 10" },
-        { "key": "txt-cran-5", "type": "text", "pos": [8.486, 3, 0.594], "text": "÷ 10" },
+        { "key": "etiq-palier-1", "type": "label", "pos": [4.27, 4.5, 2.6], "text": "10⁻¹¹ m" },
+        { "key": "etiq-palier-2", "type": "label", "pos": [6.29, 4.5, 2.0], "text": "10⁻¹² m" },
+        { "key": "etiq-palier-3", "type": "label", "pos": [7.785, 4.5, 1.55], "text": "10⁻¹³ m" },
+        { "key": "etiq-palier-4", "type": "label", "pos": [8.88, 4.8, 1.2], "text": "10⁻¹⁴ m" },
+        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [9.675, 4.5, 0.275], "size": 0.55, "accent": true },
+        { "key": "txt-cran-1", "type": "text", "pos": [2.276, 2.6, 2.736], "text": "÷ 10" },
+        { "key": "txt-cran-2", "type": "text", "pos": [4.564, 2.6, 1.926], "text": "÷ 10" },
+        { "key": "txt-cran-3", "type": "text", "pos": [6.244, 2.6, 1.293], "text": "÷ 10" },
+        { "key": "txt-cran-4", "type": "text", "pos": [7.539, 2.6, 0.891], "text": "÷ 10" },
+        { "key": "txt-cran-5", "type": "text", "pos": [8.486, 2.6, 0.594], "text": "÷ 10" },
         { "key": "borne-haut", "type": "text", "pos": [1.555, 4.5, 3.978], "text": "10⁻¹⁰ m" },
         { "key": "borne-bas", "type": "text", "pos": [9.81, 3, 0.055], "text": "10⁻¹⁵ m" },
         { "key": "echelle", "type": "text", "pos": [3.6, 7.64, 0.02], "text": "Pas à l’échelle" }
@@ -373,25 +272,28 @@
         "kind": "order-of-magnitude",
         "text": "Avec les valeurs retenues aux étapes 1 et 3 : $\\dfrac{1{,}2 \\times 10^{-10}}{8{,}4 \\times 10^{-16}} \\approx 1{,}4 \\times 10^{5}$. On retrouve le même ordre de grandeur, $10^{5}$."
       },
-      "sceneDescription": "Same staircase of spheres, but the five step marks now read « × 10 », and an arrow labeled « × 10⁵ » climbs alongside them from the nucleus, « 10⁻¹⁵ m », up to the atom, « 10⁻¹⁰ m ». The arrow is the accent.",
+      "sceneDescription": "Same staircase, with the four grey spheres still labeled « 10⁻¹¹ m » to « 10⁻¹⁴ m » and the note « Pas à l’échelle », but the five step marks now read « × 10 ». An accent arrow labeled « × 10⁵ » climbs alongside them from the nucleus, « 10⁻¹⁵ m », up to the atom, « 10⁻¹⁰ m ».",
       "scene": [
         { "key": "socle-atome", "type": "board", "role": "neutral", "pos": [1.55, 4.5, 0], "size": 3 },
         { "key": "socle-1", "type": "board", "role": "neutral", "pos": [4.27, 4.5, 0], "size": 2.2 },
         { "key": "socle-2", "type": "board", "role": "neutral", "pos": [6.29, 4.5, 0], "size": 1.6 },
         { "key": "socle-3", "type": "board", "role": "neutral", "pos": [7.785, 4.5, 0], "size": 1.15 },
         { "key": "socle-4", "type": "board", "role": "neutral", "pos": [8.88, 4.5, 0], "size": 0.8 },
-        { "key": "socle-noyau", "type": "board", "role": "neutral", "pos": [9.675, 4.5, 0], "size": 0.55 },
         { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [1.55, 4.5, 1.9], "size": 3, "opacity": 0.85 },
         { "key": "palier-1", "type": "sphere", "role": "neutral", "pos": [4.27, 4.5, 1.5], "size": 2.2 },
         { "key": "palier-2", "type": "sphere", "role": "neutral", "pos": [6.29, 4.5, 1.2], "size": 1.6 },
         { "key": "palier-3", "type": "sphere", "role": "neutral", "pos": [7.785, 4.5, 0.975], "size": 1.15 },
         { "key": "palier-4", "type": "sphere", "role": "neutral", "pos": [8.88, 4.5, 0.8], "size": 0.8 },
-        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [9.675, 4.5, 0.675], "size": 0.55 },
-        { "key": "txt-cran-1", "type": "text", "pos": [2.276, 3, 2.736], "text": "× 10" },
-        { "key": "txt-cran-2", "type": "text", "pos": [4.564, 3, 1.926], "text": "× 10" },
-        { "key": "txt-cran-3", "type": "text", "pos": [6.244, 3, 1.293], "text": "× 10" },
-        { "key": "txt-cran-4", "type": "text", "pos": [7.539, 3, 0.891], "text": "× 10" },
-        { "key": "txt-cran-5", "type": "text", "pos": [8.486, 3, 0.594], "text": "× 10" },
+        { "key": "etiq-palier-1", "type": "label", "pos": [4.27, 4.5, 2.6], "text": "10⁻¹¹ m" },
+        { "key": "etiq-palier-2", "type": "label", "pos": [6.29, 4.5, 2.0], "text": "10⁻¹² m" },
+        { "key": "etiq-palier-3", "type": "label", "pos": [7.785, 4.5, 1.55], "text": "10⁻¹³ m" },
+        { "key": "etiq-palier-4", "type": "label", "pos": [8.88, 4.8, 1.2], "text": "10⁻¹⁴ m" },
+        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [9.675, 4.5, 0.275], "size": 0.55 },
+        { "key": "txt-cran-1", "type": "text", "pos": [2.276, 2.6, 2.736], "text": "× 10" },
+        { "key": "txt-cran-2", "type": "text", "pos": [4.564, 2.6, 1.926], "text": "× 10" },
+        { "key": "txt-cran-3", "type": "text", "pos": [6.244, 2.6, 1.293], "text": "× 10" },
+        { "key": "txt-cran-4", "type": "text", "pos": [7.539, 2.6, 0.891], "text": "× 10" },
+        { "key": "txt-cran-5", "type": "text", "pos": [8.486, 2.6, 0.594], "text": "× 10" },
         { "key": "borne-haut", "type": "text", "pos": [1.555, 4.5, 3.978], "text": "10⁻¹⁰ m" },
         { "key": "borne-bas", "type": "text", "pos": [9.81, 3, 0.055], "text": "10⁻¹⁵ m" },
         { "key": "echelle", "type": "text", "pos": [3.6, 7.64, 0.02], "text": "Pas à l’échelle" },
@@ -430,7 +332,7 @@
       "title": "Comparer, c’est diviser",
       "takeaway": "Une différence donne un écart en mètres ; pour dire « combien de fois plus grand », seul le quotient répond.",
       "text": "Et une soustraction ? $10^{-10}\\,\\mathrm{m} - 10^{-15}\\,\\mathrm{m} = 9{,}9999 \\times 10^{-11}\\,\\mathrm{m} \\approx 10^{-10}\\,\\mathrm{m}$ : presque le rayon de l’atome lui-même. Retrancher une longueur aussi petite ne change presque rien au résultat. Une différence donne un écart en mètres, pas un nombre de fois. Pour dire « combien de fois plus grand », seul le quotient répond : $10^{5}$.",
-      "sceneDescription": "The staircase is gone: the large translucent atom sphere returns with the nucleus at its center and its scale bar « ∼ 10⁻¹⁰ m », and just below it a second bar labeled « 10⁻¹⁰ − 10⁻¹⁵ », almost exactly as long, is crossed out with « ✗ » and is the accent. Beside them, a vertical arrow « × 10⁵ » rises from « 10⁻¹⁵ m » to « 10⁻¹⁰ m ».",
+      "sceneDescription": "The large translucent atom sphere returns with its nucleus and its radius bar « ∼ 10⁻¹⁰ m »; just below, the accent bar, almost exactly as long, is labeled « 10⁻¹⁰ m − 10⁻¹⁵ m ≈ 10⁻¹⁰ m : un écart en mètres ». On the right, a vertical arrow from « 10⁻¹⁵ m » up to « 10⁻¹⁰ m » is labeled « × 10⁵ : combien de fois », and the note « Pas à l’échelle » stays.",
       "scene": [
         {
           "key": "atome-h",
@@ -504,9 +406,9 @@
           "key": "echelle",
           "type": "text",
           "pos": [
-            4.4604,
-            7.5396,
-            0.2667
+            4.9604,
+            8.0396,
+            0
           ],
           "text": "Pas à l’échelle"
         },
@@ -526,26 +428,8 @@
           ],
           "accent": true
         },
-        {
-          "key": "rature",
-          "type": "text",
-          "pos": [
-            4.3264,
-            5.6736,
-            1.5
-          ],
-          "text": "✗"
-        },
-        {
-          "key": "valeur-difference",
-          "type": "text",
-          "pos": [
-            4.3264,
-            5.6736,
-            0.6
-          ],
-          "text": "10⁻¹⁰ − 10⁻¹⁵"
-        },
+        { "key": "valeur-difference", "type": "text", "pos": [4.3269, 5.6731, 0.7667], "text": "10⁻¹⁰ m − 10⁻¹⁵ m ≈ 10⁻¹⁰ m :" },
+        { "key": "ecart-metres", "type": "text", "pos": [4.3269, 5.6731, 0.0333], "text": "un écart en mètres" },
         {
           "key": "borne-haut",
           "type": "text",
@@ -580,16 +464,8 @@
             5.4
           ]
         },
-        {
-          "key": "etiq-fois-1e5",
-          "type": "label",
-          "pos": [
-            8.5603,
-            1.4397,
-            2.9
-          ],
-          "text": "× 10⁵"
-        }
+        { "key": "etiq-fois-1e5", "type": "text", "pos": [7.4038, 2.5962, 3.2667], "text": "× 10⁵ :" },
+        { "key": "etiq-combien", "type": "text", "pos": [7.4038, 2.5962, 2.5333], "text": "combien de fois" }
       ],
       "notationLine": 4,
       "counters": [
