@@ -85,7 +85,10 @@ function buildCourse(input) {
     });
     chapters.push({ id: ch.id, title: ch.title, lessons });
   }
-  if (!chapters.length) return null;
+  if (!chapters.some((c) => c.lessons.some((l) => l.available))) {
+    console.log(`build: ${input.slug}: no staged lesson yet, skipped`);
+    return null;
+  }
 
   const data = {
     course: { slug: input.slug, title: input.subject, subtitle: input.chapters.length === 1 ? input.chapters[0].title : '', language: input.language },
@@ -124,4 +127,4 @@ if (errors.length) {
   for (const e of errors) console.error(`  - ${e}`);
   process.exit(1);
 }
-if (!built) console.log('build: no course with a plan yet, nothing to build');
+if (!built) console.log('build: no course with a staged lesson yet, nothing to build');
