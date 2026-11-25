@@ -1,0 +1,310 @@
+{
+  "course": "physique-chimie-seconde",
+  "chapter": "atome",
+  "id": "echelles",
+  "title": "Échelles : l’atome et son noyau",
+  "goal": "Citer l’ordre de grandeur de la taille d’un atome et calculer, par un quotient de puissances de dix, combien de fois un atome est plus grand que son noyau.",
+  "notation": [
+    "r_{\\mathrm{atome}}(\\mathrm{H}) \\approx 1{,}2 \\times 10^{-10}\\,\\mathrm{m}",
+    "r_{\\mathrm{atome}} \\sim 10^{-10}\\,\\mathrm{m}",
+    "r_{\\mathrm{noyau}}(\\mathrm{H}) \\approx 8{,}4 \\times 10^{-16}\\,\\mathrm{m} \\sim 10^{-15}\\,\\mathrm{m}",
+    "10^{-15} = 10^{-10} \\times 10^{-5} < 10^{-10}",
+    "\\dfrac{r_{\\mathrm{atome}}}{r_{\\mathrm{noyau}}} \\approx \\dfrac{10^{-10}}{10^{-15}} = 10^{-10-(-15)} = 10^{5}",
+    "1\\,\\mathrm{cm} \\times 10^{5} = 10^{5} \\times 10^{-2}\\,\\mathrm{m} = 10^{3}\\,\\mathrm{m} = 1\\,\\mathrm{km}"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "tag": "observe",
+      "title": "Le rayon d’un atome d’hydrogène",
+      "text": "Voici un atome d’hydrogène, représenté par une sphère. Son rayon vaut environ $1{,}2 \\times 10^{-10}\\,\\mathrm{m}$, soit 0,000 000 000 12 m. Écrit en entier, ce nombre se lit mal et on se trompe vite dans les zéros. L’écriture scientifique, un nombre entre 1 et 10 multiplié par une puissance de dix, rend ces tailles lisibles et faciles à comparer.",
+      "callout": {
+        "kind": "tip",
+        "text": "Les tables donnent plusieurs définitions du rayon d’un atome. Ici, on utilise le rayon dit de van der Waals, publié par PubChem."
+      },
+      "sceneDescription": "An isometric board holds one large translucent sphere, the hydrogen atom, at its center. A scale bar runs from the sphere’s center to its surface, labeled « r ≈ 1,2 × 10⁻¹⁰ m ».",
+      "scene": [
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [5, 5, 1.2], "size": 2.4, "opacity": 0.6 },
+        { "key": "barre-atome", "type": "arrow", "role": "measure", "pos": [5, 5, 1.2], "to": [5.6928, 4.3072, 1.2] },
+        { "key": "valeur-atome", "type": "text", "pos": [5.3464, 4.6536, 0.6], "text": "r ≈ 1,2 × 10⁻¹⁰ m", "accent": true },
+        { "key": "nom-atome", "type": "label", "pos": [5, 5, 2.4], "text": "Atome d’hydrogène" }
+      ],
+      "notationLine": 0,
+      "counters": [
+        { "key": "rayon-atome", "label": "Rayon de l’atome", "value": "≈ 1,2 × 10⁻¹⁰", "unit": "m", "changed": true }
+      ],
+      "sourceIds": ["pubchem-radius-h", "nist-si-prefixes"]
+    },
+    {
+      "id": "s2",
+      "tag": "concept",
+      "title": "L’ordre de grandeur d’un atome",
+      "text": "D’autres atomes ont des rayons voisins : environ $1{,}7 \\times 10^{-10}\\,\\mathrm{m}$ pour le carbone, $2{,}3 \\times 10^{-10}\\,\\mathrm{m}$ pour le sodium. Les valeurs diffèrent, mais la puissance de dix la plus proche reste $10^{-10}$ : c’est l’ordre de grandeur. On retient que la taille d’un atome est de l’ordre de $10^{-10}\\,\\mathrm{m}$. On l’écrit $r_{\\mathrm{atome}} \\sim 10^{-10}\\,\\mathrm{m}$, où le signe $\\sim$ se lit « de l’ordre de ».",
+      "sceneDescription": "Same atom sphere and scale bar; its label becomes « ∼ 10⁻¹⁰ m ». Two faded spheres labeled « C » and « Na » stand beside it, slightly larger (radii in the ratio 1,2 : 1,7 : 2,3 for H, C, Na).",
+      "scene": [
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [2.2287, 7.7713, 1.2], "size": 2.4, "opacity": 0.6 },
+        { "key": "barre-atome", "type": "arrow", "role": "measure", "pos": [2.2287, 7.7713, 1.2], "to": [2.9215, 7.0785, 1.2] },
+        { "key": "valeur-atome", "type": "text", "pos": [2.5751, 7.4249, 0.6], "text": "∼ 10⁻¹⁰ m", "accent": true },
+        { "key": "nom-atome", "type": "label", "pos": [2.2287, 7.7713, 2.4], "text": "H" },
+        { "key": "atome-c", "type": "sphere", "role": "atom", "pos": [4.3649, 5.6351, 1.7], "size": 3.4, "opacity": 0.35 },
+        { "key": "nom-c", "type": "label", "pos": [4.3649, 5.6351, 3.4], "text": "C" },
+        { "key": "atome-na", "type": "sphere", "role": "atom", "pos": [7.1362, 2.8638, 2.3], "size": 4.6, "opacity": 0.35 },
+        { "key": "nom-na", "type": "label", "pos": [7.1362, 2.8638, 4.6], "text": "Na" }
+      ],
+      "notationLine": 1,
+      "counters": [
+        { "key": "rayon-atome", "label": "Rayon de l’atome", "value": "∼ 10⁻¹⁰", "unit": "m", "changed": true }
+      ],
+      "sourceIds": ["pubchem-radius-c", "pubchem-radius-na", "pubchem-periodic-table", "nist-si-prefixes"]
+    },
+    {
+      "id": "s3",
+      "tag": "observe",
+      "title": "Zoom sur le noyau d’hydrogène",
+      "text": "Zoomons vers le centre de l’atome. Dans presque tous les atomes d’hydrogène, le noyau est un seul proton. Son rayon vaut environ $8{,}4 \\times 10^{-16}\\,\\mathrm{m}$. Ce nombre est proche de $10 \\times 10^{-16} = 10^{-15}$ : l’ordre de grandeur de la taille de ce noyau est $10^{-15}\\,\\mathrm{m}$.",
+      "sceneDescription": "The view zooms toward the atom’s center: the atom sphere becomes a faint backdrop and a small opaque sphere, the nucleus (one proton), appears at the center with its own scale bar labeled « ∼ 10⁻¹⁵ m ». The atom’s scale bar stays visible; the C and Na spheres are gone.",
+      "scene": [
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [3.4604, 6.5396, 3], "size": 6, "opacity": 0.35 },
+        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [3.4604, 6.5396, 3], "size": 0.3, "accent": true },
+        { "key": "barre-atome", "type": "arrow", "role": "measure", "pos": [3.4604, 6.5396, 3], "to": [5.1925, 4.8075, 3] },
+        { "key": "valeur-atome", "type": "text", "pos": [4.3264, 5.6736, 2.4], "text": "∼ 10⁻¹⁰ m" },
+        { "key": "nom-atome", "type": "label", "pos": [3.4604, 6.5396, 6], "text": "Atome d’hydrogène" },
+        { "key": "etiq-noyau", "type": "label", "pos": [3.4604, 6.5396, 3.2], "text": "noyau ∼ 10⁻¹⁵ m" },
+        { "key": "echelle", "type": "text", "pos": [4.4604, 7.5396, 0.2667], "text": "Pas à l’échelle" }
+      ],
+      "notationLine": 2,
+      "counters": [
+        { "key": "rayon-atome", "label": "Rayon de l’atome", "value": "∼ 10⁻¹⁰", "unit": "m" },
+        { "key": "rayon-noyau", "label": "Rayon du noyau", "value": "∼ 10⁻¹⁵", "unit": "m", "changed": true }
+      ],
+      "sourceIds": ["nist-isotopes-h", "codata-rp"]
+    },
+    {
+      "id": "s4",
+      "tag": "caution",
+      "title": "Le piège des exposants négatifs",
+      "text": "15 est plus grand que 10, et pourtant $10^{-15}$ est plus petit que $10^{-10}$. Un exposant négatif compte des divisions par 10 : $10^{-10}$, c’est 1 divisé dix fois par 10 ; $10^{-15}$, c’est 1 divisé quinze fois. Cinq divisions de plus : $10^{-15} = 10^{-10} \\times 10^{-5}$. Le noyau est donc bien plus petit que l’atome, et non l’inverse.",
+      "sceneDescription": "Both scale bars side by side; between them a row of five notch marks, one per division by 10, leads from « 10⁻¹⁰ m » down to « 10⁻¹⁵ m ». The nucleus scale bar is the accent.",
+      "scene": [
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [3.4604, 6.5396, 3], "size": 6, "opacity": 0.35 },
+        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [3.4604, 6.5396, 3], "size": 0.3 },
+        { "key": "barre-atome", "type": "arrow", "role": "measure", "pos": [3.4604, 6.5396, 3], "to": [5.1925, 4.8075, 3] },
+        { "key": "valeur-atome", "type": "text", "pos": [4.3264, 5.6736, 2.4], "text": "∼ 10⁻¹⁰ m" },
+        { "key": "nom-atome", "type": "label", "pos": [3.4604, 6.5396, 6], "text": "Atome d’hydrogène" },
+        { "key": "etiq-noyau", "type": "label", "pos": [3.4604, 6.5396, 3.2], "text": "noyau ∼ 10⁻¹⁵ m", "accent": true },
+        { "key": "echelle", "type": "text", "pos": [4.4604, 7.5396, 0.2667], "text": "Pas à l’échelle" },
+        { "key": "borne-haut", "type": "text", "pos": [6.4056, 1.5944, 4.6667], "text": "10⁻¹⁰ m" },
+        { "key": "cran-1", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 3.6], "size": 0.35 },
+        { "key": "cran-2", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 2.7333], "size": 0.35 },
+        { "key": "cran-3", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 1.8667], "size": 0.35 },
+        { "key": "cran-4", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 1], "size": 0.35 },
+        { "key": "cran-5", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 0.1333], "size": 0.35 },
+        { "key": "txt-cran-1", "type": "text", "pos": [6.6943, 1.3057, 3.7667], "text": "÷ 10" },
+        { "key": "txt-cran-2", "type": "text", "pos": [6.6943, 1.3057, 2.9], "text": "÷ 10" },
+        { "key": "txt-cran-3", "type": "text", "pos": [6.6943, 1.3057, 2.0333], "text": "÷ 10" },
+        { "key": "txt-cran-4", "type": "text", "pos": [6.6943, 1.3057, 1.1667], "text": "÷ 10" },
+        { "key": "txt-cran-5", "type": "text", "pos": [6.6943, 1.3057, 0.3], "text": "÷ 10" },
+        { "key": "borne-bas", "type": "text", "pos": [7.4056, 2.5944, 0.1667], "text": "10⁻¹⁵ m" }
+      ],
+      "notationLine": 3,
+      "counters": [
+        { "key": "rayon-atome", "label": "Rayon de l’atome", "value": "∼ 10⁻¹⁰", "unit": "m" },
+        { "key": "rayon-noyau", "label": "Rayon du noyau", "value": "∼ 10⁻¹⁵", "unit": "m" }
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "s5",
+      "tag": "calculate",
+      "title": "Combien de fois plus grand ?",
+      "text": "Pour comparer deux tailles, on calcule leur quotient : $\\dfrac{r_{\\mathrm{atome}}}{r_{\\mathrm{noyau}}} \\approx \\dfrac{10^{-10}}{10^{-15}}$. Pour diviser deux puissances de dix, on soustrait les exposants, sans oublier le double signe moins : $-10 - (-15) = -10 + 15 = 5$. Le quotient vaut $10^{5}$ : l’atome d’hydrogène est environ 100 000 fois plus grand que son noyau. Additionner les exposants donnerait $10^{-25}$, inférieur à 1 : impossible, puisque l’atome est le plus grand des deux.",
+      "callout": {
+        "kind": "order-of-magnitude",
+        "text": "Avec les valeurs précises : $\\dfrac{1{,}2 \\times 10^{-10}}{8{,}4 \\times 10^{-16}} \\approx 1{,}4 \\times 10^{5}$. On retrouve le même ordre de grandeur, $10^{5}$."
+      },
+      "sceneDescription": "Same scene; the five notches are counted off one by one and an arrow from the nucleus scale bar to the atom scale bar appears, labeled « × 10⁵ ». The arrow is the accent.",
+      "scene": [
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [3.4604, 6.5396, 3], "size": 6, "opacity": 0.35 },
+        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [3.4604, 6.5396, 3], "size": 0.3 },
+        { "key": "barre-atome", "type": "arrow", "role": "measure", "pos": [3.4604, 6.5396, 3], "to": [5.1925, 4.8075, 3] },
+        { "key": "valeur-atome", "type": "text", "pos": [4.3264, 5.6736, 2.4], "text": "∼ 10⁻¹⁰ m" },
+        { "key": "nom-atome", "type": "label", "pos": [3.4604, 6.5396, 6], "text": "Atome d’hydrogène" },
+        { "key": "etiq-noyau", "type": "label", "pos": [3.4604, 6.5396, 3.2], "text": "noyau ∼ 10⁻¹⁵ m" },
+        { "key": "echelle", "type": "text", "pos": [4.4604, 7.5396, 0.2667], "text": "Pas à l’échelle" },
+        { "key": "borne-haut", "type": "text", "pos": [6.4056, 1.5944, 4.6667], "text": "10⁻¹⁰ m" },
+        { "key": "cran-1", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 3.6], "size": 0.35 },
+        { "key": "cran-2", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 2.7333], "size": 0.35 },
+        { "key": "cran-3", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 1.8667], "size": 0.35 },
+        { "key": "cran-4", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 1], "size": 0.35 },
+        { "key": "cran-5", "type": "cube", "role": "measure", "pos": [5.9245, 2.0755, 0.1333], "size": 0.35 },
+        { "key": "txt-cran-1", "type": "text", "pos": [6.6943, 1.3057, 3.7667], "text": "× 10" },
+        { "key": "txt-cran-2", "type": "text", "pos": [6.6943, 1.3057, 2.9], "text": "× 10" },
+        { "key": "txt-cran-3", "type": "text", "pos": [6.6943, 1.3057, 2.0333], "text": "× 10" },
+        { "key": "txt-cran-4", "type": "text", "pos": [6.6943, 1.3057, 1.1667], "text": "× 10" },
+        { "key": "txt-cran-5", "type": "text", "pos": [6.6943, 1.3057, 0.3], "text": "× 10" },
+        { "key": "borne-bas", "type": "text", "pos": [7.4056, 2.5944, 0.1667], "text": "10⁻¹⁵ m" },
+        { "key": "fois-1e5", "type": "arrow", "pos": [8.5603, 1.4397, 0.4], "to": [8.5603, 1.4397, 5.4], "accent": true },
+        { "key": "etiq-fois-1e5", "type": "label", "pos": [8.5603, 1.4397, 2.9], "text": "× 10⁵" }
+      ],
+      "notationLine": 4,
+      "counters": [
+        { "key": "rayon-atome", "label": "Rayon de l’atome", "value": "∼ 10⁻¹⁰", "unit": "m" },
+        { "key": "rayon-noyau", "label": "Rayon du noyau", "value": "∼ 10⁻¹⁵", "unit": "m" },
+        { "key": "quotient", "label": "Quotient atome / noyau", "value": "10⁵", "changed": true }
+      ],
+      "sourceIds": ["pubchem-radius-h", "codata-rp"]
+    },
+    {
+      "id": "s6",
+      "tag": "caution",
+      "title": "Comparer, c’est diviser",
+      "text": "Et une soustraction ? $10^{-10} - 10^{-15} = 0{,}99999 \\times 10^{-10}\\,\\mathrm{m}$. Le résultat est presque le rayon de l’atome lui-même : le noyau est si petit que l’enlever ne change presque rien. Une différence donne un écart en mètres, pas un nombre de fois. Pour dire « combien de fois plus grand », seul le quotient répond : $10^{5}$.",
+      "sceneDescription": "Same atom sphere, nucleus and « × 10⁵ » arrow; a second bar labeled « 10⁻¹⁰ − 10⁻¹⁵ » appears beside the atom scale bar, almost exactly as long, and is crossed out. The crossed-out bar is the accent.",
+      "scene": [
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [3.4604, 6.5396, 3], "size": 6, "opacity": 0.35 },
+        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [3.4604, 6.5396, 3], "size": 0.3 },
+        { "key": "barre-atome", "type": "arrow", "role": "measure", "pos": [3.4604, 6.5396, 3], "to": [5.1925, 4.8075, 3] },
+        { "key": "valeur-atome", "type": "text", "pos": [4.3264, 5.6736, 2.4], "text": "∼ 10⁻¹⁰ m" },
+        { "key": "nom-atome", "type": "label", "pos": [3.4604, 6.5396, 6], "text": "Atome d’hydrogène" },
+        { "key": "etiq-noyau", "type": "label", "pos": [3.4604, 6.5396, 3.2], "text": "noyau ∼ 10⁻¹⁵ m" },
+        { "key": "echelle", "type": "text", "pos": [4.4604, 7.5396, 0.2667], "text": "Pas à l’échelle" },
+        { "key": "barre-difference", "type": "arrow", "role": "measure", "pos": [3.4604, 6.5396, 1.5], "to": [5.1925, 4.8075, 1.5], "accent": true },
+        { "key": "rature", "type": "text", "pos": [4.3264, 5.6736, 1.5], "text": "✗" },
+        { "key": "valeur-difference", "type": "text", "pos": [4.3264, 5.6736, 0.6], "text": "10⁻¹⁰ − 10⁻¹⁵" },
+        { "key": "borne-haut", "type": "text", "pos": [6.4056, 1.5944, 4.6667], "text": "10⁻¹⁰ m" },
+        { "key": "borne-bas", "type": "text", "pos": [7.4056, 2.5944, 0.1667], "text": "10⁻¹⁵ m" },
+        { "key": "fois-1e5", "type": "arrow", "pos": [8.5603, 1.4397, 0.4], "to": [8.5603, 1.4397, 5.4] },
+        { "key": "etiq-fois-1e5", "type": "label", "pos": [8.5603, 1.4397, 2.9], "text": "× 10⁵" }
+      ],
+      "notationLine": 4,
+      "counters": [
+        { "key": "rayon-atome", "label": "Rayon de l’atome", "value": "∼ 10⁻¹⁰", "unit": "m" },
+        { "key": "rayon-noyau", "label": "Rayon du noyau", "value": "∼ 10⁻¹⁵", "unit": "m" },
+        { "key": "quotient", "label": "Quotient atome / noyau", "value": "10⁵" },
+        { "key": "difference", "label": "Différence atome − noyau", "value": "0,99999 × 10⁻¹⁰", "unit": "m", "changed": true }
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "s7",
+      "tag": "imagine",
+      "title": "Une bille au centre d’un kilomètre",
+      "text": "Agrandissons tout du même facteur. Si le noyau avait un rayon de 1 cm, celui de l’atome serait $10^{5}$ fois plus grand : $10^{5}\\,\\mathrm{cm} = 10^{3}\\,\\mathrm{m}$, soit 1 km. Une bille au centre d’une sphère d’un kilomètre de rayon : rien à voir avec un noyau de pêche dans son fruit. Presque tout l’espace de l’atome est très loin de son noyau.",
+      "sceneDescription": "Same objects, relabeled: the nucleus scale bar reads « 1 cm », the atom scale bar « 1 km »; the « × 10⁵ » arrow stays. The nucleus is the accent, a tiny bead at the center of the huge translucent sphere.",
+      "scene": [
+        { "key": "atome-h", "type": "sphere", "role": "atom", "pos": [3.4604, 6.5396, 3], "size": 6, "opacity": 0.35 },
+        { "key": "noyau-h", "type": "sphere", "role": "nucleus", "pos": [3.4604, 6.5396, 3], "size": 0.3, "accent": true },
+        { "key": "barre-atome", "type": "arrow", "role": "measure", "pos": [3.4604, 6.5396, 3], "to": [5.1925, 4.8075, 3] },
+        { "key": "valeur-atome", "type": "text", "pos": [4.3264, 5.6736, 2.4], "text": "1 km" },
+        { "key": "nom-atome", "type": "label", "pos": [3.4604, 6.5396, 6], "text": "Atome d’hydrogène" },
+        { "key": "etiq-noyau", "type": "label", "pos": [3.4604, 6.5396, 3.2], "text": "noyau 1 cm" },
+        { "key": "echelle", "type": "text", "pos": [4.4604, 7.5396, 0.2667], "text": "Pas à l’échelle" },
+        { "key": "borne-haut", "type": "text", "pos": [6.4056, 1.5944, 4.6667], "text": "1 km" },
+        { "key": "borne-bas", "type": "text", "pos": [7.4056, 2.5944, 0.1667], "text": "1 cm" },
+        { "key": "fois-1e5", "type": "arrow", "pos": [8.5603, 1.4397, 0.4], "to": [8.5603, 1.4397, 5.4] },
+        { "key": "etiq-fois-1e5", "type": "label", "pos": [8.5603, 1.4397, 2.9], "text": "× 10⁵" }
+      ],
+      "notationLine": 5,
+      "counters": [
+        { "key": "quotient", "label": "Quotient atome / noyau", "value": "10⁵" },
+        { "key": "rayon-noyau-agrandi", "label": "Rayon du noyau agrandi", "value": 1, "unit": "cm", "changed": true },
+        { "key": "rayon-atome-agrandi", "label": "Rayon de l’atome agrandi", "value": 1, "unit": "km", "changed": true }
+      ],
+      "sourceIds": ["nist-si-prefixes"]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Quels sont les ordres de grandeur de la taille d’un atome et de celle de son noyau ?",
+      "options": [
+        "Atome : $10^{-15}\\,\\mathrm{m}$ ; noyau : $10^{-10}\\,\\mathrm{m}$",
+        "Atome : $10^{-10}\\,\\mathrm{m}$ ; noyau : $10^{-15}\\,\\mathrm{m}$",
+        "Atome : $10^{-10}\\,\\mathrm{m}$ ; noyau : $10^{-11}\\,\\mathrm{m}$"
+      ],
+      "answer": 1,
+      "explanation": "Un atome a une taille de l’ordre de $10^{-10}\\,\\mathrm{m}$ et son noyau de l’ordre de $10^{-15}\\,\\mathrm{m}$, cinq puissances de dix plus petit. La première réponse est tentante parce que 15 est plus grand que 10, mais $-15$ compte cinq divisions par 10 de plus que $-10$. La troisième imagine un noyau à peine plus petit que l’atome, comme un noyau dans un fruit."
+    },
+    {
+      "id": "q2",
+      "question": "Combien vaut le quotient $\\dfrac{10^{-10}}{10^{-15}}$ ?",
+      "options": [
+        "$10^{-25}$",
+        "$10^{-5}$",
+        "$10^{5}$",
+        "$10^{25}$"
+      ],
+      "answer": 2,
+      "explanation": "Pour diviser deux puissances de dix, on soustrait les exposants : $-10 - (-15) = -10 + 15 = 5$, d’où $10^{5}$. Le piège le plus tentant est d’additionner les exposants, comme pour un produit, ou d’oublier le double signe moins : on obtient alors $10^{-25}$. Soustraire dans le mauvais ordre donne $10^{-5}$. Bon réflexe : l’atome étant le plus grand, le quotient doit dépasser 1."
+    },
+    {
+      "id": "q3",
+      "question": "Pour comparer le rayon d’un atome ($\\sim 10^{-10}\\,\\mathrm{m}$) à celui de son noyau ($\\sim 10^{-15}\\,\\mathrm{m}$), un élève calcule $10^{-10} - 10^{-15}$. Que penser de sa méthode ?",
+      "options": [
+        "Elle convient : la différence de deux tailles indique combien de fois l’une est plus grande que l’autre.",
+        "Elle ne convient pas : il faut le quotient, qui montre que l’atome est $10^{5}$ fois plus grand.",
+        "Peu importe : comme un noyau dans un fruit, le noyau remplit une bonne partie de l’atome."
+      ],
+      "answer": 1,
+      "explanation": "Comparer deux grandeurs, c’est en faire le quotient : $\\dfrac{10^{-10}}{10^{-15}} = 10^{5}$. La différence est tentante, car on l’utilise souvent pour comparer deux nombres, mais ici elle vaut $0{,}99999 \\times 10^{-10}\\,\\mathrm{m}$, presque le rayon de l’atome : elle ne dit pas « combien de fois ». L’image du fruit est fausse : avec un noyau de 1 cm de rayon, l’atome aurait 1 km de rayon."
+    }
+  ],
+  "sources": [
+    {
+      "id": "referentiel-seconde-pc",
+      "title": "Annexe — Programme de physique-chimie de seconde générale et technologique (BO spécial n° 1 du 22 janvier 2019)",
+      "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
+      "accessed": "2026-11-25",
+      "supports": "Scope: « Citer l’ordre de grandeur de la valeur de la taille d’un atome », « Comparer la taille et la masse d’un atome et de son noyau », capacités mathématiques (quotient, puissances de 10, écriture scientifique), p. 6; ordres de grandeur de taille de l’atome et du noyau, p. 4. The text gives no numerical size."
+    },
+    {
+      "id": "pubchem-radius-h",
+      "title": "PubChem (NIH) — Hydrogen, Atomic Radius",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/element/1/JSON?heading=Atomic+Radius",
+      "accessed": "2026-11-25",
+      "supports": "Hydrogen: 120 pm (Van der Waals), source Los Alamos National Laboratory; also lists 25 pm (Empirical, Slater 1964) and 31(5) pm (Covalent, Cordero 2008), hence 'several definitions of the radius'. 120 pm = 1,2 × 10⁻¹⁰ m."
+    },
+    {
+      "id": "pubchem-radius-c",
+      "title": "PubChem (NIH) — Carbon, Atomic Radius",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/element/6/JSON?heading=Atomic+Radius",
+      "accessed": "2026-11-25",
+      "supports": "Carbon: 170 pm (Van der Waals), source Los Alamos National Laboratory. 170 pm = 1,7 × 10⁻¹⁰ m."
+    },
+    {
+      "id": "pubchem-radius-na",
+      "title": "PubChem (NIH) — Sodium, Atomic Radius",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/element/11/JSON?heading=Atomic+Radius",
+      "accessed": "2026-11-25",
+      "supports": "Sodium: 227 pm (Van der Waals), source Los Alamos National Laboratory. 227 pm ≈ 2,3 × 10⁻¹⁰ m."
+    },
+    {
+      "id": "pubchem-periodic-table",
+      "title": "PubChem (NIH) — Periodic table data, CSV",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV",
+      "accessed": "2026-11-25",
+      "supports": "AtomicRadius column for Z = 1 to 18 ranges from 120 (H) to 227 (Na); values match the Van der Waals radii in pm of the element records above (H 120, C 170, Na 227), so every atom from Z = 1 to 18 has a radius of order 10⁻¹⁰ m."
+    },
+    {
+      "id": "nist-si-prefixes",
+      "title": "NIST Office of Weights and Measures — Metric (SI) Prefixes",
+      "url": "https://www.nist.gov/pml/owm/metric-si-prefixes",
+      "accessed": "2026-11-25",
+      "supports": "pico = 10⁻¹², centi = 10⁻², kilo = 10³ (pm to m conversion; 10⁵ cm = 10³ m = 1 km)."
+    },
+    {
+      "id": "nist-isotopes-h",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Hydrogen",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=H",
+      "accessed": "2026-11-25",
+      "supports": "¹H: atomic number 1, mass number 1, isotopic composition 0.999 885(70): in almost all hydrogen atoms the nucleus is one proton and no neutron."
+    },
+    {
+      "id": "codata-rp",
+      "title": "NIST CODATA 2022 — proton rms charge radius",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?rp",
+      "accessed": "2026-11-25",
+      "supports": "r_p = 8.4075(64) × 10⁻¹⁶ m, so about 8,4 × 10⁻¹⁶ m, order of magnitude 10⁻¹⁵ m."
+    }
+  ]
+}
