@@ -1,0 +1,69 @@
+{
+ "reviewer": "syllabus-checker",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "sc-1",
+   "severity": "ERROR",
+   "category": "scope",
+   "location": "echelles/s1/callout",
+   "quote": "Ici, on utilise le rayon dit de van der Waals, publié par PubChem.",
+   "problem": "Names a technical radius definition absent from the referential and unexplained; out of scope and above level.",
+   "evidence": "The only atom-size requirement is « Citer l’ordre de grandeur de la valeur de la taille d’un atome. » (p. 6); « van der Waals » appears on none of the 13 pages.",
+   "fix": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même table, celle de PubChem."
+  },
+  {
+   "id": "sc-2",
+   "severity": "AMBIGUOUS",
+   "category": "level",
+   "location": "echelles/s1/text",
+   "quote": "L’écriture scientifique, un nombre entre 1 et 10 multiplié par une puissance de dix",
+   "problem": "« entre 1 et 10 » may include 10; the writing is unique only for 1 ≤ a < 10.",
+   "evidence": "Referential p. 6, 1.B, Capacités exigibles: « Exprimer les valeurs des grandeurs en écriture scientifique. » 10 × 10⁻¹⁶ = 1 × 10⁻¹⁵.",
+   "fix": "L’écriture scientifique, un nombre supérieur ou égal à 1 et strictement inférieur à 10, multiplié par une puissance de dix"
+  },
+  {
+   "id": "sc-3",
+   "severity": "AMBIGUOUS",
+   "category": "level",
+   "location": "echelles/s6/text",
+   "quote": "$10^{-10} - 10^{-15} = 0{,}99999 \\times 10^{-10}\\,\\mathrm{m}$",
+   "problem": "Result not in scientific notation (factor below 1).",
+   "evidence": "Referential p. 6, 1.B, Capacités exigibles: « Exprimer les valeurs des grandeurs en écriture scientifique. » 0,99999 × 10⁻¹⁰ = 9,9999 × 10⁻¹¹.",
+   "fix": "$10^{-10} - 10^{-15} = 9{,}9999 \\times 10^{-11}\\,\\mathrm{m} \\approx 10^{-10}\\,\\mathrm{m}$"
+  },
+  {
+   "id": "sc-4",
+   "severity": "AMBIGUOUS",
+   "category": "level",
+   "location": "echelles/s6/counters",
+   "quote": "0,99999 × 10⁻¹⁰",
+   "problem": "Counter not in scientific notation.",
+   "evidence": "Referential p. 6, 1.B, Capacités exigibles: « Exprimer les valeurs des grandeurs en écriture scientifique. »",
+   "fix": "9,9999 × 10⁻¹¹"
+  },
+  {
+   "id": "sc-5",
+   "severity": "AMBIGUOUS",
+   "category": "level",
+   "location": "echelles/quiz/q3/explanation",
+   "quote": "mais ici elle vaut $0{,}99999 \\times 10^{-10}\\,\\mathrm{m}$, presque le rayon de l’atome",
+   "problem": "Not in scientific notation.",
+   "evidence": "Referential p. 6, 1.B, Capacités exigibles: « Exprimer les valeurs des grandeurs en écriture scientifique. »",
+   "fix": "mais ici elle vaut $9{,}9999 \\times 10^{-11}\\,\\mathrm{m} \\approx 10^{-10}\\,\\mathrm{m}$, presque le rayon de l’atome"
+  }
+ ],
+ "verified": [
+  "Goal, s2–s7, quiz in scope: p. 6 « Citer l’ordre de grandeur… », « Comparer la taille et la masse d’un atome et de son noyau. », capacités mathématiques; p. 4 intro.",
+  "« Proton » relies on cycle 4 box (p. 4).",
+  "Order inside the lesson correct; quiz tests only what was taught.",
+  "Nothing excluded by the referential; the 4 anchors are verbatim."
+ ],
+ "unverifiable": [
+  "Programme in force for 2026-2027: eduscol 403; no primary source.",
+  "Sign ∼ read « de l’ordre de »: no official notation to compare; not flagged.",
+  "Numerical values not checked (fact-checker's job).",
+  "q1 and q3 generalize 10⁻¹⁵ m to any nucleus: no source."
+ ]
+}

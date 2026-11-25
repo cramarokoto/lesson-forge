@@ -1,0 +1,28 @@
+{
+ "reviewer": "quiz-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "qr-1",
+   "severity": "AMBIGUOUS",
+   "category": "quiz",
+   "location": "echelles/quiz/q1/question",
+   "quote": "Quels sont les ordres de grandeur de la taille d’un atome et de celle de son noyau ?",
+   "problem": "The question asks about the nucleus of any atom, but the lesson only teaches the hydrogen nucleus (one proton); the explanation repeats the general claim. A larger nucleus of a few 10⁻¹⁵ m can round to 10⁻¹⁴ m under the lesson's own rounding rule, so the keyed answer is not true for every atom and the general claim has no source.",
+   "evidence": "s3/text limits the claim to hydrogen; s5/text « l’atome d’hydrogène est environ 100 000 fois plus grand que son noyau »; plan unverified item 2 (nucleus size beyond hydrogen not fetched); s2/text rounding rule « la puissance de dix la plus proche ».",
+   "fix": "question: « Quels sont les ordres de grandeur de la taille d’un atome d’hydrogène et de celle de son noyau ? » ; explanation, first sentence: « Un atome d’hydrogène a une taille de l’ordre de $10^{-10}\\,\\mathrm{m}$ et son noyau, un proton, de l’ordre de $10^{-15}\\,\\mathrm{m}$, cinq puissances de dix plus petit. »"
+  }
+ ],
+ "verified": [
+  "q1 solved blind: answer index 1 matches; distractors false.",
+  "q2: 10⁻¹⁰/10⁻¹⁵ = 10⁵, index 2 matches; distractors trace real exponent errors.",
+  "q3: quotient is the right method, index 1 matches; 0,99999 × 10⁻¹⁰ m and 1 cm × 10⁵ = 1 km recomputed.",
+  "All questions test only what the lesson teaches; distractors map to plan misconceptions.",
+  "Correct indices 1, 2, 1; no length or grammatical giveaway.",
+  "Quiz typography correct."
+ ],
+ "unverifiable": [
+  "Order of magnitude of nuclei other than hydrogen: no fetched source."
+ ]
+}

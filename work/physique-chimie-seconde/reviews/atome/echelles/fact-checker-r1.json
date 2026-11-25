@@ -1,0 +1,132 @@
+{
+ "reviewer": "fact-checker",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "fc-1",
+   "severity": "ERROR",
+   "category": "consistency",
+   "location": "echelles/s3/sceneDescription",
+   "quote": "appears at the center with its own scale bar labeled « ∼ 10⁻¹⁵ m »",
+   "problem": "Describes a nucleus scale bar that is not drawn.",
+   "evidence": "engine/app.js uses sceneDescription as the SVG aria-label; the scene has no nucleus scale bar (only label etiq-noyau).",
+   "fix": "The view zooms toward the atom’s center: the atom sphere becomes a faint backdrop and a small opaque sphere, the nucleus (one proton), appears at the center, tagged « noyau ∼ 10⁻¹⁵ m ». The atom’s scale bar stays visible, a note reads « Pas à l’échelle », and the C and Na spheres are gone."
+  },
+  {
+   "id": "fc-2",
+   "severity": "ERROR",
+   "category": "consistency",
+   "location": "echelles/s4/sceneDescription",
+   "quote": "Both scale bars side by side; … The nucleus scale bar is the accent.",
+   "problem": "No nucleus bar; accent is on the label; ÷ 10 marks not described.",
+   "evidence": "engine/app.js uses sceneDescription as the SVG aria-label; the scene has no nucleus scale bar (only label etiq-noyau).",
+   "fix": "Same atom, nucleus and atom scale bar; beside them a column of five notches, each marked « ÷ 10 », leads from « 10⁻¹⁰ m » down to « 10⁻¹⁵ m ». The nucleus tag « noyau ∼ 10⁻¹⁵ m » is the accent."
+  },
+  {
+   "id": "fc-3",
+   "severity": "ERROR",
+   "category": "consistency",
+   "location": "echelles/s5/sceneDescription",
+   "quote": "the five notches are counted off one by one and an arrow from the nucleus scale bar to the atom scale bar appears",
+   "problem": "No nucleus bar; arrow is vertical beside the notches; nothing is counted one by one; ÷ 10 → × 10 relabel not described.",
+   "evidence": "engine/app.js uses sceneDescription as the SVG aria-label; the scene has no nucleus scale bar (only label etiq-noyau).",
+   "fix": "Same scene, but the five notches now read « × 10 », and a vertical arrow labeled « × 10⁵ » rises beside them from « 10⁻¹⁵ m » up to « 10⁻¹⁰ m ». The arrow is the accent."
+  },
+  {
+   "id": "fc-4",
+   "severity": "ERROR",
+   "category": "consistency",
+   "location": "echelles/s7/sceneDescription",
+   "quote": "the nucleus scale bar reads « 1 cm », the atom scale bar « 1 km »",
+   "problem": "No nucleus bar.",
+   "evidence": "engine/app.js uses sceneDescription as the SVG aria-label; the scene has no nucleus scale bar (only label etiq-noyau).",
+   "fix": "Same objects, relabeled: the nucleus tag reads « noyau 1 cm », the atom scale bar and the upper mark read « 1 km », the lower mark « 1 cm »; the « × 10⁵ » arrow stays. The nucleus is the accent, a tiny bead at the center of the huge translucent sphere."
+  },
+  {
+   "id": "fc-5",
+   "severity": "ERROR",
+   "category": "unit",
+   "location": "echelles/s6/text",
+   "quote": "$10^{-10} - 10^{-15} = 0{,}99999 \\times 10^{-10}\\,\\mathrm{m}$",
+   "problem": "Left side pure numbers, right side metres.",
+   "evidence": "Recomputed; the step itself says a difference « donne un écart en mètres ».",
+   "fix": "$10^{-10}\\,\\mathrm{m} - 10^{-15}\\,\\mathrm{m} = 0{,}99999 \\times 10^{-10}\\,\\mathrm{m}$"
+  },
+  {
+   "id": "fc-6",
+   "severity": "AMBIGUOUS",
+   "category": "calculation",
+   "location": "echelles/s6/counters/difference",
+   "quote": "Différence atome − noyau = 0,99999 × 10⁻¹⁰",
+   "problem": "False precision: with the lesson's values r_atome − r_noyau ≈ 1,2 × 10⁻¹⁰ m.",
+   "evidence": "1.2e-10 − 8.4075e-16 = 1.19999e-10 (recomputed).",
+   "fix": "label « Différence 10⁻¹⁰ m − 10⁻¹⁵ m »"
+  },
+  {
+   "id": "fc-7",
+   "severity": "AMBIGUOUS",
+   "category": "consistency",
+   "location": "echelles/s5/counters/quotient",
+   "quote": "Quotient atome / noyau = 10⁵",
+   "problem": "Shown as exact while inputs are orders of magnitude and the callout gives 1,4 × 10⁵ (also s6, s7).",
+   "evidence": "1.2e-10/8.4e-16 = 1.43e5 (recomputed); notation line 4 uses ≈.",
+   "fix": "value « ∼ 10⁵ » in s5, s6, s7"
+  },
+  {
+   "id": "fc-8",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/s5/callout/text",
+   "quote": "Avec les valeurs précises",
+   "problem": "Two-figure values from one radius definition; other PubChem H radii (25, 31 pm) give ~3–4 × 10⁴.",
+   "evidence": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/element/1/JSON?heading=Atomic+Radius (fetched 2026-11-25): 120 pm vdW, 25 pm empirical, 31 pm covalent; recomputed quotients.",
+   "fix": "Avec les valeurs retenues aux étapes 1 et 3 : … ≈ 1,4 × 10⁵. On retrouve le même ordre de grandeur, 10⁵."
+  },
+  {
+   "id": "fc-9",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/s1/text",
+   "quote": "un nombre entre 1 et 10 multiplié par une puissance de dix",
+   "problem": "10 not excluded; form not unique.",
+   "evidence": "https://cours-et-fiches.com/college/maths/puissances-de-dix-notation-scientifique/ (fetched 2026-11-25): « 1 ≤ a < 10 ».",
+   "fix": "un nombre au moins égal à 1 et strictement inférieur à 10 multiplié par une puissance de dix"
+  },
+  {
+   "id": "fc-10",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/quiz/q1/question",
+   "quote": "Quels sont les ordres de grandeur de la taille d’un atome et de celle de son noyau ?",
+   "problem": "Generalises to all nuclei; heavy nuclei ~5,5 × 10⁻¹⁵ m → 10⁻¹⁴.",
+   "evidence": "arXiv:2504.19977v2 (fetched 2026-11-25): ²⁰⁸Pb 5.5062 fm; plan unverified[1].",
+   "fix": "« … d’un atome d’hydrogène et de celle de son noyau ? »"
+  },
+  {
+   "id": "fc-11",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/quiz/q1/explanation",
+   "quote": "La troisième imagine un noyau à peine plus petit que l’atome, comme un noyau dans un fruit.",
+   "problem": "One power of ten is 10× in radius, 1000× in volume: not « à peine plus petit ».",
+   "evidence": "Recomputed.",
+   "fix": "La troisième ne met qu’une puissance de dix entre l’atome et son noyau, soit un noyau seulement 10 fois plus petit : l’écart réel est de cinq puissances de dix."
+  }
+ ],
+ "verified": [
+  "Referential scope p. 4, 6.",
+  "H 120 pm, C 170 pm, Na 227 pm (PubChem vdW, fetched 2026-11-25).",
+  "SI prefixes (NIST).",
+  "¹H abundance 0.999885 (NIST).",
+  "Proton radius 8.4075(64) × 10⁻¹⁶ m (CODATA 2022).",
+  "All orders of magnitude and calculations recomputed.",
+  "Scene geometry and « Pas à l’échelle » consistent.",
+  "French typography and word counts OK."
+ ],
+ "unverifiable": [
+  "Fruit-stone proportions and marble size: qualitative, not sourced.",
+  "Unit of PubChem CSV AtomicRadius inferred (pm).",
+  "Nuclear radii other than ¹H and ²⁰⁸Pb (IAEA 402); ²⁰⁸Pb from a preprint."
+ ]
+}

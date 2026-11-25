@@ -1,0 +1,64 @@
+{
+ "reviewer": "pedagogy-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "pr-1",
+   "severity": "AMBIGUOUS",
+   "category": "pedagogy",
+   "location": "echelles/s6/text",
+   "quote": "le noyau est si petit que l’enlever ne change presque rien",
+   "problem": "Can be read physically (remove the nucleus, nothing changes), contradicting the later lesson masse and the nucleus' identity role.",
+   "evidence": "Plan lessons[3].title « Masse : le noyau pèse presque tout »; referential anchor « Le noyau de l’atome, siège de sa masse et de son identité » (p. 6).",
+   "fix": "Et une soustraction ? $10^{-10} - 10^{-15} = 0{,}99999 \\times 10^{-10}\\,\\mathrm{m}$. Le résultat est presque le rayon de l’atome lui-même : retrancher une longueur aussi petite que $10^{-15}\\,\\mathrm{m}$ ne change presque rien. Une différence donne un écart en mètres, pas un nombre de fois. Pour dire « combien de fois plus grand », seul le quotient répond : $10^{5}$."
+  },
+  {
+   "id": "pr-2",
+   "severity": "AMBIGUOUS",
+   "category": "consistency",
+   "location": "echelles/s5/scene",
+   "quote": "txt-cran-1 « × 10 »",
+   "problem": "Same notches, same end labels as s4 but relabelled × 10 with no stated reversal of reading direction; reading top to bottom brings back the 10⁻¹⁵ > 10⁻¹⁰ confusion.",
+   "evidence": "s4 labels « ÷ 10 », s5 « × 10 » at the same positions; s5 sceneDescription does not mention it; plan misconception lessons[0][1].",
+   "fix": "Add to s5 text: « en remontant du noyau vers l’atome, les cinq crans deviennent cinq multiplications par 10 » (full text in reviewer report); append to s5 sceneDescription: « The five notch labels change from ÷ 10 to × 10, read upward from 10⁻¹⁵ m to 10⁻¹⁰ m along the × 10⁵ arrow. »"
+  },
+  {
+   "id": "pr-3",
+   "severity": "AMBIGUOUS",
+   "category": "consistency",
+   "location": "echelles/s3/sceneDescription",
+   "quote": "a small opaque sphere, the nucleus (one proton), appears at the center with its own scale bar labeled « ∼ 10⁻¹⁵ m »",
+   "problem": "sceneDescriptions s3–s7 mention a nucleus scale bar the scene never draws (only a label).",
+   "evidence": "s3–s7 scenes contain one measure arrow (atom) and none for the nucleus; s4 accent is on etiq-noyau (label).",
+   "fix": "Make descriptions match the scene: nucleus « label » instead of « scale bar » in s3, s4, s5, s7; s5 arrow « beside the notch column »."
+  },
+  {
+   "id": "pr-4",
+   "severity": "AMBIGUOUS",
+   "category": "level",
+   "location": "echelles/s1/callout",
+   "quote": "Ici, on utilise le rayon dit de van der Waals, publié par PubChem.",
+   "problem": "« van der Waals » and « PubChem » unexplained for seconde students.",
+   "evidence": "Style guide: difficult words explained at first use; audience seconde 15-16.",
+   "fix": "Les tables ne donnent pas toutes la même valeur du rayon d’un atome, car il existe plusieurs façons de le définir. La valeur utilisée ici vient de la base de données PubChem."
+  },
+  {
+   "id": "pr-5",
+   "severity": "AMBIGUOUS",
+   "category": "order",
+   "location": "echelles/quiz/q1/question",
+   "quote": "Quels sont les ordres de grandeur de la taille d’un atome et de celle de son noyau ?",
+   "problem": "Tests a generalisation to all nuclei the lesson never taught (same as qr-1).",
+   "evidence": "Style guide: « Only test what the lesson taught. »; plan unverified[1].",
+   "fix": "Quels sont les ordres de grandeur de la taille d’un atome d’hydrogène et de celle de son noyau ?"
+  }
+ ],
+ "verified": [
+  "s1, s5, s6, s7 and callout calculations recomputed.",
+  "All four plan misconceptions addressed."
+ ],
+ "unverifiable": [
+  "Numerical values not re-fetched (fact-checker's job)."
+ ]
+}
