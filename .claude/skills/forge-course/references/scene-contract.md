@@ -25,6 +25,20 @@ Implemented by `engine/app.js`; see `engine/README.md`. Allowed `role` values: t
 - `accent: true` marks **the** focus of the step: at most one per step.
 - `opacity` 0–1; use it to fade context, not to hide (omit the object instead).
 
+## Visual grammar (mandatory)
+
+First find the **verb** of the step's `takeaway`, then use the device it requires. A step may need several.
+
+| Verb in the takeaway | Required device |
+|---|---|
+| operation or transformation: divide, multiply, convert, go from A to B | an `arrow` from the start object to the end object, labelled with the operation (e.g. « ÷ 10 » five times, or « ÷ 10⁵ »), accent on it |
+| comparison: smaller, larger, as much as, same order | objects side by side on one common base (`board`), the gap itself drawn (bar, bracket, arrow between them) |
+| sequence or steps | one reading direction (left→right or top→bottom), an arrow between consecutive stages |
+| quantity or size | size or length of the object; if not proportional, a « Pas à l’échelle » text |
+| definition or naming | the named object with its label, accent on it, everything else faded |
+
+Every diagram must answer, without the text: **where do I start? which way do I go? where do I end? what changes? what do I conclude?** A label alone never gives a direction: use an arrow.
+
 ## Animation between steps
 
 - Each step's `scene` is the **full** state, not a diff.

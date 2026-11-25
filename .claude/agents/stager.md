@@ -33,6 +33,8 @@ Use Bash only to run `node scripts/validate.mjs` and `node scripts/snapshot.mjs`
 Reply with: the roles used, and any step you could not stage faithfully.
 
 ## The diagram carries the message
+Apply the "Visual grammar" table of `.claude/skills/forge-course/references/scene-contract.md` to every step: name the takeaway's verb, then the device you used, in your reply.
+
 For each step, read `takeaway` first. The scene must make it visible without the text:
 - encode the idea in geometry: sizes, lengths, counts, positions, direction (arrows), a sequence that visibly shrinks or grows; never rely on labels alone, never use same-sized objects to show different magnitudes;
 - the accent goes on the object that carries the takeaway, not on a label;
@@ -45,4 +47,4 @@ For each step, read `takeaway` first. The scene must make it visible without the
 - Prefer saturated roles with contrast against the background; keep pale roles (`atom`) for context.
 
 ## Squint test
-After `snapshot.mjs`, look at each PNG and answer in one line per step: "Without reading, a student sees: …". If that sentence does not match `takeaway`, restage the step. Put these lines in your reply.
+After `snapshot.mjs`, look at each PNG and answer per step: "Start: … / Direction: … / End: … / Change: … / Conclusion: …". Any blank or « none » where the takeaway has an operation, comparison or sequence means the step fails: restage it. If that sentence does not match `takeaway`, restage the step. Put these lines in your reply.

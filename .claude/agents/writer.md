@@ -37,3 +37,5 @@ Before starting, read your memory. Save there only reusable sources: URL, exact 
 
 ## Message first
 For every step, write `takeaway` first (see "Message first" in the style guide), then the text that leads to it, then the `sceneDescription` that would show it without words. Before finishing, run the teach-back test on each step and fix the text where your own one-line summary differs from the takeaway.
+
+Write each `takeaway` with an explicit verb (« est plus petit que », « on divise », « on compare »…), and in `sceneDescription` name the visual device that the scene contract's "Visual grammar" requires for that verb (e.g. « an arrow runs from the atom down to the nucleus, labelled « ÷ 10 » at each step »).

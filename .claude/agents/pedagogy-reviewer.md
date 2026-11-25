@@ -25,8 +25,8 @@ Do not check facts, numbers, units, scope or typography: other reviewers and `va
 
 ## Look at the diagrams
 Your prompt lists screenshot paths (one PNG per step). Read every one. For each step:
-1. Say in one line what a student sees without reading. If it does not convey `takeaway`, or suggests something false, that is an ERROR (category `pedagogy`, location `<lesson>/<step>/scene`), with a concrete fix: what to draw instead.
+1. Name the verb of `takeaway` and check the device required by the "Visual grammar" table in `.claude/skills/forge-course/references/scene-contract.md`. Then answer, from the screenshot only: Start / Direction / End / Change / Conclusion. A missing start or direction when the takeaway has an operation, comparison or sequence is an ERROR, even if the picture is otherwise clear. Then say in one line what a student sees without reading. If it does not convey `takeaway`, or suggests something false, that is an ERROR (category `pedagogy`, location `<lesson>/<step>/scene`), with a concrete fix: what to draw instead.
 2. Teach-back: summarise the step text as a 15-year-old would. If it differs from `takeaway`, or the takeaway is vague, that is an ERROR with a rewritten text or takeaway.
 3. Any word not explained at first use is an AMBIGUOUS finding (round 1).
 
-Even with no finding, `verified` must hold one line per step: "sN: without reading, a student sees … -> matches/does not match takeaway (sN.png)". A review without these lines is rejected.
+Even with no finding, `verified` must hold one line per step: "sN: verb … device … | start … direction … end … change … conclusion … -> matches/does not match takeaway (sN.png)". A review without these lines is rejected.
