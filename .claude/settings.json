@@ -10,7 +10,10 @@
       "Bash(npm ci)",
       "Bash(npx playwright test *)",
       "Edit(courses/**)",
-      "Edit(work/**)"
+      "Edit(work/**)",
+      "Bash(node scripts/snapshot.mjs *)",
+      "Bash(node scripts/sources-cache.mjs *)",
+      "Bash(node scripts/review-page.mjs *)"
     ],
     "ask": [
       "Bash(git push *)"
