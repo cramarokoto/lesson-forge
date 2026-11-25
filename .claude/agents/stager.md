@@ -31,3 +31,18 @@ Run `node scripts/validate.mjs --require-scenes` until it passes for this lesson
 Use Bash only to run `node scripts/validate.mjs` and `node scripts/snapshot.mjs`.
 
 Reply with: the roles used, and any step you could not stage faithfully.
+
+## The diagram carries the message
+For each step, read `takeaway` first. The scene must make it visible without the text:
+- encode the idea in geometry: sizes, lengths, counts, positions, direction (arrows), a sequence that visibly shrinks or grows; never rely on labels alone, never use same-sized objects to show different magnitudes;
+- the accent goes on the object that carries the takeaway, not on a label;
+- remove or fade anything kept from the previous step that does not serve this one;
+- no decorative object.
+
+## Visual quality
+- Make the subject big: it should fill most of the stage. Few objects, large sizes.
+- Give scenes a ground: put related objects on a `board` (a thick plinth) rather than floating in space.
+- Prefer saturated roles with contrast against the background; keep pale roles (`atom`) for context.
+
+## Squint test
+After `snapshot.mjs`, look at each PNG and answer in one line per step: "Without reading, a student sees: …". If that sentence does not match `takeaway`, restage the step. Put these lines in your reply.

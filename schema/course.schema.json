@@ -506,7 +506,8 @@
         "tag",
         "title",
         "text",
-        "sceneDescription"
+        "sceneDescription",
+        "takeaway"
       ],
       "properties": {
         "id": {
@@ -570,6 +571,12 @@
             "$ref": "#/$defs/id"
           },
           "description": "Sources backing the facts of this step."
+        },
+        "takeaway": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160,
+          "description": "The one sentence the learner must remember from this step, in the course language. Shown as « À retenir ». The text leads to it; the diagram shows it."
         }
       }
     },

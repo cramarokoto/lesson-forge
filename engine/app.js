@@ -135,37 +135,68 @@
   svg.append(defs, grid, layer);
   const nodes = new Map(); // key -> { el, type, timer }
 
-  const rhombus = (sz, z = 0) => [[0, 0, z], [sz, 0, z], [sz, sz, z], [0, sz, z]].map((p) => proj(p.map((v, i) => (i < 2 ? v - sz / 2 : v))).join(',')).join(' ');
+  // Light comes from the upper left. Colors are shaded per face, spheres get a radial gradient,
+  // raised objects cast a soft shadow on the floor, flat plates get a visible thickness.
+  const hex = (c) => c.replace('#', '').match(/../g).map((x) => parseInt(x, 16));
+  const mix = (c, t, a) => '#' + hex(c).map((v, i) => Math.round(v + (t[i] - v) * a).toString(16).padStart(2, '0')).join('');
+  const light = (c, a) => mix(c, [255, 255, 255], a);
+  const dark = (c, a) => mix(c, [0, 0, 0], a);
+  function gradient(color) {
+    const id = `g${color.slice(1)}`;
+    if (!defs.querySelector(`#${id}`)) {
+      const g = s('radialGradient', { id, cx: '35%', cy: '30%', r: '75%', fx: '30%', fy: '25%' });
+      [[0, light(color, 0.55)], [0.45, color], [1, dark(color, 0.35)]].forEach(([o, c]) => g.append(s('stop', { offset: o, 'stop-color': c })));
+      defs.append(g);
+    }
+    return `url(#${id})`;
+  }
+  const P = (x, y, z) => proj([x, y, z]).join(',');
+  function slab(g, sz, th, color, alpha = 1) {
+    const h = sz / 2;
+    const top = [P(-h, -h, th), P(h, -h, th), P(h, h, th), P(-h, h, th)].join(' ');
+    const left = [P(-h, h, th), P(h, h, th), P(h, h, 0), P(-h, h, 0)].join(' ');
+    const right = [P(h, -h, th), P(h, h, th), P(h, h, 0), P(h, -h, 0)].join(' ');
+    g.append(s('polygon', { points: left, fill: dark(color, 0.28), 'fill-opacity': alpha }),
+      s('polygon', { points: right, fill: dark(color, 0.14), 'fill-opacity': alpha }),
+      s('polygon', { class: 'fill edge', points: top, fill: light(color, 0.06), 'fill-opacity': alpha }));
+  }
+  function shadow(g, o, r) {
+    const z = o.pos?.[2] ?? 0;
+    if (z <= 0.01 && o.type !== 'cube') return;
+    const op = Math.max(0.08, 0.28 - z * 0.03);
+    g.append(s('ellipse', { class: 'shadow', cx: 0, cy: z * U, rx: r * C30 * U * 1.1, ry: r * S30 * U * 1.1, fill: '#0b1220', 'fill-opacity': op }));
+  }
   function shapeFor(o) {
     const g = s('g', { class: 'shape' });
     const color = roleColor(o.role);
     const size = o.size ?? 1;
     switch (o.type) {
-      case 'sphere':
-        g.append(s('circle', { class: 'fill', r: (size * U) / 2, fill: color }),
-          s('circle', { r: (size * U) / 7, cx: -(size * U) / 6, cy: -(size * U) / 6, fill: '#fff', 'fill-opacity': 0.35 }));
-        break;
-      case 'cube': {
-        const e = size;
-        const P = (x, y, z) => proj([x - e / 2, y - e / 2, z]).join(',');
-        const top = [P(0, 0, e), P(e, 0, e), P(e, e, e), P(0, e, e)].join(' ');
-        const left = [P(0, e, e), P(e, e, e), P(e, e, 0), P(0, e, 0)].join(' ');
-        const right = [P(e, 0, e), P(e, e, e), P(e, e, 0), P(e, 0, 0)].join(' ');
-        for (const [pts, shade] of [[left, 0.22], [right, 0.1], [top, 0]]) {
-          g.append(s('polygon', { class: 'fill edge', points: pts, fill: color }));
-          if (shade) g.append(s('polygon', { points: pts, fill: '#000', 'fill-opacity': shade }));
-        }
+      case 'sphere': {
+        const r = (size * U) / 2;
+        shadow(g, o, size / 2);
+        g.append(s('circle', { class: 'fill', r, fill: gradient(color), 'data-color': color }),
+          s('ellipse', { cx: -r * 0.32, cy: -r * 0.38, rx: r * 0.28, ry: r * 0.18, fill: '#fff', 'fill-opacity': 0.45, transform: 'rotate(-30)' }));
         break;
       }
-      case 'tile':
-        g.append(s('polygon', { class: 'fill edge', points: rhombus(size), fill: color }));
+      case 'cube': {
+        const e = size, h = e / 2;
+        shadow(g, { ...o, pos: [0, 0, 0] }, e * 0.75);
+        const top = [P(-h, -h, e), P(h, -h, e), P(h, h, e), P(-h, h, e)].join(' ');
+        const left = [P(-h, h, e), P(h, h, e), P(h, h, 0), P(-h, h, 0)].join(' ');
+        const right = [P(h, -h, e), P(h, h, e), P(h, h, 0), P(h, -h, 0)].join(' ');
+        g.append(s('polygon', { class: 'fill edge face-l', points: left, fill: dark(color, 0.3), 'data-color': color }),
+          s('polygon', { class: 'fill edge face-r', points: right, fill: dark(color, 0.15), 'data-color': color }),
+          s('polygon', { class: 'fill edge face-t', points: top, fill: light(color, 0.12), 'data-color': color }));
         break;
-      case 'board':
-        g.append(s('polygon', { class: 'fill edge', points: rhombus(size), fill: color, 'fill-opacity': 0.35 }));
+      }
+      case 'tile': slab(g, size, 0.14, color); break;
+      case 'board': slab(g, size, 0.4, color); break;
+      case 'ring': {
+        const rx = size * Math.SQRT2 * C30 * U, ry = size * Math.SQRT2 * S30 * U;
+        g.append(s('ellipse', { rx, ry: ry + 2, cy: 2, fill: 'none', stroke: dark(color, 0.35), 'stroke-width': 2.5, 'stroke-opacity': 0.5, 'vector-effect': 'non-scaling-stroke' }),
+          s('ellipse', { class: 'ring', rx, ry, stroke: color }));
         break;
-      case 'ring':
-        g.append(s('ellipse', { class: 'ring', rx: size * Math.SQRT2 * C30 * U, ry: size * Math.SQRT2 * S30 * U, stroke: color }));
-        break;
+      }
       case 'arrow': {
         const [x1, y1] = proj(o.pos), [x2, y2] = proj(o.to);
         g.append(s('line', { class: 'arrow', x1: 0, y1: 0, x2: x2 - x1, y2: y2 - y1, 'marker-end': 'url(#arrowhead)' }));
@@ -184,7 +215,7 @@
     }
     return g;
   }
-  const signature = (o) => JSON.stringify([o.type, o.role, o.size, o.text, o.to && o.pos && proj(o.to).map((v, i) => v - proj(o.pos)[i])]);
+  const signature = (o) => JSON.stringify([o.type, o.role, roleColor(o.role), o.pos?.[2], o.size, o.text, o.to && o.pos && proj(o.to).map((v, i) => v - proj(o.pos)[i])]);
   const typeRank = { board: 0, tile: 1, ring: 2, cube: 3, sphere: 3, arrow: 4, text: 5, label: 6 };
 
   // Frame the whole lesson once, so the camera stays still between steps.
@@ -208,7 +239,7 @@
       }
     }
     if (!isFinite(x0)) { x0 = -9.4 * U; y0 = -6.6 * U; x1 = 9.4 * U; y1 = 10.8 * U; }
-    const pad = 24, minW = 8 * U, minH = 6 * U;
+    const pad = 14, minW = 5 * U, minH = 4 * U;
     let w = Math.max(x1 - x0, minW), hh = Math.max(y1 - y0, minH);
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
     const box = `${cx - w / 2 - pad} ${cy - hh / 2 - pad} ${w + 2 * pad} ${hh + 2 * pad}`;
@@ -257,7 +288,6 @@
         n.el.style.transform = `translate(${x}px, ${y}px)`;
       }
       n.el.classList.toggle('accent', !!o.accent);
-      for (const f of n.el.querySelectorAll('.fill')) f.setAttribute('fill', roleColor(o.role));
       for (const r of n.el.querySelectorAll('.ring')) r.setAttribute('stroke', roleColor(o.role));
       if (layer.children[i] !== n.el) layer.insertBefore(n.el, layer.children[i] || null);
     });
@@ -271,6 +301,7 @@
       h('span', { class: `tag ${st.tag}` }, T.tags[st.tag]),
       h('h3', { html: st.titleHtml }),
       h('p', { class: 'step-text', html: st.textHtml }),
+      st.takeawayHtml ? h('p', { class: 'takeaway' }, h('b', {}, T.takeaway), ' ', h('span', { html: st.takeawayHtml })) : null,
       st.callout ? h('div', { class: `callout ${st.callout.kind}` }, h('b', {}, T.callouts[st.callout.kind]), h('span', { html: st.callout.html })) : null,
       st.widget ? widget(st.widget) : null,
       h('div', { class: 'nav' },

@@ -56,7 +56,7 @@ For each lesson, start these in parallel. Each gets **only**: the lesson path, t
 Never pass the writer's messages, reasoning, earlier findings or other reviewers' reports.
 - `fact-checker`: claims, numbers, units, calculations, sources.
 - `syllabus-checker`: scope, level, order of notions.
-- `pedagogy-reviewer`: one idea per step, length, progression, text–diagram match.
+- `pedagogy-reviewer`: one idea per step, progression, teach-back of each `takeaway`, and the diagrams themselves: run `node scripts/snapshot.mjs <slug> <chapter> <lesson>` first and pass the PNG paths in its prompt.
 - `quiz-reviewer`: one correct answer, wrong distractors, explanations.
 - `safety-reviewer`: activities, lab-safety statements, age-appropriateness.
 

@@ -55,7 +55,8 @@
       "cation": "cation",
       "anion": "anion",
       "unknown": "élément au-delà de Z = 20"
-    }
+    },
+    "takeaway": "À retenir"
   },
   "en": {
     "search": "Search lessons",
@@ -112,6 +113,7 @@
       "cation": "cation",
       "anion": "anion",
       "unknown": "element beyond Z = 20"
-    }
+    },
+    "takeaway": "Key idea"
   }
 }

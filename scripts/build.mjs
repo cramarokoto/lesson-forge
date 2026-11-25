@@ -68,6 +68,7 @@ function buildCourse(input) {
           id: st.id, tag: st.tag,
           titleHtml: rich(st.title, w(`${st.id}/title`)),
           textHtml: rich(st.text, w(`${st.id}/text`)),
+          takeawayHtml: st.takeaway ? rich(st.takeaway, w(`${st.id}/takeaway`)) : null,
           callout: st.callout ? { kind: st.callout.kind, html: rich(st.callout.text, w(`${st.id}/callout`)) } : null,
           notationLine: st.notationLine ?? null,
           counters: (st.counters || []).map((c) => ({ key: c.key, labelHtml: rich(c.label, w(`${st.id}/counters`)), value: c.value, unit: c.unit || '', changed: !!c.changed })),

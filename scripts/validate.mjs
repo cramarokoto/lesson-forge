@@ -78,7 +78,7 @@ function frenchTypography(text) {
 function displayTexts(lesson) {
   const out = [['title', lesson.title], ['goal', lesson.goal]];
   for (const s of lesson.steps) {
-    out.push([`steps/${s.id}/title`, s.title], [`steps/${s.id}/text`, s.text]);
+    out.push([`steps/${s.id}/title`, s.title], [`steps/${s.id}/text`, s.text], [`steps/${s.id}/takeaway`, s.takeaway || '']);
     if (s.callout) out.push([`steps/${s.id}/callout`, s.callout.text]);
     for (const c of s.counters || []) out.push([`steps/${s.id}/counters/${c.key}`, c.label]);
     for (const o of s.scene || []) if (o.text) out.push([`steps/${s.id}/scene/${o.key}`, o.text]);

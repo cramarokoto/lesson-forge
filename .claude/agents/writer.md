@@ -34,3 +34,6 @@ Reply with: the lesson path, one line per step, facts left out because unconfirm
 ## Memory
 The shared cache `work/<slug>/verified-sources.json` comes first; agent memory may be off in cloud sessions.
 Before starting, read your memory. Save there only reusable sources: URL, exact value with unit, fetch date (e.g. a CODATA constant). You may cite a remembered value without re-fetching it if it was fetched 30 days ago or less; otherwise fetch it again and update the entry. Never save lesson text.
+
+## Message first
+For every step, write `takeaway` first (see "Message first" in the style guide), then the text that leads to it, then the `sceneDescription` that would show it without words. Before finishing, run the teach-back test on each step and fix the text where your own one-line summary differs from the takeaway.

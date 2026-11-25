@@ -15,6 +15,7 @@
   --bad-soft: #fbe9e7;
   --stage: #f8fafc;
   --stage-grid: #e3e8ef;
+  --ink-line: #1b2330;
   --shadow: 0 1px 2px rgba(20, 30, 50, .06), 0 4px 16px rgba(20, 30, 50, .06);
   --radius: 12px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -26,7 +27,7 @@
     --bg: #12161d; --surface: #1a2029; --surface-2: #202834; --ink: #e6ebf2; --muted: #9aa5b5;
     --line: #2e3846; --accent: #a58bff; --accent-ink: #14101f; --accent-soft: #2c2445;
     --ok: #4cc292; --ok-soft: #173327; --bad: #f08a83; --bad-soft: #3a1f1d;
-    --stage: #161b23; --stage-grid: #232b37; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+    --stage: #161b23; --stage-grid: #232b37; --ink-line: #05080d; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
     color-scheme: dark;
   }
 }
@@ -34,7 +35,7 @@
   --bg: #12161d; --surface: #1a2029; --surface-2: #202834; --ink: #e6ebf2; --muted: #9aa5b5;
   --line: #2e3846; --accent: #a58bff; --accent-ink: #14101f; --accent-soft: #2c2445;
   --ok: #4cc292; --ok-soft: #173327; --bad: #f08a83; --bad-soft: #3a1f1d;
-  --stage: #161b23; --stage-grid: #232b37; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+  --stage: #161b23; --stage-grid: #232b37; --ink-line: #05080d; --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
   color-scheme: dark;
 }
 
@@ -76,7 +77,7 @@ nav.tree { border-right: 1px solid var(--line); background: var(--surface); padd
 main.stage-col { padding: 18px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
 .lesson-head h1 { font-size: 20px; margin: 0; }
 .lesson-head p { margin: 2px 0 0; color: var(--muted); }
-.stage { position: relative; flex: 1; min-height: 340px; background: var(--stage); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.stage { position: relative; flex: 1; min-height: 340px; background: radial-gradient(120% 90% at 50% 35%, var(--surface) 0%, var(--stage) 70%); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
 .stage svg { width: 100%; height: 100%; display: block; position: absolute; inset: 0; }
 .timeline { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .timeline button { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--surface); cursor: pointer; font-size: 12px; }
@@ -87,8 +88,9 @@ main.stage-col { padding: 18px; display: flex; flex-direction: column; gap: 12px
 /* scene objects */
 .obj { transition: transform .55s cubic-bezier(.3,.7,.2,1), opacity .45s ease; }
 .obj .fill { transition: fill .45s ease; }
+.obj .shadow { pointer-events: none; }
 .obj.accent .fill { stroke: var(--accent); stroke-width: 3; vector-effect: non-scaling-stroke; }
-.obj .edge { stroke: rgba(0,0,0,.18); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.obj .edge, .obj circle.fill { stroke: var(--ink-line); stroke-width: 1.4; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .obj .ring { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; transition: stroke .45s ease; }
 .obj.accent .ring { stroke-width: 3.5; }
 .obj text { fill: var(--ink); font: 13px var(--font); paint-order: stroke; stroke: var(--stage); stroke-width: 4px; stroke-linejoin: round; }
@@ -120,6 +122,9 @@ aside.panels { border-left: 1px solid var(--line); background: var(--surface); p
 .counters dd.changed { color: var(--accent); }
 .sources { font-size: 12px; color: var(--muted); margin-top: 10px; }
 .sources ul { margin: 2px 0 0; padding-left: 18px; }
+
+.takeaway { margin: 10px 0 0; padding: 8px 12px; border-radius: 8px; background: var(--accent-soft); font-weight: 550; }
+.takeaway b { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
 
 /* annex, further reading */
 a.btn { text-decoration: none; color: inherit; }

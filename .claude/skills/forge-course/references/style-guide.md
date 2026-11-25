@@ -9,11 +9,21 @@ Hard limits are also enforced by `scripts/validate.mjs`; the rest is checked by 
 - Order of notions: never use a notion before it is introduced, in this lesson or in a prerequisite lesson of the plan.
 - Go from concrete (an observation, a mental image) to the named notion, then to the formal notation.
 
+## Message first (applies to every step)
+
+1. **Takeaway first.** Write `takeaway` before anything else: the one sentence a learner must remember, in plain words, ≤ 160 characters. If you cannot write it, the step has no point: merge or cut it.
+2. **Dual coding.** The diagram must show the takeaway on its own, by what it *draws*, not by what it labels: size, length, count, position, direction, change from the previous step. A student who reads no text should still guess the point.
+3. **Concrete, then named, then formal.** Start from what the learner can picture; name the notion once it is felt; write the formula last.
+4. **Teach-back test.** Read the step as a 15-year-old, then say its point in your own words. If that sentence differs from `takeaway`, rewrite the text, not the takeaway.
+5. **No unexplained word.** Any term not in the plan's prior knowledge or earlier steps is either explained in the same sentence or removed.
+6. **One thing moves.** Between two steps, the diagram changes in one way that matches the new idea; everything that does not serve the step fades or disappears.
+
 ## Step
 
 | Field | Rule |
 |---|---|
 | `tag` | `concept` new idea · `observe` look at the diagram · `calculate` worked computation · `try` the learner acts (widget or activity) · `caution` frequent mistake · `imagine` thought experiment |
+| `takeaway` | **Required.** One sentence, ≤ 160 characters, shown as « À retenir ». See "Message first" |
 | `title` | 3–7 words, ≤ 60 characters |
 | `text` | **≤ 90 words**, one new idea. Math inline as `$…$` |
 | `callout` | Optional, at most one: `analogy`, `pitfall`, `order-of-magnitude`, `tip`. Must add something the text does not say |
