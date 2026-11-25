@@ -21,7 +21,7 @@
       "text": "Voici un atome d’hydrogène, représenté par une sphère. Son rayon vaut environ $1{,}2 \\times 10^{-10}\\,\\mathrm{m}$, soit 0,000 000 000 12 m. Écrit en entier, ce nombre se lit mal et on se trompe vite dans les zéros. L’écriture scientifique, un nombre supérieur ou égal à 1 et strictement inférieur à 10, multiplié par une puissance de dix, rend ces tailles lisibles et faciles à comparer.",
       "callout": {
         "kind": "tip",
-        "text": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même série de données, celle de PubChem."
+        "text": "Les tables donnent plusieurs valeurs du rayon d’un atome, selon la façon de le définir. Pour pouvoir comparer les atomes entre eux, cette leçon prend tous leurs rayons dans une même série de données, celle de PubChem, une base de données publique de chimie."
       },
       "sceneDescription": "An isometric board holds one large translucent sphere, the hydrogen atom, at its center. A scale bar runs from the sphere’s center to its surface, labeled « r ≈ 1,2 × 10⁻¹⁰ m ».",
       "scene": [
@@ -95,7 +95,7 @@
       "tag": "concept",
       "title": "L’ordre de grandeur d’un atome",
       "takeaway": "Pour H, C et Na, la puissance de dix la plus proche du rayon est $10^{-10}\\,\\mathrm{m}$ : c’est l’ordre de grandeur de la taille d’un atome.",
-      "text": "D’autres atomes ont des rayons voisins : environ $1{,}7 \\times 10^{-10}\\,\\mathrm{m}$ pour le carbone, $2{,}3 \\times 10^{-10}\\,\\mathrm{m}$ pour le sodium. Les valeurs diffèrent, mais la puissance de dix la plus proche reste $10^{-10}$ : c’est l’ordre de grandeur. On retient que la taille d’un atome est de l’ordre de $10^{-10}\\,\\mathrm{m}$. On l’écrit $r_{\\mathrm{atome}} \\sim 10^{-10}\\,\\mathrm{m}$, où le signe $\\sim$ se lit « de l’ordre de ».",
+      "text": "D’autres atomes ont des rayons voisins : environ $1{,}7 \\times 10^{-10}\\,\\mathrm{m}$ pour le carbone, $2{,}3 \\times 10^{-10}\\,\\mathrm{m}$ pour le sodium. Les valeurs diffèrent, mais la puissance de dix la plus proche reste $10^{-10}$ : c’est l’ordre de grandeur. On retient que la taille d’un atome, mesurée ici par son rayon, est de l’ordre de $10^{-10}\\,\\mathrm{m}$. On l’écrit $r_{\\mathrm{atome}} \\sim 10^{-10}\\,\\mathrm{m}$, où le signe $\\sim$ se lit « de l’ordre de ».",
       "sceneDescription": "Same atom sphere and scale bar; its label becomes « ∼ 10⁻¹⁰ m ». Two faded spheres labeled « C » and « Na » stand beside it, larger (radii in the ratio 1,2 : 1,7 : 2,3 for H, C, Na).",
       "scene": [
         {
