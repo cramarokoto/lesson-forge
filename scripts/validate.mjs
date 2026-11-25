@@ -129,6 +129,10 @@ for (const courseDir of listDirs(join(ROOT, 'courses'))) {
         if (p.course !== slug) fail(planFile, `course "${p.course}" != directory "${slug}"`);
         if (p.chapter !== chapter) fail(planFile, `chapter "${p.chapter}" != directory "${chapter}"`);
         for (const d of dupes(p.lessons.map((l) => l.id))) fail(planFile, `duplicate lesson id ${d}`);
+        // Lesson titles are shown in the course tree before the lesson exists.
+        if (lang.startsWith('fr')) {
+          for (const l of p.lessons) for (const issue of frenchTypography(l.title)) fail(planFile, `lessons/${l.id}/title: ${issue}`);
+        }
       }
     }
 
