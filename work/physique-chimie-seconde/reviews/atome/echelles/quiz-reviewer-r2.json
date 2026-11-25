@@ -1,0 +1,24 @@
+{
+ "reviewer": "quiz-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 2,
+ "findings": [
+  {
+   "id": "qr-1",
+   "severity": "AMBIGUOUS",
+   "category": "consistency",
+   "location": "echelles/quiz/q1/explanation",
+   "quote": "son noyau, un proton, de l’ordre de $10^{-15}\\,\\mathrm{m}$",
+   "problem": "States flatly that the hydrogen nucleus is one proton, while s3 says « presque tous »; the later lesson element-isotopes makes this false for this audience.",
+   "evidence": "s3/text « Dans presque tous les atomes d’hydrogène, le noyau est un seul proton. »; source nist-isotopes-h 0.999 885(70); plan lessons[4] goal « identifier des isotopes ».",
+   "fix": "Un atome d’hydrogène a une taille de l’ordre de $10^{-10}\\,\\mathrm{m}$ et son noyau, presque toujours un seul proton, de l’ordre de $10^{-15}\\,\\mathrm{m}$, cinq puissances de dix plus petit. La première réponse est tentante parce que 15 est plus grand que 10, mais $-15$ compte cinq divisions par 10 de plus que $-10$. La troisième ne met qu’une puissance de dix entre l’atome et son noyau, soit un noyau seulement 10 fois plus petit : l’écart réel est de cinq puissances de dix."
+  }
+ ],
+ "verified": [
+  "q1, q2, q3 solved blind; keys 1, 2, 1 correct; distractors false; explanations recomputed and explain the traps.",
+  "No giveaway; French typography OK; schema OK."
+ ],
+ "unverifiable": [
+  "Some distractors (q1 « noyau : 10⁻¹¹ m », q2 10⁻⁵ and 10²⁵) do not map literally to a listed misconception; still false, no finding raised."
+ ]
+}

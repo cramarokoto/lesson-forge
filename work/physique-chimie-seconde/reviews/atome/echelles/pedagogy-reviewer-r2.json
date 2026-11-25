@@ -1,0 +1,25 @@
+{
+ "reviewer": "pedagogy-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 2,
+ "findings": [
+  {
+   "id": "pr-1",
+   "severity": "AMBIGUOUS",
+   "category": "pedagogy",
+   "location": "echelles/s5/text",
+   "quote": "En remontant du noyau vers l’atome, les cinq crans deviennent cinq multiplications par 10.",
+   "problem": "« crans » is used in text before any step text introduces it (s4 says « Cinq divisions de plus »; notches only in the diagram).",
+   "evidence": "Style guide: « never use a notion before it is introduced »; « crans » first appears in s5/text.",
+   "fix": "En remontant du noyau vers l’atome, les cinq crans « ÷ 10 » de l’étape précédente deviennent cinq multiplications par 10."
+  }
+ ],
+ "verified": [
+  "All calculations s1–s7, callout, q2, q3 recomputed.",
+  "All four plan misconceptions addressed.",
+  "Progression concrete → formal; lesson reaches the plan goal.",
+  "Each sceneDescription matches its step, single accent; « Pas à l’échelle » s3–s7.",
+  "Tone matches the input."
+ ],
+ "unverifiable": []
+}

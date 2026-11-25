@@ -1,0 +1,100 @@
+{
+ "reviewer": "fact-checker",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 2,
+ "findings": [
+  {
+   "id": "fc-1",
+   "severity": "AMBIGUOUS",
+   "category": "consistency",
+   "location": "echelles/s5/text",
+   "quote": "Le quotient vaut $10^{5}$ : l’atome d’hydrogène est environ 100 000 fois plus grand que son noyau.",
+   "problem": "Mixes ≈/« environ » with order-of-magnitude values; callout gives ≈ 1,4 × 10⁵ in the same step.",
+   "evidence": "1,2e-10/8,4e-16 = 1,43e5 (recomputed); s2 defines ∼ as « de l’ordre de ».",
+   "fix": "First sentence with \\sim instead of \\approx; « …est de l’ordre de 100 000 fois plus grand que son noyau. »"
+  },
+  {
+   "id": "fc-2",
+   "severity": "AMBIGUOUS",
+   "category": "consistency",
+   "location": "echelles/notation[4]",
+   "quote": "\\dfrac{r_{\\mathrm{atome}}}{r_{\\mathrm{noyau}}} \\approx \\dfrac{10^{-10}}{10^{-15}} = …",
+   "problem": "Same ≈/∼ mix; drops (H), reads as a general ratio.",
+   "evidence": "Only nucleus source is the proton radius; plan unverified[1].",
+   "fix": "\\dfrac{r_{\\mathrm{atome}}(\\mathrm{H})}{r_{\\mathrm{noyau}}(\\mathrm{H})} \\sim \\dfrac{10^{-10}}{10^{-15}} = 10^{-10-(-15)} = 10^{5}"
+  },
+  {
+   "id": "fc-3",
+   "severity": "ERROR",
+   "category": "requirement",
+   "location": "echelles/s5/sceneDescription",
+   "quote": "… The five notch labels change from ÷ 10 to × 10, read upward …",
+   "problem": "Three sentences (style guide: 1–2); third repeats the first.",
+   "evidence": "style-guide.md Step table.",
+   "fix": "Same scene, but the five notches now read « × 10 », and a vertical arrow labeled « × 10⁵ » rises beside them from « 10⁻¹⁵ m » up to « 10⁻¹⁰ m ». The arrow is the accent."
+  },
+  {
+   "id": "fc-4",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/quiz/q1/explanation",
+   "quote": "et son noyau, un proton, de l’ordre de $10^{-15}\\,\\mathrm{m}$",
+   "problem": "Unqualified « un proton » (deuterium exists; s3 says « presque tous »). Same as qr-1 r2.",
+   "evidence": "NIST H isotopic composition: D 0.000 115(70).",
+   "fix": "… et son noyau, presque toujours un seul proton, de l’ordre de $10^{-15}\\,\\mathrm{m}$ …"
+  },
+  {
+   "id": "fc-5",
+   "severity": "ERROR",
+   "category": "requirement",
+   "location": "echelles/quiz/q3/question",
+   "quote": "Pour comparer le rayon d’un atome ($\\sim 10^{-10}\\,\\mathrm{m}$) à celui de son noyau ($\\sim 10^{-15}\\,\\mathrm{m}$)",
+   "problem": "Generalises the nucleus size to any atom; only the proton is sourced.",
+   "evidence": "Only source codata-rp; plan unverified[1]; IAEA radii 402.",
+   "fix": "« … le rayon d’un atome d’hydrogène … » and in the explanation « l’atome d’hydrogène aurait 1 km de rayon »."
+  },
+  {
+   "id": "fc-6",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "echelles/s1/callout",
+   "quote": "cette leçon prend tous leurs rayons dans une même table, celle de PubChem.",
+   "problem": "PubChem lists three radii per element (H: 120, 25, 31 pm); « la table de PubChem » is ambiguous; periodic-table source missing from s1 sourceIds.",
+   "evidence": "PubChem H radius record and periodic-table CSV (fetched 2026-11-25).",
+   "fix": "Name the PubChem periodic table and its single radius column; add pubchem-periodic-table to s1 sourceIds."
+  },
+  {
+   "id": "fc-7",
+   "severity": "AMBIGUOUS",
+   "category": "consistency",
+   "location": "echelles/s2/sceneDescription",
+   "quote": "stand beside it, slightly larger (radii in the ratio 1,2 : 1,7 : 2,3 for H, C, Na)",
+   "problem": "Na is almost twice H: not « slightly ».",
+   "evidence": "2,3/1,2 = 1,92 (recomputed).",
+   "fix": "stand beside it, larger (radii in the ratio 1,2 : 1,7 : 2,3 for H, C, Na)"
+  },
+  {
+   "id": "fc-8",
+   "severity": "ERROR",
+   "category": "requirement",
+   "location": "echelles/s6/counters[difference]/label",
+   "quote": "Différence 10⁻¹⁰ m − 10⁻¹⁵ m",
+   "problem": "Ordinary spaces between numbers and « m » in visible HTML.",
+   "evidence": "style-guide French: non-breaking space between number and unit.",
+   "fix": "Use U+00A0 before both « m »."
+  }
+ ],
+ "verified": [
+  "All radii, proton radius, isotopic composition, SI prefixes re-fetched 2026-11-25 and match.",
+  "All calculations recomputed (s1–s7, callout, quiz).",
+  "Scene geometry consistent; one accent per step.",
+  "Quiz keys correct.",
+  "All 8 lesson source URLs load and support their claims."
+ ],
+ "unverifiable": [
+  "PubChem CSV radius unit inferred (pm).",
+  "Nucleus order of magnitude beyond hydrogen: no source (IAEA 402).",
+  "Peach-stone image: qualitative.",
+  "Lesson duration: not checkable."
+ ]
+}

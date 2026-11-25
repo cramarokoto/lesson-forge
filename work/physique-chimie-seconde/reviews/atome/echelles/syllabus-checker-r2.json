@@ -1,0 +1,19 @@
+{
+ "reviewer": "syllabus-checker",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 2,
+ "findings": [],
+ "verified": [
+  "Referential fetched 2026-11-25, 13 pages read; all lesson content in scope (p. 6 capacités exigibles and capacités mathématiques, p. 4 intro, p. 2 Analyser/Raisonner for the analogy).",
+  "Proton and nucleus are collège notions (p. 4 box).",
+  "Order within the lesson correct.",
+  "Nothing excluded is used; no radius definitions, masses, isotopes or pm/fm units on screen.",
+  "The referential gives no numerical size."
+ ],
+ "unverifiable": [
+  "Numerical values not checked (fact-checker's job).",
+  "s2 « la taille d’un atome est de l’ordre de 10⁻¹⁰ m » for all atoms and q3 « celui de son noyau (∼ 10⁻¹⁵ m) » for any atom: no referential value.",
+  "Notation ∼: no official symbol.",
+  "Programme in force for 2026-2027: not checked."
+ ]
+}
