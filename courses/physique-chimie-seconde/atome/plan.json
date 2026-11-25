@@ -2,7 +2,18 @@
   "course": "physique-chimie-seconde",
   "chapter": "atome",
   "title": "L’atome",
-  "priorKnowledge": ["puissances-de-dix", "atome", "noyau", "electron", "proton", "neutron", "molecule", "ion", "formule-chimique", "symbole-chimique"],
+  "priorKnowledge": [
+    "puissances-de-dix",
+    "atome",
+    "noyau",
+    "electron",
+    "proton",
+    "neutron",
+    "molecule",
+    "ion",
+    "formule-chimique",
+    "symbole-chimique"
+  ],
   "referential": {
     "citation": "BO spécial n° 1 du 22 janvier 2019, annexe « Programme de physique-chimie de seconde générale et technologique »",
     "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
@@ -11,8 +22,18 @@
   "lessons": [
     {
       "id": "echelles",
-      "introduces": ["ecriture-scientifique", "ordre-de-grandeur", "taille-atome", "taille-noyau"],
-      "uses": ["puissances-de-dix", "atome", "noyau", "electron"],
+      "introduces": [
+        "ecriture-scientifique",
+        "ordre-de-grandeur",
+        "taille-atome",
+        "taille-noyau"
+      ],
+      "uses": [
+        "puissances-de-dix",
+        "atome",
+        "noyau",
+        "electron"
+      ],
       "title": "Échelles : l’atome et son noyau",
       "goal": "Citer l’ordre de grandeur de la taille d’un atome et calculer, par un quotient de puissances de dix, combien de fois un atome est plus grand que son noyau.",
       "prerequisites": [
@@ -28,16 +49,41 @@
       "diagramIdea": "One translucent atom sphere on an isometric board, with a scale bar for its diameter (order of magnitude 10⁻¹⁰ m). Steps zoom toward the center until the nucleus appears as a tiny opaque sphere with its own scale bar; a counter shows the quotient atom/nucleus as a power of ten; the last step keeps the same quotient but relabels the scale bars with an everyday analogy computed from it (pure arithmetic, no extra data).",
       "interactionIdea": "A zoom slider that moves one power of ten per notch between the atom and the nucleus, with the scale-bar exponent updating: counting the notches makes the quotient tangible.",
       "anchors": [
-        { "quote": "Citer l’ordre de grandeur de la valeur de la taille d’un atome.", "location": "Annexe, Constitution et transformations de la matière, 1.B, ligne « Le noyau de l’atome, siège de sa masse et de son identité », colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "Comparer la taille et la masse d’un atome et de son noyau.", "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "Capacités mathématiques : effectuer le quotient de deux grandeurs pour les comparer. Utiliser les opérations sur les puissances de 10. Exprimer les valeurs des grandeurs en écriture scientifique.", "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "la description des entités chimiques est complétée par les ordres de grandeur de taille et de masse de l’atome et du noyau", "location": "Annexe, Constitution et transformations de la matière, introduction de la partie 1 (p. 4 du PDF)" }
+        {
+          "quote": "Citer l’ordre de grandeur de la valeur de la taille d’un atome.",
+          "location": "Annexe, Constitution et transformations de la matière, 1.B, ligne « Le noyau de l’atome, siège de sa masse et de son identité », colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "Comparer la taille et la masse d’un atome et de son noyau.",
+          "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "Capacités mathématiques : effectuer le quotient de deux grandeurs pour les comparer. Utiliser les opérations sur les puissances de 10. Exprimer les valeurs des grandeurs en écriture scientifique.",
+          "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "la description des entités chimiques est complétée par les ordres de grandeur de taille et de masse de l’atome et du noyau",
+          "location": "Annexe, Constitution et transformations de la matière, introduction de la partie 1 (p. 4 du PDF)"
+        }
       ]
     },
     {
       "id": "noyau",
-      "introduces": ["nucleon", "numero-atomique", "nombre-de-masse", "nombre-de-neutrons", "ecriture-conventionnelle"],
-      "uses": ["noyau", "proton", "neutron", "electron", "symbole-chimique", "taille-noyau"],
+      "introduces": [
+        "nucleon",
+        "numero-atomique",
+        "nombre-de-masse",
+        "nombre-de-neutrons",
+        "ecriture-conventionnelle"
+      ],
+      "uses": [
+        "noyau",
+        "proton",
+        "neutron",
+        "electron",
+        "symbole-chimique",
+        "taille-noyau"
+      ],
       "title": "Le noyau : nucléons et écriture conventionnelle",
       "goal": "Établir l’écriture conventionnelle $^{A}_{Z}\\mathrm{X}$ ou $^{A}\\mathrm{X}$ d’un noyau à partir de ses nombres de protons et de neutrons, et retrouver cette composition à partir de l’écriture, Z étant fourni dans le cas de $^{A}\\mathrm{X}$.",
       "prerequisites": [
@@ -54,15 +100,39 @@
       "diagramIdea": "The nucleus from lesson echelles, enlarged: a cluster of proton spheres (one color) and neutron spheres (another color). Steps add protons, then neutrons, while counters Z, N and A update; the notation panel assembles A (top) and Z (bottom) around the symbol. The final steps run the other way: from a given notation, the cluster is rebuilt.",
       "interactionIdea": "Nucleus builder: the symbol X and a target notation are given; the learner adds or removes protons and neutrons until Z, N and A match. Manipulating the two counts separately is what fixes the A = Z + N relation.",
       "anchors": [
-        { "quote": "Numéro atomique, nombre de masse, écriture conventionnelle : $^{A}_{Z}X$ ou $^{A}X$.", "location": "Annexe, 1.B, ligne « Le noyau de l’atome, siège de sa masse et de son identité », colonne Notions et contenus (p. 6 du PDF)" },
-        { "quote": "Établir l’écriture conventionnelle d’un noyau à partir de sa composition et inversement.", "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "constituants de l’atome (noyau et électrons) et du noyau (neutrons et protons)", "location": "Annexe, partie 1, encadré « Notions étudiées au collège (cycle 4) » (p. 4 du PDF)" }
+        {
+          "quote": "Numéro atomique, nombre de masse, écriture conventionnelle : $^{A}_{Z}X$ ou $^{A}X$.",
+          "location": "Annexe, 1.B, ligne « Le noyau de l’atome, siège de sa masse et de son identité », colonne Notions et contenus (p. 6 du PDF)"
+        },
+        {
+          "quote": "Établir l’écriture conventionnelle d’un noyau à partir de sa composition et inversement.",
+          "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "constituants de l’atome (noyau et électrons) et du noyau (neutrons et protons)",
+          "location": "Annexe, partie 1, encadré « Notions étudiées au collège (cycle 4) » (p. 4 du PDF)"
+        }
       ]
     },
     {
       "id": "charges-ions",
-      "introduces": ["charge-elementaire", "charge-particules", "neutralite-atome", "cation", "anion"],
-      "uses": ["numero-atomique", "proton", "neutron", "electron", "atome", "ion", "molecule", "formule-chimique"],
+      "introduces": [
+        "charge-elementaire",
+        "charge-particules",
+        "neutralite-atome",
+        "cation",
+        "anion"
+      ],
+      "uses": [
+        "numero-atomique",
+        "proton",
+        "neutron",
+        "electron",
+        "atome",
+        "ion",
+        "molecule",
+        "formule-chimique"
+      ],
       "title": "Charges : atome neutre, cation et anion",
       "goal": "Déterminer le nombre d’électrons d’un atome ou d’un ion monoatomique à partir de Z et de sa charge, et qualifier l’entité d’atome, de cation ou d’anion.",
       "prerequisites": [
@@ -78,14 +148,34 @@
       "diagramIdea": "The nucleus cluster from lesson noyau, now surrounded by small electron spheres; each proton carries a +e tag, each electron a −e tag, neutrons none; a total-charge counter reads 0 when electrons equal Z. One electron leaves (counter +1, label cation, formula with a + exponent), returns, then an extra one arrives (counter −1, anion). The last step sorts given formulas into four bins: molécule, atome, cation, anion.",
       "interactionIdea": "Add or remove one electron on the same builder and watch the charge counter and the formula exponent change; the nucleus stays locked, which makes the point that ions differ only by electrons.",
       "anchors": [
-        { "quote": "Masse et charge électrique d’un électron, d’un proton et d’un neutron, charge électrique élémentaire, neutralité de l’atome.", "location": "Annexe, 1.B, ligne « Le noyau de l’atome, siège de sa masse et de son identité », colonne Notions et contenus (p. 6 du PDF)" },
-        { "quote": "Utiliser le terme adapté parmi molécule, atome, anion et cation pour qualifier une entité chimique à partir d’une formule chimique donnée.", "location": "Annexe, 1.B, ligne « Entités chimiques : molécules, atomes, ions. », colonne Capacités exigibles (p. 6 du PDF)" }
+        {
+          "quote": "Masse et charge électrique d’un électron, d’un proton et d’un neutron, charge électrique élémentaire, neutralité de l’atome.",
+          "location": "Annexe, 1.B, ligne « Le noyau de l’atome, siège de sa masse et de son identité », colonne Notions et contenus (p. 6 du PDF)"
+        },
+        {
+          "quote": "Utiliser le terme adapté parmi molécule, atome, anion et cation pour qualifier une entité chimique à partir d’une formule chimique donnée.",
+          "location": "Annexe, 1.B, ligne « Entités chimiques : molécules, atomes, ions. », colonne Capacités exigibles (p. 6 du PDF)"
+        }
       ]
     },
     {
       "id": "masse",
-      "introduces": ["masse-particules", "masse-atome"],
-      "uses": ["nucleon", "numero-atomique", "nombre-de-masse", "neutralite-atome", "ecriture-scientifique", "puissances-de-dix", "proton", "neutron", "electron", "noyau"],
+      "introduces": [
+        "masse-particules",
+        "masse-atome"
+      ],
+      "uses": [
+        "nucleon",
+        "numero-atomique",
+        "nombre-de-masse",
+        "neutralite-atome",
+        "ecriture-scientifique",
+        "puissances-de-dix",
+        "proton",
+        "neutron",
+        "electron",
+        "noyau"
+      ],
       "title": "Masse : le noyau pèse presque tout",
       "goal": "Calculer le quotient de la masse d’un nucléon par celle d’un électron et en déduire que la masse d’un atome est pratiquement celle de son noyau.",
       "prerequisites": [
@@ -101,15 +191,35 @@
       ],
       "diagramIdea": "Three tiles side by side (proton, neutron, electron) with their masses in scientific notation (CODATA 2022). A balance then compares one nucleon with electrons; rather than drawing about 1 800 electrons, a counter shows the quotient. The last steps put a whole atom (nucleus plus Z electrons) against its nucleus alone: the two mass counters agree to within a tiny fraction.",
       "anchors": [
-        { "quote": "Le noyau de l’atome, siège de sa masse et de son identité.", "location": "Annexe, 1.B, intitulé de ligne, colonne Notions et contenus (p. 6 du PDF)" },
-        { "quote": "Masse et charge électrique d’un électron, d’un proton et d’un neutron, charge électrique élémentaire, neutralité de l’atome.", "location": "Même ligne, colonne Notions et contenus (p. 6 du PDF)" },
-        { "quote": "Comparer la taille et la masse d’un atome et de son noyau.", "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)" }
+        {
+          "quote": "Le noyau de l’atome, siège de sa masse et de son identité.",
+          "location": "Annexe, 1.B, intitulé de ligne, colonne Notions et contenus (p. 6 du PDF)"
+        },
+        {
+          "quote": "Masse et charge électrique d’un électron, d’un proton et d’un neutron, charge électrique élémentaire, neutralité de l’atome.",
+          "location": "Même ligne, colonne Notions et contenus (p. 6 du PDF)"
+        },
+        {
+          "quote": "Comparer la taille et la masse d’un atome et de son noyau.",
+          "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)"
+        }
       ]
     },
     {
       "id": "element-isotopes",
-      "introduces": ["element-chimique", "isotopes"],
-      "uses": ["ecriture-conventionnelle", "numero-atomique", "nombre-de-masse", "nombre-de-neutrons", "atome", "cation", "anion"],
+      "introduces": [
+        "element-chimique",
+        "isotopes"
+      ],
+      "uses": [
+        "ecriture-conventionnelle",
+        "numero-atomique",
+        "nombre-de-masse",
+        "nombre-de-neutrons",
+        "atome",
+        "cation",
+        "anion"
+      ],
       "title": "Élément chimique et isotopes",
       "goal": "Reconnaître, à partir de leurs écritures, que des atomes et des ions de même numéro atomique Z appartiennent au même élément chimique, et identifier des isotopes.",
       "prerequisites": [
@@ -124,15 +234,34 @@
       ],
       "diagramIdea": "A row of nucleus clusters reused from lesson noyau: two or three with the same Z and different N, plus one ion of the same Z; a frame groups them under one element symbol. A nucleus with the same A but a different Z sits outside the frame. Counters Z, N, A are shown under each cluster.",
       "anchors": [
-        { "quote": "Élément chimique.", "location": "Annexe, 1.B, ligne « Le noyau de l’atome, siège de sa masse et de son identité », colonne Notions et contenus (p. 6 du PDF)" },
-        { "quote": "Le noyau de l’atome, siège de sa masse et de son identité.", "location": "Même ligne, intitulé (p. 6 du PDF)" },
-        { "quote": "Identifier des isotopes.", "location": "Annexe, Constitution et transformations de la matière, 2.C « Transformation nucléaire », ligne « Isotopes. », colonne Capacités exigibles (p. 8 du PDF)" }
+        {
+          "quote": "Élément chimique.",
+          "location": "Annexe, 1.B, ligne « Le noyau de l’atome, siège de sa masse et de son identité », colonne Notions et contenus (p. 6 du PDF)"
+        },
+        {
+          "quote": "Le noyau de l’atome, siège de sa masse et de son identité.",
+          "location": "Même ligne, intitulé (p. 6 du PDF)"
+        },
+        {
+          "quote": "Identifier des isotopes.",
+          "location": "Annexe, Constitution et transformations de la matière, 2.C « Transformation nucléaire », ligne « Isotopes. », colonne Capacités exigibles (p. 8 du PDF)"
+        }
       ]
     },
     {
       "id": "configuration",
-      "introduces": ["etat-fondamental", "couche-electronique", "sous-couche", "configuration-electronique"],
-      "uses": ["neutralite-atome", "numero-atomique", "nombre-de-masse", "electron"],
+      "introduces": [
+        "etat-fondamental",
+        "couche-electronique",
+        "sous-couche",
+        "configuration-electronique"
+      ],
+      "uses": [
+        "neutralite-atome",
+        "numero-atomique",
+        "nombre-de-masse",
+        "electron"
+      ],
       "title": "Configuration électronique de 1s à 3p",
       "goal": "Écrire la configuration électronique à l’état fondamental d’un atome de numéro atomique Z ⩽ 18.",
       "prerequisites": [
@@ -147,14 +276,31 @@
       "diagramIdea": "An isometric shelf of five boxes in filling order, 1s, 2s, 2p, 3s, 3p, each showing its capacity (2, 2, 6, 2, 6). Electrons drop in group by group; a counter shows electrons placed out of Z; the configuration string grows in the notation panel. Worked examples go from a small Z to Z = 18.",
       "interactionIdea": "Configuration filler: the learner drops Z electrons into the shelf; a box refuses an electron once full and the next box only opens when the previous one is full. Placing them by hand is what makes the filling order and capacities stick.",
       "anchors": [
-        { "quote": "Configuration électronique (1s, 2s, 2p, 3s, 3p) d’un atome à l’état fondamental et position dans le tableau périodique (blocs s et p).", "location": "Annexe, 1.B, ligne « Le cortège électronique de l’atome définit ses propriétés chimiques », colonne Notions et contenus (p. 6 du PDF)" },
-        { "quote": "le modèle du cortège électronique pour les trois premières lignes de la classification périodique", "location": "Annexe, introduction de la partie 1 (p. 4 du PDF)" }
+        {
+          "quote": "Configuration électronique (1s, 2s, 2p, 3s, 3p) d’un atome à l’état fondamental et position dans le tableau périodique (blocs s et p).",
+          "location": "Annexe, 1.B, ligne « Le cortège électronique de l’atome définit ses propriétés chimiques », colonne Notions et contenus (p. 6 du PDF)"
+        },
+        {
+          "quote": "le modèle du cortège électronique pour les trois premières lignes de la classification périodique",
+          "location": "Annexe, introduction de la partie 1 (p. 4 du PDF)"
+        }
       ]
     },
     {
       "id": "tableau-valence",
-      "introduces": ["tableau-periodique", "blocs-s-p", "electrons-de-valence"],
-      "uses": ["configuration-electronique", "couche-electronique", "sous-couche", "etat-fondamental", "element-chimique", "numero-atomique", "gaz-nobles"],
+      "introduces": [
+        "tableau-periodique",
+        "blocs-s-p",
+        "electrons-de-valence"
+      ],
+      "uses": [
+        "configuration-electronique",
+        "couche-electronique",
+        "sous-couche",
+        "etat-fondamental",
+        "element-chimique",
+        "numero-atomique"
+      ],
       "title": "Tableau périodique et électrons de valence",
       "goal": "Situer un élément (Z ⩽ 18) dans les trois premières lignes du tableau périodique à partir de sa configuration électronique, en déduire ses électrons de valence, et inversement.",
       "prerequisites": [
@@ -167,17 +313,36 @@
         "Les électrons de valence d’un atome de la troisième ligne sont ceux de la couche 2.",
         "L’hélium (1s²) se place dans la même colonne que le béryllium."
       ],
-      "diagramIdea": "The subshell shelf from lesson configuration stands next to a three-row grid split into an s block and a p block. For each example, the outermost shell lights up as the valence electrons and the element's tile lights up in the grid (row from the outermost shell number, column from the valence filling). The last steps run the other way: a lit tile gives back the valence configuration. Helium is shown as the special case placed with the noble gases.",
+      "diagramIdea": "The subshell shelf from lesson configuration stands next to a three-row grid split into an s block and a p block. For each example, the outermost shell lights up as the valence electrons and the element's tile lights up in the grid (row from the outermost shell number, column from the valence filling). The last steps run the other way: a lit tile gives back the valence configuration. Helium is shown as the special case: its tile sits at the top of the last column, above neon, and not next to beryllium; the step states this placement as given and announces that lesson familles-gaz-nobles explains it.",
       "anchors": [
-        { "quote": "Déterminer la position de l’élément dans le tableau périodique à partir de la donnée de la configuration électronique de l’atome à l’état fondamental.", "location": "Annexe, 1.B, ligne « Le cortège électronique de l’atome définit ses propriétés chimiques », colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "Déterminer les électrons de valence d’un atome (Z ⩽ 18) à partir de sa configuration électronique à l’état fondamental ou de sa position dans le tableau périodique.", "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "Électrons de valence.", "location": "Même ligne, colonne Notions et contenus (p. 6 du PDF)" }
+        {
+          "quote": "Déterminer la position de l’élément dans le tableau périodique à partir de la donnée de la configuration électronique de l’atome à l’état fondamental.",
+          "location": "Annexe, 1.B, ligne « Le cortège électronique de l’atome définit ses propriétés chimiques », colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "Déterminer les électrons de valence d’un atome (Z ⩽ 18) à partir de sa configuration électronique à l’état fondamental ou de sa position dans le tableau périodique.",
+          "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "Électrons de valence.",
+          "location": "Même ligne, colonne Notions et contenus (p. 6 du PDF)"
+        }
       ]
     },
     {
       "id": "familles-gaz-nobles",
-      "introduces": ["famille-chimique", "gaz-nobles", "metaux-alcalins", "stabilite-chimique"],
-      "uses": ["tableau-periodique", "electrons-de-valence", "configuration-electronique", "element-chimique"],
+      "introduces": [
+        "famille-chimique",
+        "gaz-nobles",
+        "metaux-alcalins",
+        "stabilite-chimique"
+      ],
+      "uses": [
+        "tableau-periodique",
+        "electrons-de-valence",
+        "configuration-electronique",
+        "element-chimique"
+      ],
       "title": "Familles chimiques et stabilité des gaz nobles",
       "goal": "Associer la notion de famille chimique à l’existence de propriétés communes, identifier la famille des gaz nobles dans le tableau et relier leur stabilité chimique à leur configuration électronique de valence.",
       "prerequisites": [
@@ -191,15 +356,38 @@
       ],
       "diagramIdea": "The three-row grid from lesson tableau-valence. Columns light up one at a time: the noble-gas column shows its members' full valence shelves (1s² for helium, 2s² 2p⁶ for neon, 3s² 3p⁶ for argon); a second family (e.g. alkali metals) shows one valence electron each. A contrast step lights a row instead of a column to show that a row is not a family.",
       "anchors": [
-        { "quote": "Associer la notion de famille chimique à l’existence de propriétés communes et identifier la famille des gaz nobles.", "location": "Annexe, 1.B, ligne « Le cortège électronique de l’atome définit ses propriétés chimiques », colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "Stabilité chimique des gaz nobles et configurations électroniques associées.", "location": "Annexe, 1.B, ligne « Vers des entités plus stables chimiquement », colonne Notions et contenus (p. 6 du PDF)" },
-        { "quote": "Établir le lien entre stabilité chimique et configuration électronique de valence d’un gaz noble.", "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)" }
+        {
+          "quote": "Associer la notion de famille chimique à l’existence de propriétés communes et identifier la famille des gaz nobles.",
+          "location": "Annexe, 1.B, ligne « Le cortège électronique de l’atome définit ses propriétés chimiques », colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "Stabilité chimique des gaz nobles et configurations électroniques associées.",
+          "location": "Annexe, 1.B, ligne « Vers des entités plus stables chimiquement », colonne Notions et contenus (p. 6 du PDF)"
+        },
+        {
+          "quote": "Établir le lien entre stabilité chimique et configuration électronique de valence d’un gaz noble.",
+          "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)"
+        }
       ]
     },
     {
       "id": "ions-monoatomiques",
-      "introduces": ["ions-monoatomiques-courants"],
-      "uses": ["cation", "anion", "ion", "gaz-nobles", "stabilite-chimique", "electrons-de-valence", "configuration-electronique", "tableau-periodique", "famille-chimique", "metaux-alcalins", "formule-chimique"],
+      "introduces": [
+        "ions-monoatomiques-courants"
+      ],
+      "uses": [
+        "cation",
+        "anion",
+        "ion",
+        "gaz-nobles",
+        "stabilite-chimique",
+        "electrons-de-valence",
+        "configuration-electronique",
+        "tableau-periodique",
+        "famille-chimique",
+        "metaux-alcalins",
+        "formule-chimique"
+      ],
       "title": "Ions monoatomiques courants",
       "goal": "Prévoir, à partir de la position dans le tableau périodique, la charge des ions H⁺, Na⁺, K⁺, Ca²⁺, Mg²⁺, Cl⁻ et F⁻, nommer ces ions à partir de leur formule et écrire leur formule à partir de leur nom.",
       "prerequisites": [
@@ -215,9 +403,18 @@
       "diagramIdea": "The grid from lesson familles-gaz-nobles. For sodium, its single valence electron leaves along an arrow and its shelf ends like neon's; the tile shows Na⁺ and a charge counter reads +1. For chlorine, one electron arrives and its shelf ends like argon's: Cl⁻. Then Mg²⁺ and F⁻. Before K⁺ and Ca²⁺, the grid gains a partial fourth row showing only K and Ca, given as data and placed under Na and Mg (same family), with no configuration written; their ion charge is then read from that family. H⁺ comes last, with an explicit note that it has no electron left, so the noble-gas argument does not apply to it.",
       "interactionIdea": "Move electrons between an atom and the outside until its valence shelf matches the nearest noble gas; the charge counter and the formula update. Doing the moves makes the sign of the charge follow from the electron count rather than be memorised.",
       "anchors": [
-        { "quote": "Déterminer la charge électrique d’ions monoatomiques courants à partir du tableau périodique.", "location": "Annexe, 1.B, ligne « Vers des entités plus stables chimiquement », colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "Nommer les ions : H⁺, Na⁺, K⁺, Ca²⁺, Mg²⁺, Cl⁻, F⁻ ; écrire leur formule à partir de leur nom.", "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)" },
-        { "quote": "La stabilité des gaz nobles, associée à leur configuration électronique, permet de rendre compte de l’existence d’ions monoatomiques et de molécules.", "location": "Annexe, introduction de la partie 1 (p. 4 du PDF)" }
+        {
+          "quote": "Déterminer la charge électrique d’ions monoatomiques courants à partir du tableau périodique.",
+          "location": "Annexe, 1.B, ligne « Vers des entités plus stables chimiquement », colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "Nommer les ions : H⁺, Na⁺, K⁺, Ca²⁺, Mg²⁺, Cl⁻, F⁻ ; écrire leur formule à partir de leur nom.",
+          "location": "Même ligne, colonne Capacités exigibles (p. 6 du PDF)"
+        },
+        {
+          "quote": "La stabilité des gaz nobles, associée à leur configuration électronique, permet de rendre compte de l’existence d’ions monoatomiques et de molécules.",
+          "location": "Annexe, introduction de la partie 1 (p. 4 du PDF)"
+        }
       ]
     }
   ],
@@ -232,17 +429,83 @@
     "Mémorisation de valeurs précises de masses ou de rayons : le programme demande de citer l’ordre de grandeur de la taille d’un atome et de comparer tailles et masses ; les valeurs précises sont fournies comme données."
   ],
   "sources": [
-    { "id": "referentiel-seconde-pc", "title": "Annexe — Programme de physique-chimie de seconde générale et technologique (BO spécial n° 1 du 22 janvier 2019)", "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf", "accessed": "2026-11-25", "supports": "Every anchor quote of this plan (sections 1.B and 2.C, PDF pages 4, 6 and 8)." },
-    { "id": "lettre-ipr-bordeaux-2026", "title": "Académie de Bordeaux, IA-IPR de physique-chimie — Lettre de rentrée lycées 2026-2027 (1er septembre 2026)", "url": "https://ent2d.ac-bordeaux.fr/disciplines/physique-chimie/wp-content/uploads/sites/82/2026/09/Lettre-2-26-27.pdf", "accessed": "2026-11-25", "supports": "In-force evidence (indirect): the only lycée programme updates it lists are enseignement scientifique (1re 2023, terminale 2024); no new seconde physique-chimie programme for 2026-2027." },
-    { "id": "lettre-ipr-nancy-metz-2026", "title": "Académie de Nancy-Metz, IA-IPR — Lettre de rentrée 2026-2027 physique-chimie (septembre 2026)", "url": "https://sites.ac-nancy-metz.fr/physique/wp_local/IPR/LR_PC_def_2026.pdf", "accessed": "2026-11-25", "supports": "In-force evidence (indirect): cites the circulaire de rentrée 2026 as a year of consolidation, not of new structural reforms; announces no new lycée physique-chimie programme." },
-    { "id": "codata-mp", "title": "NIST CODATA 2022 — proton mass", "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mp", "accessed": "2026-11-25", "supports": "m_p = 1.672 621 925 95(52) × 10⁻²⁷ kg" },
-    { "id": "codata-mn", "title": "NIST CODATA 2022 — neutron mass", "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mn", "accessed": "2026-11-25", "supports": "m_n = 1.674 927 500 56(85) × 10⁻²⁷ kg" },
-    { "id": "codata-me", "title": "NIST CODATA 2022 — electron mass", "url": "https://physics.nist.gov/cgi-bin/cuu/Value?me", "accessed": "2026-11-25", "supports": "m_e = 9.109 383 7139(28) × 10⁻³¹ kg; with m_p gives m_p/m_e ≈ 1.84 × 10³" },
-    { "id": "codata-e", "title": "NIST CODATA 2022 — elementary charge", "url": "https://physics.nist.gov/cgi-bin/cuu/Value?e", "accessed": "2026-11-25", "supports": "e = 1.602 176 634 × 10⁻¹⁹ C (exact)" },
-    { "id": "codata-a0", "title": "NIST CODATA 2022 — Bohr radius", "url": "https://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0", "accessed": "2026-11-25", "supports": "a₀ = 5.291 772 105 44(82) × 10⁻¹¹ m: hydrogen atom size of order 10⁻¹⁰ m" },
-    { "id": "codata-rp", "title": "NIST CODATA 2022 — proton rms charge radius", "url": "https://physics.nist.gov/cgi-bin/cuu/Value?rp", "accessed": "2026-11-25", "supports": "r_p = 8.4075(64) × 10⁻¹⁶ m: hydrogen nucleus size of order 10⁻¹⁵ m" },
-    { "id": "nist-asd-configurations", "title": "NIST Atomic Spectra Database — Atomic Ionization Energies Output, H to Ca", "url": "https://physics.nist.gov/cgi-bin/ASD/ie.pl?spectra=H-Ca&units=1&format=0&order=0&at_num_out=on&sp_name_out=on&ion_charge_out=on&el_name_out=on&seq_out=on&shells_out=on&level_out=on&e_out=0&unc_out=on&biblio=on", "accessed": "2026-11-25", "supports": "Ground-state configurations of neutral atoms Z = 1 to 20 (1s¹ … [Ne]3s²3p⁶, K [Ar]4s¹, Ca [Ar]4s²): filling order 1s 2s 2p 3s 3p and capacities 2 and 6 for Z ⩽ 18." },
-    { "id": "pubchem-periodic-table", "title": "PubChem (NIH) — Periodic table data, CSV", "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV", "accessed": "2026-11-25", "supports": "Families (GroupBlock) for Z = 1 to 20: He, Ne, Ar noble gas; Li, Na, K alkali metal; Be, Mg, Ca alkaline earth metal; F, Cl halogen; H nonmetal (not an alkali metal). Shared family property (OxidationStates column): He, Ne, Ar 0; Li, Na, K +1; Be, Mg, Ca +2." }
+    {
+      "id": "referentiel-seconde-pc",
+      "title": "Annexe — Programme de physique-chimie de seconde générale et technologique (BO spécial n° 1 du 22 janvier 2019)",
+      "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
+      "accessed": "2026-11-25",
+      "supports": "Every anchor quote of this plan (sections 1.B and 2.C, PDF pages 4, 6 and 8)."
+    },
+    {
+      "id": "lettre-ipr-bordeaux-2026",
+      "title": "Académie de Bordeaux, IA-IPR de physique-chimie — Lettre de rentrée lycées 2026-2027 (1er septembre 2026)",
+      "url": "https://ent2d.ac-bordeaux.fr/disciplines/physique-chimie/wp-content/uploads/sites/82/2026/09/Lettre-2-26-27.pdf",
+      "accessed": "2026-11-25",
+      "supports": "In-force evidence (indirect): the only lycée programme updates it lists are enseignement scientifique (1re 2023, terminale 2024); no new seconde physique-chimie programme for 2026-2027."
+    },
+    {
+      "id": "lettre-ipr-nancy-metz-2026",
+      "title": "Académie de Nancy-Metz, IA-IPR — Lettre de rentrée 2026-2027 physique-chimie (septembre 2026)",
+      "url": "https://sites.ac-nancy-metz.fr/physique/wp_local/IPR/LR_PC_def_2026.pdf",
+      "accessed": "2026-11-25",
+      "supports": "In-force evidence (indirect): cites the circulaire de rentrée 2026 as a year of consolidation, not of new structural reforms; announces no new lycée physique-chimie programme."
+    },
+    {
+      "id": "codata-mp",
+      "title": "NIST CODATA 2022 — proton mass",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mp",
+      "accessed": "2026-11-25",
+      "supports": "m_p = 1.672 621 925 95(52) × 10⁻²⁷ kg"
+    },
+    {
+      "id": "codata-mn",
+      "title": "NIST CODATA 2022 — neutron mass",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mn",
+      "accessed": "2026-11-25",
+      "supports": "m_n = 1.674 927 500 56(85) × 10⁻²⁷ kg"
+    },
+    {
+      "id": "codata-me",
+      "title": "NIST CODATA 2022 — electron mass",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?me",
+      "accessed": "2026-11-25",
+      "supports": "m_e = 9.109 383 7139(28) × 10⁻³¹ kg; with m_p gives m_p/m_e ≈ 1.84 × 10³"
+    },
+    {
+      "id": "codata-e",
+      "title": "NIST CODATA 2022 — elementary charge",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?e",
+      "accessed": "2026-11-25",
+      "supports": "e = 1.602 176 634 × 10⁻¹⁹ C (exact)"
+    },
+    {
+      "id": "codata-a0",
+      "title": "NIST CODATA 2022 — Bohr radius",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0",
+      "accessed": "2026-11-25",
+      "supports": "a₀ = 5.291 772 105 44(82) × 10⁻¹¹ m: hydrogen atom size of order 10⁻¹⁰ m"
+    },
+    {
+      "id": "codata-rp",
+      "title": "NIST CODATA 2022 — proton rms charge radius",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?rp",
+      "accessed": "2026-11-25",
+      "supports": "r_p = 8.4075(64) × 10⁻¹⁶ m: hydrogen nucleus size of order 10⁻¹⁵ m"
+    },
+    {
+      "id": "nist-asd-configurations",
+      "title": "NIST Atomic Spectra Database — Atomic Ionization Energies Output, H to Ca",
+      "url": "https://physics.nist.gov/cgi-bin/ASD/ie.pl?spectra=H-Ca&units=1&format=0&order=0&at_num_out=on&sp_name_out=on&ion_charge_out=on&el_name_out=on&seq_out=on&shells_out=on&level_out=on&e_out=0&unc_out=on&biblio=on",
+      "accessed": "2026-11-25",
+      "supports": "Ground-state configurations of neutral atoms Z = 1 to 20 (1s¹ … [Ne]3s²3p⁶, K [Ar]4s¹, Ca [Ar]4s²): filling order 1s 2s 2p 3s 3p and capacities 2 and 6 for Z ⩽ 18."
+    },
+    {
+      "id": "pubchem-periodic-table",
+      "title": "PubChem (NIH) — Periodic table data, CSV",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV",
+      "accessed": "2026-11-25",
+      "supports": "Families (GroupBlock) for Z = 1 to 20: He, Ne, Ar noble gas; Li, Na, K alkali metal; Be, Mg, Ca alkaline earth metal; F, Cl halogen; H nonmetal (not an alkali metal). Shared family property (OxidationStates column): He, Ne, Ar 0; Li, Na, K +1; Be, Mg, Ca +2."
+    }
   ],
   "unverified": [
     "In force for 2026-2027: not confirmed from a primary legal source. education.gouv.fr (BO pages), eduscol.education.gouv.fr and legifrance.gouv.fr returned 403 through the agent proxy, so no consolidated text or BO index could be opened. Evidence used instead: the official annex is still served by the ministry's media host; the 2026-2027 IA-IPR letters of Bordeaux and Nancy-Metz announce no new seconde physique-chimie programme; search snippets (not fetched) indicate the BO n° 14 of 2 April 2026 replaces the seconde mathematics annex (NOR MENE2602914A replacing MENE1901631A), not the physique-chimie one (MENE1901634A). The owner should confirm on Légifrance or eduscol.",
