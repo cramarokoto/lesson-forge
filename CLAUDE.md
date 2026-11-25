@@ -13,7 +13,7 @@ Format inspired by Algo Lab (step-by-step animated diagram, notation panel, coun
 4. **The referential prevails.** Scope comes from the official syllabus, not from taste.
 5. **External links only after a real fetch** that returned the expected content.
 6. **No copying of protected designs or text.** Algo Lab inspires the format only: no code, assets, colors or wording.
-7. **Show before publishing.** Build and show the result; never deploy, publish or push without the owner's explicit yes.
+7. **Show before publishing.** Build and show the result; never deploy or publish a course, merge, or push to a shared branch without the owner's explicit yes. Committing and pushing to the session's own working branch is allowed: it is a backup, not a publication.
 8. **Target-language typography** (French: non-breaking space before `; : ! ?`, « guillemets », decimal comma).
 
 Repo, prompts and code are in **English**. Course content is in the course's language.
