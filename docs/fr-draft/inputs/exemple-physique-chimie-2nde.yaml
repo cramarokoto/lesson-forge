@@ -1,0 +1,22 @@
+# Fichier d'entrée : un cours = un sujet + une liste de chapitres.
+sujet: Physique-chimie
+public: élèves de seconde générale et technologique (15-16 ans), en France
+langue: fr
+referentiel:
+  nom: Programme de physique-chimie de seconde générale et technologique
+  reference: BO spécial n°1 du 22 janvier 2019   # le cadreur retrouve et ouvre le texte officiel
+style:
+  ton: encourageant, précis, sans infantiliser
+  schema: isométrique, sobre, une couleur par type d'objet
+  duree_lecon_minutes: [5, 8]
+  etapes_par_lecon: [4, 8]
+chapitres:
+  - id: atome
+    titre: L'atome
+    notes: noyau, nucléons, notation, ordres de grandeur, cortège électronique, tableau périodique (3 premières lignes), ions monoatomiques
+  - id: mouvement
+    titre: Mouvement et interactions
+  - id: solutions
+    titre: Solutions aqueuses
+publication:
+  validation_humaine: obligatoire

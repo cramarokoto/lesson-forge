@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cours en micro-leçons",
+  "$defs": {
+    "plan": {
+      "type": "object",
+      "required": ["chapitre", "lecons", "hors_perimetre", "sources"],
+      "properties": {
+        "chapitre": {"type": "string"},
+        "lecons": {"type": "array", "items": {
+          "type": "object",
+          "required": ["id", "titre", "objectif", "prerequis", "erreurs_frequentes"],
+          "properties": {
+            "id": {"type": "string"}, "titre": {"type": "string"}, "objectif": {"type": "string"},
+            "prerequis": {"type": "array", "items": {"type": "string"}},
+            "erreurs_frequentes": {"type": "array", "items": {"type": "string"}, "minItems": 2},
+            "idee_schema": {"type": "string"}, "idee_interactive": {"type": "string"},
+            "references_programme": {"type": "array", "items": {"type": "string"}}
+          }}},
+        "hors_perimetre": {"type": "array", "items": {"type": "string"}},
+        "sources": {"type": "array", "items": {"type": "string", "format": "uri"}}
+      }
+    },
+    "step": {
+      "type": "object",
+      "required": ["id", "tag", "titre", "texte", "scene"],
+      "properties": {
+        "id": {"type": "string"},
+        "tag": {"enum": ["concept", "observe", "calcule", "essaie", "attention", "imagine"]},
+        "titre": {"type": "string", "maxLength": 60},
+        "texte": {"type": "string", "description": "90 mots maximum ; formules en $…$"},
+        "encadre": {"type": "object", "properties": {"type": {"enum": ["imagine", "piege", "ordre_de_grandeur", "astuce"]}, "texte": {"type": "string"}}},
+        "scene_description": {"type": "string"},
+        "scene": {"type": "array", "items": {"$ref": "#/$defs/objet"}},
+        "notation_ligne": {"type": "integer", "minimum": 0},
+        "compteurs": {"type": "array", "items": {"type": "object", "properties": {"nom": {"type": "string"}, "valeur": {"type": ["string", "number"]}, "unite": {"type": "string"}}}},
+        "widget": {"type": "object", "properties": {"type": {"type": "string"}, "params": {"type": "object"}}}
+      }
+    },
+    "objet": {
+      "type": "object",
+      "required": ["cle", "type"],
+      "properties": {
+        "cle": {"type": "string", "description": "stable d'une étape à l'autre"},
+        "type": {"enum": ["plateau", "cube", "sphere", "anneau", "tuile", "fleche", "etiquette", "texte", "groupe"]},
+        "pos": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+        "taille": {"type": "number"}, "couleur": {"type": "string"}, "texte": {"type": "string"},
+        "accent": {"type": "boolean"}, "opacite": {"type": "number"}
+      }
+    },
+    "quiz": {
+      "type": "object",
+      "required": ["question", "options", "bonne", "explication"],
+      "properties": {
+        "question": {"type": "string"},
+        "options": {"type": "array", "items": {"type": "string"}, "minItems": 3, "maxItems": 4},
+        "bonne": {"type": "integer", "minimum": 0},
+        "explication": {"type": "string"}
+      }
+    },
+    "lesson": {
+      "type": "object",
+      "required": ["id", "titre", "objectif", "notation", "etapes", "quiz", "sources"],
+      "properties": {
+        "id": {"type": "string"}, "titre": {"type": "string"}, "objectif": {"type": "string"},
+        "notation": {"type": "array", "items": {"type": "string"}, "minItems": 1, "maxItems": 7},
+        "etapes": {"type": "array", "items": {"$ref": "#/$defs/step"}, "minItems": 4, "maxItems": 8},
+        "quiz": {"type": "array", "items": {"$ref": "#/$defs/quiz"}, "minItems": 3, "maxItems": 3},
+        "sources": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}
