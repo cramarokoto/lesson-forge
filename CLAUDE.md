@@ -40,7 +40,6 @@ Never weaken a check to make it pass.
 - `courses/<slug>/<chapter>/`: plan and lesson JSON (generated)
 - `work/<slug>/`: review reports, `report.md`, screenshots
 - `engine/`: static site renderer (not built yet)
-- `docs/fr-draft/`: original French prompt pack, superseded by the files above
 
 ## Status
 
