@@ -1,0 +1,19 @@
+{
+  "name": "lesson-forge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-agent pipeline that turns a syllabus into a reviewed, interactive micro-lesson website.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "check": "bash scripts/check.sh"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.9.1"
+  }
+}

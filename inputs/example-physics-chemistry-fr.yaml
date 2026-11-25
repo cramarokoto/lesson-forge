@@ -1,0 +1,36 @@
+# One course = one subject + a list of chapters. Validated against
+# schema/course.schema.json#/$defs/input by scripts/validate.mjs.
+# Keys are English; values that end up on screen are in the course language.
+slug: physique-chimie-seconde
+subject: Physique-chimie
+audience: >-
+  French lycée students in seconde générale et technologique (age 15-16).
+  They know powers of ten and basic algebra from collège; no prior notion
+  of electron configuration.
+language: fr
+schoolYear: 2026-2027
+referential:
+  name: Programme de physique-chimie de seconde générale et technologique
+  reference: BO spécial n°1 du 22 janvier 2019
+  # url: left empty on purpose. The framer must locate the official text,
+  # fetch it, and confirm it is still in force for the school year above.
+style:
+  tone: encouraging, precise, never condescending
+  diagram: isometric, sober, one color per kind of object
+  lessonMinutes: [5, 8]
+  stepsPerLesson: [4, 8]
+chapters:
+  - id: atome
+    title: L'atome
+    notes: >-
+      Nucleus, nucleons, nuclide notation, orders of magnitude, electron
+      configuration, periodic table (first 3 rows), monatomic ions.
+    lessonHints:
+      - "Échelles : l'atome et le noyau (ordres de grandeur, puissances de dix)"
+      - "Le noyau : nucléons, notation A/Z X, numéros Z et A"
+      - "Masse de l'atome : pourquoi elle est concentrée dans le noyau"
+      - "Élément chimique, isotopes, ions monoatomiques"
+      - "Configuration électronique de 1s à 3p, électrons de valence"
+      - "Tableau périodique (3 premières lignes) : familles, stabilité (règles du duet et de l'octet)"
+publication:
+  humanApproval: true

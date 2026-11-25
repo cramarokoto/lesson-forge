@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lesson-forge.local/schema/course.schema.json",
+  "title": "lesson-forge course data",
+  "description": "Contracts for every file the pipeline reads or writes. Rules JSON Schema cannot express (word counts, cross-references, stable keys) are enforced by scripts/validate.mjs.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "kebab-case identifier, stable across rounds"
+    },
+
+    "input": {
+      "description": "inputs/<file>.yaml: one course = one subject + a list of chapters.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "subject", "audience", "language", "referential", "chapters", "publication"],
+      "properties": {
+        "slug": { "$ref": "#/$defs/id" },
+        "subject": { "type": "string", "minLength": 1 },
+        "audience": { "type": "string", "minLength": 1, "description": "Who learns: level, age, country, prior knowledge." },
+        "language": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$", "description": "BCP 47 tag of the course content, e.g. fr or fr-FR." },
+        "schoolYear": { "type": "string" },
+        "referential": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "reference"],
+          "properties": {
+            "name": { "type": "string" },
+            "reference": { "type": "string", "description": "Official citation. The framer locates and opens the text itself." },
+            "url": { "type": "string", "format": "uri", "description": "Only a URL that was actually fetched and checked." }
+          }
+        },
+        "style": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tone": { "type": "string" },
+            "diagram": { "type": "string" },
+            "lessonMinutes": { "$ref": "#/$defs/range" },
+            "stepsPerLesson": { "$ref": "#/$defs/range" }
+          }
+        },
+        "chapters": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "title"],
+            "properties": {
+              "id": { "$ref": "#/$defs/id" },
+              "title": { "type": "string" },
+              "notes": { "type": "string" },
+              "lessonHints": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Owner's suggested split. Advisory: the framer checks it against the referential and may change it, with reasons."
+              }
+            }
+          }
+        },
+        "publication": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["humanApproval"],
+          "properties": {
+            "humanApproval": { "const": true, "description": "Always true: nothing ships without the owner's explicit yes." }
+          }
+        }
+      }
+    },
+
+    "range": {
+      "type": "array",
+      "items": { "type": "integer", "minimum": 1 },
+      "minItems": 2,
+      "maxItems": 2
+    },
+
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "url", "accessed"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "accessed": { "type": "string", "format": "date", "description": "Date of the fetch that returned the expected content." },
+        "supports": { "type": "string", "description": "What this source confirms, e.g. 'proton mass, CODATA 2022'." }
+      }
+    },
+
+    "referentialAnchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["quote", "location"],
+      "properties": {
+        "quote": { "type": "string", "description": "Short verbatim quote from the referential, in its own language." },
+        "location": { "type": "string", "description": "Where it is: section, table row, page." }
+      }
+    },
+
+    "plan": {
+      "description": "courses/<slug>/<chapter>/plan.json, written by the framer.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["course", "chapter", "title", "referential", "lessons", "outOfScope", "sources", "unverified"],
+      "properties": {
+        "course": { "$ref": "#/$defs/id" },
+        "chapter": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "referential": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["citation", "url", "accessed"],
+          "properties": {
+            "citation": { "type": "string" },
+            "url": { "type": "string", "format": "uri" },
+            "accessed": { "type": "string", "format": "date" }
+          }
+        },
+        "lessons": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "title", "goal", "prerequisites", "misconceptions", "anchors"],
+            "properties": {
+              "id": { "$ref": "#/$defs/id" },
+              "title": { "type": "string" },
+              "goal": { "type": "string", "description": "One learning goal, observable." },
+              "prerequisites": { "type": "array", "items": { "type": "string" } },
+              "misconceptions": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 4 },
+              "diagramIdea": { "type": "string" },
+              "interactionIdea": { "type": "string" },
+              "anchors": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/referentialAnchor" } }
+            }
+          }
+        },
+        "outOfScope": { "type": "array", "items": { "type": "string" } },
+        "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+        "unverified": { "type": "array", "items": { "type": "string" }, "description": "What the framer could not confirm. Empty array if none." }
+      }
+    },
+
+    "callout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "text"],
+      "properties": {
+        "kind": { "enum": ["analogy", "pitfall", "order-of-magnitude", "tip"] },
+        "text": { "type": "string", "minLength": 1 }
+      }
+    },
+
+    "counter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "label", "value"],
+      "properties": {
+        "key": { "$ref": "#/$defs/id" },
+        "label": { "type": "string" },
+        "value": { "type": ["string", "number"] },
+        "unit": { "type": "string" },
+        "changed": { "type": "boolean", "description": "Highlight: the value changed at this step." }
+      }
+    },
+
+    "sceneObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "type"],
+      "properties": {
+        "key": { "$ref": "#/$defs/id", "description": "Stable across steps: same key = same object, animated." },
+        "type": { "enum": ["board", "cube", "sphere", "ring", "tile", "arrow", "label", "text", "group"] },
+        "pos": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3, "description": "[x, y, z] in grid units, see scene-contract.md." },
+        "to": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3, "description": "Arrow end point." },
+        "size": { "type": "number", "exclusiveMinimum": 0 },
+        "role": { "type": "string", "description": "Semantic color role from the course palette, e.g. proton, neutron, electron." },
+        "text": { "type": "string" },
+        "accent": { "type": "boolean", "description": "The one focus of the step." },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "parent": { "$ref": "#/$defs/id", "description": "Key of a group object." }
+      }
+    },
+
+    "widget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type"],
+      "properties": {
+        "type": { "$ref": "#/$defs/id", "description": "Widget type implemented by the engine, e.g. atom-builder." },
+        "params": { "type": "object" }
+      }
+    },
+
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "tag", "title", "text", "sceneDescription"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "tag": { "enum": ["concept", "observe", "calculate", "try", "caution", "imagine"] },
+        "title": { "type": "string", "minLength": 1, "maxLength": 60 },
+        "text": { "type": "string", "minLength": 1, "description": "At most 90 words, one new idea. Inline math as $...$ (LaTeX)." },
+        "callout": { "$ref": "#/$defs/callout" },
+        "sceneDescription": { "type": "string", "description": "Writer's plain-language description of the diagram at this step." },
+        "scene": { "type": "array", "maxItems": 25, "items": { "$ref": "#/$defs/sceneObject" }, "description": "Added by the stager. Full scene state, not a diff." },
+        "notationLine": { "type": ["integer", "null"], "minimum": 0, "description": "0-based index into lesson.notation, or null." },
+        "counters": { "type": "array", "items": { "$ref": "#/$defs/counter" } },
+        "widget": { "$ref": "#/$defs/widget" },
+        "sourceIds": { "type": "array", "items": { "$ref": "#/$defs/id" }, "description": "Sources backing the facts of this step." }
+      }
+    },
+
+    "quizQuestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "question", "options", "answer", "explanation"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "question": { "type": "string" },
+        "options": { "type": "array", "items": { "type": "string" }, "minItems": 3, "maxItems": 4 },
+        "answer": { "type": "integer", "minimum": 0, "description": "0-based index of the only correct option." },
+        "explanation": { "type": "string", "description": "Why the answer is right and why the main trap is tempting." }
+      }
+    },
+
+    "lesson": {
+      "description": "courses/<slug>/<chapter>/<lesson>.json, written by the writer, staged by the stager.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["course", "chapter", "id", "title", "goal", "notation", "steps", "quiz", "sources"],
+      "properties": {
+        "course": { "$ref": "#/$defs/id" },
+        "chapter": { "$ref": "#/$defs/id" },
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "type": "string" },
+        "goal": { "type": "string" },
+        "notation": { "type": "array", "items": { "type": "string" }, "minItems": 1, "maxItems": 7, "description": "LaTeX lines for the notation panel." },
+        "steps": { "type": "array", "items": { "$ref": "#/$defs/step" }, "minItems": 4, "maxItems": 8 },
+        "quiz": { "type": "array", "items": { "$ref": "#/$defs/quizQuestion" }, "minItems": 3, "maxItems": 3 },
+        "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } }
+      }
+    },
+
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "severity", "category", "location", "quote", "problem", "evidence", "fix"],
+      "properties": {
+        "id": { "type": "string" },
+        "severity": { "enum": ["ERROR", "AMBIGUOUS"], "description": "ERROR: false, out of scope, unsafe, or breaks a hard requirement. AMBIGUOUS: true but likely to mislead the audience." },
+        "category": { "enum": ["fact", "calculation", "unit", "scope", "order", "level", "requirement", "pedagogy", "quiz", "safety", "consistency"] },
+        "location": { "type": "string", "description": "lesson/step/field, e.g. 'scales/s3/text' or 'plan/lessons[2]'." },
+        "quote": { "type": "string", "description": "Exact text at fault." },
+        "problem": { "type": "string" },
+        "evidence": { "type": "string", "description": "Source URL + what it says, referential quote, or the recomputed calculation." },
+        "fix": { "type": "string", "description": "Replacement text, word for word." }
+      }
+    },
+
+    "review": {
+      "description": "A reviewer's report, returned as JSON and saved by the orchestrator to work/<slug>/reviews/.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewer", "target", "round", "findings", "verified", "unverifiable"],
+      "properties": {
+        "reviewer": { "enum": ["syllabus-checker", "fact-checker", "pedagogy-reviewer", "quiz-reviewer", "safety-reviewer"] },
+        "target": { "type": "string", "description": "Path of the reviewed file." },
+        "round": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "findings": { "type": "array", "items": { "$ref": "#/$defs/finding" } },
+        "verified": { "type": "array", "items": { "type": "string" }, "description": "Claims actually confirmed, each with its source." },
+        "unverifiable": { "type": "array", "items": { "type": "string" }, "description": "Claims that could not be confirmed. Never listed as verified." }
+      }
+    }
+  }
+}
