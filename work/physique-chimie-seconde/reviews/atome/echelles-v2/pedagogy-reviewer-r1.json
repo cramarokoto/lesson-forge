@@ -1,0 +1,74 @@
+{
+ "reviewer": "pedagogy-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/echelles.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "pr-1",
+   "severity": "ERROR",
+   "category": "pedagogy",
+   "location": "echelles/s1/scene",
+   "quote": "L’écriture scientifique … rend lisible la taille d’un atome.",
+   "problem": "s1 shows a radius only; nothing contrasts the decimal writing with scientific notation.",
+   "evidence": "Style guide, Message first §2: the diagram shows the takeaway by what it draws. Screenshot s1.png.",
+   "fix": "Under the radius arrow, a faded text « r ≈ 0,000 000 000 12 m » above the accent text « r ≈ 1,2 × 10⁻¹⁰ m »; sceneDescription to match."
+  },
+  {
+   "id": "pr-2",
+   "severity": "ERROR",
+   "category": "pedagogy",
+   "location": "echelles/s2/scene",
+   "quote": "Two faded spheres labeled « C » and « Na » …",
+   "problem": "C and Na are not faded and dominate; the picture says « atoms differ in size », the opposite of the takeaway; no single focus.",
+   "evidence": "Style guide, Message first §2: the diagram shows the takeaway by what it draws. §6. Screenshot s2.png.",
+   "fix": "Each sphere gets a short scale bar with its radius (1,2 / 1,7 / 2,3 × 10⁻¹⁰ m); one bracket or band under all three carries the accent « ∼ 10⁻¹⁰ m »."
+  },
+  {
+   "id": "pr-3",
+   "severity": "ERROR",
+   "category": "pedagogy",
+   "location": "echelles/s6/scene",
+   "quote": "rature « ✗ »",
+   "problem": "The ✗ reads as the multiplication sign used in « × 10 » and « × 10⁵ ».",
+   "evidence": "Style guide, Message first §2: the diagram shows the takeaway by what it draws. Screenshot s6.png.",
+   "fix": "Remove « ✗ »; label the purple bar « 10⁻¹⁰ m − 10⁻¹⁵ m ≈ 10⁻¹⁰ m : un écart en mètres » and the vertical arrow « × 10⁵ : combien de fois »."
+  },
+  {
+   "id": "pr-4",
+   "severity": "AMBIGUOUS",
+   "category": "pedagogy",
+   "location": "echelles/s4/scene",
+   "quote": "four grey spheres",
+   "problem": "Unlabeled intermediate spheres may look like real particles.",
+   "evidence": "Style guide, Message first §2: the diagram shows the takeaway by what it draws. Screenshot s4.png.",
+   "fix": "Label them « 10⁻¹¹ m » … « 10⁻¹⁴ m » in s4 and s5."
+  },
+  {
+   "id": "pr-5",
+   "severity": "AMBIGUOUS",
+   "category": "pedagogy",
+   "location": "echelles/s2/text",
+   "quote": "On retient que la taille d’un atome est de l’ordre de $10^{-10}\\,\\mathrm{m}$.",
+   "problem": "« taille » used without saying it is measured by the radius.",
+   "evidence": "Message first §5.",
+   "fix": "On retient que la taille d’un atome, mesurée ici par son rayon, est de l’ordre de $10^{-10}\\,\\mathrm{m}$."
+  },
+  {
+   "id": "pr-6",
+   "severity": "AMBIGUOUS",
+   "category": "pedagogy",
+   "location": "echelles/s1/callout",
+   "quote": "celle de PubChem.",
+   "problem": "« PubChem » unexplained.",
+   "evidence": "Message first §5.",
+   "fix": "… celle de PubChem, une base de données publique de chimie."
+  }
+ ],
+ "verified": [
+  "s3, s4, s5, s7 diagrams convey their takeaways.",
+  "Teach-back matches all 7 takeaways.",
+  "All four misconceptions addressed; tone OK."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": []
+}
