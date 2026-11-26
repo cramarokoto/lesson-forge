@@ -26,19 +26,149 @@
       },
       "sceneDescription": "Three spheres stand in a row on one board: a large red « proton » raised by an upward arrow « +e », a large grey « neutron » left at the arrows’ starting level and tagged « 0 », and a small blue « électron » lowered by a downward accent arrow « −e » of the same length. A note on the board reads « Pas à l’échelle ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 4.4 },
-        { "key": "p-seul", "type": "sphere", "role": "proton", "pos": [3.2679, 6.7321, 4.15], "size": 1.3 },
-        { "key": "n-seul", "type": "sphere", "role": "neutron", "pos": [5, 5, 2.4], "size": 1.3 },
-        { "key": "e1", "type": "sphere", "role": "electron", "pos": [6.7321, 3.2679, 1.0], "size": 0.55 },
-        { "key": "charge-p", "type": "arrow", "pos": [3.2679, 6.7321, 2.4], "to": [3.2679, 6.7321, 3.48] },
-        { "key": "charge-e", "type": "arrow", "pos": [6.7321, 3.2679, 2.4], "to": [6.7321, 3.2679, 1.32], "accent": true },
-        { "key": "nom-proton", "type": "label", "pos": [3.2679, 6.7321, 4.8], "text": "proton" },
-        { "key": "nom-neutron", "type": "label", "pos": [5, 5, 3.05], "text": "neutron" },
-        { "key": "nom-electron", "type": "text", "pos": [6.8987, 3.4346, 0.4], "text": "électron" },
-        { "key": "val-p", "type": "text", "pos": [3.6529, 6.3471, 2.9667], "text": "+e" },
-        { "key": "val-n", "type": "text", "pos": [5.6158, 4.3842, 2.4], "text": "0" },
-        { "key": "val-e", "type": "text", "pos": [7.1169, 2.8831, 1.8667], "text": "−e" },
-        { "key": "echelle", "type": "text", "pos": [6.0667, 6.0667, 0.4], "text": "Pas à l’échelle" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 4.4
+        },
+        {
+          "key": "p-seul",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            3.2679,
+            6.7321,
+            4.15
+          ],
+          "size": 1.3
+        },
+        {
+          "key": "n-seul",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            2.4
+          ],
+          "size": 1.3
+        },
+        {
+          "key": "e1",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.7321,
+            3.2679,
+            1.0
+          ],
+          "size": 0.55
+        },
+        {
+          "key": "charge-p",
+          "type": "arrow",
+          "pos": [
+            3.2679,
+            6.7321,
+            2.4
+          ],
+          "to": [
+            3.2679,
+            6.7321,
+            3.48
+          ]
+        },
+        {
+          "key": "charge-e",
+          "type": "arrow",
+          "pos": [
+            6.7321,
+            3.2679,
+            2.4
+          ],
+          "to": [
+            6.7321,
+            3.2679,
+            1.32
+          ],
+          "accent": true
+        },
+        {
+          "key": "nom-proton",
+          "type": "label",
+          "pos": [
+            3.2679,
+            6.7321,
+            4.8
+          ],
+          "text": "proton"
+        },
+        {
+          "key": "nom-neutron",
+          "type": "label",
+          "pos": [
+            5,
+            5,
+            3.05
+          ],
+          "text": "neutron"
+        },
+        {
+          "key": "nom-electron",
+          "type": "text",
+          "pos": [
+            6.8987,
+            3.4346,
+            0.4
+          ],
+          "text": "électron"
+        },
+        {
+          "key": "val-p",
+          "type": "text",
+          "pos": [
+            3.6529,
+            6.3471,
+            2.9667
+          ],
+          "text": "+e"
+        },
+        {
+          "key": "val-n",
+          "type": "text",
+          "pos": [
+            5.6158,
+            4.3842,
+            2.4
+          ],
+          "text": "0"
+        },
+        {
+          "key": "val-e",
+          "type": "text",
+          "pos": [
+            7.1169,
+            2.8831,
+            1.8667
+          ],
+          "text": "−e"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            6.0667,
+            6.0667,
+            0.4
+          ],
+          "text": "Pas à l’échelle"
+        }
       ],
       "notationLine": 0,
       "counters": [
@@ -62,30 +192,264 @@
       "title": "Un atome est neutre",
       "takeaway": "Un atome possède Z électrons, autant que de protons : leurs charges s’annulent et l’atome est électriquement neutre.",
       "text": "Prenons un atome de sodium. Son numéro atomique vaut $Z = 11$ : son noyau contient 11 protons, soit une charge $+11e$. Autour du noyau, 11 électrons apportent une charge $-11e$. Additionnons : $11 \\times (+e) + 11 \\times (-e) = 0$. Il en va de même pour tout atome : il possède Z électrons, autant que de protons. Sa charge totale est nulle : on dit que l’atome est électriquement neutre.",
-      "sceneDescription": "On the board, a pale translucent sphere labelled « atome Na », the whole atom and the accent, holds an orange nucleus tagged « 11 protons » ringed by 11 small blue electrons. Below the board, two arrows run from « protons : +11e » and « électrons : −11e » and meet at « charge totale : 0 », above the note « Pas à l’échelle ».",
+      "sceneDescription": "On a thin board, a large pale translucent sphere labelled « atome Na », the whole atom and the accent, holds an orange nucleus tagged « 11 protons » ringed by 11 small blue electrons. Below the board, two arrows run from « protons : +11e » and « électrons : −11e » and meet at « charge totale : 0 », above the note « Pas à l’échelle ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 4.4 },
-        { "key": "atome", "type": "sphere", "role": "atom", "pos": [5, 5, 2.95], "size": 5.4, "opacity": 0.55, "accent": true },
-        { "key": "noyau", "type": "sphere", "role": "nucleus", "pos": [5, 5, 2.95], "size": 1.2 },
-        { "key": "e1", "type": "sphere", "role": "electron", "pos": [7.0303, 4.4897, 3.71], "size": 0.55 },
-        { "key": "e2", "type": "sphere", "role": "electron", "pos": [6.8287, 4.6913, 4.8993], "size": 0.55 },
-        { "key": "e3", "type": "sphere", "role": "electron", "pos": [6.2877, 5.2323, 5.7111], "size": 0.55 },
-        { "key": "e4", "type": "sphere", "role": "electron", "pos": [5.5792, 5.9408, 5.8876], "size": 0.55 },
-        { "key": "e5", "type": "sphere", "role": "electron", "pos": [4.9281, 6.5919, 5.3725], "size": 0.55 },
-        { "key": "e6", "type": "sphere", "role": "electron", "pos": [4.5411, 6.9789, 4.3297], "size": 0.55 },
-        { "key": "e7", "type": "sphere", "role": "electron", "pos": [4.5411, 6.9789, 3.0903], "size": 0.55 },
-        { "key": "e8", "type": "sphere", "role": "electron", "pos": [4.9281, 6.5919, 2.0475], "size": 0.55 },
-        { "key": "e9", "type": "sphere", "role": "electron", "pos": [5.5792, 5.9408, 1.5324], "size": 0.55 },
-        { "key": "e10", "type": "sphere", "role": "electron", "pos": [6.2877, 5.2323, 1.7089], "size": 0.55 },
-        { "key": "e11", "type": "sphere", "role": "electron", "pos": [6.8287, 4.6913, 2.5207], "size": 0.55 },
-        { "key": "etiq-noyau", "type": "label", "pos": [5, 5, 2.95], "text": "11 protons" },
-        { "key": "nom-entite", "type": "label", "pos": [5, 5, 5.65], "text": "atome Na" },
-        { "key": "txt-p", "type": "text", "pos": [5.8604, 8.9396, 0], "text": "protons : +11e" },
-        { "key": "txt-e", "type": "text", "pos": [8.9396, 5.8604, 0], "text": "électrons : −11e" },
-        { "key": "somme-p", "type": "arrow", "pos": [6.612, 8.9214, 0], "to": [8.187, 8.8798, 0] },
-        { "key": "somme-e", "type": "arrow", "pos": [8.9214, 6.612, 0], "to": [8.8798, 8.187, 0] },
-        { "key": "charge-totale", "type": "text", "pos": [8.9333, 8.9333, 0], "text": "charge totale : 0" },
-        { "key": "echelle", "type": "text", "pos": [9.7333, 9.7333, 0], "text": "Pas à l’échelle" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 4.4,
+          "height": 0.2
+        },
+        {
+          "key": "atome",
+          "type": "sphere",
+          "role": "atom",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "size": 5.4,
+          "opacity": 0.55,
+          "accent": true
+        },
+        {
+          "key": "noyau",
+          "type": "sphere",
+          "role": "nucleus",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "size": 1.2
+        },
+        {
+          "key": "e1",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            7.0303,
+            4.4897,
+            3.71
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e2",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.8287,
+            4.6913,
+            4.8993
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e3",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.2877,
+            5.2323,
+            5.7111
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e4",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            5.5792,
+            5.9408,
+            5.8876
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e5",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.9281,
+            6.5919,
+            5.3725
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e6",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.5411,
+            6.9789,
+            4.3297
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e7",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.5411,
+            6.9789,
+            3.0903
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e8",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.9281,
+            6.5919,
+            2.0475
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e9",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            5.5792,
+            5.9408,
+            1.5324
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e10",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.2877,
+            5.2323,
+            1.7089
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e11",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.8287,
+            4.6913,
+            2.5207
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "etiq-noyau",
+          "type": "label",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "text": "11 protons"
+        },
+        {
+          "key": "nom-entite",
+          "type": "label",
+          "pos": [
+            5,
+            5,
+            5.65
+          ],
+          "text": "atome Na"
+        },
+        {
+          "key": "txt-p",
+          "type": "text",
+          "pos": [
+            5.8604,
+            8.9396,
+            0
+          ],
+          "text": "protons : +11e"
+        },
+        {
+          "key": "txt-e",
+          "type": "text",
+          "pos": [
+            8.9396,
+            5.8604,
+            0
+          ],
+          "text": "électrons : −11e"
+        },
+        {
+          "key": "somme-p",
+          "type": "arrow",
+          "pos": [
+            6.612,
+            8.9214,
+            0
+          ],
+          "to": [
+            8.187,
+            8.8798,
+            0
+          ]
+        },
+        {
+          "key": "somme-e",
+          "type": "arrow",
+          "pos": [
+            8.9214,
+            6.612,
+            0
+          ],
+          "to": [
+            8.8798,
+            8.187,
+            0
+          ]
+        },
+        {
+          "key": "charge-totale",
+          "type": "text",
+          "pos": [
+            8.9333,
+            8.9333,
+            0
+          ],
+          "text": "charge totale : 0"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            9.7333,
+            9.7333,
+            0
+          ],
+          "text": "Pas à l’échelle"
+        }
       ],
       "notationLine": 2,
       "counters": [
@@ -120,23 +484,178 @@
       "tag": "caution",
       "title": "Et les neutrons ?",
       "takeaway": "Un atome est neutre parce qu’il a autant d’électrons que de protons ; ses neutrons, sans charge, n’y changent rien.",
-      "text": "Piège fréquent : penser qu’un atome est neutre parce qu’il a autant de neutrons que de protons. Le noyau de sodium s’écrit ${}^{23}_{11}\\mathrm{Na}$ : il compte $23 - 11 = 12$ neutrons pour 11 protons. Pourtant, l’atome de sodium est neutre. Les neutrons ne portent aucune charge : quel que soit leur nombre, ils ne modifient pas la charge totale. Seule compte l’égalité entre le nombre d’électrons et celui de protons.",
+      "text": "Piège fréquent : penser qu’un atome est neutre parce qu’il a autant de neutrons que de protons. Le noyau de l’atome de sodium naturel s’écrit ${}^{23}_{11}\\mathrm{Na}$ : il compte $23 - 11 = 12$ neutrons pour 11 protons. Pourtant, l’atome de sodium est neutre. Les neutrons ne portent aucune charge : quel que soit leur nombre, ils ne modifient pas la charge totale. Seule compte l’égalité entre le nombre d’électrons et celui de protons.",
       "sceneDescription": "The atom gives way to three bars on the board, each as tall as its particle count and topped by a sphere: red « 11 protons », blue « 11 électrons » and, faded and slightly taller, grey « 12 neutrons » tagged « charge 0 ». An accent arrow joins the equally high proton and electron tops, marked « 11 = 11 », above the plate « atome Na : neutre ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 4.4 },
-        { "key": "barre-p", "type": "arrow", "role": "measure", "pos": [2.9793, 7.0207, 0.4], "to": [2.9793, 7.0207, 4.8] },
-        { "key": "tete-p", "type": "sphere", "role": "proton", "pos": [2.9793, 7.0207, 5.15], "size": 0.7 },
-        { "key": "etiq-p", "type": "label", "pos": [2.9793, 7.0207, 5.5], "text": "11 protons" },
-        { "key": "barre-e", "type": "arrow", "role": "measure", "pos": [4.5189, 5.4811, 0.4], "to": [4.5189, 5.4811, 4.8] },
-        { "key": "tete-e", "type": "sphere", "role": "electron", "pos": [4.5189, 5.4811, 5.15], "size": 0.7 },
-        { "key": "etiq-e", "type": "label", "pos": [4.5189, 5.4811, 5.5], "text": "11 électrons" },
-        { "key": "barre-n", "type": "arrow", "role": "measure", "pos": [6.7705, 3.2295, 0.4], "to": [6.7705, 3.2295, 5.2], "opacity": 0.45 },
-        { "key": "tete-n", "type": "sphere", "role": "neutron", "pos": [6.7705, 3.2295, 5.55], "size": 0.7, "opacity": 0.45 },
-        { "key": "etiq-n", "type": "label", "pos": [6.7705, 3.2295, 5.9], "text": "12 neutrons", "opacity": 0.6 },
-        { "key": "txt-n", "type": "text", "pos": [7.5018, 2.4982, 2.6667], "text": "charge 0", "opacity": 0.6 },
-        { "key": "egalite", "type": "arrow", "pos": [3.1814, 6.8186, 5.15], "to": [4.3168, 5.6832, 5.15], "accent": true },
-        { "key": "txt-egalite", "type": "text", "pos": [3.7491, 6.2509, 4.6], "text": "11 = 11" },
-        { "key": "nom-barres", "type": "text", "pos": [5.9, 5.9, 0.4], "text": "atome Na : neutre" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 4.4,
+          "height": 0.2
+        },
+        {
+          "key": "barre-p",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            2.9793,
+            7.0207,
+            0.4
+          ],
+          "to": [
+            2.9793,
+            7.0207,
+            4.8
+          ]
+        },
+        {
+          "key": "tete-p",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            2.9793,
+            7.0207,
+            5.15
+          ],
+          "size": 0.7
+        },
+        {
+          "key": "etiq-p",
+          "type": "label",
+          "pos": [
+            2.9793,
+            7.0207,
+            5.5
+          ],
+          "text": "11 protons"
+        },
+        {
+          "key": "barre-e",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            4.5189,
+            5.4811,
+            0.4
+          ],
+          "to": [
+            4.5189,
+            5.4811,
+            4.8
+          ]
+        },
+        {
+          "key": "tete-e",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.5189,
+            5.4811,
+            5.15
+          ],
+          "size": 0.7
+        },
+        {
+          "key": "etiq-e",
+          "type": "label",
+          "pos": [
+            4.5189,
+            5.4811,
+            5.5
+          ],
+          "text": "11 électrons"
+        },
+        {
+          "key": "barre-n",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            6.7705,
+            3.2295,
+            0.4
+          ],
+          "to": [
+            6.7705,
+            3.2295,
+            5.2
+          ],
+          "opacity": 0.45
+        },
+        {
+          "key": "tete-n",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            6.7705,
+            3.2295,
+            5.55
+          ],
+          "size": 0.7,
+          "opacity": 0.45
+        },
+        {
+          "key": "etiq-n",
+          "type": "label",
+          "pos": [
+            6.7705,
+            3.2295,
+            5.9
+          ],
+          "text": "12 neutrons",
+          "opacity": 0.6
+        },
+        {
+          "key": "txt-n",
+          "type": "text",
+          "pos": [
+            7.5018,
+            2.4982,
+            2.6667
+          ],
+          "text": "charge 0",
+          "opacity": 0.6
+        },
+        {
+          "key": "egalite",
+          "type": "arrow",
+          "pos": [
+            3.1814,
+            6.8186,
+            5.15
+          ],
+          "to": [
+            4.3168,
+            5.6832,
+            5.15
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-egalite",
+          "type": "text",
+          "pos": [
+            3.7491,
+            6.2509,
+            4.6
+          ],
+          "text": "11 = 11"
+        },
+        {
+          "key": "nom-barres",
+          "type": "text",
+          "pos": [
+            5.9,
+            5.9,
+            0.4
+          ],
+          "text": "atome Na : neutre"
+        }
       ],
       "notationLine": 2,
       "counters": [
@@ -177,26 +696,238 @@
       "text": "Retirons un électron à l’atome de sodium. Le noyau n’a pas changé : toujours 11 protons. Il reste 10 électrons, donc la charge totale vaut $(11 - 10) \\times e = +e$. L’entité n’est plus neutre : c’est un ion. Un ion de charge positive s’appelle un cation. On écrit sa charge en exposant : $\\mathrm{Na}^{+}$. Ce « + » signale un électron en moins, et non un électron en plus.",
       "sceneDescription": "The sodium atom is back, its sphere now tinted green and labelled « cation Na⁺ »: the nucleus still reads « 11 protons » and one blue electron has left the ring to the right along the outward accent arrow « −1 électron », leaving a gap and 10 electrons around the nucleus. Below the board, « charge totale : +e » and the note « Pas à l’échelle ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 4.4 },
-        { "key": "atome", "type": "sphere", "role": "ion", "pos": [5, 5, 2.95], "size": 5.4, "opacity": 0.45 },
-        { "key": "noyau", "type": "sphere", "role": "nucleus", "pos": [5, 5, 2.95], "size": 1.2 },
-        { "key": "e1", "type": "sphere", "role": "electron", "pos": [7.6943, 2.3057, 2.95], "size": 0.55 },
-        { "key": "e2", "type": "sphere", "role": "electron", "pos": [6.8287, 4.6913, 4.8993], "size": 0.55 },
-        { "key": "e3", "type": "sphere", "role": "electron", "pos": [6.2877, 5.2323, 5.7111], "size": 0.55 },
-        { "key": "e4", "type": "sphere", "role": "electron", "pos": [5.5792, 5.9408, 5.8876], "size": 0.55 },
-        { "key": "e5", "type": "sphere", "role": "electron", "pos": [4.9281, 6.5919, 5.3725], "size": 0.55 },
-        { "key": "e6", "type": "sphere", "role": "electron", "pos": [4.5411, 6.9789, 4.3297], "size": 0.55 },
-        { "key": "e7", "type": "sphere", "role": "electron", "pos": [4.5411, 6.9789, 3.0903], "size": 0.55 },
-        { "key": "e8", "type": "sphere", "role": "electron", "pos": [4.9281, 6.5919, 2.0475], "size": 0.55 },
-        { "key": "e9", "type": "sphere", "role": "electron", "pos": [5.5792, 5.9408, 1.5324], "size": 0.55 },
-        { "key": "e10", "type": "sphere", "role": "electron", "pos": [6.2877, 5.2323, 1.7089], "size": 0.55 },
-        { "key": "e11", "type": "sphere", "role": "electron", "pos": [6.8287, 4.6913, 2.5207], "size": 0.55 },
-        { "key": "etiq-noyau", "type": "label", "pos": [5, 5, 2.95], "text": "11 protons" },
-        { "key": "nom-entite", "type": "label", "pos": [5, 5, 5.65], "text": "cation Na⁺" },
-        { "key": "fleche-electron", "type": "arrow", "pos": [6.3856, 3.6144, 2.95], "to": [7.4633, 2.5367, 2.95], "accent": true },
-        { "key": "txt-fleche-electron", "type": "text", "pos": [6.7705, 3.2295, 3.5333], "text": "−1 électron" },
-        { "key": "charge-totale", "type": "text", "pos": [7.6, 7.6, 0], "text": "charge totale : +e" },
-        { "key": "echelle", "type": "text", "pos": [8.6, 8.6, 0], "text": "Pas à l’échelle" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 4.4,
+          "height": 0.2
+        },
+        {
+          "key": "atome",
+          "type": "sphere",
+          "role": "ion",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "size": 5.4,
+          "opacity": 0.45
+        },
+        {
+          "key": "noyau",
+          "type": "sphere",
+          "role": "nucleus",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "size": 1.2
+        },
+        {
+          "key": "e1",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            7.6943,
+            2.3057,
+            2.95
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e2",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.8287,
+            4.6913,
+            4.8993
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e3",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.2877,
+            5.2323,
+            5.7111
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e4",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            5.5792,
+            5.9408,
+            5.8876
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e5",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.9281,
+            6.5919,
+            5.3725
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e6",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.5411,
+            6.9789,
+            4.3297
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e7",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.5411,
+            6.9789,
+            3.0903
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e8",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.9281,
+            6.5919,
+            2.0475
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e9",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            5.5792,
+            5.9408,
+            1.5324
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e10",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.2877,
+            5.2323,
+            1.7089
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e11",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.8287,
+            4.6913,
+            2.5207
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "etiq-noyau",
+          "type": "label",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "text": "11 protons"
+        },
+        {
+          "key": "nom-entite",
+          "type": "label",
+          "pos": [
+            5,
+            5,
+            5.65
+          ],
+          "text": "cation Na⁺"
+        },
+        {
+          "key": "fleche-electron",
+          "type": "arrow",
+          "pos": [
+            6.3856,
+            3.6144,
+            2.95
+          ],
+          "to": [
+            7.4633,
+            2.5367,
+            2.95
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-fleche-electron",
+          "type": "text",
+          "pos": [
+            6.7705,
+            3.2295,
+            3.5333
+          ],
+          "text": "−1 électron"
+        },
+        {
+          "key": "charge-totale",
+          "type": "text",
+          "pos": [
+            7.6,
+            7.6,
+            0
+          ],
+          "text": "charge totale : +e"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            8.6,
+            8.6,
+            0
+          ],
+          "text": "Pas à l’échelle"
+        }
       ],
       "notationLine": 3,
       "counters": [
@@ -234,25 +965,226 @@
       "text": "Changeons d’atome : le fluor, de numéro atomique $Z = 9$, possède 9 protons et 9 électrons. Cette fois, un électron supplémentaire arrive. Le noyau ne change toujours pas : 9 protons. Avec 10 électrons, la charge totale vaut $(9 - 10) \\times e = -e$. Un ion de charge négative s’appelle un anion. On écrit $\\mathrm{F}^{-}$ : ce « − » signale un électron en plus.",
       "sceneDescription": "The same green ion sphere, now labelled « anion F⁻ », holds a nucleus tagged « 9 protons » and a ring of 10 blue electrons, the rightmost one having just come in from outside along the inward accent arrow « +1 électron ». Below the board, « charge totale : −e » and the note « Pas à l’échelle ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 4.4 },
-        { "key": "atome", "type": "sphere", "role": "ion", "pos": [5, 5, 2.95], "size": 5.4, "opacity": 0.45 },
-        { "key": "noyau", "type": "sphere", "role": "nucleus", "pos": [5, 5, 2.95], "size": 1.2 },
-        { "key": "e1", "type": "sphere", "role": "electron", "pos": [7.0303, 4.4897, 3.71], "size": 0.55 },
-        { "key": "e2", "type": "sphere", "role": "electron", "pos": [6.7877, 4.7323, 5.0032], "size": 0.55 },
-        { "key": "e3", "type": "sphere", "role": "electron", "pos": [6.1525, 5.3675, 5.8024], "size": 0.55 },
-        { "key": "e4", "type": "sphere", "role": "electron", "pos": [5.3675, 6.1525, 5.8024], "size": 0.55 },
-        { "key": "e5", "type": "sphere", "role": "electron", "pos": [4.7323, 6.7877, 5.0032], "size": 0.55 },
-        { "key": "e6", "type": "sphere", "role": "electron", "pos": [4.4897, 7.0303, 3.71], "size": 0.55 },
-        { "key": "e7", "type": "sphere", "role": "electron", "pos": [4.7323, 6.7877, 2.4168], "size": 0.55 },
-        { "key": "e8", "type": "sphere", "role": "electron", "pos": [5.3675, 6.1525, 1.6176], "size": 0.55 },
-        { "key": "e9", "type": "sphere", "role": "electron", "pos": [6.1525, 5.3675, 1.6176], "size": 0.55 },
-        { "key": "e10", "type": "sphere", "role": "electron", "pos": [6.7877, 4.7323, 2.4168], "size": 0.55 },
-        { "key": "etiq-noyau", "type": "label", "pos": [5, 5, 2.95], "text": "9 protons" },
-        { "key": "nom-entite", "type": "label", "pos": [5, 5, 5.65], "text": "anion F⁻" },
-        { "key": "fleche-electron", "type": "arrow", "pos": [7.6943, 2.3057, 2.95], "to": [6.5396, 3.4604, 2.95], "accent": true },
-        { "key": "txt-fleche-electron", "type": "text", "pos": [6.7705, 3.2295, 3.5333], "text": "+1 électron" },
-        { "key": "charge-totale", "type": "text", "pos": [7.6, 7.6, 0], "text": "charge totale : −e" },
-        { "key": "echelle", "type": "text", "pos": [8.6, 8.6, 0], "text": "Pas à l’échelle" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 4.4,
+          "height": 0.2
+        },
+        {
+          "key": "atome",
+          "type": "sphere",
+          "role": "ion",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "size": 5.4,
+          "opacity": 0.45
+        },
+        {
+          "key": "noyau",
+          "type": "sphere",
+          "role": "nucleus",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "size": 1.2
+        },
+        {
+          "key": "e1",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            7.0303,
+            4.4897,
+            3.71
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e2",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.7877,
+            4.7323,
+            5.0032
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e3",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.1525,
+            5.3675,
+            5.8024
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e4",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            5.3675,
+            6.1525,
+            5.8024
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e5",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.7323,
+            6.7877,
+            5.0032
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e6",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.4897,
+            7.0303,
+            3.71
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e7",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.7323,
+            6.7877,
+            2.4168
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e8",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            5.3675,
+            6.1525,
+            1.6176
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e9",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.1525,
+            5.3675,
+            1.6176
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "e10",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.7877,
+            4.7323,
+            2.4168
+          ],
+          "size": 0.55,
+          "shadow": false
+        },
+        {
+          "key": "etiq-noyau",
+          "type": "label",
+          "pos": [
+            5,
+            5,
+            2.95
+          ],
+          "text": "9 protons"
+        },
+        {
+          "key": "nom-entite",
+          "type": "label",
+          "pos": [
+            5,
+            5,
+            5.65
+          ],
+          "text": "anion F⁻"
+        },
+        {
+          "key": "fleche-electron",
+          "type": "arrow",
+          "pos": [
+            7.6943,
+            2.3057,
+            2.95
+          ],
+          "to": [
+            6.5396,
+            3.4604,
+            2.95
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-fleche-electron",
+          "type": "text",
+          "pos": [
+            6.7705,
+            3.2295,
+            3.5333
+          ],
+          "text": "+1 électron"
+        },
+        {
+          "key": "charge-totale",
+          "type": "text",
+          "pos": [
+            7.6,
+            7.6,
+            0
+          ],
+          "text": "charge totale : −e"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            8.6,
+            8.6,
+            0
+          ],
+          "text": "Pas à l’échelle"
+        }
       ],
       "notationLine": 4,
       "counters": [
@@ -285,7 +1217,7 @@
       "id": "s6",
       "tag": "calculate",
       "title": "Compter les électrons d’un ion",
-      "takeaway": "Pour compter les électrons d’un ion, on part de Z : on retranche le nombre de l’exposant pour un cation, on l’ajoute pour un anion.",
+      "takeaway": "Pour compter les électrons d’un ion monoatomique, on part de Z : on retranche le nombre de l’exposant pour un cation, on l’ajoute pour un anion.",
       "text": "Connaissant Z, la formule d’un ion suffit pour compter ses électrons. Pour $\\mathrm{Mg}^{2+}$, avec $Z = 12$ : l’exposant « 2+ » signale 2 électrons en moins, soit $12 - 2 = 10$ électrons. Pour $\\mathrm{Cl}^{-}$, avec $Z = 17$ : un électron en plus, soit $17 + 1 = 18$ électrons. Un exposant réduit à un signe, « + » ou « − », vaut 1. Le nombre de protons, lui, reste égal à Z.",
       "callout": {
         "kind": "pitfall",
@@ -293,25 +1225,230 @@
       },
       "sceneDescription": "Two pairs of bars stand on the board, each as tall as its particle count: over the plate « Mg²⁺ », a red-topped bar « Z = 12 » leads by the accent arrow « − 2 » down to a shorter blue-topped bar « 10 électrons ». Over the plate « Cl⁻ », a red-topped bar « Z = 17 » leads by the arrow « + 1 » up to a taller blue-topped bar « 18 électrons ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 4.4 },
-        { "key": "barre-z-mg", "type": "arrow", "role": "measure", "pos": [2.8831, 7.1169, 0.4], "to": [2.8831, 7.1169, 3.64] },
-        { "key": "tete-z-mg", "type": "sphere", "role": "proton", "pos": [2.8831, 7.1169, 3.94], "size": 0.6 },
-        { "key": "etiq-z-mg", "type": "label", "pos": [2.8831, 7.1169, 4.24], "text": "Z = 12" },
-        { "key": "barre-e-mg", "type": "arrow", "role": "measure", "pos": [4.2302, 5.7698, 0.4], "to": [4.2302, 5.7698, 3.1] },
-        { "key": "tete-e-mg", "type": "sphere", "role": "electron", "pos": [4.2302, 5.7698, 3.4], "size": 0.6 },
-        { "key": "etiq-e-mg", "type": "label", "pos": [4.2302, 5.7698, 3.7], "text": "10 électrons" },
-        { "key": "op-mg", "type": "arrow", "pos": [3.0563, 6.9437, 3.9167], "to": [4.057, 5.943, 3.4333], "accent": true },
-        { "key": "txt-op-mg", "type": "text", "pos": [3.5566, 6.4434, 2.8667], "text": "− 2" },
-        { "key": "nom-mg", "type": "text", "pos": [4.0233, 6.91, 0.4], "text": "Mg²⁺" },
-        { "key": "barre-z-cl", "type": "arrow", "role": "measure", "pos": [5.7698, 4.2302, 0.4], "to": [5.7698, 4.2302, 4.99] },
-        { "key": "tete-z-cl", "type": "sphere", "role": "proton", "pos": [5.7698, 4.2302, 5.29], "size": 0.6 },
-        { "key": "etiq-z-cl", "type": "label", "pos": [5.7698, 4.2302, 5.59], "text": "Z = 17" },
-        { "key": "barre-e-cl", "type": "arrow", "role": "measure", "pos": [7.1169, 2.8831, 0.4], "to": [7.1169, 2.8831, 5.26] },
-        { "key": "tete-e-cl", "type": "sphere", "role": "electron", "pos": [7.1169, 2.8831, 5.56], "size": 0.6 },
-        { "key": "etiq-e-cl", "type": "label", "pos": [7.1169, 2.8831, 5.86], "text": "18 électrons" },
-        { "key": "op-cl", "type": "arrow", "pos": [5.943, 4.057, 5.3], "to": [6.9437, 3.0563, 5.55] },
-        { "key": "txt-op-cl", "type": "text", "pos": [6.4434, 3.5566, 4.5333], "text": "+ 1" },
-        { "key": "nom-cl", "type": "text", "pos": [6.91, 4.0233, 0.4], "text": "Cl⁻" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 4.4
+        },
+        {
+          "key": "barre-z-mg",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            2.8831,
+            7.1169,
+            0.4
+          ],
+          "to": [
+            2.8831,
+            7.1169,
+            3.64
+          ]
+        },
+        {
+          "key": "tete-z-mg",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            2.8831,
+            7.1169,
+            3.94
+          ],
+          "size": 0.6
+        },
+        {
+          "key": "etiq-z-mg",
+          "type": "label",
+          "pos": [
+            2.8831,
+            7.1169,
+            4.24
+          ],
+          "text": "Z = 12"
+        },
+        {
+          "key": "barre-e-mg",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            4.2302,
+            5.7698,
+            0.4
+          ],
+          "to": [
+            4.2302,
+            5.7698,
+            3.1
+          ]
+        },
+        {
+          "key": "tete-e-mg",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            4.2302,
+            5.7698,
+            3.4
+          ],
+          "size": 0.6
+        },
+        {
+          "key": "etiq-e-mg",
+          "type": "label",
+          "pos": [
+            4.2302,
+            5.7698,
+            3.7
+          ],
+          "text": "10 électrons"
+        },
+        {
+          "key": "op-mg",
+          "type": "arrow",
+          "pos": [
+            3.0563,
+            6.9437,
+            3.9167
+          ],
+          "to": [
+            4.057,
+            5.943,
+            3.4333
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-op-mg",
+          "type": "text",
+          "pos": [
+            3.5566,
+            6.4434,
+            2.8667
+          ],
+          "text": "− 2"
+        },
+        {
+          "key": "nom-mg",
+          "type": "text",
+          "pos": [
+            4.0233,
+            6.91,
+            0.4
+          ],
+          "text": "Mg²⁺"
+        },
+        {
+          "key": "barre-z-cl",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            5.7698,
+            4.2302,
+            0.4
+          ],
+          "to": [
+            5.7698,
+            4.2302,
+            4.99
+          ]
+        },
+        {
+          "key": "tete-z-cl",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            5.7698,
+            4.2302,
+            5.29
+          ],
+          "size": 0.6
+        },
+        {
+          "key": "etiq-z-cl",
+          "type": "label",
+          "pos": [
+            5.7698,
+            4.2302,
+            5.59
+          ],
+          "text": "Z = 17"
+        },
+        {
+          "key": "barre-e-cl",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            7.1169,
+            2.8831,
+            0.4
+          ],
+          "to": [
+            7.1169,
+            2.8831,
+            5.26
+          ]
+        },
+        {
+          "key": "tete-e-cl",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            7.1169,
+            2.8831,
+            5.56
+          ],
+          "size": 0.6
+        },
+        {
+          "key": "etiq-e-cl",
+          "type": "label",
+          "pos": [
+            7.1169,
+            2.8831,
+            5.86
+          ],
+          "text": "18 électrons"
+        },
+        {
+          "key": "op-cl",
+          "type": "arrow",
+          "pos": [
+            5.943,
+            4.057,
+            5.3
+          ],
+          "to": [
+            6.9437,
+            3.0563,
+            5.55
+          ]
+        },
+        {
+          "key": "txt-op-cl",
+          "type": "text",
+          "pos": [
+            6.4434,
+            3.5566,
+            4.5333
+          ],
+          "text": "+ 1"
+        },
+        {
+          "key": "nom-cl",
+          "type": "text",
+          "pos": [
+            6.91,
+            4.0233,
+            0.4
+          ],
+          "text": "Cl⁻"
+        }
       ],
       "notationLine": 6,
       "counters": [
@@ -345,30 +1482,180 @@
       "tag": "try",
       "title": "À toi de former un ion",
       "takeaway": "Pour former un ion, on change seulement le nombre d’électrons ; retirer un proton changerait le noyau, et donc le symbole.",
-      "text": "Le constructeur part d’un atome de sodium : 11 protons, 12 neutrons, 11 électrons. Il calcule la charge $q = (Z - n_{\\mathrm{e}}) \\times e$, où $n_{\\mathrm{e}}$ est le nombre d’électrons. Retire un électron : la charge passe à $+1\\,e$ et « cation » s’affiche. Remets-le, puis retire plutôt un proton : la charge devient $-1\\,e$ et le symbole change, ce n’est plus un noyau de sodium. Un ion se forme en changeant les électrons, jamais les protons.",
-      "sceneDescription": "The neutral sodium atom is back, pale again and labelled « atome Na », with its nucleus « 11 protons » and 11 blue electrons, above the note « Pas à l’échelle ». An accent arrow points outward from the rightmost electron, labelled « −1 électron : Na⁺ », while a plain arrow leaves the nucleus toward the lower left, labelled « −1 proton : ≠ Na ».",
+      "text": "Le constructeur part d’un atome de sodium : 11 protons, 12 neutrons, 11 électrons. Il calcule la charge $q = (Z - n_{\\mathrm{e}}) \\times e$, où $n_{\\mathrm{e}}$ est le nombre d’électrons. Retire un électron : la charge passe à $+1\\,e$ et « cation » s’affiche. Remets-le, puis retire plutôt un proton : le noyau n’a plus 11 protons, ce n’est plus du sodium, et la charge $-1\\,e$ affichée ne décrit pas un anion du sodium. Un ion de sodium se forme en changeant les électrons, jamais les protons. Un ion se forme en changeant les électrons, jamais les protons.",
+      "sceneDescription": "Two copies of the same small sodium atom stand side by side, each on its own board. On the left, the accent arrow sends one blue electron out of the green sphere under the caption « Na⁺ : un ion »; on the right, a plain arrow sends one red proton out of the nucleus, now tagged « 10 protons », under the caption « 10 protons : ce n’est plus du sodium », with the note « Pas à l’échelle » below.",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 4.4 },
-        { "key": "atome", "type": "sphere", "role": "atom", "pos": [5, 5, 2.95], "size": 5.4, "opacity": 0.45 },
-        { "key": "noyau", "type": "sphere", "role": "nucleus", "pos": [5, 5, 2.95], "size": 1.2 },
-        { "key": "e1", "type": "sphere", "role": "electron", "pos": [7.0303, 4.4897, 3.71], "size": 0.55 },
-        { "key": "e2", "type": "sphere", "role": "electron", "pos": [6.8287, 4.6913, 4.8993], "size": 0.55 },
-        { "key": "e3", "type": "sphere", "role": "electron", "pos": [6.2877, 5.2323, 5.7111], "size": 0.55 },
-        { "key": "e4", "type": "sphere", "role": "electron", "pos": [5.5792, 5.9408, 5.8876], "size": 0.55 },
-        { "key": "e5", "type": "sphere", "role": "electron", "pos": [4.9281, 6.5919, 5.3725], "size": 0.55 },
-        { "key": "e6", "type": "sphere", "role": "electron", "pos": [4.5411, 6.9789, 4.3297], "size": 0.55 },
-        { "key": "e7", "type": "sphere", "role": "electron", "pos": [4.5411, 6.9789, 3.0903], "size": 0.55 },
-        { "key": "e8", "type": "sphere", "role": "electron", "pos": [4.9281, 6.5919, 2.0475], "size": 0.55 },
-        { "key": "e9", "type": "sphere", "role": "electron", "pos": [5.5792, 5.9408, 1.5324], "size": 0.55 },
-        { "key": "e10", "type": "sphere", "role": "electron", "pos": [6.2877, 5.2323, 1.7089], "size": 0.55 },
-        { "key": "e11", "type": "sphere", "role": "electron", "pos": [6.8287, 4.6913, 2.5207], "size": 0.55 },
-        { "key": "etiq-noyau", "type": "label", "pos": [5, 5, 2.95], "text": "11 protons" },
-        { "key": "nom-entite", "type": "label", "pos": [5, 5, 5.65], "text": "atome Na" },
-        { "key": "fleche-electron", "type": "arrow", "pos": [6.5011, 3.4989, 2.95], "to": [7.6943, 2.3057, 2.95], "accent": true },
-        { "key": "txt-fleche-electron", "type": "text", "pos": [6.9245, 3.0755, 2.3667], "text": "−1 électron : Na⁺" },
-        { "key": "fleche-proton", "type": "arrow", "pos": [4.644, 5.356, 2.5533], "to": [3.2199, 6.7801, 0.97] },
-        { "key": "txt-fleche-proton", "type": "text", "pos": [3.4051, 7.0616, 0.4], "text": "−1 proton : ≠ Na" },
-        { "key": "echelle", "type": "text", "pos": [8.6, 8.6, 0], "text": "Pas à l’échelle" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            3,
+            7,
+            0
+          ],
+          "size": 3.6
+        },
+        {
+          "key": "atome",
+          "type": "sphere",
+          "role": "ion",
+          "pos": [
+            3,
+            7,
+            1.9
+          ],
+          "size": 2.8,
+          "opacity": 0.55
+        },
+        {
+          "key": "noyau",
+          "type": "sphere",
+          "role": "nucleus",
+          "pos": [
+            3,
+            7,
+            1.9
+          ],
+          "size": 0.8
+        },
+        {
+          "key": "etiq-noyau",
+          "type": "label",
+          "pos": [
+            3,
+            7,
+            3.7
+          ],
+          "text": "11 protons"
+        },
+        {
+          "key": "e1",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            3,
+            9.5,
+            1.9
+          ],
+          "size": 0.45,
+          "shadow": false
+        },
+        {
+          "key": "fleche-electron",
+          "type": "arrow",
+          "pos": [
+            3,
+            8.4,
+            1.9
+          ],
+          "to": [
+            3,
+            9.2,
+            1.9
+          ],
+          "accent": true
+        },
+        {
+          "key": "legende-g",
+          "type": "text",
+          "pos": [
+            5.2,
+            9.2,
+            0
+          ],
+          "text": "Na⁺ : un ion"
+        },
+        {
+          "key": "socle-d",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            7,
+            3,
+            0
+          ],
+          "size": 3.6
+        },
+        {
+          "key": "atome-d",
+          "type": "sphere",
+          "role": "atom",
+          "pos": [
+            7,
+            3,
+            1.9
+          ],
+          "size": 2.8,
+          "opacity": 0.55
+        },
+        {
+          "key": "noyau-d",
+          "type": "sphere",
+          "role": "nucleus",
+          "pos": [
+            7,
+            3,
+            1.9
+          ],
+          "size": 0.8
+        },
+        {
+          "key": "etiq-noyau-d",
+          "type": "label",
+          "pos": [
+            7,
+            3,
+            3.7
+          ],
+          "text": "10 protons"
+        },
+        {
+          "key": "p-sorti",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            7,
+            5.5,
+            1.9
+          ],
+          "size": 0.45,
+          "shadow": false
+        },
+        {
+          "key": "fleche-proton",
+          "type": "arrow",
+          "pos": [
+            7,
+            3.6,
+            1.9
+          ],
+          "to": [
+            7,
+            5.2,
+            1.9
+          ]
+        },
+        {
+          "key": "legende-d",
+          "type": "text",
+          "pos": [
+            9.2,
+            5.2,
+            0
+          ],
+          "text": "10 protons : ce n’est plus du sodium"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            9.6,
+            9.6,
+            0
+          ],
+          "text": "Pas à l’échelle"
+        }
       ],
       "notationLine": 5,
       "counters": [
@@ -416,33 +1703,274 @@
       "id": "s8",
       "tag": "concept",
       "title": "Molécule, atome, cation ou anion ?",
-      "takeaway": "On classe une entité d’après sa formule : sans exposant, molécule (plusieurs atomes) ou atome (un seul) ; exposant +, cation ; exposant −, anion.",
-      "text": "Une formule chimique suffit pour qualifier une entité. Sans exposant, l’entité est neutre : $\\mathrm{H_2O}$ et $\\mathrm{CO_2}$, qui associent plusieurs atomes, sont des molécules ; $\\mathrm{Na}$, un symbole seul, désigne un atome. Avec un exposant positif, comme $\\mathrm{Na}^{+}$ ou $\\mathrm{Mg}^{2+}$, c’est un cation. Avec un exposant négatif, comme $\\mathrm{F}^{-}$ ou $\\mathrm{Cl}^{-}$, c’est un anion.",
+      "takeaway": "Sans exposant, l’entité est neutre (molécule $\\mathrm{H_2O}$, atome $\\mathrm{Na}$) ; exposant +, cation ; exposant −, anion.",
+      "text": "Une formule chimique suffit pour qualifier une entité. Une formule chimique suffit pour qualifier une entité isolée. Sans exposant, l’entité est neutre : $\\mathrm{H_2O}$ et $\\mathrm{CO_2}$, qui associent plusieurs atomes, sont des molécules ; $\\mathrm{Na}$, un symbole seul, désigne un atome. Avec un exposant positif, comme $\\mathrm{Na}^{+}$ ou $\\mathrm{Mg}^{2+}$, c’est un cation. Avec un exposant négatif, comme $\\mathrm{F}^{-}$ ou $\\mathrm{Cl}^{-}$, c’est un anion.",
       "sceneDescription": "Four tiles stand in a row on the board, named « molécule » (grey), « atome » (pale blue), « cation » and « anion » (both green, ions), and seven formulas above them each drop along an arrow into their tile: « H₂O » and « CO₂ » into molécule, « Na » into atome, « Na⁺ » and « Mg²⁺ » into cation, « F⁻ » and « Cl⁻ » into anion. The arrow from « Mg²⁺ » into « cation » is the accent.",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 4.4 },
-        { "key": "bac-molecule", "type": "tile", "role": "neutral", "pos": [3.2679, 6.7321, 0.4], "size": 1.05 },
-        { "key": "bac-atome", "type": "tile", "role": "atom", "pos": [4.4227, 5.5773, 0.4], "size": 1.05 },
-        { "key": "bac-cation", "type": "tile", "role": "ion", "pos": [5.5773, 4.4227, 0.4], "size": 1.05 },
-        { "key": "bac-anion", "type": "tile", "role": "ion", "pos": [6.7321, 3.2679, 0.4], "size": 1.05 },
-        { "key": "nom-molecule", "type": "text", "pos": [3.9807, 7.7526, 0.4], "text": "molécule" },
-        { "key": "nom-atome", "type": "text", "pos": [5.3278, 6.4055, 0.4], "text": "atome" },
-        { "key": "nom-cation", "type": "text", "pos": [6.444, 5.2893, 0.4], "text": "cation" },
-        { "key": "nom-anion", "type": "text", "pos": [7.6372, 4.0961, 0.4], "text": "anion" },
-        { "key": "f-h2o", "type": "text", "pos": [2.5944, 7.4056, 4.3333], "text": "H₂O" },
-        { "key": "f-co2", "type": "text", "pos": [3.4604, 6.5396, 4.3333], "text": "CO₂" },
-        { "key": "f-na", "type": "text", "pos": [4.4227, 5.5773, 4.3333], "text": "Na" },
-        { "key": "f-na-plus", "type": "text", "pos": [5.1925, 4.8075, 4.3333], "text": "Na⁺" },
-        { "key": "f-mg", "type": "text", "pos": [5.9623, 4.0377, 4.3333], "text": "Mg²⁺" },
-        { "key": "f-f", "type": "text", "pos": [6.6935, 3.3065, 4.3333], "text": "F⁻" },
-        { "key": "f-cl", "type": "text", "pos": [7.4633, 2.5367, 4.3333], "text": "Cl⁻" },
-        { "key": "tri-h2o", "type": "arrow", "pos": [2.5944, 7.4056, 3.9], "to": [3.114, 6.886, 0.8667] },
-        { "key": "tri-co2", "type": "arrow", "pos": [3.4604, 6.5396, 3.9], "to": [3.3834, 6.6166, 0.8667] },
-        { "key": "tri-na", "type": "arrow", "pos": [4.4227, 5.5773, 3.9], "to": [4.4227, 5.5773, 0.8667] },
-        { "key": "tri-na-plus", "type": "arrow", "pos": [5.1925, 4.8075, 3.9], "to": [5.4426, 4.5574, 0.8667] },
-        { "key": "tri-mg", "type": "arrow", "pos": [5.9623, 4.0377, 3.9], "to": [5.712, 4.288, 0.8667], "accent": true },
-        { "key": "tri-f", "type": "arrow", "pos": [6.6935, 3.3065, 3.9], "to": [6.6166, 3.3834, 0.8667] },
-        { "key": "tri-cl", "type": "arrow", "pos": [7.4633, 2.5367, 3.9], "to": [6.8667, 3.1333, 0.8667] }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 4.4
+        },
+        {
+          "key": "bac-molecule",
+          "type": "tile",
+          "role": "neutral",
+          "pos": [
+            3.2679,
+            6.7321,
+            0.4
+          ],
+          "size": 1.05
+        },
+        {
+          "key": "bac-atome",
+          "type": "tile",
+          "role": "atom",
+          "pos": [
+            4.4227,
+            5.5773,
+            0.4
+          ],
+          "size": 1.05
+        },
+        {
+          "key": "bac-cation",
+          "type": "tile",
+          "role": "ion",
+          "pos": [
+            5.5773,
+            4.4227,
+            0.4
+          ],
+          "size": 1.05
+        },
+        {
+          "key": "bac-anion",
+          "type": "tile",
+          "role": "ion",
+          "pos": [
+            6.7321,
+            3.2679,
+            0.4
+          ],
+          "size": 1.05
+        },
+        {
+          "key": "nom-molecule",
+          "type": "text",
+          "pos": [
+            3.9807,
+            7.7526,
+            0.4
+          ],
+          "text": "molécule"
+        },
+        {
+          "key": "nom-atome",
+          "type": "text",
+          "pos": [
+            5.3278,
+            6.4055,
+            0.4
+          ],
+          "text": "atome"
+        },
+        {
+          "key": "nom-cation",
+          "type": "text",
+          "pos": [
+            6.444,
+            5.2893,
+            0.4
+          ],
+          "text": "cation"
+        },
+        {
+          "key": "nom-anion",
+          "type": "text",
+          "pos": [
+            7.6372,
+            4.0961,
+            0.4
+          ],
+          "text": "anion"
+        },
+        {
+          "key": "f-h2o",
+          "type": "text",
+          "pos": [
+            2.5944,
+            7.4056,
+            4.3333
+          ],
+          "text": "H₂O"
+        },
+        {
+          "key": "f-co2",
+          "type": "text",
+          "pos": [
+            3.4604,
+            6.5396,
+            4.3333
+          ],
+          "text": "CO₂"
+        },
+        {
+          "key": "f-na",
+          "type": "text",
+          "pos": [
+            4.4227,
+            5.5773,
+            4.3333
+          ],
+          "text": "Na"
+        },
+        {
+          "key": "f-na-plus",
+          "type": "text",
+          "pos": [
+            5.1925,
+            4.8075,
+            4.3333
+          ],
+          "text": "Na⁺"
+        },
+        {
+          "key": "f-mg",
+          "type": "text",
+          "pos": [
+            5.9623,
+            4.0377,
+            4.3333
+          ],
+          "text": "Mg²⁺"
+        },
+        {
+          "key": "f-f",
+          "type": "text",
+          "pos": [
+            6.6935,
+            3.3065,
+            4.3333
+          ],
+          "text": "F⁻"
+        },
+        {
+          "key": "f-cl",
+          "type": "text",
+          "pos": [
+            7.4633,
+            2.5367,
+            4.3333
+          ],
+          "text": "Cl⁻"
+        },
+        {
+          "key": "tri-h2o",
+          "type": "arrow",
+          "pos": [
+            2.5944,
+            7.4056,
+            3.9
+          ],
+          "to": [
+            3.114,
+            6.886,
+            0.8667
+          ]
+        },
+        {
+          "key": "tri-co2",
+          "type": "arrow",
+          "pos": [
+            3.4604,
+            6.5396,
+            3.9
+          ],
+          "to": [
+            3.3834,
+            6.6166,
+            0.8667
+          ]
+        },
+        {
+          "key": "tri-na",
+          "type": "arrow",
+          "pos": [
+            4.4227,
+            5.5773,
+            3.9
+          ],
+          "to": [
+            4.4227,
+            5.5773,
+            0.8667
+          ]
+        },
+        {
+          "key": "tri-na-plus",
+          "type": "arrow",
+          "pos": [
+            5.1925,
+            4.8075,
+            3.9
+          ],
+          "to": [
+            5.4426,
+            4.5574,
+            0.8667
+          ]
+        },
+        {
+          "key": "tri-mg",
+          "type": "arrow",
+          "pos": [
+            5.9623,
+            4.0377,
+            3.9
+          ],
+          "to": [
+            5.712,
+            4.288,
+            0.8667
+          ],
+          "accent": true
+        },
+        {
+          "key": "tri-f",
+          "type": "arrow",
+          "pos": [
+            6.6935,
+            3.3065,
+            3.9
+          ],
+          "to": [
+            6.6166,
+            3.3834,
+            0.8667
+          ]
+        },
+        {
+          "key": "tri-cl",
+          "type": "arrow",
+          "pos": [
+            7.4633,
+            2.5367,
+            3.9
+          ],
+          "to": [
+            6.8667,
+            3.1333,
+            0.8667
+          ]
+        }
       ],
       "notationLine": null,
       "counters": [
