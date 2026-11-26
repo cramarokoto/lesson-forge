@@ -1,0 +1,271 @@
+{
+  "course": "physique-chimie-seconde",
+  "chapter": "atome",
+  "id": "element-isotopes",
+  "title": "Élément chimique et isotopes",
+  "goal": "Reconnaître, à partir de leurs écritures, que des atomes et des ions de même numéro atomique Z appartiennent au même élément chimique, et identifier des isotopes.",
+  "notation": [
+    "{}^{6}_{3}\\mathrm{Li} : N = 6 - 3 = 3 \\qquad {}^{7}_{3}\\mathrm{Li} : N = 7 - 3 = 4",
+    "Z = 3 \\;\\Leftrightarrow\\; \\text{élément lithium, symbole } \\mathrm{Li}",
+    "\\text{isotopes : même } Z,\\ A \\text{ différents} \\qquad {}^{6}_{3}\\mathrm{Li},\\ {}^{7}_{3}\\mathrm{Li}",
+    "{}^{40}_{18}\\mathrm{Ar} \\text{ et } {}^{40}_{20}\\mathrm{Ca} : \\text{même } A,\\ Z \\text{ différents}",
+    "{}^{7}_{3}\\mathrm{Li} \\xrightarrow{-\\,1\\ \\text{électron}} {}^{7}_{3}\\mathrm{Li}^{+} : Z = 3",
+    "Z = 8 : {}^{16}_{8}\\mathrm{O},\\ {}^{18}_{8}\\mathrm{O} \\qquad Z = 9 : {}^{19}_{9}\\mathrm{F},\\ {}^{19}_{9}\\mathrm{F}^{-}",
+    "\\text{même } Z \\Rightarrow \\text{même élément} \\qquad \\text{autre } Z \\Rightarrow \\text{autre élément}"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "tag": "observe",
+      "title": "Deux noyaux de lithium",
+      "takeaway": "Deux noyaux de lithium ont le même nombre de protons, 3, mais pas le même nombre de neutrons : on en compte 3 dans l’un, 4 dans l’autre.",
+      "text": "Le lithium de la nature contient deux sortes de noyaux. Le premier s’écrit ${}^{6}_{3}\\mathrm{Li}$ : 3 protons et $6 - 3 = 3$ neutrons. Le second s’écrit ${}^{7}_{3}\\mathrm{Li}$ : 3 protons aussi, mais $7 - 3 = 4$ neutrons. Ces deux noyaux ont donc le même nombre de protons et un neutron d’écart. Pourtant, on les appelle tous les deux « lithium ». Qu’ont-ils en commun qui justifie ce même nom ?",
+      "sceneDescription": "Two nucleus clusters stand side by side on one common board: on the left 3 red proton spheres and 3 grey neutron spheres, on the right 3 red and 4 grey, each captioned with its notation, « 6 over 3 Li » and « 7 over 3 Li ». A bracket in the accent color marks the single extra grey sphere of the right cluster and reads « + 1 neutron ».",
+      "scene": [],
+      "notationLine": 0,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": "3 et 3", "changed": true },
+        { "key": "n", "label": "N (neutrons)", "value": "3 et 4", "changed": true },
+        { "key": "a", "label": "A (nucléons)", "value": "6 et 7", "changed": true }
+      ],
+      "sourceIds": ["nist-li", "iupac-green-book"]
+    },
+    {
+      "id": "s2",
+      "tag": "concept",
+      "title": "Le lithium, c’est 3 protons",
+      "takeaway": "Un élément chimique est défini par son numéro atomique Z : tous les noyaux à 3 protons appartiennent à l’élément lithium.",
+      "text": "Ce qui fait l’identité d’un noyau, c’est son nombre de protons. Tout noyau qui contient 3 protons est un noyau de lithium, quel que soit son nombre de neutrons. On dit que ces noyaux appartiennent au même élément chimique : le lithium, de symbole Li. Un élément chimique est donc caractérisé par son numéro atomique Z. À chaque valeur de Z correspond un seul élément, donc un seul symbole : Z = 3, c’est toujours Li.",
+      "sceneDescription": "The two clusters stay in place, and a frame in the accent color now surrounds both, labelled « élément lithium : Z = 3 ». Inside each cluster the 3 red protons stay bright while the grey neutrons fade.",
+      "scene": [],
+      "notationLine": 1,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": "3 et 3" },
+        { "key": "n", "label": "N (neutrons)", "value": "3 et 4" },
+        { "key": "a", "label": "A (nucléons)", "value": "6 et 7" },
+        { "key": "elem", "label": "Élément", "value": "lithium", "changed": true }
+      ],
+      "sourceIds": ["referentiel-seconde-pc", "oqlf-radioelement", "iupac-red-book", "nist-li"]
+    },
+    {
+      "id": "s3",
+      "tag": "concept",
+      "title": "Des isotopes",
+      "takeaway": "Des isotopes sont des noyaux de même Z mais de A différents : ${}^{6}_{3}\\mathrm{Li}$ et ${}^{7}_{3}\\mathrm{Li}$ sont deux isotopes du lithium.",
+      "text": "Des noyaux qui ont le même nombre de protons mais pas le même nombre de neutrons s’appellent des isotopes. Comme $A = Z + N$, ils ont le même Z mais des nombres de masse A différents. Dans l’écriture conventionnelle, cela se voit tout de suite : même nombre en bas, nombres différents en haut. On distingue les isotopes d’un élément par leur nombre de masse : lithium 6 et lithium 7.",
+      "callout": {
+        "kind": "order-of-magnitude",
+        "text": "Dans le lithium de la nature, environ 92 noyaux sur 100 sont du lithium 7 ; les autres sont du lithium 6."
+      },
+      "sceneDescription": "The frame stays around both clusters, and the two notations stand under them side by side. A bracket labelled « même Z » joins the two lower 3, and an accent bracket labelled « A différents » joins the upper 6 and 7.",
+      "scene": [],
+      "notationLine": 2,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": "3 et 3" },
+        { "key": "n", "label": "N (neutrons)", "value": "3 et 4" },
+        { "key": "a", "label": "A (nucléons)", "value": "6 et 7" },
+        { "key": "elem", "label": "Élément", "value": "lithium" }
+      ],
+      "sourceIds": ["iupac-red-book", "iupac-green-book", "nist-li", "referentiel-seconde-pc"]
+    },
+    {
+      "id": "s4",
+      "tag": "caution",
+      "title": "Même A, éléments différents",
+      "takeaway": "Pour trouver l’élément, on compare les Z, pas les A : ${}^{40}_{18}\\mathrm{Ar}$ et ${}^{40}_{20}\\mathrm{Ca}$ ont le même A mais sont deux éléments différents.",
+      "text": "Piège fréquent : croire que deux noyaux de même nombre de masse sont du même élément. Prenons ${}^{40}_{18}\\mathrm{Ar}$, un noyau d’argon, et ${}^{40}_{20}\\mathrm{Ca}$, un noyau de calcium. Tous deux ont 40 nucléons. Mais le premier contient 18 protons et 22 neutrons, le second 20 protons et 20 neutrons. Leurs Z diffèrent : ils appartiennent à deux éléments différents, et ne sont donc pas des isotopes. Seul Z, le nombre du bas, décide de l’élément.",
+      "sceneDescription": "The lithium frame fades out; two bars of the same total length, both labelled « A = 40 nucléons », stand side by side on the board, each split into a red protons part and a grey neutrons part: 18 + 22 in the frame « argon : Z = 18 » on the left, 20 + 20 in a separate frame « calcium : Z = 20 » on the right. An accent bracket between the ends of the two red parts marks the gap « 2 protons d’écart ».",
+      "scene": [],
+      "notationLine": 3,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": "18 et 20", "changed": true },
+        { "key": "n", "label": "N (neutrons)", "value": "22 et 20", "changed": true },
+        { "key": "a", "label": "A (nucléons)", "value": "40 et 40", "changed": true },
+        { "key": "elem", "label": "Élément", "value": "argon et calcium", "changed": true }
+      ],
+      "sourceIds": ["nist-ar", "nist-ca", "iupac-green-book"]
+    },
+    {
+      "id": "s5",
+      "tag": "concept",
+      "title": "Un ion reste du même élément",
+      "takeaway": "Un ion garde le noyau de son atome : quand l’atome de lithium perd un électron, l’ion $\\mathrm{Li}^{+}$ a toujours Z = 3, c’est encore du lithium.",
+      "text": "Revenons au lithium. Un atome ${}^{7}_{3}\\mathrm{Li}$ possède 3 électrons. S’il en perd un, il devient un cation : l’ion ${}^{7}_{3}\\mathrm{Li}^{+}$, qui n’a plus que 2 électrons. Son noyau n’a pas changé : toujours 3 protons, donc Z = 3. L’ion appartient au même élément chimique que l’atome dont il provient. Un élément chimique regroupe ainsi tous les atomes et tous les ions de même Z, quels que soient leurs nombres de neutrons et d’électrons.",
+      "sceneDescription": "The frame « élément lithium : Z = 3 » returns, holding on the left the atom, a 7-nucleon cluster with 3 small electron spheres around it, and on the right the same cluster with only 2 electrons, captioned « 7 over 3 Li + ». An accent arrow labelled « − 1 électron » runs from the atom to the ion, and both stay inside the single frame.",
+      "scene": [],
+      "notationLine": 4,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": "3", "changed": true },
+        { "key": "n", "label": "N (neutrons)", "value": "4", "changed": true },
+        { "key": "a", "label": "A (nucléons)", "value": "7", "changed": true },
+        { "key": "e", "label": "Électrons", "value": "3 puis 2", "changed": true },
+        { "key": "elem", "label": "Élément", "value": "lithium", "changed": true }
+      ],
+      "sourceIds": ["pubchem-li-ion", "iupac-red-book", "oqlf-radioelement", "nist-li"]
+    },
+    {
+      "id": "s6",
+      "tag": "calculate",
+      "title": "Trier des écritures par élément",
+      "takeaway": "Pour trier des écritures par élément, on lit d’abord Z, en bas à gauche ; puis, dans un même élément, des A différents signalent des isotopes.",
+      "text": "Voici quatre écritures : ${}^{16}_{8}\\mathrm{O}$, ${}^{19}_{9}\\mathrm{F}$, ${}^{18}_{8}\\mathrm{O}$ et ${}^{19}_{9}\\mathrm{F}^{-}$. On lit d’abord Z, en bas. Z = 8 pour les deux O : élément oxygène. Z = 9 pour l’atome F et pour l’ion $\\mathrm{F}^{-}$ : élément fluor. On compare ensuite A dans chaque groupe. Les deux noyaux d’oxygène ont des A différents, 16 et 18 : ce sont des isotopes. Les deux écritures du fluor ont le même noyau : un atome et son ion, pas des isotopes.",
+      "sceneDescription": "Four notation cards stand in a row at the top, and arrows labelled « Z = 8 » and « Z = 9 » carry each card down into one of two frames, « oxygène » and « fluor ». Inside the oxygen frame an accent bracket labelled « isotopes » joins the 16 over 8 O and 18 over 8 O cards, while a plain bracket « même noyau » joins the two fluorine cards.",
+      "scene": [],
+      "notationLine": 5,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": "8 et 9", "changed": true },
+        { "key": "a", "label": "A (nucléons)", "value": "16, 18 et 19", "changed": true },
+        { "key": "elem", "label": "Élément", "value": "oxygène et fluor", "changed": true }
+      ],
+      "sourceIds": ["nist-o", "nist-f", "pubchem-ions"]
+    },
+    {
+      "id": "s7",
+      "tag": "try",
+      "title": "À toi : garder ou changer l’élément",
+      "takeaway": "Changer le nombre de neutrons ou d’électrons laisse l’élément lithium ; ajouter un seul proton change d’élément.",
+      "text": "Le module part de l’atome ${}^{7}_{3}\\mathrm{Li}$ : 3 protons, 4 neutrons, 3 électrons. Avant chaque clic, prévois si le symbole Li va rester. Retire 1 neutron : quelle écriture s’affiche ? Remets-le, puis retire 1 électron. Remets-le aussi, puis ajoute 1 proton. Compare le symbole affiché à chaque fois : un seul de ces trois changements fait quitter l’élément lithium. Lequel, et pourquoi lui seul modifie-t-il Z ?",
+      "sceneDescription": "The lithium frame holds a 7-nucleon cluster, and three accent arrows leave it: « − 1 neutron » and « − 1 électron » end inside the frame on the notations 6 over 3 Li and 7 over 3 Li +, while « + 1 proton » ends outside the frame on a cluster captioned « Z = 4 : autre élément ».",
+      "scene": [],
+      "notationLine": 6,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": "3" },
+        { "key": "n", "label": "N (neutrons)", "value": "4" },
+        { "key": "a", "label": "A (nucléons)", "value": "7" },
+        { "key": "e", "label": "Électrons", "value": "3", "changed": true },
+        { "key": "elem", "label": "Élément", "value": "lithium" }
+      ],
+      "widget": { "type": "atom-builder", "params": { "protons": 3, "neutrons": 4, "electrons": 3 } },
+      "sourceIds": ["nist-li", "oqlf-radioelement"]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Quelle paire réunit deux isotopes ?",
+      "options": [
+        "${}^{40}_{18}\\mathrm{Ar}$ et ${}^{40}_{20}\\mathrm{Ca}$",
+        "${}^{12}_{6}\\mathrm{C}$ et ${}^{13}_{6}\\mathrm{C}$",
+        "${}^{16}_{8}\\mathrm{O}$ et ${}^{19}_{9}\\mathrm{F}$",
+        "${}^{23}_{11}\\mathrm{Na}$ et ${}^{23}_{11}\\mathrm{Na}^{+}$"
+      ],
+      "answer": 1,
+      "explanation": "${}^{12}_{6}\\mathrm{C}$ et ${}^{13}_{6}\\mathrm{C}$ ont le même Z, 6, et des A différents, 12 et 13 : ce sont deux isotopes du carbone. La paire ${}^{40}_{18}\\mathrm{Ar}$ et ${}^{40}_{20}\\mathrm{Ca}$ est tentante, car le même nombre en haut saute aux yeux ; mais leurs Z diffèrent : ce sont deux éléments différents. ${}^{16}_{8}\\mathrm{O}$ et ${}^{19}_{9}\\mathrm{F}$ n’ont pas le même Z non plus. ${}^{23}_{11}\\mathrm{Na}$ et ${}^{23}_{11}\\mathrm{Na}^{+}$ ont le même noyau : un atome et son ion, pas deux isotopes."
+    },
+    {
+      "id": "q2",
+      "question": "Un noyau ${}^{6}_{3}\\mathrm{Li}$ reçoit 1 neutron de plus. Que devient-il ?",
+      "options": [
+        "Un noyau d’un autre élément, puisque sa composition a changé.",
+        "L’ion ${}^{6}_{3}\\mathrm{Li}^{-}$, puisque le neutron apporte une charge négative.",
+        "Le noyau ${}^{7}_{3}\\mathrm{Li}$, toujours de l’élément lithium."
+      ],
+      "answer": 2,
+      "explanation": "Ajouter un neutron ne change pas le nombre de protons : Z reste 3 et A passe de 6 à 7. On obtient ${}^{7}_{3}\\mathrm{Li}$, l’autre isotope du lithium. Il est tentant de croire que toute modification du noyau change l’élément ; mais seul le nombre de protons fait l’identité de l’élément. Et le neutron ne porte pas de charge : il ne crée pas d’ion."
+    },
+    {
+      "id": "q3",
+      "question": "Que peut-on dire de l’atome ${}^{19}_{9}\\mathrm{F}$ et de l’ion ${}^{19}_{9}\\mathrm{F}^{-}$ ?",
+      "options": [
+        "Ils appartiennent tous deux à l’élément fluor, car ils ont le même Z.",
+        "L’ion n’est plus du fluor, puisqu’il a gagné un électron.",
+        "Ce sont deux isotopes du fluor, puisque l’un est chargé et l’autre non."
+      ],
+      "answer": 0,
+      "explanation": "L’ion ${}^{19}_{9}\\mathrm{F}^{-}$ a gagné un électron, mais son noyau n’a pas changé : 9 protons, donc Z = 9. Comme l’atome, il appartient à l’élément fluor. Le piège « ce n’est plus du fluor » est tentant, car l’écriture a changé ; mais la charge, en haut à droite, ne concerne que les électrons. Ce ne sont pas non plus des isotopes : même A et même Z, donc même nombre de neutrons."
+    }
+  ],
+  "sources": [
+    {
+      "id": "referentiel-seconde-pc",
+      "title": "Annexe — Programme de physique-chimie de seconde générale et technologique (BO spécial n° 1 du 22 janvier 2019)",
+      "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
+      "accessed": "2026-11-26",
+      "supports": "p. 6, 1.B: « Le noyau de l’atome, siège de sa masse et de son identité », « Élément chimique », « écriture conventionnelle »; p. 8, 2.C: « Isotopes. » / « Identifier des isotopes. »"
+    },
+    {
+      "id": "iupac-red-book",
+      "title": "IUPAC, Nomenclature of Inorganic Chemistry, Recommendations 2005 (Red Book), chapter IR-3 Elements",
+      "url": "https://iupac.org/wp-content/uploads/2016/07/Red_Book_2005.pdf",
+      "accessed": "2026-11-26",
+      "supports": "IR-3.2 p. 47: left upper index mass number, left lower index atomic number, right upper index charge; p. 48 example: 32 over 16 S2+ « represents a doubly ionized sulfur atom of atomic number 16 and mass number 32 » (an ion keeps its element). IR-3.3.1 p. 48: « The isotopes of an element all bear the same name … and are designated by mass numbers »; atom of atomic number 8 and mass number 18 is oxygen-18."
+    },
+    {
+      "id": "oqlf-radioelement",
+      "title": "Office québécois de la langue française, Grand dictionnaire terminologique — fiche « radioélément » (1999)",
+      "url": "https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/8385247/radioelement",
+      "accessed": "2026-11-26",
+      "supports": "Note: « élément chimique » … « caractérisée par son numéro atomique Z (lequel numéro représente le nombre de protons contenus dans le noyau) »; mentions « éléments isotopes » d’un « élément » chimique donné."
+    },
+    {
+      "id": "iupac-green-book",
+      "title": "IUPAC, Quantities, Units and Symbols in Physical Chemistry, 3rd ed., 2nd printing (Green Book)",
+      "url": "https://iupac.org/wp-content/uploads/2019/05/IUPAC-GB3-2012-2ndPrinting-PDFsearchable.pdf",
+      "accessed": "2026-11-26",
+      "supports": "§2.5 p. 22: A nucleon (mass) number, Z proton (atomic) number, N = A − Z; §2.10.1 pp. 49–50: A as left superscript, Z as optional left subscript."
+    },
+    {
+      "id": "nist-li",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Lithium",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Li",
+      "accessed": "2026-11-26",
+      "supports": "Li: atomic number 3; mass numbers 6 (isotopic composition 0.0759) and 7 (0.9241)."
+    },
+    {
+      "id": "nist-ar",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Argon",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Ar",
+      "accessed": "2026-11-26",
+      "supports": "Ar: atomic number 18; mass numbers 36 (0.003 336), 38 (0.000 629), 40 (0.996 035)."
+    },
+    {
+      "id": "nist-ca",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Calcium",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Ca",
+      "accessed": "2026-11-26",
+      "supports": "Ca: atomic number 20; mass numbers 40 (0.969 41), 42, 43, 44, 46, 48."
+    },
+    {
+      "id": "nist-c",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Carbon",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C",
+      "accessed": "2026-11-26",
+      "supports": "C: atomic number 6; mass numbers 12 (0.9893) and 13 (0.0107)."
+    },
+    {
+      "id": "nist-o",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Oxygen",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=O",
+      "accessed": "2026-11-26",
+      "supports": "O: atomic number 8; mass numbers 16, 17, 18."
+    },
+    {
+      "id": "nist-f",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Fluorine",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=F",
+      "accessed": "2026-11-26",
+      "supports": "F: atomic number 9; mass number 19 (isotopic composition 1)."
+    },
+    {
+      "id": "nist-na",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Sodium",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Na",
+      "accessed": "2026-11-26",
+      "supports": "Na: atomic number 11; mass number 23 (isotopic composition 1)."
+    },
+    {
+      "id": "pubchem-ions",
+      "title": "PubChem (NIH) — Compound properties for CID 923, 28179, 312, 888",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/923,28179,312,888/property/MolecularFormula,Charge,Title/JSON",
+      "accessed": "2026-11-26",
+      "supports": "CID 923 Na+ charge +1; CID 28179 F- charge −1."
+    },
+    {
+      "id": "pubchem-li-ion",
+      "title": "PubChem (NIH) — Compound properties for CID 28486",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/28486/property/MolecularFormula,Charge,Title/JSON",
+      "accessed": "2026-11-26",
+      "supports": "CID 28486: molecular formula Li+, charge +1, title « Lithium Cation »."
+    }
+  ]
+}
