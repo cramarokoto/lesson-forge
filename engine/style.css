@@ -89,6 +89,8 @@ main.stage-col { padding: 18px; display: flex; flex-direction: column; gap: 12px
 .obj { transition: transform .55s cubic-bezier(.3,.7,.2,1), opacity .45s ease; }
 .obj .fill { transition: fill .45s ease; }
 .obj .shadow { pointer-events: none; }
+.obj .scaler, .obj .shadowg { transition: transform .55s cubic-bezier(.3,.7,.2,1), opacity .45s ease; }
+.obj .arrow { transition: stroke-dashoffset .6s ease .15s; }
 .obj.accent .fill { stroke: var(--accent); stroke-width: 3; vector-effect: non-scaling-stroke; }
 .obj .edge, .obj circle.fill { stroke: var(--ink-line); stroke-width: 1.4; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .obj .ring { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; transition: stroke .45s ease; }
@@ -97,7 +99,7 @@ main.stage-col { padding: 18px; display: flex; flex-direction: column; gap: 12px
 .obj.t-text text { font-size: 15px; font-weight: 600; }
 .obj.accent text { fill: var(--accent); font-weight: 650; }
 .obj .dot { fill: var(--ink); }
-.obj .arrow { stroke: var(--ink); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.obj .arrow { stroke: var(--ink); stroke-width: 2; }
 .obj.accent .arrow { stroke: var(--accent); }
 
 /* right: panels */

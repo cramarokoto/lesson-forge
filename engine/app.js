@@ -120,19 +120,12 @@
   const C30 = Math.cos(Math.PI / 6), S30 = 0.5;
   const proj = ([x, y, z]) => [(x - y) * C30 * U, (x + y) * S30 * U - z * U];
   const svg = s('svg', { viewBox: `${-9.4 * U} ${-6.6 * U} ${18.8 * U} ${17.4 * U}`, role: 'img', preserveAspectRatio: 'xMidYMid meet' });
-  const grid = s('g');
-  for (let i = 0; i <= 10; i += 1) {
-    const st = { stroke: 'var(--stage-grid)', 'stroke-width': 1, 'vector-effect': 'non-scaling-stroke' };
-    const [a, b] = [proj([i, 0, 0]), proj([i, 10, 0])];
-    const [c, d] = [proj([0, i, 0]), proj([10, i, 0])];
-    grid.append(s('line', { x1: a[0], y1: a[1], x2: b[0], y2: b[1], ...st }), s('line', { x1: c[0], y1: c[1], x2: d[0], y2: d[1], ...st }));
-  }
   const layer = s('g');
   const defs = s('defs');
   const marker = s('marker', { id: 'arrowhead', viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' });
   marker.append(s('path', { d: 'M0,0 L10,5 L0,10 z', fill: 'context-stroke' }));
   defs.append(marker);
-  svg.append(defs, grid, layer);
+  svg.append(defs, layer);
   const nodes = new Map(); // key -> { el, type, timer }
 
   // Light comes from the upper left. Colors are shaded per face, spheres get a radial gradient,
@@ -151,20 +144,39 @@
     return `url(#${id})`;
   }
   const P = (x, y, z) => proj([x, y, z]).join(',');
-  function slab(g, sz, th, color, alpha = 1) {
+  let clipN = 0;
+  function slab(g, sz, th, color, alpha = 1, shadows = []) {
     const h = sz / 2;
     const top = [P(-h, -h, th), P(h, -h, th), P(h, h, th), P(-h, h, th)].join(' ');
+    if (shadows.length) {
+      const id = `clip${++clipN}`;
+      const cp = s('clipPath', { id }); cp.append(s('polygon', { points: top })); defs.append(cp);
+      const sg = s('g', { 'clip-path': `url(#${id})` });
+      for (const [dx, dy, r, op] of shadows) {
+        const [cx, cy] = proj([dx, dy, th]);
+        sg.append(s('ellipse', { class: 'shadow', cx, cy, rx: r * C30 * U * 1.1, ry: r * S30 * U * 1.1, fill: '#0b1220', 'fill-opacity': op }));
+      }
+      queueMicrotask(() => g.append(sg));
+    }
     const left = [P(-h, h, th), P(h, h, th), P(h, h, 0), P(-h, h, 0)].join(' ');
     const right = [P(h, -h, th), P(h, h, th), P(h, h, 0), P(h, -h, 0)].join(' ');
     g.append(s('polygon', { points: left, fill: dark(color, 0.28), 'fill-opacity': alpha }),
       s('polygon', { points: right, fill: dark(color, 0.14), 'fill-opacity': alpha }),
       s('polygon', { class: 'fill edge', points: top, fill: light(color, 0.06), 'fill-opacity': alpha }));
   }
-  function shadow(g, o, r) {
-    const z = o.pos?.[2] ?? 0;
-    if (z <= 0.01 && o.type !== 'cube') return;
-    const op = Math.max(0.08, 0.28 - z * 0.03);
-    g.append(s('ellipse', { class: 'shadow', cx: 0, cy: z * U, rx: r * C30 * U * 1.1, ry: r * S30 * U * 1.1, fill: '#0b1220', 'fill-opacity': op }));
+  // Floor shadow, drawn at unit radius and scaled, so size and height changes animate.
+  function floorShadow(g, o) {
+    const sh = s('g', { class: 'shadowg' });
+    sh.append(s('ellipse', { class: 'shadow', rx: C30 * U * 1.1, ry: S30 * U * 1.1, fill: '#0b1220' }));
+    g.append(sh);
+  }
+  function placeShadow(el, o) {
+    const sh = el.querySelector('.shadowg');
+    if (!sh) return;
+    const z = o.abs?.[2] ?? 0, r = o.type === 'cube' ? (o.size ?? 1) * 0.75 : (o.size ?? 1) / 2;
+    const show = !o.support && (z > 0.01 || o.type === 'cube');
+    sh.style.transform = `translate(0px, ${z * U}px) scale(${r})`;
+    sh.style.opacity = show ? String(Math.max(0.08, 0.28 - z * 0.03)) : '0';
   }
   function shapeFor(o) {
     const g = s('g', { class: 'shape' });
@@ -172,25 +184,28 @@
     const size = o.size ?? 1;
     switch (o.type) {
       case 'sphere': {
-        const r = (size * U) / 2;
-        shadow(g, o, size / 2);
-        g.append(s('circle', { class: 'fill', r, fill: gradient(color), 'data-color': color }),
+        const r = U / 2;
+        floorShadow(g, o);
+        const sc = s('g', { class: 'scaler' }); g.append(sc);
+        sc.append(s('circle', { class: 'fill', r, fill: gradient(color), 'data-color': color }),
           s('ellipse', { cx: -r * 0.32, cy: -r * 0.38, rx: r * 0.28, ry: r * 0.18, fill: '#fff', 'fill-opacity': 0.45, transform: 'rotate(-30)' }));
+        sc.style.transform = `scale(${size})`;
         break;
       }
       case 'cube': {
-        const e = size, h = e / 2;
-        shadow(g, { ...o, pos: [0, 0, 0] }, e * 0.75);
+        const e = 1, h = 0.5;
+        floorShadow(g, o);
+        const sc = s('g', { class: 'scaler' }); g.append(sc); sc.style.transform = `scale(${size})`;
         const top = [P(-h, -h, e), P(h, -h, e), P(h, h, e), P(-h, h, e)].join(' ');
         const left = [P(-h, h, e), P(h, h, e), P(h, h, 0), P(-h, h, 0)].join(' ');
         const right = [P(h, -h, e), P(h, h, e), P(h, h, 0), P(h, -h, 0)].join(' ');
-        g.append(s('polygon', { class: 'fill edge face-l', points: left, fill: dark(color, 0.3), 'data-color': color }),
+        sc.append(s('polygon', { class: 'fill edge face-l', points: left, fill: dark(color, 0.3), 'data-color': color }),
           s('polygon', { class: 'fill edge face-r', points: right, fill: dark(color, 0.15), 'data-color': color }),
           s('polygon', { class: 'fill edge face-t', points: top, fill: light(color, 0.12), 'data-color': color }));
         break;
       }
-      case 'tile': slab(g, size, 0.14, color); break;
-      case 'board': slab(g, size, 0.4, color); break;
+      case 'tile': slab(g, size, 0.14, color, 1, o.shadows || []); break;
+      case 'board': slab(g, size, 0.4, color, 1, o.shadows || []); break;
       case 'ring': {
         const rx = size * Math.SQRT2 * C30 * U, ry = size * Math.SQRT2 * S30 * U;
         g.append(s('ellipse', { rx, ry: ry + 2, cy: 2, fill: 'none', stroke: dark(color, 0.35), 'stroke-width': 2.5, 'stroke-opacity': 0.5, 'vector-effect': 'non-scaling-stroke' }),
@@ -199,7 +214,10 @@
       }
       case 'arrow': {
         const [x1, y1] = proj(o.pos), [x2, y2] = proj(o.to);
-        g.append(s('line', { class: 'arrow', x1: 0, y1: 0, x2: x2 - x1, y2: y2 - y1, 'marker-end': 'url(#arrowhead)' }));
+        // pathLength=1 makes the dash pattern independent of scale, so the draw-on effect is exact.
+        const ln = s('line', { class: 'arrow', x1: 0, y1: 0, x2: x2 - x1, y2: y2 - y1, 'marker-end': 'url(#arrowhead)', pathLength: 1, 'stroke-dasharray': '1 1', 'stroke-dashoffset': 1 });
+        g.append(ln);
+        requestAnimationFrame(() => requestAnimationFrame(() => ln.setAttribute('stroke-dashoffset', 0)));
         break;
       }
       case 'label': {
@@ -215,7 +233,7 @@
     }
     return g;
   }
-  const signature = (o) => JSON.stringify([o.type, o.role, roleColor(o.role), o.pos?.[2], o.size, o.text, o.to && o.pos && proj(o.to).map((v, i) => v - proj(o.pos)[i])]);
+  const signature = (o) => JSON.stringify([o.type, o.role, roleColor(o.role), o.type === 'sphere' || o.type === 'cube' ? 0 : o.size, o.text, o.shadows, o.to && o.pos && proj(o.to).map((v, i) => v - proj(o.pos)[i])]);
   const typeRank = { board: 0, tile: 1, ring: 2, cube: 3, sphere: 3, arrow: 4, text: 5, label: 6 };
 
   // Frame the whole lesson once, so the camera stays still between steps.
@@ -265,6 +283,23 @@
     const visible = step.scene.filter((o) => o.type !== 'group')
       .map((o) => ({ ...o, abs: abs(o), to: o.to && o.parent && byKey.get(o.parent)?.pos ? o.to.map((v, i) => v + byKey.get(o.parent).pos[i]) : o.to }))
       .sort((a, b) => (typeRank[a.type] ?? 3) - (typeRank[b.type] ?? 3) || (a.abs[0] + a.abs[1] + a.abs[2]) - (b.abs[0] + b.abs[1] + b.abs[2]));
+    // Each sphere/cube resting on a board or tile casts its shadow on that plate's top face.
+    const plates = visible.filter((o) => o.type === 'board' || o.type === 'tile');
+    for (const pl of plates) pl.shadows = [];
+    for (const o of visible) {
+      if (o.type !== 'sphere' && o.type !== 'cube') continue;
+      const bottom = o.type === 'sphere' ? o.abs[2] - (o.size ?? 1) / 2 : o.abs[2];
+      let best = null;
+      for (const pl of plates) {
+        const h = (pl.size ?? 1) / 2, top = pl.abs[2] + (pl.type === 'board' ? 0.4 : 0.14);
+        if (Math.abs(o.abs[0] - pl.abs[0]) <= h && Math.abs(o.abs[1] - pl.abs[1]) <= h && top <= bottom + 0.05 && (!best || top > best.top)) best = { pl, top };
+      }
+      if (best) {
+        o.support = best.pl.key;
+        const z = o.abs[2] - best.top, r = o.type === 'cube' ? (o.size ?? 1) * 0.75 : (o.size ?? 1) / 2;
+        best.pl.shadows.push([o.abs[0] - best.pl.abs[0], o.abs[1] - best.pl.abs[1], r, +Math.max(0.1, 0.3 - z * 0.03).toFixed(2)]);
+      }
+    }
 
     for (const [key, n] of nodes) {
       if (!visible.some((o) => o.key === key)) {
@@ -273,6 +308,7 @@
         n.timer = setTimeout(() => { n.el.remove(); nodes.delete(key); }, 480);
       }
     }
+    let entering = 0;
     visible.forEach((o, i) => {
       const [x, y] = proj(o.abs);
       let n = nodes.get(o.key);
@@ -281,17 +317,22 @@
       if (!n) {
         const el = s('g', { class: `obj t-${o.type}`, 'data-key': o.key });
         el.append(shapeFor({ ...o, pos: o.abs }));
-        el.style.transform = `translate(${x}px, ${y}px)`;
+        el.style.transform = `translate(${x}px, ${y - 14}px)`;
         el.style.opacity = '0';
+        el.style.transitionDelay = `${Math.min(entering++, 8) * 45}ms`;
         n = { el, sig };
         nodes.set(o.key, n);
-        requestAnimationFrame(() => requestAnimationFrame(() => { el.style.opacity = String(o.opacity ?? 1); }));
+        requestAnimationFrame(() => requestAnimationFrame(() => { el.style.opacity = String(o.opacity ?? 1); el.style.transform = `translate(${x}px, ${y}px)`; }));
       } else {
         clearTimeout(n.timer);
+        n.el.style.transitionDelay = '0ms';
         n.el.style.opacity = String(o.opacity ?? 1);
         n.el.style.transform = `translate(${x}px, ${y}px)`;
       }
       n.el.classList.toggle('accent', !!o.accent);
+      const sc = n.el.querySelector('.scaler');
+      if (sc) sc.style.transform = `scale(${o.size ?? 1})`;
+      placeShadow(n.el, o);
       for (const r of n.el.querySelectorAll('.ring')) r.setAttribute('stroke', roleColor(o.role));
       if (layer.children[i] !== n.el) layer.insertBefore(n.el, layer.children[i] || null);
     });
