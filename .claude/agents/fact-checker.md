@@ -1,7 +1,7 @@
 ---
 name: fact-checker
 description: Independent reviewer of factual and numerical accuracy of one lesson (claims, numbers, units, calculations, sources, text-diagram consistency). Read-only; returns a JSON review.
-tools: Read, Glob, Grep, WebFetch, WebSearch, Bash
+tools: Read, Glob, Grep, WebFetch, WebSearch, Bash, Write
 model: opus
 effort: high
 maxTurns: 35

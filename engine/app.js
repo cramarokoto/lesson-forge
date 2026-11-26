@@ -277,11 +277,12 @@
 
   // Frame the whole lesson once, so the camera stays still between steps.
   const frames = new WeakMap();
-  function frameLesson(lesson) {
-    if (frames.has(lesson)) return frames.get(lesson);
+  function frameLesson(lesson, only) {
+    const cacheKey = only || lesson;
+    if (frames.has(cacheKey)) return frames.get(cacheKey);
     let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     const add = ([x, y], r = 0) => { x0 = Math.min(x0, x - r); x1 = Math.max(x1, x + r); y0 = Math.min(y0, y - r); y1 = Math.max(y1, y + r); };
-    for (const st of lesson.steps) {
+    for (const st of only ? [only] : lesson.steps) {
       const byKey = new Map(st.scene.map((o) => [o.key, o]));
       for (const o of st.scene) {
         if (o.type === 'group') continue;
@@ -299,16 +300,31 @@
       }
     }
     if (!isFinite(x0)) { x0 = -9.4 * U; y0 = -6.6 * U; x1 = 9.4 * U; y1 = 10.8 * U; }
-    const pad = 14, minW = 5 * U, minH = 4 * U;
+    const pad = 18, minW = 4 * U, minH = 3.2 * U;
     let w = Math.max(x1 - x0, minW), hh = Math.max(y1 - y0, minH);
     const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
     const box = `${cx - w / 2 - pad} ${cy - hh / 2 - pad} ${w + 2 * pad} ${hh + 2 * pad}`;
-    frames.set(lesson, box);
+    frames.set(cacheKey, box);
     return box;
   }
 
+  let camera = null, camAnim = 0;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  function moveCamera(target) {
+    const to = target.split(' ').map(Number);
+    if (!camera || reduced.matches) { camera = to; svg.setAttribute('viewBox', to.join(' ')); return; }
+    const from = camera.slice(), t0 = performance.now(), dur = 550;
+    cancelAnimationFrame(camAnim);
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      camera = from.map((v, i) => v + (to[i] - v) * e);
+      svg.setAttribute('viewBox', camera.join(' '));
+      if (k < 1) camAnim = requestAnimationFrame(tick);
+    };
+    camAnim = requestAnimationFrame(tick);
+  }
   function renderScene(step, lesson) {
-    svg.setAttribute('viewBox', frameLesson(lesson));
+    moveCamera(frameLesson(lesson, step));
     svg.setAttribute('aria-label', step.sceneDescription || '');
     const byKey = new Map(step.scene.map((o) => [o.key, o]));
     // resolve group offsets

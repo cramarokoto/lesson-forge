@@ -1482,7 +1482,7 @@
       "tag": "try",
       "title": "À toi de former un ion",
       "takeaway": "Pour former un ion, on change seulement le nombre d’électrons ; retirer un proton changerait le noyau, et donc le symbole.",
-      "text": "Le constructeur part d’un atome de sodium : 11 protons, 12 neutrons, 11 électrons. Il calcule la charge $q = (Z - n_{\\mathrm{e}}) \\times e$, où $n_{\\mathrm{e}}$ est le nombre d’électrons. Retire un électron : la charge passe à $+1\\,e$ et « cation » s’affiche. Remets-le, puis retire plutôt un proton : le noyau n’a plus 11 protons, ce n’est plus du sodium, et la charge $-1\\,e$ affichée ne décrit pas un anion du sodium. Un ion de sodium se forme en changeant les électrons, jamais les protons. Un ion se forme en changeant les électrons, jamais les protons.",
+      "text": "Le constructeur part d’un atome de sodium : 11 protons, 12 neutrons, 11 électrons. Il calcule la charge $q = (Z - n_{\\mathrm{e}}) \\times e$, où $n_{\\mathrm{e}}$ est le nombre d’électrons. Retire un électron : la charge passe à $+1\\,e$ et « cation » s’affiche. Remets-le, puis retire plutôt un proton : le noyau n’a plus 11 protons, ce n’est plus du sodium, et la charge $-1\\,e$ affichée ne décrit pas un anion du sodium. Un ion de sodium se forme en changeant les électrons, jamais les protons.",
       "sceneDescription": "Two copies of the same small sodium atom stand side by side, each on its own board. On the left, the accent arrow sends one blue electron out of the green sphere under the caption « Na⁺ : un ion »; on the right, a plain arrow sends one red proton out of the nucleus, now tagged « 10 protons », under the caption « 10 protons : ce n’est plus du sodium », with the note « Pas à l’échelle » below.",
       "scene": [
         {
@@ -1704,7 +1704,7 @@
       "tag": "concept",
       "title": "Molécule, atome, cation ou anion ?",
       "takeaway": "Sans exposant, l’entité est neutre (molécule $\\mathrm{H_2O}$, atome $\\mathrm{Na}$) ; exposant +, cation ; exposant −, anion.",
-      "text": "Une formule chimique suffit pour qualifier une entité. Une formule chimique suffit pour qualifier une entité isolée. Sans exposant, l’entité est neutre : $\\mathrm{H_2O}$ et $\\mathrm{CO_2}$, qui associent plusieurs atomes, sont des molécules ; $\\mathrm{Na}$, un symbole seul, désigne un atome. Avec un exposant positif, comme $\\mathrm{Na}^{+}$ ou $\\mathrm{Mg}^{2+}$, c’est un cation. Avec un exposant négatif, comme $\\mathrm{F}^{-}$ ou $\\mathrm{Cl}^{-}$, c’est un anion.",
+      "text": "Une formule chimique suffit pour qualifier une entité isolée. Sans exposant, l’entité est neutre : $\\mathrm{H_2O}$ et $\\mathrm{CO_2}$, qui associent plusieurs atomes, sont des molécules ; $\\mathrm{Na}$, un symbole seul, désigne un atome. Avec un exposant positif, comme $\\mathrm{Na}^{+}$ ou $\\mathrm{Mg}^{2+}$, c’est un cation. Avec un exposant négatif, comme $\\mathrm{F}^{-}$ ou $\\mathrm{Cl}^{-}$, c’est un anion.",
       "sceneDescription": "Four tiles stand in a row on the board, named « molécule » (grey), « atome » (pale blue), « cation » and « anion » (both green, ions), and seven formulas above them each drop along an arrow into their tile: « H₂O » and « CO₂ » into molécule, « Na » into atome, « Na⁺ » and « Mg²⁺ » into cation, « F⁻ » and « Cl⁻ » into anion. The arrow from « Mg²⁺ » into « cation » is the accent.",
       "scene": [
         {

@@ -1,7 +1,7 @@
 ---
 name: safety-reviewer
 description: Independent reviewer of safety and age-appropriateness of a lesson (hands-on activities, lab-safety statements, content for minors). Read-only; returns a JSON review. Run on every lesson.
-tools: Read, Glob, Grep, WebFetch, WebSearch
+tools: Read, Glob, Grep, WebFetch, WebSearch, Write
 model: sonnet
 effort: low
 maxTurns: 15

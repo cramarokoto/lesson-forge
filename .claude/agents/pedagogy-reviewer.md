@@ -1,7 +1,7 @@
 ---
 name: pedagogy-reviewer
 description: Independent reviewer of a micro-lesson's teaching requirements (one idea per step, length, progression, cognitive load, text-diagram match, audience fit). Read-only; returns a JSON review.
-tools: Read, Glob, Grep
+tools: Read, Glob, Grep, Write
 model: sonnet
 effort: medium
 maxTurns: 20

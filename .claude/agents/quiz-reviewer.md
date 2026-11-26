@@ -1,7 +1,7 @@
 ---
 name: quiz-reviewer
 description: Independent reviewer of a lesson's quiz (exactly one correct answer, distractors false in every reading, accurate explanations, no giveaways). Read-only; returns a JSON review.
-tools: Read, Glob, Grep
+tools: Read, Glob, Grep, Write
 model: sonnet
 effort: medium
 maxTurns: 15

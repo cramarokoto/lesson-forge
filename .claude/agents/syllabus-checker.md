@@ -1,7 +1,7 @@
 ---
 name: syllabus-checker
 description: Independent reviewer of scope against the official referential (missing notions, out-of-scope content, order of notions, level). Use on plans and on lessons. Read-only; returns a JSON review.
-tools: Read, Glob, Grep, WebFetch, WebSearch
+tools: Read, Glob, Grep, WebFetch, WebSearch, Write
 model: sonnet
 effort: high
 maxTurns: 25
