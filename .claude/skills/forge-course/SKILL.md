@@ -52,6 +52,12 @@ Review rules and arbitration: [review-protocol.md](references/review-protocol.md
 - Run `node scripts/validate.mjs --require-scenes`. A format failure goes back to the writer or stager who produced it.
 
 ## 4. Independent review (parallel, fresh contexts)
+Before launching reviewers, prepare shared inputs once (code, not tokens):
+- `node scripts/digest.mjs courses/<slug>/<chapter>/<lesson>.json > work/<slug>/digest/<lesson>.md` and pass that path to every reviewer;
+- `node scripts/snapshot.mjs <slug> <chapter> <lesson> --sheet` and pass `sheet.png` to the pedagogy-reviewer;
+- `scripts/referential.sh <slug> <url>` once per course (cached in `work/<slug>/referential.txt`).
+Run the safety-reviewer only when the lesson has `furtherReading`, a `try` step, or a safety statement (`grep -iE 'danger|sécurité|expérience|manipul'`).
+
 For each lesson, start these in parallel. Each gets **only**: the lesson path, the plan path, the input path, the round number.
 Never pass the writer's messages, reasoning, earlier findings or other reviewers' reports.
 - `fact-checker`: claims, numbers, units, calculations, sources.

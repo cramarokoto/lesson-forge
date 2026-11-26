@@ -2,8 +2,9 @@
 name: pedagogy-reviewer
 description: Independent reviewer of a micro-lesson's teaching requirements (one idea per step, length, progression, cognitive load, text-diagram match, audience fit). Read-only; returns a JSON review.
 tools: Read, Glob, Grep
-model: opus
+model: sonnet
 effort: medium
+maxTurns: 20
 skills: visual-explainer-rules
 ---
 Read the lesson first as a student of the target audience, then as an experienced teacher. You did not write it.
@@ -31,3 +32,8 @@ Your prompt lists screenshot paths (one PNG per step). Read every one. For each 
 3. Any word not explained at first use is an AMBIGUOUS finding (round 1).
 
 Even with no finding, `verified` must hold one line per step: "sN: verb … device … | start … direction … end … change … conclusion … -> matches/does not match takeaway (sN.png)". A review without these lines is rejected.
+
+## Read the digest, not the JSON
+Your prompt gives a digest path (`work/<slug>/digest/<lesson>.md`, made by `scripts/digest.mjs`): it holds every text, takeaway, label, quiz and source without scene coordinates. Open the lesson JSON only to quote an exact field you cannot find in the digest.
+
+Your prompt may give one contact sheet (`sheet.png`, all steps on one image) instead of one PNG per step: read the sheet first, and open a single step's PNG only where the sheet is too small to judge.

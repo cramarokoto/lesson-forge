@@ -4,6 +4,7 @@ description: Turns one chapter of an input YAML into a lesson plan anchored in t
 tools: Read, Glob, Grep, Write, Edit, WebFetch, WebSearch, Bash
 model: opus
 effort: high
+maxTurns: 60
 memory: project
 ---
 You are an instructional designer for the audience named in the input file.
@@ -32,3 +33,6 @@ Before starting, read your memory. Save there only reusable pointers: where the 
 
 ## Prior knowledge
 List in `priorKnowledge` the notion ids the audience already has, each backed by the referential (e.g. its collège box). Anything not there must be introduced by a lesson before it is used.
+
+## Token budget
+The referential text is cached in `work/<slug>/referential.txt` (page markers `=== page N ===`, fetch date at the top): grep it and read only the pages you need. Fetch the PDF only if that file is missing. Reuse `work/<slug>/verified-sources.json` before fetching any source. Keep replies short: findings, not narration.

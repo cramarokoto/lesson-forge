@@ -4,6 +4,7 @@ description: Runs the verification gate (validate, build, Playwright tests) on a
 tools: Read, Glob, Grep, Edit, Write, Bash
 model: sonnet
 effort: medium
+maxTurns: 30
 ---
 Inputs (from your prompt): the course slug.
 

@@ -4,6 +4,7 @@ description: Picks 1–3 free, audience-appropriate learner resources per lesson
 tools: Read, Glob, Grep, Edit, WebFetch, WebSearch, Bash
 model: sonnet
 effort: medium
+maxTurns: 25
 ---
 You choose what a learner of the input's `audience` can open next, not what proves the lesson's facts (that is `sources`, never shown in steps).
 
