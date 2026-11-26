@@ -19,7 +19,8 @@ Scene objects follow `.claude/skills/forge-course/references/scene-contract.md`,
 
 Formulas: `$…$` in text and every `notation` line are rendered by KaTeX to MathML at build time. A formula error fails the build.
 
-Widgets: **none implemented yet.** `validate.mjs` rejects any `widget` until one is added here and in `WIDGETS` there.
+Widgets (any other type is rejected by `validate.mjs`):
+- `atom-builder` — params `protons`, `neutrons`, `electrons`, optional `max` `{p, n, e}`, optional `nucleusOnly: true` (hides the electrons row and the charge, for lessons before ions). Shows Z, A, charge and the nuclide notation for Z ≤ 20.
 
 Progress, quiz answers and theme are kept in `localStorage` when available; the page works without it.
 

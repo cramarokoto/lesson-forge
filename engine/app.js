@@ -383,14 +383,14 @@
     function show() {
       const Z = st.p, A = st.p + st.n, q = st.p - st.e;
       const X = SYMBOLS[Z - 1];
-      const charge = q === 0 ? '' : `${Math.abs(q) > 1 ? sup(Math.abs(q)) : ''}${q > 0 ? '⁺' : '⁻'}`;
+      const charge = q === 0 || P.nucleusOnly ? '' : `${Math.abs(q) > 1 ? sup(Math.abs(q)) : ''}${q > 0 ? '⁺' : '⁻'}`;
       out.replaceChildren(
         Z && X ? h('span', { class: 'nuc' }, h('span', { class: 'ms' }, h('sup', {}, String(A)), h('sub', {}, String(Z))), X, charge) : h('span', {}, Z ? T.w.unknown : '—'),
         h('dl', {}, h('dt', {}, T.w.Z), h('dd', {}, String(Z)), h('dt', {}, T.w.A), h('dd', {}, String(A)),
-          h('dt', {}, T.w.charge), h('dd', {}, q === 0 ? `0 (${T.w.neutral})` : `${q > 0 ? '+' : '−'}${Math.abs(q)} e (${q > 0 ? T.w.cation : T.w.anion})`)));
+          ...(P.nucleusOnly ? [] : [h('dt', {}, T.w.charge), h('dd', {}, q === 0 ? `0 (${T.w.neutral})` : `${q > 0 ? '+' : '−'}${Math.abs(q)} e (${q > 0 ? T.w.cation : T.w.anion})`)])));
     }
     show();
-    return h('div', { class: 'widget', 'data-widget': w.type }, row('p'), row('n'), row('e'), out);
+    return h('div', { class: 'widget', 'data-widget': w.type }, row('p'), row('n'), P.nucleusOnly ? null : row('e'), out);
   }
 
   function render() {
