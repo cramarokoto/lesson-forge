@@ -1,0 +1,84 @@
+{
+ "reviewer": "fact-checker",
+ "target": "courses/physique-chimie-seconde/atome/noyau.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "fc-1",
+   "severity": "ERROR",
+   "category": "fact",
+   "location": "noyau/quiz/q1/explanation",
+   "quote": "Et 19 protons est impossible, puisque Z ne dépasse jamais A.",
+   "problem": "Z = A = 19 is allowed; the option fails because 19 + 9 = 28 ≠ 19. Same as qr-1.",
+   "evidence": "Recomputed; lesson s5 allows A = Z.",
+   "fix": "Et 19 protons avec 9 neutrons feraient 28 nucléons, plus que les A = 19 annoncés."
+  },
+  {
+   "id": "fc-2",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "noyau/s7/text",
+   "quote": "Pour savoir combien sont des protons, il faut une donnée de plus, le numéro atomique, fourni par l’énoncé : ici Z = 11.",
+   "problem": "The symbol Na fixes Z = 11; the short form only leaves it unwritten. Will contradict element-isotopes.",
+   "evidence": "IUPAC Green Book p. 49; NIST Na.",
+   "fix": "Le symbole Na correspond toujours au même numéro atomique, mais l’écriture courte ne l’affiche pas : on le lit dans l’énoncé, ici Z = 11."
+  },
+  {
+   "id": "fc-3",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "noyau/s7/takeaway",
+   "quote": "L’écriture courte ${}^{A}\\mathrm{X}$ ne donne pas Z : on prend Z dans l’énoncé",
+   "problem": "Same as fc-2.",
+   "evidence": "IUPAC Green Book p. 49.",
+   "fix": "L’écriture courte ${}^{A}\\mathrm{X}$ n’écrit pas Z : on le lit dans l’énoncé, puis on soustrait ; ${}^{23}\\mathrm{Na}$ avec Z = 11 a 12 neutrons."
+  }
+ ],
+ "verified": [
+  "All nuclides, electron count of Cl, IUPAC notation rules, referential quotes and arithmetic verified; scene arrows to scale.",
+  "furtherReading loads via 301 to www."
+ ],
+ "sourcesChecked": [
+  {
+   "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Li",
+   "accessed": "2026-11-26",
+   "supports": "Z = 3; A 6 (0.0759), 7 (0.9241)"
+  },
+  {
+   "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C",
+   "accessed": "2026-11-26",
+   "supports": "Z = 6; A 12 (0.9893), 13 (0.0107)"
+  },
+  {
+   "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=O",
+   "accessed": "2026-11-26",
+   "supports": "Z = 8; A 16, 17, 18"
+  },
+  {
+   "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Na",
+   "accessed": "2026-11-26",
+   "supports": "Z = 11; A 23 (1)"
+  },
+  {
+   "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=F",
+   "accessed": "2026-11-26",
+   "supports": "Z = 9; A 19 (1)"
+  },
+  {
+   "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Al",
+   "accessed": "2026-11-26",
+   "supports": "Z = 13; A 27 (1)"
+  },
+  {
+   "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Cl",
+   "accessed": "2026-11-26",
+   "supports": "Z = 17; A 35 (0.7576), 37 (0.2424)"
+  },
+  {
+   "url": "https://iupac.org/wp-content/uploads/2019/05/IUPAC-GB3-2012-2ndPrinting-PDFsearchable.pdf",
+   "accessed": "2026-11-26",
+   "supports": "§2.5 p. 22: A nucleon/mass number, Z proton/atomic number, N = A − Z; §2.10.1 pp. 49–50: A left superscript, Z optional left subscript"
+  }
+ ],
+ "unverifiable": []
+}

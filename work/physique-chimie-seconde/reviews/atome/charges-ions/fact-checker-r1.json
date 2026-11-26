@@ -1,0 +1,75 @@
+{
+ "reviewer": "fact-checker",
+ "target": "courses/physique-chimie-seconde/atome/charges-ions.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "fc-1",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "charges-ions/s3/text",
+   "quote": "Le noyau de sodium s’écrit ${}^{23}_{11}\\mathrm{Na}$ : il compte $23 - 11 = 12$ neutrons pour 11 protons.",
+   "problem": "Makes 23Na the only sodium nucleus; isotopes are in the syllabus.",
+   "evidence": "IAEA 22Na, 24Na; NIST Na natural = 23Na only.",
+   "fix": "Le noyau de l’atome de sodium naturel s’écrit ${}^{23}_{11}\\mathrm{Na}$ : il compte $23 - 11 = 12$ neutrons pour 11 protons."
+  },
+  {
+   "id": "fc-2",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "charges-ions/s8/takeaway",
+   "quote": "sans exposant, molécule (plusieurs atomes) ou atome (un seul)",
+   "problem": "Ionic compounds (NaCl) break the rule.",
+   "evidence": "Referential p. 5 « formules de composés ioniques ».",
+   "fix": "On classe une entité d’après sa formule : sans exposant, elle est neutre, comme la molécule $\\mathrm{H_2O}$ ou l’atome $\\mathrm{Na}$ ; exposant +, cation ; exposant −, anion."
+  },
+  {
+   "id": "fc-3",
+   "severity": "AMBIGUOUS",
+   "category": "fact",
+   "location": "charges-ions/s6/takeaway",
+   "quote": "Pour compter les électrons d’un ion, on part de Z",
+   "problem": "Only for monoatomic ions.",
+   "evidence": "OQLF ion definition; referential p. 6 « Ions monoatomiques ».",
+   "fix": "Pour compter les électrons d’un ion monoatomique, on part de Z : on retranche le nombre de l’exposant pour un cation, on l’ajoute pour un anion."
+  }
+ ],
+ "verified": [
+  "Charges, e value, Z of Na F Mg Cl, ion charges, all arithmetic, counters and scene labels, quiz, PhET link verified."
+ ],
+ "sourcesChecked": [
+  {
+   "url": "https://physics.nist.gov/cgi-bin/cuu/Value?e",
+   "accessed": "2026-11-26",
+   "supports": "e = 1.602 176 634 × 10⁻¹⁹ C exact (CODATA 2022)"
+  },
+  {
+   "url": "https://pdg.lbl.gov/2024/tables/rpp2024-sum-baryons.pdf",
+   "accessed": "2026-11-26",
+   "supports": "p uud, n udd; |q_p + q_e|/e < 1e-21; neutron charge ≈ 0"
+  },
+  {
+   "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/923,28179,312,888/property/MolecularFormula,Charge,Title/JSON",
+   "accessed": "2026-11-26",
+   "supports": "Na+ +1, F- −1, Cl- −1, Mg2+ +2"
+  },
+  {
+   "url": "https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/2075913/ion",
+   "accessed": "2026-11-26",
+   "supports": "ion: atome ou groupe d’atomes liés de charge non nulle; anion gains, cation loses electrons"
+  },
+  {
+   "url": "https://nds.iaea.org/relnsd/v1/data?fields=ground_states&nuclides=22na",
+   "accessed": "2026-11-26",
+   "supports": "22Na: Z 11, N 11"
+  },
+  {
+   "url": "https://phet.colorado.edu/fr/simulations/build-an-atom",
+   "accessed": "2026-11-26",
+   "supports": "PhET Construire un atome: element, charge, mass change"
+  }
+ ],
+ "unverifiable": [
+  "« Piège fréquent » (s3): frequency not sourced."
+ ]
+}

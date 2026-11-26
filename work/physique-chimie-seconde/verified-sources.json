@@ -6,6 +6,12 @@
     "by": "fact-checker"
   },
   {
+    "url": "https://iupac.org/wp-content/uploads/2019/05/IUPAC-GB3-2012-2ndPrinting-PDFsearchable.pdf",
+    "accessed": "2026-11-26",
+    "supports": "§2.5 p. 22: A nucleon/mass number, Z proton/atomic number, N = A − Z; §2.10.1 pp. 49–50: A left superscript, Z optional left subscript",
+    "by": "fact-checker"
+  },
+  {
     "url": "https://lyceen.nathan.fr/sirius2019-2de/assets/chap-3-synthese-des-activites-dys/preview",
     "accessed": "2026-11-25",
     "supports": "Free 5-page PDF, Nathan 2019 Sirius 2de chap. 3; p. 4: 10−10/10−15 = 10^5 = 100 000; no login, ads or sign-up.",
@@ -18,9 +24,87 @@
     "by": "safety-reviewer"
   },
   {
+    "url": "https://nds.iaea.org/relnsd/v1/data?fields=ground_states&nuclides=22na",
+    "accessed": "2026-11-26",
+    "supports": "22Na: Z 11, N 11",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://pdg.lbl.gov/2024/tables/rpp2024-sum-baryons.pdf",
+    "accessed": "2026-11-26",
+    "supports": "p uud, n udd; |q_p + q_e|/e < 1e-21; neutron charge ≈ 0",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://phet.colorado.edu/fr/simulations/build-an-atom",
+    "accessed": "2026-11-26",
+    "supports": "PhET Construire un atome: element, charge, mass change",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Al",
+    "accessed": "2026-11-26",
+    "supports": "Z = 13; A 27 (1)",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C",
+    "accessed": "2026-11-26",
+    "supports": "Z = 6; A 12 (0.9893), 13 (0.0107)",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Cl",
+    "accessed": "2026-11-26",
+    "supports": "Z = 17; A 35 (0.7576), 37 (0.2424)",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=F",
+    "accessed": "2026-11-26",
+    "supports": "Z = 9; A 19 (1)",
+    "by": "fact-checker"
+  },
+  {
     "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=H",
     "accessed": "2026-11-25",
     "supports": "H: Z = 1, mass number 1, isotopic composition 0.999 885(70); D mass number 2, 0.000 115(70)",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Li",
+    "accessed": "2026-11-26",
+    "supports": "Z = 3; A 6 (0.0759), 7 (0.9241)",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Na",
+    "accessed": "2026-11-26",
+    "supports": "Z = 11; A 23 (1)",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=O",
+    "accessed": "2026-11-26",
+    "supports": "Z = 8; A 16, 17, 18",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://physics.nist.gov/cgi-bin/cuu/Value?e",
+    "accessed": "2026-11-26",
+    "supports": "e = 1.602 176 634 × 10⁻¹⁹ C exact (CODATA 2022)",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/923,28179,312,888/property/MolecularFormula,Charge,Title/JSON",
+    "accessed": "2026-11-26",
+    "supports": "Na+ +1, F- −1, Cl- −1, Mg2+ +2",
+    "by": "fact-checker"
+  },
+  {
+    "url": "https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/2075913/ion",
+    "accessed": "2026-11-26",
+    "supports": "ion: atome ou groupe d’atomes liés de charge non nulle; anion gains, cation loses electrons",
     "by": "fact-checker"
   }
 ]

@@ -20,27 +20,164 @@
       "title": "Un noyau vu de très près",
       "takeaway": "Un noyau est un amas de protons et de neutrons, deux sortes de particules qu’on appelle ensemble des nucléons.",
       "text": "À la leçon précédente, le noyau n’était qu’un point minuscule au centre de l’atome. Agrandissons énormément un noyau de lithium, de symbole Li. On y voit deux sortes de particules serrées les unes contre les autres : 3 protons et 4 neutrons. Protons et neutrons portent un nom commun : ce sont les nucléons. Ce noyau contient donc 7 nucléons.",
-      "sceneDescription": "A tight cluster of 3 red proton spheres and 4 grey neutron spheres sits on a plinth inside a translucent orange disc, the accent, labelled « noyau : 7 nucléons »; one red sphere is tagged « proton » and one grey sphere « neutron ». A note on the plinth reads « lithium, très agrandi ».",
+      "sceneDescription": "A tight cluster of 3 red proton spheres and 4 grey neutron spheres sits on a plinth inside a translucent orange sphere resting on the plinth, the accent, labelled « noyau : 7 nucléons »; one red sphere is tagged « proton » and one grey sphere « neutron ». A note on the plinth reads « lithium, très agrandi ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 7.6 },
-        { "key": "noyau-li", "type": "sphere", "role": "nucleus", "pos": [3, 3, 0.657], "size": 5.6, "opacity": 0.45, "accent": true },
-        { "key": "p1", "type": "sphere", "role": "proton", "pos": [4.548, 5.452, 4.013], "size": 1.8 },
-        { "key": "p2", "type": "sphere", "role": "proton", "pos": [5.5, 5.5, 3.157], "size": 1.8 },
-        { "key": "p3", "type": "sphere", "role": "proton", "pos": [5.905, 4.095, 2.657], "size": 1.8 },
-        { "key": "n1", "type": "sphere", "role": "neutron", "pos": [5.452, 4.548, 4.013], "size": 1.8 },
-        { "key": "n2", "type": "sphere", "role": "neutron", "pos": [4.095, 5.905, 2.657], "size": 1.8 },
-        { "key": "n3", "type": "sphere", "role": "neutron", "pos": [4.548, 5.452, 1.3], "size": 1.8 },
-        { "key": "n4", "type": "sphere", "role": "neutron", "pos": [5.452, 4.548, 1.3], "size": 1.8 },
-        { "key": "etiq-proton", "type": "label", "pos": [6.27, 3.73, 3.29], "text": "proton" },
-        { "key": "etiq-neutron", "type": "label", "pos": [3.73, 6.27, 3.29], "text": "neutron" },
-        { "key": "etiq-noyau", "type": "label", "pos": [3, 3, 3.457], "text": "noyau : 7 nucléons" },
-        { "key": "agrandi", "type": "text", "pos": [7, 7, 0.5], "text": "lithium, très agrandi" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 7.6
+        },
+        {
+          "key": "noyau-li",
+          "type": "sphere",
+          "role": "nucleus",
+          "pos": [
+            5,
+            5,
+            2.9
+          ],
+          "size": 5,
+          "opacity": 0.4,
+          "accent": true
+        },
+        {
+          "key": "p1",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            4.548,
+            5.452,
+            4.013
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p2",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            5.5,
+            5.5,
+            3.157
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p3",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            5.905,
+            4.095,
+            2.657
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n1",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5.452,
+            4.548,
+            4.013
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n2",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            4.095,
+            5.905,
+            2.657
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n3",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            4.548,
+            5.452,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n4",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5.452,
+            4.548,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "etiq-proton",
+          "type": "label",
+          "pos": [
+            6.27,
+            3.73,
+            3.29
+          ],
+          "text": "proton"
+        },
+        {
+          "key": "etiq-neutron",
+          "type": "label",
+          "pos": [
+            3.73,
+            6.27,
+            3.29
+          ],
+          "text": "neutron"
+        },
+        {
+          "key": "etiq-noyau",
+          "type": "label",
+          "pos": [
+            3,
+            3,
+            3.457
+          ],
+          "text": "noyau : 7 nucléons"
+        },
+        {
+          "key": "agrandi",
+          "type": "text",
+          "pos": [
+            7,
+            7,
+            0.5
+          ],
+          "text": "lithium, très agrandi"
+        }
       ],
       "notationLine": null,
       "counters": [
-        { "key": "a", "label": "Nucléons", "value": 7, "changed": true }
+        {
+          "key": "a",
+          "label": "Nucléons",
+          "value": 7,
+          "changed": true
+        }
       ],
-      "sourceIds": ["nist-li", "referentiel-seconde-pc", "iupac-green-book"]
+      "sourceIds": [
+        "nist-li",
+        "referentiel-seconde-pc",
+        "iupac-green-book"
+      ]
     },
     {
       "id": "s2",
@@ -50,26 +187,173 @@
       "text": "Comptons d’abord les protons de ce noyau de lithium : il y en a 3. Ce nombre porte un nom : le numéro atomique, noté Z. Pour ce noyau, Z = 3. Les neutrons n’entrent pas dans ce compte : Z ne dit rien d’eux. Comme on compte des particules entières, Z est toujours un nombre entier.",
       "sceneDescription": "The 7 spheres line up in one row on the plinth: the 3 red protons on the left, numbered 1, 2, 3, and the 4 grey neutrons, faded, on the right. Above the protons only, the accent arrow spans exactly three spheres and reads « Z = 3 protons ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 7.6 },
-        { "key": "p1", "type": "sphere", "role": "proton", "pos": [1.88, 8.12, 1.3], "size": 1.8 },
-        { "key": "p2", "type": "sphere", "role": "proton", "pos": [2.92, 7.08, 1.3], "size": 1.8 },
-        { "key": "p3", "type": "sphere", "role": "proton", "pos": [3.96, 6.04, 1.3], "size": 1.8 },
-        { "key": "n1", "type": "sphere", "role": "neutron", "pos": [5, 5, 1.3], "size": 1.8, "opacity": 0.25 },
-        { "key": "n2", "type": "sphere", "role": "neutron", "pos": [6.04, 3.96, 1.3], "size": 1.8, "opacity": 0.25 },
-        { "key": "n3", "type": "sphere", "role": "neutron", "pos": [7.08, 2.92, 1.3], "size": 1.8, "opacity": 0.25 },
-        { "key": "n4", "type": "sphere", "role": "neutron", "pos": [8.12, 1.88, 1.3], "size": 1.8, "opacity": 0.25 },
-        { "key": "num-1", "type": "text", "pos": [1.88, 8.12, 1.3], "text": "1" },
-        { "key": "num-2", "type": "text", "pos": [2.92, 7.08, 1.3], "text": "2" },
-        { "key": "num-3", "type": "text", "pos": [3.96, 6.04, 1.3], "text": "3" },
-        { "key": "rail-z", "type": "arrow", "role": "measure", "pos": [1.36, 8.64, 2.867], "to": [4.48, 5.52, 2.867], "accent": true },
-        { "key": "txt-z", "type": "text", "pos": [2.787, 7.213, 3.4], "text": "Z = 3 protons" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 7.6
+        },
+        {
+          "key": "p1",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            1.88,
+            8.12,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p2",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            2.92,
+            7.08,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p3",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            3.96,
+            6.04,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n1",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            1.3
+          ],
+          "size": 1.8,
+          "opacity": 0.25
+        },
+        {
+          "key": "n2",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            6.04,
+            3.96,
+            1.3
+          ],
+          "size": 1.8,
+          "opacity": 0.25
+        },
+        {
+          "key": "n3",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            7.08,
+            2.92,
+            1.3
+          ],
+          "size": 1.8,
+          "opacity": 0.25
+        },
+        {
+          "key": "n4",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            8.12,
+            1.88,
+            1.3
+          ],
+          "size": 1.8,
+          "opacity": 0.25
+        },
+        {
+          "key": "num-1",
+          "type": "text",
+          "pos": [
+            1.88,
+            8.12,
+            1.3
+          ],
+          "text": "1"
+        },
+        {
+          "key": "num-2",
+          "type": "text",
+          "pos": [
+            2.92,
+            7.08,
+            1.3
+          ],
+          "text": "2"
+        },
+        {
+          "key": "num-3",
+          "type": "text",
+          "pos": [
+            3.96,
+            6.04,
+            1.3
+          ],
+          "text": "3"
+        },
+        {
+          "key": "rail-z",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.36,
+            8.64,
+            2.867
+          ],
+          "to": [
+            4.48,
+            5.52,
+            2.867
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-z",
+          "type": "text",
+          "pos": [
+            2.787,
+            7.213,
+            3.4
+          ],
+          "text": "Z = 3 protons"
+        }
       ],
       "notationLine": 0,
       "counters": [
-        { "key": "z", "label": "Z (protons)", "value": 3, "changed": true },
-        { "key": "a", "label": "Nucléons", "value": 7 }
+        {
+          "key": "z",
+          "label": "Z (protons)",
+          "value": 3,
+          "changed": true
+        },
+        {
+          "key": "a",
+          "label": "Nucléons",
+          "value": 7
+        }
       ],
-      "sourceIds": ["nist-li", "iupac-green-book"]
+      "sourceIds": [
+        "nist-li",
+        "iupac-green-book"
+      ]
     },
     {
       "id": "s3",
@@ -83,30 +367,220 @@
       },
       "sceneDescription": "Same row, all bright: above it, the arrow « Z = 3 protons » over the red spheres is followed head to tail by the arrow « N = 4 neutrons » over the grey ones, and a higher arrow « A = 7 nucléons » spans the whole row. At the right end, the accent arrow labelled « Z + N » rises from the chained arrows to the end of the A arrow.",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 7.6 },
-        { "key": "p1", "type": "sphere", "role": "proton", "pos": [1.88, 8.12, 1.3], "size": 1.8 },
-        { "key": "p2", "type": "sphere", "role": "proton", "pos": [2.92, 7.08, 1.3], "size": 1.8 },
-        { "key": "p3", "type": "sphere", "role": "proton", "pos": [3.96, 6.04, 1.3], "size": 1.8 },
-        { "key": "n1", "type": "sphere", "role": "neutron", "pos": [5, 5, 1.3], "size": 1.8 },
-        { "key": "n2", "type": "sphere", "role": "neutron", "pos": [6.04, 3.96, 1.3], "size": 1.8 },
-        { "key": "n3", "type": "sphere", "role": "neutron", "pos": [7.08, 2.92, 1.3], "size": 1.8 },
-        { "key": "n4", "type": "sphere", "role": "neutron", "pos": [8.12, 1.88, 1.3], "size": 1.8 },
-        { "key": "rail-z", "type": "arrow", "role": "measure", "pos": [1.36, 8.64, 2.867], "to": [4.48, 5.52, 2.867] },
-        { "key": "rail-n", "type": "arrow", "role": "measure", "pos": [4.48, 5.52, 2.867], "to": [8.64, 1.36, 2.867] },
-        { "key": "rail-a", "type": "arrow", "role": "measure", "pos": [1.36, 8.64, 5], "to": [8.64, 1.36, 5] },
-        { "key": "txt-z", "type": "text", "pos": [2.787, 7.213, 3.4], "text": "Z = 3 protons" },
-        { "key": "txt-n", "type": "text", "pos": [7.213, 2.787, 3.4], "text": "N = 4 neutrons" },
-        { "key": "txt-a", "type": "text", "pos": [5, 5, 5.533], "text": "A = 7 nucléons" },
-        { "key": "fleche-somme", "type": "arrow", "pos": [8.95, 1.05, 3.0], "to": [8.95, 1.05, 4.8], "accent": true },
-        { "key": "txt-somme", "type": "text", "pos": [9.715, 0.285, 3.9], "text": "Z + N" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 7.6
+        },
+        {
+          "key": "p1",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            1.88,
+            8.12,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p2",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            2.92,
+            7.08,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p3",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            3.96,
+            6.04,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n1",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n2",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            6.04,
+            3.96,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n3",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            7.08,
+            2.92,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n4",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            8.12,
+            1.88,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "rail-z",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.36,
+            8.64,
+            2.867
+          ],
+          "to": [
+            4.48,
+            5.52,
+            2.867
+          ]
+        },
+        {
+          "key": "rail-n",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            4.48,
+            5.52,
+            2.867
+          ],
+          "to": [
+            8.64,
+            1.36,
+            2.867
+          ]
+        },
+        {
+          "key": "rail-a",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.36,
+            8.64,
+            5
+          ],
+          "to": [
+            8.64,
+            1.36,
+            5
+          ]
+        },
+        {
+          "key": "txt-z",
+          "type": "text",
+          "pos": [
+            2.787,
+            7.213,
+            3.4
+          ],
+          "text": "Z = 3 protons"
+        },
+        {
+          "key": "txt-n",
+          "type": "text",
+          "pos": [
+            7.213,
+            2.787,
+            3.4
+          ],
+          "text": "N = 4 neutrons"
+        },
+        {
+          "key": "txt-a",
+          "type": "text",
+          "pos": [
+            5,
+            5,
+            5.533
+          ],
+          "text": "A = 7 nucléons"
+        },
+        {
+          "key": "fleche-somme",
+          "type": "arrow",
+          "pos": [
+            8.95,
+            1.05,
+            3.0
+          ],
+          "to": [
+            8.95,
+            1.05,
+            4.8
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-somme",
+          "type": "text",
+          "pos": [
+            9.715,
+            0.285,
+            3.9
+          ],
+          "text": "Z + N"
+        }
       ],
       "notationLine": 1,
       "counters": [
-        { "key": "z", "label": "Z (protons)", "value": 3 },
-        { "key": "n", "label": "N (neutrons)", "value": 4, "changed": true },
-        { "key": "a", "label": "A (nucléons)", "value": 7, "changed": true }
+        {
+          "key": "z",
+          "label": "Z (protons)",
+          "value": 3
+        },
+        {
+          "key": "n",
+          "label": "N (neutrons)",
+          "value": 4,
+          "changed": true
+        },
+        {
+          "key": "a",
+          "label": "A (nucléons)",
+          "value": 7,
+          "changed": true
+        }
       ],
-      "sourceIds": ["nist-li", "iupac-green-book", "referentiel-seconde-pc"]
+      "sourceIds": [
+        "nist-li",
+        "iupac-green-book",
+        "referentiel-seconde-pc"
+      ]
     },
     {
       "id": "s4",
@@ -116,31 +590,221 @@
       "text": "Pour décrire un noyau en quelques signes, on utilise son écriture conventionnelle : ${}^{A}_{Z}\\mathrm{X}$. X est le symbole chimique, ici Li. On place A, le nombre de nucléons, en haut à gauche du symbole, et Z, le nombre de protons, en bas à gauche. Notre noyau s’écrit donc ${}^{7}_{3}\\mathrm{Li}$. Le nombre de neutrons n’y figure pas directement : il est inclus dans A.",
       "sceneDescription": "The 7 spheres gather back into the cluster, and the accent arrow labelled « on écrit » rises from it to the notation drawn as a 7 above a 3, both to the left of « Li ». At the left, the tag « A = 7 nucléons » points with an arrow to the upper 7 and the tag « Z = 3 protons » to the lower 3.",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 7.6 },
-        { "key": "p1", "type": "sphere", "role": "proton", "pos": [4.548, 5.452, 4.013], "size": 1.8 },
-        { "key": "p2", "type": "sphere", "role": "proton", "pos": [5.5, 5.5, 3.157], "size": 1.8 },
-        { "key": "p3", "type": "sphere", "role": "proton", "pos": [5.905, 4.095, 2.657], "size": 1.8 },
-        { "key": "n1", "type": "sphere", "role": "neutron", "pos": [5.452, 4.548, 4.013], "size": 1.8 },
-        { "key": "n2", "type": "sphere", "role": "neutron", "pos": [4.095, 5.905, 2.657], "size": 1.8 },
-        { "key": "n3", "type": "sphere", "role": "neutron", "pos": [4.548, 5.452, 1.3], "size": 1.8 },
-        { "key": "n4", "type": "sphere", "role": "neutron", "pos": [5.452, 4.548, 1.3], "size": 1.8 },
-        { "key": "fleche-ecrit", "type": "arrow", "pos": [3.77, 2.23, 3.0], "to": [4.27, 1.73, 5.333], "accent": true },
-        { "key": "txt-ecrit", "type": "text", "pos": [4.925, 1.076, 4.267], "text": "on écrit" },
-        { "key": "not-a", "type": "text", "pos": [3.174, 1.326, 5.617], "text": "7" },
-        { "key": "not-z", "type": "text", "pos": [3.424, 1.576, 5.133], "text": "3" },
-        { "key": "not-x", "type": "text", "pos": [3.809, 1.191, 5.5], "text": "Li" },
-        { "key": "txt-a", "type": "text", "pos": [0.23, 4.27, 5.617], "text": "A = 7 nucléons" },
-        { "key": "txt-z", "type": "text", "pos": [0.48, 4.52, 5.133], "text": "Z = 3 protons" },
-        { "key": "fleche-a", "type": "arrow", "pos": [1.384, 3.116, 5.617], "to": [2.943, 1.557, 5.617] },
-        { "key": "fleche-z", "type": "arrow", "pos": [1.634, 3.366, 5.133], "to": [3.193, 1.807, 5.133] }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 7.6
+        },
+        {
+          "key": "p1",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            4.548,
+            5.452,
+            4.013
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p2",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            5.5,
+            5.5,
+            3.157
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p3",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            5.905,
+            4.095,
+            2.657
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n1",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5.452,
+            4.548,
+            4.013
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n2",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            4.095,
+            5.905,
+            2.657
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n3",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            4.548,
+            5.452,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n4",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5.452,
+            4.548,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "fleche-ecrit",
+          "type": "arrow",
+          "pos": [
+            3.77,
+            2.23,
+            3.0
+          ],
+          "to": [
+            4.27,
+            1.73,
+            5.333
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-ecrit",
+          "type": "text",
+          "pos": [
+            4.925,
+            1.076,
+            4.267
+          ],
+          "text": "on écrit"
+        },
+        {
+          "key": "not-a",
+          "type": "text",
+          "pos": [
+            3.174,
+            1.326,
+            5.617
+          ],
+          "text": "7"
+        },
+        {
+          "key": "not-z",
+          "type": "text",
+          "pos": [
+            3.424,
+            1.576,
+            5.133
+          ],
+          "text": "3"
+        },
+        {
+          "key": "not-x",
+          "type": "text",
+          "pos": [
+            3.809,
+            1.191,
+            5.5
+          ],
+          "text": "Li"
+        },
+        {
+          "key": "txt-a",
+          "type": "text",
+          "pos": [
+            0.23,
+            4.27,
+            5.617
+          ],
+          "text": "A = 7 nucléons"
+        },
+        {
+          "key": "txt-z",
+          "type": "text",
+          "pos": [
+            0.48,
+            4.52,
+            5.133
+          ],
+          "text": "Z = 3 protons"
+        },
+        {
+          "key": "fleche-a",
+          "type": "arrow",
+          "pos": [
+            1.384,
+            3.116,
+            5.617
+          ],
+          "to": [
+            2.943,
+            1.557,
+            5.617
+          ]
+        },
+        {
+          "key": "fleche-z",
+          "type": "arrow",
+          "pos": [
+            1.634,
+            3.366,
+            5.133
+          ],
+          "to": [
+            3.193,
+            1.807,
+            5.133
+          ]
+        }
       ],
       "notationLine": 2,
       "counters": [
-        { "key": "z", "label": "Z (protons)", "value": 3 },
-        { "key": "n", "label": "N (neutrons)", "value": 4 },
-        { "key": "a", "label": "A (nucléons)", "value": 7 }
+        {
+          "key": "z",
+          "label": "Z (protons)",
+          "value": 3
+        },
+        {
+          "key": "n",
+          "label": "N (neutrons)",
+          "value": 4
+        },
+        {
+          "key": "a",
+          "label": "A (nucléons)",
+          "value": 7
+        }
       ],
-      "sourceIds": ["referentiel-seconde-pc", "iupac-green-book", "nist-li"]
+      "sourceIds": [
+        "referentiel-seconde-pc",
+        "iupac-green-book",
+        "nist-li"
+      ]
     },
     {
       "id": "s5",
@@ -150,35 +814,266 @@
       "text": "Piège fréquent : inverser A et Z. Un repère simple : $A = Z + N$, donc A n’est jamais plus petit que Z. Dans l’écriture conventionnelle, le nombre du haut est le plus grand des deux, ou égal à celui du bas. ${}^{3}_{7}\\mathrm{Li}$ annoncerait 7 protons parmi 3 nucléons en tout : c’est impossible.",
       "sceneDescription": "The row of 3 red and 4 grey spheres returns under two arrows starting from the same left end, the long upper « A = 7 nucléons » and the short lower « Z = 3 protons », with the accent arrow « N = 4 neutrons » filling the gap between their ends. Above, the notation 7 over 3 Li stands beside a faded 3 over 7 Li marked « Z > A : impossible ».",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 7.6 },
-        { "key": "p1", "type": "sphere", "role": "proton", "pos": [1.88, 8.12, 1.3], "size": 1.8 },
-        { "key": "p2", "type": "sphere", "role": "proton", "pos": [2.92, 7.08, 1.3], "size": 1.8 },
-        { "key": "p3", "type": "sphere", "role": "proton", "pos": [3.96, 6.04, 1.3], "size": 1.8 },
-        { "key": "n1", "type": "sphere", "role": "neutron", "pos": [5, 5, 1.3], "size": 1.8 },
-        { "key": "n2", "type": "sphere", "role": "neutron", "pos": [6.04, 3.96, 1.3], "size": 1.8 },
-        { "key": "n3", "type": "sphere", "role": "neutron", "pos": [7.08, 2.92, 1.3], "size": 1.8 },
-        { "key": "n4", "type": "sphere", "role": "neutron", "pos": [8.12, 1.88, 1.3], "size": 1.8 },
-        { "key": "rail-a", "type": "arrow", "role": "measure", "pos": [1.36, 8.64, 5], "to": [8.64, 1.36, 5] },
-        { "key": "rail-z", "type": "arrow", "role": "measure", "pos": [1.36, 8.64, 2.867], "to": [4.48, 5.52, 2.867] },
-        { "key": "rail-n", "type": "arrow", "role": "measure", "pos": [4.48, 5.52, 2.867], "to": [8.64, 1.36, 2.867], "accent": true },
-        { "key": "txt-a", "type": "text", "pos": [5, 5, 5.533], "text": "A = 7 nucléons" },
-        { "key": "txt-z", "type": "text", "pos": [2.787, 7.213, 3.4], "text": "Z = 3 protons" },
-        { "key": "txt-n", "type": "text", "pos": [7.213, 2.787, 3.4], "text": "N = 4 neutrons" },
-        { "key": "not-a", "type": "text", "pos": [0.903, 3.597, 5.617], "text": "7" },
-        { "key": "not-z", "type": "text", "pos": [1.153, 3.847, 5.133], "text": "3" },
-        { "key": "not-x", "type": "text", "pos": [1.538, 3.463, 5.5], "text": "Li" },
-        { "key": "faux-a", "type": "text", "pos": [3.405, 1.096, 5.617], "text": "3", "opacity": 0.35 },
-        { "key": "faux-z", "type": "text", "pos": [3.655, 1.346, 5.133], "text": "7", "opacity": 0.35 },
-        { "key": "faux-x", "type": "text", "pos": [4.04, 0.961, 5.5], "text": "Li", "opacity": 0.35 },
-        { "key": "txt-impossible", "type": "text", "pos": [3.847, 1.153, 4.333], "text": "Z > A : impossible" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 7.6
+        },
+        {
+          "key": "p1",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            1.88,
+            8.12,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p2",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            2.92,
+            7.08,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "p3",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            3.96,
+            6.04,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n1",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n2",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            6.04,
+            3.96,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n3",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            7.08,
+            2.92,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "n4",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            8.12,
+            1.88,
+            1.3
+          ],
+          "size": 1.8
+        },
+        {
+          "key": "rail-a",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.36,
+            8.64,
+            5
+          ],
+          "to": [
+            8.64,
+            1.36,
+            5
+          ]
+        },
+        {
+          "key": "rail-z",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.36,
+            8.64,
+            2.867
+          ],
+          "to": [
+            4.48,
+            5.52,
+            2.867
+          ]
+        },
+        {
+          "key": "rail-n",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            4.48,
+            5.52,
+            2.867
+          ],
+          "to": [
+            8.64,
+            1.36,
+            2.867
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-a",
+          "type": "text",
+          "pos": [
+            5,
+            5,
+            5.533
+          ],
+          "text": "A = 7 nucléons"
+        },
+        {
+          "key": "txt-z",
+          "type": "text",
+          "pos": [
+            2.787,
+            7.213,
+            3.4
+          ],
+          "text": "Z = 3 protons"
+        },
+        {
+          "key": "txt-n",
+          "type": "text",
+          "pos": [
+            7.213,
+            2.787,
+            3.4
+          ],
+          "text": "N = 4 neutrons"
+        },
+        {
+          "key": "not-a",
+          "type": "text",
+          "pos": [
+            0.903,
+            3.597,
+            5.617
+          ],
+          "text": "7"
+        },
+        {
+          "key": "not-z",
+          "type": "text",
+          "pos": [
+            1.153,
+            3.847,
+            5.133
+          ],
+          "text": "3"
+        },
+        {
+          "key": "not-x",
+          "type": "text",
+          "pos": [
+            1.538,
+            3.463,
+            5.5
+          ],
+          "text": "Li"
+        },
+        {
+          "key": "faux-a",
+          "type": "text",
+          "pos": [
+            3.405,
+            1.096,
+            5.617
+          ],
+          "text": "3",
+          "opacity": 0.35
+        },
+        {
+          "key": "faux-z",
+          "type": "text",
+          "pos": [
+            3.655,
+            1.346,
+            5.133
+          ],
+          "text": "7",
+          "opacity": 0.35
+        },
+        {
+          "key": "faux-x",
+          "type": "text",
+          "pos": [
+            4.04,
+            0.961,
+            5.5
+          ],
+          "text": "Li",
+          "opacity": 0.35
+        },
+        {
+          "key": "txt-impossible",
+          "type": "text",
+          "pos": [
+            3.847,
+            1.153,
+            4.333
+          ],
+          "text": "Z > A : impossible"
+        }
       ],
       "notationLine": 3,
       "counters": [
-        { "key": "z", "label": "Z (protons)", "value": 3 },
-        { "key": "n", "label": "N (neutrons)", "value": 4 },
-        { "key": "a", "label": "A (nucléons)", "value": 7 }
+        {
+          "key": "z",
+          "label": "Z (protons)",
+          "value": 3
+        },
+        {
+          "key": "n",
+          "label": "N (neutrons)",
+          "value": 4
+        },
+        {
+          "key": "a",
+          "label": "A (nucléons)",
+          "value": 7
+        }
       ],
-      "sourceIds": ["iupac-green-book", "nist-li"]
+      "sourceIds": [
+        "iupac-green-book",
+        "nist-li"
+      ]
     },
     {
       "id": "s6",
@@ -188,72 +1083,537 @@
       "text": "Faisons le chemin inverse. Voici un noyau de carbone : ${}^{13}_{6}\\mathrm{C}$. En bas, Z = 6 : il contient 6 protons. En haut, A = 13 : 13 nucléons en tout. Les neutrons sont les nucléons qui ne sont pas des protons, donc on soustrait : $N = A - Z = 13 - 6 = 7$. Additionner donnerait 19 neutrons, plus que les 13 nucléons du noyau : impossible.",
       "sceneDescription": "The notation becomes 13 over 6 C and a row of 6 red and 7 grey spheres, drawn smaller to fit, replaces the lithium row, with the upper arrow « A = 13 nucléons » over all of it, « Z = 6 protons » over the red part and « N = 7 neutrons » over the grey part. At the right end, the accent arrow labelled « − Z = − 6 » goes down from the end of the A arrow to the end of the N arrow.",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 7.6 },
-        { "key": "c-p1", "type": "sphere", "role": "proton", "pos": [1.535, 8.465, 0.9], "size": 1 },
-        { "key": "c-p2", "type": "sphere", "role": "proton", "pos": [2.1125, 7.8875, 0.9], "size": 1 },
-        { "key": "c-p3", "type": "sphere", "role": "proton", "pos": [2.69, 7.31, 0.9], "size": 1 },
-        { "key": "c-p4", "type": "sphere", "role": "proton", "pos": [3.2675, 6.7325, 0.9], "size": 1 },
-        { "key": "c-p5", "type": "sphere", "role": "proton", "pos": [3.845, 6.155, 0.9], "size": 1 },
-        { "key": "c-p6", "type": "sphere", "role": "proton", "pos": [4.4225, 5.5775, 0.9], "size": 1 },
-        { "key": "c-n1", "type": "sphere", "role": "neutron", "pos": [5, 5, 0.9], "size": 1 },
-        { "key": "c-n2", "type": "sphere", "role": "neutron", "pos": [5.5775, 4.4225, 0.9], "size": 1 },
-        { "key": "c-n3", "type": "sphere", "role": "neutron", "pos": [6.155, 3.845, 0.9], "size": 1 },
-        { "key": "c-n4", "type": "sphere", "role": "neutron", "pos": [6.7325, 3.2675, 0.9], "size": 1 },
-        { "key": "c-n5", "type": "sphere", "role": "neutron", "pos": [7.31, 2.69, 0.9], "size": 1 },
-        { "key": "c-n6", "type": "sphere", "role": "neutron", "pos": [7.8875, 2.1125, 0.9], "size": 1 },
-        { "key": "c-n7", "type": "sphere", "role": "neutron", "pos": [8.465, 1.535, 0.9], "size": 1 },
-        { "key": "rail-a", "type": "arrow", "role": "measure", "pos": [1.246, 8.754, 5], "to": [8.754, 1.246, 5] },
-        { "key": "rail-z", "type": "arrow", "role": "measure", "pos": [1.246, 8.754, 2.867], "to": [4.711, 5.289, 2.867] },
-        { "key": "rail-n", "type": "arrow", "role": "measure", "pos": [4.711, 5.289, 2.867], "to": [8.754, 1.246, 2.867] },
-        { "key": "txt-a", "type": "text", "pos": [5, 5, 5.533], "text": "A = 13 nucléons" },
-        { "key": "txt-z", "type": "text", "pos": [2.787, 7.213, 3.4], "text": "Z = 6 protons" },
-        { "key": "txt-n", "type": "text", "pos": [7.213, 2.787, 3.4], "text": "N = 7 neutrons" },
-        { "key": "fleche-diff", "type": "arrow", "pos": [9.08, 0.92, 4.867], "to": [9.08, 0.92, 3.0], "accent": true },
-        { "key": "txt-diff", "type": "text", "pos": [9.9075, 0.0925, 3.9], "text": "− Z = − 6" },
-        { "key": "not-a", "type": "text", "pos": [0.903, 3.597, 5.617], "text": "13" },
-        { "key": "not-z", "type": "text", "pos": [1.153, 3.847, 5.133], "text": "6" },
-        { "key": "not-x", "type": "text", "pos": [1.538, 3.463, 5.5], "text": "C" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 7.6
+        },
+        {
+          "key": "c-p1",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            1.535,
+            8.465,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-p2",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            2.1125,
+            7.8875,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-p3",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            2.69,
+            7.31,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-p4",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            3.2675,
+            6.7325,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-p5",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            3.845,
+            6.155,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-p6",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            4.4225,
+            5.5775,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-n1",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-n2",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5.5775,
+            4.4225,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-n3",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            6.155,
+            3.845,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-n4",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            6.7325,
+            3.2675,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-n5",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            7.31,
+            2.69,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-n6",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            7.8875,
+            2.1125,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "c-n7",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            8.465,
+            1.535,
+            0.9
+          ],
+          "size": 1
+        },
+        {
+          "key": "rail-a",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.246,
+            8.754,
+            5
+          ],
+          "to": [
+            8.754,
+            1.246,
+            5
+          ]
+        },
+        {
+          "key": "rail-z",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.246,
+            8.754,
+            2.867
+          ],
+          "to": [
+            4.711,
+            5.289,
+            2.867
+          ]
+        },
+        {
+          "key": "rail-n",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            4.711,
+            5.289,
+            2.867
+          ],
+          "to": [
+            8.754,
+            1.246,
+            2.867
+          ]
+        },
+        {
+          "key": "txt-a",
+          "type": "text",
+          "pos": [
+            5,
+            5,
+            5.533
+          ],
+          "text": "A = 13 nucléons"
+        },
+        {
+          "key": "txt-z",
+          "type": "text",
+          "pos": [
+            2.787,
+            7.213,
+            3.4
+          ],
+          "text": "Z = 6 protons"
+        },
+        {
+          "key": "txt-n",
+          "type": "text",
+          "pos": [
+            7.213,
+            2.787,
+            3.4
+          ],
+          "text": "N = 7 neutrons"
+        },
+        {
+          "key": "fleche-diff",
+          "type": "arrow",
+          "pos": [
+            9.08,
+            0.92,
+            4.867
+          ],
+          "to": [
+            9.08,
+            0.92,
+            3.0
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-diff",
+          "type": "text",
+          "pos": [
+            9.9075,
+            0.0925,
+            3.9
+          ],
+          "text": "− Z = − 6"
+        },
+        {
+          "key": "not-a",
+          "type": "text",
+          "pos": [
+            0.903,
+            3.597,
+            5.617
+          ],
+          "text": "13"
+        },
+        {
+          "key": "not-z",
+          "type": "text",
+          "pos": [
+            1.153,
+            3.847,
+            5.133
+          ],
+          "text": "6"
+        },
+        {
+          "key": "not-x",
+          "type": "text",
+          "pos": [
+            1.538,
+            3.463,
+            5.5
+          ],
+          "text": "C"
+        }
       ],
       "notationLine": 4,
       "counters": [
-        { "key": "z", "label": "Z (protons)", "value": 6, "changed": true },
-        { "key": "n", "label": "N (neutrons)", "value": 7, "changed": true },
-        { "key": "a", "label": "A (nucléons)", "value": 13, "changed": true }
+        {
+          "key": "z",
+          "label": "Z (protons)",
+          "value": 6,
+          "changed": true
+        },
+        {
+          "key": "n",
+          "label": "N (neutrons)",
+          "value": 7,
+          "changed": true
+        },
+        {
+          "key": "a",
+          "label": "A (nucléons)",
+          "value": 13,
+          "changed": true
+        }
       ],
-      "sourceIds": ["nist-c", "iupac-green-book"]
+      "sourceIds": [
+        "nist-c",
+        "iupac-green-book"
+      ]
     },
     {
       "id": "s7",
       "tag": "calculate",
       "title": "Quand Z n’est pas écrit",
-      "takeaway": "L’écriture courte ${}^{A}\\mathrm{X}$ ne donne pas Z : on prend Z dans l’énoncé, puis on soustrait ; ${}^{23}\\mathrm{Na}$ avec Z = 11 a 12 neutrons.",
-      "text": "On rencontre aussi une écriture courte, ${}^{A}\\mathrm{X}$, sans Z. Par exemple ${}^{23}\\mathrm{Na}$, un noyau de sodium : 23 nucléons en tout. Pour savoir combien sont des protons, il faut une donnée de plus, le numéro atomique, fourni par l’énoncé : ici Z = 11. On complète l’écriture, ${}^{23}_{11}\\mathrm{Na}$, puis on calcule comme avant : 11 protons et $N = 23 - 11 = 12$ neutrons.",
+      "takeaway": "L’écriture courte ${}^{A}\\mathrm{X}$ n’écrit pas Z : on le lit dans l’énoncé, puis on soustrait ; ${}^{23}\\mathrm{Na}$ avec Z = 11 a 12 neutrons.",
+      "text": "On rencontre aussi une écriture courte, ${}^{A}\\mathrm{X}$, sans Z. Par exemple ${}^{23}\\mathrm{Na}$, un noyau de sodium : 23 nucléons en tout. Le symbole Na correspond toujours au même numéro atomique, mais l’écriture courte ne l’affiche pas : on le lit dans l’énoncé, ici Z = 11. On complète l’écriture, ${}^{23}_{11}\\mathrm{Na}$, puis on calcule comme avant : 11 protons et $N = 23 - 11 = 12$ neutrons.",
       "sceneDescription": "No spheres: at the top, the short writing 23 Na with a faded question mark in its lower-left slot, and the accent arrow labelled « Z = 11 (donné) » runs from that slot to the completed writing 23 over 11 Na. Below, arrows drawn to scale show « A = 23 nucléons » above « Z = 11 protons » followed by « N = 12 neutrons », and an arrow « − Z = − 11 » goes down from the end of A to the end of N.",
       "scene": [
-        { "key": "court-a", "type": "text", "pos": [0.0405, 4.6595, 5.717], "text": "23" },
-        { "key": "court-z", "type": "text", "pos": [0.0405, 4.6595, 4.983], "text": "?", "opacity": 0.5 },
-        { "key": "court-x", "type": "text", "pos": [0.483, 4.217, 5.35], "text": "Na" },
-        { "key": "fleche-donne", "type": "arrow", "pos": [0.383, 4.617, 5.1], "to": [3.347, 1.653, 5.1], "accent": true },
-        { "key": "txt-donne", "type": "text", "pos": [1.9225, 3.0775, 4.5], "text": "Z = 11 (donné)" },
-        { "key": "not-a", "type": "text", "pos": [3.405, 1.096, 5.617], "text": "23" },
-        { "key": "not-z", "type": "text", "pos": [3.655, 1.346, 5.133], "text": "11" },
-        { "key": "not-x", "type": "text", "pos": [4.098, 0.903, 5.5], "text": "Na" },
-        { "key": "rail-a", "type": "arrow", "role": "measure", "pos": [1.246, 8.754, 5], "to": [8.754, 1.246, 5] },
-        { "key": "rail-z", "type": "arrow", "role": "measure", "pos": [1.246, 8.754, 2.867], "to": [4.837, 5.163, 2.867] },
-        { "key": "rail-n", "type": "arrow", "role": "measure", "pos": [4.837, 5.163, 2.867], "to": [8.754, 1.246, 2.867] },
-        { "key": "txt-a", "type": "text", "pos": [5, 5, 5.533], "text": "A = 23 nucléons" },
-        { "key": "txt-z", "type": "text", "pos": [3.0425, 6.9575, 3.4], "text": "Z = 11 protons" },
-        { "key": "txt-n", "type": "text", "pos": [6.7955, 3.2045, 3.4], "text": "N = 12 neutrons" },
-        { "key": "fleche-diff", "type": "arrow", "pos": [9.08, 0.92, 4.867], "to": [9.08, 0.92, 3.0] },
-        { "key": "txt-diff", "type": "text", "pos": [9.9075, 0.0925, 3.9], "text": "− Z = − 11" }
+        {
+          "key": "court-a",
+          "type": "text",
+          "pos": [
+            0.0405,
+            4.6595,
+            5.717
+          ],
+          "text": "23"
+        },
+        {
+          "key": "court-z",
+          "type": "text",
+          "pos": [
+            0.0405,
+            4.6595,
+            4.983
+          ],
+          "text": "?",
+          "opacity": 0.5
+        },
+        {
+          "key": "court-x",
+          "type": "text",
+          "pos": [
+            0.483,
+            4.217,
+            5.35
+          ],
+          "text": "Na"
+        },
+        {
+          "key": "fleche-donne",
+          "type": "arrow",
+          "pos": [
+            0.383,
+            4.617,
+            5.1
+          ],
+          "to": [
+            3.347,
+            1.653,
+            5.1
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-donne",
+          "type": "text",
+          "pos": [
+            1.9225,
+            3.0775,
+            4.5
+          ],
+          "text": "Z = 11 (donné)"
+        },
+        {
+          "key": "not-a",
+          "type": "text",
+          "pos": [
+            3.405,
+            1.096,
+            5.617
+          ],
+          "text": "23"
+        },
+        {
+          "key": "not-z",
+          "type": "text",
+          "pos": [
+            3.655,
+            1.346,
+            5.133
+          ],
+          "text": "11"
+        },
+        {
+          "key": "not-x",
+          "type": "text",
+          "pos": [
+            4.098,
+            0.903,
+            5.5
+          ],
+          "text": "Na"
+        },
+        {
+          "key": "rail-a",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.246,
+            8.754,
+            5
+          ],
+          "to": [
+            8.754,
+            1.246,
+            5
+          ]
+        },
+        {
+          "key": "rail-z",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            1.246,
+            8.754,
+            2.867
+          ],
+          "to": [
+            4.837,
+            5.163,
+            2.867
+          ]
+        },
+        {
+          "key": "rail-n",
+          "type": "arrow",
+          "role": "measure",
+          "pos": [
+            4.837,
+            5.163,
+            2.867
+          ],
+          "to": [
+            8.754,
+            1.246,
+            2.867
+          ]
+        },
+        {
+          "key": "txt-a",
+          "type": "text",
+          "pos": [
+            5,
+            5,
+            5.533
+          ],
+          "text": "A = 23 nucléons"
+        },
+        {
+          "key": "txt-z",
+          "type": "text",
+          "pos": [
+            3.0425,
+            6.9575,
+            3.4
+          ],
+          "text": "Z = 11 protons"
+        },
+        {
+          "key": "txt-n",
+          "type": "text",
+          "pos": [
+            6.7955,
+            3.2045,
+            3.4
+          ],
+          "text": "N = 12 neutrons"
+        },
+        {
+          "key": "fleche-diff",
+          "type": "arrow",
+          "pos": [
+            9.08,
+            0.92,
+            4.867
+          ],
+          "to": [
+            9.08,
+            0.92,
+            3.0
+          ]
+        },
+        {
+          "key": "txt-diff",
+          "type": "text",
+          "pos": [
+            9.9075,
+            0.0925,
+            3.9
+          ],
+          "text": "− Z = − 11"
+        }
       ],
       "notationLine": 5,
       "counters": [
-        { "key": "z", "label": "Z (protons)", "value": 11, "changed": true },
-        { "key": "n", "label": "N (neutrons)", "value": 12, "changed": true },
-        { "key": "a", "label": "A (nucléons)", "value": 23, "changed": true }
+        {
+          "key": "z",
+          "label": "Z (protons)",
+          "value": 11,
+          "changed": true
+        },
+        {
+          "key": "n",
+          "label": "N (neutrons)",
+          "value": 12,
+          "changed": true
+        },
+        {
+          "key": "a",
+          "label": "A (nucléons)",
+          "value": 23,
+          "changed": true
+        }
       ],
-      "sourceIds": ["nist-na", "referentiel-seconde-pc", "iupac-green-book"]
+      "sourceIds": [
+        "nist-na",
+        "referentiel-seconde-pc",
+        "iupac-green-book"
+      ]
     },
     {
       "id": "s8",
@@ -263,30 +1623,174 @@
       "text": "Le module ci-dessous part de 3 protons et 4 neutrons : le noyau ${}^{7}_{3}\\mathrm{Li}$. Transforme-le en noyau d’oxygène ${}^{16}_{8}\\mathrm{O}$ : combien de protons faut-il, combien de neutrons ? Lis d’abord Z en bas, puis calcule A − Z avant de cliquer. Vérifie ensuite que l’écriture affichée par le module correspond exactement à la cible.",
       "sceneDescription": "The target notation 16 over 8 O stands above two empty grey trays on the plinth, « protons » on the left and « neutrons » on the right. An arrow labelled « Z » runs from the 8 down to the protons tray, and the accent arrow labelled « A − Z » runs from the notation down to the neutrons tray.",
       "scene": [
-        { "key": "socle", "type": "board", "role": "neutral", "pos": [5, 5, 0], "size": 7.6 },
-        { "key": "plateau-p", "type": "tile", "role": "neutral", "pos": [3.2, 6.8, 0.4], "size": 3.2 },
-        { "key": "plateau-n", "type": "tile", "role": "neutral", "pos": [6.8, 3.2, 0.4], "size": 3.2 },
-        { "key": "txt-plateau-p", "type": "text", "pos": [3.2, 6.8, 0.54], "text": "protons" },
-        { "key": "txt-plateau-n", "type": "text", "pos": [6.8, 3.2, 0.54], "text": "neutrons" },
-        { "key": "not-a", "type": "text", "pos": [2.0575, 2.4425, 5.617], "text": "16" },
-        { "key": "not-z", "type": "text", "pos": [2.3075, 2.6925, 5.133], "text": "8" },
-        { "key": "not-x", "type": "text", "pos": [2.6925, 2.3075, 5.5], "text": "O" },
-        { "key": "fleche-vers-p", "type": "arrow", "pos": [2.1535, 2.8465, 4.833], "to": [3.21, 6.79, 1.267] },
-        { "key": "fleche-vers-n", "type": "arrow", "pos": [2.8465, 2.1535, 4.833], "to": [6.79, 3.21, 1.267], "accent": true },
-        { "key": "txt-vers-p", "type": "text", "pos": [3.6145, 6.3855, 4.4], "text": "Z" },
-        { "key": "txt-vers-n", "type": "text", "pos": [6.6935, 3.3065, 4.4], "text": "A − Z" }
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "size": 7.6
+        },
+        {
+          "key": "plateau-p",
+          "type": "tile",
+          "role": "neutral",
+          "pos": [
+            3.2,
+            6.8,
+            0.4
+          ],
+          "size": 3.2
+        },
+        {
+          "key": "plateau-n",
+          "type": "tile",
+          "role": "neutral",
+          "pos": [
+            6.8,
+            3.2,
+            0.4
+          ],
+          "size": 3.2
+        },
+        {
+          "key": "txt-plateau-p",
+          "type": "text",
+          "pos": [
+            3.2,
+            6.8,
+            0.54
+          ],
+          "text": "protons"
+        },
+        {
+          "key": "txt-plateau-n",
+          "type": "text",
+          "pos": [
+            6.8,
+            3.2,
+            0.54
+          ],
+          "text": "neutrons"
+        },
+        {
+          "key": "not-a",
+          "type": "text",
+          "pos": [
+            2.0575,
+            2.4425,
+            5.617
+          ],
+          "text": "16"
+        },
+        {
+          "key": "not-z",
+          "type": "text",
+          "pos": [
+            2.3075,
+            2.6925,
+            5.133
+          ],
+          "text": "8"
+        },
+        {
+          "key": "not-x",
+          "type": "text",
+          "pos": [
+            2.6925,
+            2.3075,
+            5.5
+          ],
+          "text": "O"
+        },
+        {
+          "key": "fleche-vers-p",
+          "type": "arrow",
+          "pos": [
+            2.1535,
+            2.8465,
+            4.833
+          ],
+          "to": [
+            3.21,
+            6.79,
+            1.267
+          ]
+        },
+        {
+          "key": "fleche-vers-n",
+          "type": "arrow",
+          "pos": [
+            2.8465,
+            2.1535,
+            4.833
+          ],
+          "to": [
+            6.79,
+            3.21,
+            1.267
+          ],
+          "accent": true
+        },
+        {
+          "key": "txt-vers-p",
+          "type": "text",
+          "pos": [
+            3.6145,
+            6.3855,
+            4.4
+          ],
+          "text": "Z"
+        },
+        {
+          "key": "txt-vers-n",
+          "type": "text",
+          "pos": [
+            6.6935,
+            3.3065,
+            4.4
+          ],
+          "text": "A − Z"
+        }
       ],
       "notationLine": 6,
       "counters": [
-        { "key": "z", "label": "Z (protons)", "value": 8, "changed": true },
-        { "key": "n", "label": "N (neutrons)", "value": "?", "changed": true },
-        { "key": "a", "label": "A (nucléons)", "value": 16, "changed": true }
+        {
+          "key": "z",
+          "label": "Z (protons)",
+          "value": 8,
+          "changed": true
+        },
+        {
+          "key": "n",
+          "label": "N (neutrons)",
+          "value": "?",
+          "changed": true
+        },
+        {
+          "key": "a",
+          "label": "A (nucléons)",
+          "value": 16,
+          "changed": true
+        }
       ],
       "widget": {
         "type": "atom-builder",
-        "params": { "protons": 3, "neutrons": 4, "nucleusOnly": true }
+        "params": {
+          "protons": 3,
+          "neutrons": 4,
+          "nucleusOnly": true
+        }
       },
-      "sourceIds": ["nist-o", "nist-li", "iupac-green-book", "referentiel-seconde-pc"]
+      "sourceIds": [
+        "nist-o",
+        "nist-li",
+        "iupac-green-book",
+        "referentiel-seconde-pc"
+      ]
     }
   ],
   "quiz": [
@@ -300,7 +1804,7 @@
         "9 protons et 28 neutrons"
       ],
       "answer": 1,
-      "explanation": "En bas, Z = 9 : 9 protons. En haut, A = 19 nucléons en tout, protons compris, donc $N = A - Z = 19 - 9 = 10$. Le piège le plus tentant est de lire 19 comme le nombre de neutrons, parce que c’est le plus grand nombre écrit ; mais A compte tous les nucléons, et les 9 protons en font partie. Additionner, 28, donnerait plus de neutrons que de nucléons. Et 19 protons est impossible, puisque Z ne dépasse jamais A."
+      "explanation": "En bas, Z = 9 : 9 protons. En haut, A = 19 nucléons en tout, protons compris, donc $N = A - Z = 19 - 9 = 10$. Le piège le plus tentant est de lire 19 comme le nombre de neutrons, parce que c’est le plus grand nombre écrit ; mais A compte tous les nucléons, et les 9 protons en font partie. Additionner, 28, donnerait plus de neutrons que de nucléons. Et 19 protons est faux : le nombre du bas indique Z = 9, et 19 protons avec 9 neutrons feraient 28 nucléons, pas 19."
     },
     {
       "id": "q2",
@@ -415,7 +1919,7 @@
   "furtherReading": [
     {
       "title": "Fiche de mémorisation : le noyau de l’atome, siège de sa masse et de son identité (seconde)",
-      "url": "https://lyceelouisbarthou.fr/docs/Neurosciences/FicheMe%20mo-Seconde-PC-The%20me1-Partie1-PartieB-Noyau%20de%20l'atome.pdf",
+      "url": "https://www.lyceelouisbarthou.fr/docs/Neurosciences/FicheMe%20mo-Seconde-PC-The%20me1-Partie1-PartieB-Noyau%20de%20l'atome.pdf",
       "provider": "Lycée Louis Barthou",
       "accessed": "2026-11-26",
       "kind": "exercises",
