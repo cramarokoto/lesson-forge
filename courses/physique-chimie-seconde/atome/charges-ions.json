@@ -1,0 +1,416 @@
+{
+  "course": "physique-chimie-seconde",
+  "chapter": "atome",
+  "id": "charges-ions",
+  "title": "Charges : atome neutre, cation et anion",
+  "goal": "Déterminer le nombre d’électrons d’un atome ou d’un ion monoatomique à partir de Z et de sa charge, et qualifier l’entité d’atome, de cation ou d’anion.",
+  "notation": [
+    "\\text{proton} : +e \\qquad \\text{neutron} : 0 \\qquad \\text{électron} : -e",
+    "e = 1{,}602\\,176\\,634 \\times 10^{-19}\\,\\mathrm{C} \\approx 1{,}6 \\times 10^{-19}\\,\\mathrm{C}",
+    "q_{\\text{atome}} = Z \\times (+e) + Z \\times (-e) = 0",
+    "\\mathrm{Na}^{+} : q = (11 - 10) \\times e = +e",
+    "\\mathrm{F}^{-} : q = (9 - 10) \\times e = -e",
+    "q = (Z - n_{\\mathrm{e}}) \\times e",
+    "\\mathrm{Mg}^{2+} : n_{\\mathrm{e}} = 12 - 2 = 10 \\qquad \\mathrm{Cl}^{-} : n_{\\mathrm{e}} = 17 + 1 = 18"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "tag": "concept",
+      "title": "Trois particules, trois charges",
+      "takeaway": "Le proton porte la charge $+e$, l’électron la charge $-e$, de même valeur et de signe opposé ; le neutron ne porte aucune charge.",
+      "text": "Reprenons le noyau de la leçon précédente, avec ses protons et ses neutrons, entouré d’électrons. Chaque proton porte une charge électrique positive, notée $+e$. Chaque électron porte une charge négative de même valeur, notée $-e$. Le neutron, lui, est électriquement neutre : sa charge est nulle. La valeur $e$, commune au proton et à l’électron, s’appelle la charge électrique élémentaire.",
+      "callout": {
+        "kind": "order-of-magnitude",
+        "text": "Sa valeur est fixée exactement : $e = 1{,}602\\,176\\,634 \\times 10^{-19}\\,\\mathrm{C}$, soit environ $1{,}6 \\times 10^{-19}\\,\\mathrm{C}$. Le coulomb (C) est l’unité de charge électrique."
+      },
+      "sceneDescription": "Three spheres stand side by side on one shared board: a red proton tagged « +e », a grey neutron tagged « 0 » and a blue electron tagged « −e ». A double-headed accent arrow spans from the proton to the electron, labelled « même valeur e, signes opposés », while the neutron has no arrow.",
+      "scene": [],
+      "notationLine": 0,
+      "counters": [
+        {
+          "key": "charge-elementaire",
+          "label": "Charge élémentaire e",
+          "value": "≈ 1,6 × 10⁻¹⁹",
+          "unit": "C",
+          "changed": true
+        }
+      ],
+      "sourceIds": [
+        "pdg-baryons",
+        "pdg-constants",
+        "codata-e"
+      ]
+    },
+    {
+      "id": "s2",
+      "tag": "concept",
+      "title": "Un atome est neutre",
+      "takeaway": "Un atome possède Z électrons, autant que de protons : leurs charges s’annulent et l’atome est électriquement neutre.",
+      "text": "Prenons un atome de sodium. Son numéro atomique vaut $Z = 11$ : son noyau contient 11 protons, soit une charge $+11e$. Autour du noyau, 11 électrons apportent une charge $-11e$. Additionnons : $11 \\times (+e) + 11 \\times (-e) = 0$. Il en va de même pour tout atome : il possède Z électrons, autant que de protons. Sa charge totale est nulle : on dit que l’atome est électriquement neutre.",
+      "sceneDescription": "The nucleus from lesson noyau, drawn as one orange sphere tagged « 11 protons : +11e », is ringed by 11 small blue electron spheres tagged together « 11 électrons : −11e », with the label « Na » above the atom. Two arrows labelled « somme » run from these two tags and meet at the accent text « charge totale : 0 ».",
+      "scene": [],
+      "notationLine": 2,
+      "counters": [
+        {
+          "key": "protons",
+          "label": "Protons",
+          "value": 11,
+          "changed": true
+        },
+        {
+          "key": "electrons",
+          "label": "Électrons",
+          "value": 11,
+          "changed": true
+        },
+        {
+          "key": "charge-totale",
+          "label": "Charge totale",
+          "value": "0",
+          "unit": "e",
+          "changed": true
+        }
+      ],
+      "sourceIds": [
+        "pubchem-periodic-table",
+        "oqlf-ion",
+        "pdg-baryons"
+      ]
+    },
+    {
+      "id": "s3",
+      "tag": "caution",
+      "title": "Et les neutrons ?",
+      "takeaway": "Un atome est neutre parce qu’il a autant d’électrons que de protons ; ses neutrons, sans charge, n’y changent rien.",
+      "text": "Piège fréquent : penser qu’un atome est neutre parce qu’il a autant de neutrons que de protons. Le noyau de sodium s’écrit ${}^{23}_{11}\\mathrm{Na}$ : il compte $23 - 11 = 12$ neutrons pour 11 protons. Pourtant, l’atome de sodium est neutre. Les neutrons ne portent aucune charge : quel que soit leur nombre, ils ne modifient pas la charge totale. Seule compte l’égalité entre le nombre d’électrons et celui de protons.",
+      "sceneDescription": "The sodium atom moves aside and three vertical bars stand on one shared board, 11, 12 and 11 units tall: red for protons, grey for neutrons, blue for electrons. An accent bracket labelled « 11 = 11 » joins the equal proton and electron bars, while the slightly taller neutron bar is faded and tagged « charge 0 ».",
+      "scene": [],
+      "notationLine": 2,
+      "counters": [
+        {
+          "key": "protons",
+          "label": "Protons",
+          "value": 11
+        },
+        {
+          "key": "neutrons",
+          "label": "Neutrons",
+          "value": 12,
+          "changed": true
+        },
+        {
+          "key": "electrons",
+          "label": "Électrons",
+          "value": 11
+        },
+        {
+          "key": "charge-totale",
+          "label": "Charge totale",
+          "value": "0",
+          "unit": "e"
+        }
+      ],
+      "sourceIds": [
+        "nist-isotopes-na",
+        "pdg-baryons",
+        "oqlf-ion"
+      ]
+    },
+    {
+      "id": "s4",
+      "tag": "concept",
+      "title": "Un électron part : le cation",
+      "takeaway": "En perdant un électron, l’atome de sodium devient le cation $\\mathrm{Na}^{+}$ : 11 protons, 10 électrons, charge $+e$.",
+      "text": "Retirons un électron à l’atome de sodium. Le noyau n’a pas changé : toujours 11 protons. Il reste 10 électrons, donc la charge totale vaut $(11 - 10) \\times e = +e$. L’entité n’est plus neutre : c’est un ion. Un ion de charge positive s’appelle un cation. On écrit sa charge en exposant : $\\mathrm{Na}^{+}$. Ce « + » signale un électron en moins, et non un électron en plus.",
+      "sceneDescription": "The sodium atom returns with its ring of electrons, and one electron leaves the ring along an accent arrow pointing outward, labelled « −1 électron ». The nucleus tag still reads « 11 protons », the atom label changes from « Na » to « Na⁺ » and the total-charge text now reads « charge totale : +e ».",
+      "scene": [],
+      "notationLine": 3,
+      "counters": [
+        {
+          "key": "protons",
+          "label": "Protons",
+          "value": 11
+        },
+        {
+          "key": "electrons",
+          "label": "Électrons",
+          "value": 10,
+          "changed": true
+        },
+        {
+          "key": "charge-totale",
+          "label": "Charge totale",
+          "value": "+1",
+          "unit": "e",
+          "changed": true
+        }
+      ],
+      "sourceIds": [
+        "pubchem-periodic-table",
+        "pubchem-ions",
+        "oqlf-ion",
+        "referentiel-seconde-pc"
+      ]
+    },
+    {
+      "id": "s5",
+      "tag": "concept",
+      "title": "Un électron arrive : l’anion",
+      "takeaway": "En gagnant un électron, l’atome de fluor devient l’anion $\\mathrm{F}^{-}$ : 9 protons, 10 électrons, charge $-e$.",
+      "text": "Changeons d’atome : le fluor, de numéro atomique $Z = 9$, possède 9 protons et 9 électrons. Cette fois, un électron supplémentaire arrive. Le noyau ne change toujours pas : 9 protons. Avec 10 électrons, la charge totale vaut $(9 - 10) \\times e = -e$. Un ion de charge négative s’appelle un anion. On écrit $\\mathrm{F}^{-}$ : ce « − » signale un électron en plus.",
+      "sceneDescription": "A fluorine atom takes the sodium atom’s place: a nucleus tagged « 9 protons » ringed by 9 blue electrons. A tenth electron comes in from outside along an accent arrow pointing inward, labelled « +1 électron », while the atom label reads « F⁻ » and the total-charge text « charge totale : −e ».",
+      "scene": [],
+      "notationLine": 4,
+      "counters": [
+        {
+          "key": "protons",
+          "label": "Protons",
+          "value": 9,
+          "changed": true
+        },
+        {
+          "key": "electrons",
+          "label": "Électrons",
+          "value": 10
+        },
+        {
+          "key": "charge-totale",
+          "label": "Charge totale",
+          "value": "−1",
+          "unit": "e",
+          "changed": true
+        }
+      ],
+      "sourceIds": [
+        "pubchem-periodic-table",
+        "pubchem-ions",
+        "oqlf-ion"
+      ]
+    },
+    {
+      "id": "s6",
+      "tag": "calculate",
+      "title": "Compter les électrons d’un ion",
+      "takeaway": "Pour compter les électrons d’un ion, on part de Z : on retranche le nombre de l’exposant pour un cation, on l’ajoute pour un anion.",
+      "text": "Connaissant Z, la formule d’un ion suffit pour compter ses électrons. Pour $\\mathrm{Mg}^{2+}$, avec $Z = 12$ : l’exposant « 2+ » signale 2 électrons en moins, soit $12 - 2 = 10$ électrons. Pour $\\mathrm{Cl}^{-}$, avec $Z = 17$ : un électron en plus, soit $17 + 1 = 18$ électrons. Un exposant réduit à un signe, « + » ou « − », vaut 1. Le nombre de protons, lui, reste égal à Z.",
+      "callout": {
+        "kind": "pitfall",
+        "text": "Un cation a perdu des électrons, même si sa charge est positive : ce sont ses protons, désormais plus nombreux que ses électrons, qui rendent sa charge positive."
+      },
+      "sceneDescription": "No atom is drawn: two rows read left to right on one board, the tile « Mg²⁺ : Z = 12 » leading by the accent arrow « − 2 » to the tile « 10 électrons ». Below it, the tile « Cl⁻ : Z = 17 » leads by an arrow « + 1 » to the tile « 18 électrons ».",
+      "scene": [],
+      "notationLine": 6,
+      "counters": [
+        {
+          "key": "protons",
+          "label": "Protons",
+          "value": 12,
+          "changed": true
+        },
+        {
+          "key": "electrons",
+          "label": "Électrons",
+          "value": 10
+        },
+        {
+          "key": "charge-totale",
+          "label": "Charge totale",
+          "value": "+2",
+          "unit": "e",
+          "changed": true
+        }
+      ],
+      "sourceIds": [
+        "pubchem-periodic-table",
+        "pubchem-ions",
+        "referentiel-seconde-pc"
+      ]
+    },
+    {
+      "id": "s7",
+      "tag": "try",
+      "title": "À toi de former un ion",
+      "takeaway": "Pour former un ion, on change seulement le nombre d’électrons ; retirer un proton changerait le noyau, et donc le symbole.",
+      "text": "Le constructeur part d’un atome de sodium : 11 protons, 12 neutrons, 11 électrons. Il calcule la charge $q = (Z - n_{\\mathrm{e}}) \\times e$, où $n_{\\mathrm{e}}$ est le nombre d’électrons. Retire un électron : la charge passe à $+1\\,e$ et « cation » s’affiche. Remets-le, puis retire plutôt un proton : la charge devient $-1\\,e$ et le symbole change, ce n’est plus un noyau de sodium. Un ion se forme en changeant les électrons, jamais les protons.",
+      "sceneDescription": "The whole sodium atom is back: the nucleus tagged « 11 protons » with the label « noyau inchangé », ringed by 11 blue electrons. An accent arrow runs from one electron outward, labelled « −1 électron → Na⁺ ».",
+      "scene": [],
+      "notationLine": 5,
+      "counters": [
+        {
+          "key": "protons",
+          "label": "Protons",
+          "value": 11,
+          "changed": true
+        },
+        {
+          "key": "neutrons",
+          "label": "Neutrons",
+          "value": 12,
+          "changed": true
+        },
+        {
+          "key": "electrons",
+          "label": "Électrons",
+          "value": 11,
+          "changed": true
+        },
+        {
+          "key": "charge-totale",
+          "label": "Charge totale",
+          "value": "0",
+          "unit": "e",
+          "changed": true
+        }
+      ],
+      "widget": {
+        "type": "atom-builder",
+        "params": {
+          "protons": 11,
+          "neutrons": 12,
+          "electrons": 11
+        }
+      },
+      "sourceIds": [
+        "nist-isotopes-na",
+        "pubchem-periodic-table",
+        "oqlf-ion"
+      ]
+    },
+    {
+      "id": "s8",
+      "tag": "concept",
+      "title": "Molécule, atome, cation ou anion ?",
+      "takeaway": "On classe une entité d’après sa formule : sans exposant, molécule (plusieurs atomes) ou atome (un seul) ; exposant +, cation ; exposant −, anion.",
+      "text": "Une formule chimique suffit pour qualifier une entité. Sans exposant, l’entité est neutre : $\\mathrm{H_2O}$ et $\\mathrm{CO_2}$, qui associent plusieurs atomes, sont des molécules ; $\\mathrm{Na}$, un symbole seul, désigne un atome. Avec un exposant positif, comme $\\mathrm{Na}^{+}$ ou $\\mathrm{Mg}^{2+}$, c’est un cation. Avec un exposant négatif, comme $\\mathrm{F}^{-}$ ou $\\mathrm{Cl}^{-}$, c’est un anion.",
+      "sceneDescription": "Four tiles stand in a row on one board, labelled left to right « molécule », « atome », « cation », « anion », and above them seven formulas, « H₂O », « CO₂ », « Na », « Na⁺ », « Mg²⁺ », « F⁻ », « Cl⁻ », each drop along an arrow into their tile. The arrow from « Mg²⁺ » into « cation » is the accent.",
+      "scene": [],
+      "notationLine": null,
+      "counters": [
+        {
+          "key": "molecules",
+          "label": "Molécules",
+          "value": 2,
+          "changed": true
+        },
+        {
+          "key": "atomes",
+          "label": "Atomes",
+          "value": 1,
+          "changed": true
+        },
+        {
+          "key": "cations",
+          "label": "Cations",
+          "value": 2,
+          "changed": true
+        },
+        {
+          "key": "anions",
+          "label": "Anions",
+          "value": 2,
+          "changed": true
+        }
+      ],
+      "sourceIds": [
+        "referentiel-seconde-pc",
+        "pubchem-ions"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Que désigne la formule $\\mathrm{F}^{-}$ ?",
+      "options": [
+        "Un cation : un atome de fluor qui a perdu un électron.",
+        "Un anion : un atome de fluor qui a gagné un électron.",
+        "Un anion : un noyau de fluor qui a gagné un neutron, de charge négative."
+      ],
+      "answer": 1,
+      "explanation": "Le « − » en exposant indique une charge négative : l’entité a un électron de plus que de protons, c’est un anion. L’atome de fluor (9 protons) a gagné un électron et en compte 10. Lire « − » comme « un électron en moins » est tentant, car le signe moins évoque un retrait ; mais retirer un électron, de charge $-e$, rendrait l’entité positive. Quant au neutron, il ne porte aucune charge, et former un ion ne touche pas au noyau."
+    },
+    {
+      "id": "q2",
+      "question": "Le noyau d’un atome de sodium contient 11 protons et 12 neutrons. Pourquoi cet atome est-il électriquement neutre ?",
+      "options": [
+        "Parce qu’il possède 11 électrons, autant que de protons.",
+        "Parce qu’il possède autant de neutrons que de protons.",
+        "Parce que ses 12 neutrons compensent la charge de ses 11 protons."
+      ],
+      "answer": 0,
+      "explanation": "Les 11 protons apportent $+11e$ et les 11 électrons $-11e$ : la somme est nulle. La deuxième réponse est tentante parce que « neutron » et « neutre » se ressemblent, mais cet atome compte 12 neutrons pour 11 protons et il est pourtant neutre. La troisième suppose que le neutron est négatif : il ne porte aucune charge, donc il ne compense rien."
+    },
+    {
+      "id": "q3",
+      "question": "Le magnésium a pour numéro atomique $Z = 12$. Quelle est la composition de l’ion $\\mathrm{Mg}^{2+}$ ?",
+      "options": [
+        "12 protons et 14 électrons",
+        "10 protons et 12 électrons",
+        "12 protons et 10 électrons",
+        "14 protons et 12 électrons"
+      ],
+      "answer": 2,
+      "explanation": "Former un ion ne change pas le noyau : il garde 12 protons. L’exposant « 2+ » signale 2 électrons en moins, soit $12 - 2 = 10$ électrons et une charge $(12 - 10) \\times e = +2e$. Le piège le plus tentant est d’associer « + » à un ajout, d’où 14 électrons ; mais ajouter des électrons, de charge négative, rendrait l’ion négatif. Les réponses qui modifient le nombre de protons oublient que seuls les électrons changent quand un ion se forme."
+    }
+  ],
+  "sources": [
+    {
+      "id": "referentiel-seconde-pc",
+      "title": "Annexe — Programme de physique-chimie de seconde générale et technologique (BO spécial n° 1 du 22 janvier 2019)",
+      "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
+      "accessed": "2026-11-25",
+      "supports": "p. 6, 1.B: « Masse et charge électrique d’un électron, d’un proton et d’un neutron, charge électrique élémentaire, neutralité de l’atome »; « Utiliser le terme adapté parmi molécule, atome, anion et cation pour qualifier une entité chimique à partir d’une formule chimique donnée »; ion list « H⁺, Na⁺, K⁺, Ca²⁺, Mg²⁺, Cl⁻, F⁻ ». p. 4, cycle 4 box: « formule chimique d’une molécule, formules O₂, H₂, N₂, H₂O, CO₂ »."
+    },
+    {
+      "id": "codata-e",
+      "title": "NIST CODATA 2022 — elementary charge",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?e",
+      "accessed": "2026-11-25",
+      "supports": "e = 1.602 176 634 × 10⁻¹⁹ C, exact (2022 CODATA recommended values); unit coulomb (C)."
+    },
+    {
+      "id": "pdg-constants",
+      "title": "Particle Data Group, Review of Particle Physics 2024 — Table 1.1 Physical Constants",
+      "url": "https://pdg.lbl.gov/2024/reviews/rpp2024-rev-phys-constants.pdf",
+      "accessed": "2026-11-25",
+      "supports": "Row « electron charge magnitude, e, 1.602 176 634 × 10⁻¹⁹ C, exact »; caption: e now has a defined (exact) value. So e is the magnitude of the electron's charge."
+    },
+    {
+      "id": "pdg-baryons",
+      "title": "Particle Data Group, Review of Particle Physics 2024 — Summary Tables, N baryons",
+      "url": "https://pdg.lbl.gov/2024/tables/rpp2024-sum-baryons.pdf",
+      "accessed": "2026-11-25",
+      "supports": "Header « p, N⁺ = uud; n, N⁰ = udd » (proton positive, neutron neutral); proton: |q_p + q_e|/e < 1 × 10⁻²¹ (proton and electron charges equal and opposite); neutron: charge q = (−0.2 ± 0.8) × 10⁻²¹ e (zero within uncertainty); decay modes write the electron e⁻ (negative)."
+    },
+    {
+      "id": "pubchem-periodic-table",
+      "title": "PubChem (NIH) — Periodic table data, CSV",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV",
+      "accessed": "2026-11-25",
+      "supports": "AtomicNumber: H 1, C 6, O 8, F 9, Na 11, Mg 12, Cl 17."
+    },
+    {
+      "id": "pubchem-ions",
+      "title": "PubChem (NIH) — Compound properties for CID 923, 28179, 312, 888",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/923,28179,312,888/property/MolecularFormula,Charge,Title/JSON",
+      "accessed": "2026-11-25",
+      "supports": "CID 923 Na+ charge 1 (Sodium Ion); CID 28179 F- charge −1 (Fluoride Ion); CID 312 Cl- charge −1 (Chloride); CID 888 Mg+2 charge 2 (Magnesium Cation)."
+    },
+    {
+      "id": "nist-isotopes-na",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Sodium",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Na",
+      "accessed": "2026-11-25",
+      "supports": "Na: atomic number 11, one isotope listed, mass number 23, isotopic composition 1; hence 23 − 11 = 12 neutrons."
+    },
+    {
+      "id": "oqlf-ion",
+      "title": "Office québécois de la langue française, Grand dictionnaire terminologique — fiche « ion » (mise à jour 1996)",
+      "url": "https://vitrinelinguistique.oqlf.gouv.qc.ca/fiche-gdt/fiche/2075913/ion",
+      "accessed": "2026-11-25",
+      "supports": "Définition « Atome ou groupe d’atomes liés qui possède une charge électrique non nulle »; note: un atome neutre a Z électrons et peut en capter (ion négatif ou anion) ou en perdre (ion positif ou cation)."
+    }
+  ],
+  "furtherReading": []
+}

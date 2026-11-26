@@ -1,0 +1,267 @@
+{
+  "course": "physique-chimie-seconde",
+  "chapter": "atome",
+  "id": "noyau",
+  "title": "Le noyau : nucléons et écriture conventionnelle",
+  "goal": "Établir l’écriture conventionnelle $^{A}_{Z}\\mathrm{X}$ ou $^{A}\\mathrm{X}$ d’un noyau à partir de ses nombres de protons et de neutrons, et retrouver cette composition à partir de l’écriture, Z étant fourni dans le cas de $^{A}\\mathrm{X}$.",
+  "notation": [
+    "Z = \\text{nombre de protons}",
+    "N = \\text{nombre de neutrons}, \\qquad A = Z + N",
+    "{}^{A}_{Z}\\mathrm{X} \\qquad {}^{7}_{3}\\mathrm{Li}",
+    "A = Z + N \\geq Z",
+    "N = A - Z, \\qquad {}^{13}_{6}\\mathrm{C} : N = 13 - 6 = 7",
+    "{}^{23}\\mathrm{Na}, \\ Z = 11 \\text{ (donné)} : N = 23 - 11 = 12",
+    "{}^{16}_{8}\\mathrm{O} : 8 \\text{ protons}, \\ 16 - 8 \\text{ neutrons}"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "tag": "observe",
+      "title": "Un noyau vu de très près",
+      "takeaway": "Un noyau est un amas de protons et de neutrons, deux sortes de particules qu’on appelle ensemble des nucléons.",
+      "text": "À la leçon précédente, le noyau n’était qu’un point minuscule au centre de l’atome. Agrandissons énormément un noyau de lithium, de symbole Li. On y voit deux sortes de particules serrées les unes contre les autres : 3 protons et 4 neutrons. Protons et neutrons portent un nom commun : ce sont les nucléons. Ce noyau contient donc 7 nucléons.",
+      "sceneDescription": "The tiny nucleus from lesson echelles is blown up into a tight cluster of 3 red proton spheres and 4 grey neutron spheres on a small plinth, with the faded atom sphere behind it and the note « Pas à l’échelle ». The label « 7 nucléons », attached to the whole cluster, is the accent, while one sphere of each kind carries a small tag « proton » or « neutron ».",
+      "notationLine": null,
+      "counters": [
+        { "key": "a", "label": "Nucléons", "value": 7, "changed": true }
+      ],
+      "sourceIds": ["nist-li", "referentiel-seconde-pc", "iupac-green-book"]
+    },
+    {
+      "id": "s2",
+      "tag": "concept",
+      "title": "Z, le nombre de protons",
+      "takeaway": "Le numéro atomique Z est le nombre de protons du noyau : on compte les protons, ici Z = 3.",
+      "text": "Comptons d’abord les protons de ce noyau de lithium : il y en a 3. Ce nombre porte un nom : le numéro atomique, noté Z. Pour ce noyau, Z = 3. Les neutrons n’entrent pas dans ce compte : Z ne dit rien d’eux. Comme on compte des particules entières, Z est toujours un nombre entier.",
+      "sceneDescription": "Same cluster: the 3 proton spheres stay bright, each tagged « 1 », « 2 », « 3 », while the 4 neutron spheres fade. The label « Z = 3 », pointing at the protons, is the accent.",
+      "notationLine": 0,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": 3, "changed": true },
+        { "key": "a", "label": "Nucléons", "value": 7 }
+      ],
+      "sourceIds": ["nist-li", "iupac-green-book"]
+    },
+    {
+      "id": "s3",
+      "tag": "concept",
+      "title": "A, le nombre de nucléons",
+      "takeaway": "Le nombre de masse A compte tous les nucléons : on additionne protons et neutrons, A = Z + N = 3 + 4 = 7.",
+      "text": "Comptons maintenant les neutrons : il y en a 4. On note N ce nombre de neutrons. Le nombre total de nucléons, protons et neutrons ensemble, s’appelle le nombre de masse, noté A. Pour l’obtenir, on additionne : $A = Z + N = 3 + 4 = 7$. Ce noyau de lithium a donc un nombre de masse égal à 7.",
+      "callout": {
+        "kind": "pitfall",
+        "text": "Les électrons de l’atome se trouvent autour du noyau, pas dedans : ils ne comptent jamais dans A."
+      },
+      "sceneDescription": "The 3 protons and the 4 neutrons, both bright again, sit in two small heaps tagged « Z = 3 » and « N = 4 ». An accent arrow labelled « Z + N » runs from the two heaps to the tag « A = 7 » placed over the whole cluster.",
+      "notationLine": 1,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": 3 },
+        { "key": "n", "label": "N (neutrons)", "value": 4, "changed": true },
+        { "key": "a", "label": "A (nucléons)", "value": 7, "changed": true }
+      ],
+      "sourceIds": ["nist-li", "iupac-green-book", "referentiel-seconde-pc"]
+    },
+    {
+      "id": "s4",
+      "tag": "concept",
+      "title": "L’écriture conventionnelle",
+      "takeaway": "On écrit le noyau ${}^{A}_{Z}\\mathrm{X}$ : A (nucléons) en haut à gauche du symbole, Z (protons) en bas à gauche ; ici ${}^{7}_{3}\\mathrm{Li}$.",
+      "text": "Pour décrire un noyau en quelques signes, on utilise son écriture conventionnelle : ${}^{A}_{Z}\\mathrm{X}$. X est le symbole chimique, ici Li. On place A, le nombre de nucléons, en haut à gauche du symbole, et Z, le nombre de protons, en bas à gauche. Notre noyau s’écrit donc ${}^{7}_{3}\\mathrm{Li}$. Le nombre de neutrons n’y figure pas directement : il est inclus dans A.",
+      "sceneDescription": "An accent arrow labelled « on écrit » runs from the cluster, still tagged « A = 7 » and « Z = 3 », to a large « ⁷₃Li » on the right. Two thin arrows link the tag « A = 7 » to the upper-left 7 and the tag « Z = 3 » to the lower-left 3.",
+      "notationLine": 2,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": 3 },
+        { "key": "n", "label": "N (neutrons)", "value": 4 },
+        { "key": "a", "label": "A (nucléons)", "value": 7 }
+      ],
+      "sourceIds": ["referentiel-seconde-pc", "iupac-green-book", "nist-li"]
+    },
+    {
+      "id": "s5",
+      "tag": "caution",
+      "title": "Le plus grand nombre en haut",
+      "takeaway": "Comme A = Z + N, le nombre du haut n’est jamais plus petit que celui du bas : on écrit ${}^{7}_{3}\\mathrm{Li}$, jamais ${}^{3}_{7}\\mathrm{Li}$.",
+      "text": "Piège fréquent : inverser A et Z. Un repère simple : $A = Z + N$, donc A n’est jamais plus petit que Z. Dans l’écriture conventionnelle, le nombre du haut est le plus grand des deux, ou égal à celui du bas. ${}^{3}_{7}\\mathrm{Li}$ annoncerait 7 protons parmi 3 nucléons en tout : c’est impossible.",
+      "sceneDescription": "On one shared plinth, the 7 nucleons are stacked in a single column, 3 red protons at the bottom and 4 grey neutrons on top, with a long measure arrow beside the whole column reading « A = 7 » and a short one beside the red part reading « Z = 3 ». The accent arrow beside the grey part, the gap between the two lengths, reads « N = 4 », and a faded « ³₇Li » sits next to « ⁷₃Li ».",
+      "notationLine": 3,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": 3 },
+        { "key": "n", "label": "N (neutrons)", "value": 4 },
+        { "key": "a", "label": "A (nucléons)", "value": 7 }
+      ],
+      "sourceIds": ["iupac-green-book", "nist-li"]
+    },
+    {
+      "id": "s6",
+      "tag": "calculate",
+      "title": "De l’écriture à la composition",
+      "takeaway": "Pour lire une écriture, on soustrait : N = A − Z ; le noyau ${}^{13}_{6}\\mathrm{C}$ contient 6 protons et 13 − 6 = 7 neutrons.",
+      "text": "Faisons le chemin inverse. Voici un noyau de carbone : ${}^{13}_{6}\\mathrm{C}$. En bas, Z = 6 : il contient 6 protons. En haut, A = 13 : 13 nucléons en tout. Les neutrons sont les nucléons qui ne sont pas des protons, donc on soustrait : $N = A - Z = 13 - 6 = 7$. Additionner donnerait 19 neutrons, plus que les 13 nucléons du noyau : impossible.",
+      "sceneDescription": "The notation « ¹³₆C » stands on the left and the cluster is rebuilt from it on the plinth: 6 red protons, then 7 grey neutrons. An accent arrow labelled « − Z = − 6 » runs from the tag « A = 13 » over the whole cluster to the tag « N = 7 » over the grey spheres.",
+      "notationLine": 4,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": 6, "changed": true },
+        { "key": "n", "label": "N (neutrons)", "value": 7, "changed": true },
+        { "key": "a", "label": "A (nucléons)", "value": 13, "changed": true }
+      ],
+      "sourceIds": ["nist-c", "iupac-green-book"]
+    },
+    {
+      "id": "s7",
+      "tag": "calculate",
+      "title": "Quand Z n’est pas écrit",
+      "takeaway": "L’écriture courte ${}^{A}\\mathrm{X}$ ne donne pas Z : on prend Z dans l’énoncé, puis on soustrait ; ${}^{23}\\mathrm{Na}$ avec Z = 11 a 12 neutrons.",
+      "text": "On rencontre aussi une écriture courte, ${}^{A}\\mathrm{X}$, sans Z. Par exemple ${}^{23}\\mathrm{Na}$, un noyau de sodium : 23 nucléons en tout. Pour savoir combien sont des protons, il faut une donnée de plus, le numéro atomique, fourni par l’énoncé : ici Z = 11. On complète l’écriture, ${}^{23}_{11}\\mathrm{Na}$, puis on calcule comme avant : 11 protons et $N = 23 - 11 = 12$ neutrons.",
+      "sceneDescription": "A large « ²³Na » shows an empty lower-left slot, and a card « Z = 11 (donné) » moves into it along the accent arrow, completing « ²³₁₁Na ». Below, the nucleus is drawn as a single sphere, with the note « Pas à l’échelle » and an arrow labelled « − 11 » from the tag « A = 23 » to the tag « N = 12 ».",
+      "notationLine": 5,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": 11, "changed": true },
+        { "key": "n", "label": "N (neutrons)", "value": 12, "changed": true },
+        { "key": "a", "label": "A (nucléons)", "value": 23, "changed": true }
+      ],
+      "sourceIds": ["nist-na", "referentiel-seconde-pc", "iupac-green-book"]
+    },
+    {
+      "id": "s8",
+      "tag": "try",
+      "title": "À toi de construire un noyau",
+      "takeaway": "Pour construire un noyau à partir de son écriture, on place Z protons et A − Z neutrons.",
+      "text": "Le module ci-dessous part de 3 protons et 4 neutrons : le noyau ${}^{7}_{3}\\mathrm{Li}$. Transforme-le en noyau d’oxygène ${}^{16}_{8}\\mathrm{O}$ : combien de protons faut-il, combien de neutrons ? Lis d’abord Z en bas, puis calcule A − Z avant de cliquer. Vérifie ensuite que l’écriture affichée par le module correspond exactement à la cible.",
+      "sceneDescription": "The target card « ¹⁶₈O » stands above two empty trays on the plinth: a thin arrow leads from its lower 8 to the tray « protons : Z », and the accent arrow labelled « A − Z » leads from its upper 16 to the tray « neutrons ». Three blue electron spheres float off the plinth, tagged « autour du noyau : ni dans Z, ni dans A ».",
+      "notationLine": 6,
+      "counters": [
+        { "key": "z", "label": "Z (protons)", "value": 8, "changed": true },
+        { "key": "n", "label": "N (neutrons)", "value": "?", "changed": true },
+        { "key": "a", "label": "A (nucléons)", "value": 16, "changed": true }
+      ],
+      "widget": {
+        "type": "atom-builder",
+        "params": { "protons": 3, "neutrons": 4, "nucleusOnly": true }
+      },
+      "sourceIds": ["nist-o", "nist-li", "iupac-green-book", "referentiel-seconde-pc"]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Que contient le noyau ${}^{19}_{9}\\mathrm{F}$ ?",
+      "options": [
+        "9 protons et 19 neutrons",
+        "9 protons et 10 neutrons",
+        "19 protons et 9 neutrons",
+        "9 protons et 28 neutrons"
+      ],
+      "answer": 1,
+      "explanation": "En bas, Z = 9 : 9 protons. En haut, A = 19 nucléons en tout, protons compris, donc $N = A - Z = 19 - 9 = 10$. Le piège le plus tentant est de lire 19 comme le nombre de neutrons, parce que c’est le plus grand nombre écrit ; mais A compte tous les nucléons, et les 9 protons en font partie. Additionner, 28, donnerait plus de neutrons que de nucléons. Et 19 protons est impossible, puisque Z ne dépasse jamais A."
+    },
+    {
+      "id": "q2",
+      "question": "Un atome de chlore (symbole Cl) est formé d’un noyau de 17 protons et 18 neutrons, entouré de 17 électrons. Quelle est l’écriture conventionnelle de son noyau ?",
+      "options": [
+        "${}^{35}_{17}\\mathrm{Cl}$",
+        "${}^{17}_{35}\\mathrm{Cl}$",
+        "${}^{52}_{17}\\mathrm{Cl}$",
+        "${}^{18}_{17}\\mathrm{Cl}$"
+      ],
+      "answer": 0,
+      "explanation": "A compte les nucléons du noyau, $17 + 18 = 35$, et Z = 17 se place en bas : ${}^{35}_{17}\\mathrm{Cl}$. Ajouter les 17 électrons, ce qui donne 52, est tentant puisqu’ils font partie de l’atome ; mais ils sont autour du noyau, pas dedans. Écrire 18 en haut confond A avec le nombre de neutrons, et ${}^{17}_{35}\\mathrm{Cl}$ inverse les places : le nombre du haut n’est jamais plus petit que celui du bas."
+    },
+    {
+      "id": "q3",
+      "question": "Le noyau ${}^{27}\\mathrm{Al}$ est un noyau d’aluminium, dont le numéro atomique vaut Z = 13. Combien de neutrons contient-il ?",
+      "options": [
+        "27",
+        "40",
+        "14"
+      ],
+      "answer": 2,
+      "explanation": "Z = 13 est donné : le noyau contient 13 protons. Il compte A = 27 nucléons en tout, donc $N = 27 - 13 = 14$. Répondre 27 est tentant, car c’est le seul nombre écrit sur le symbole ; mais A compte tous les nucléons, protons compris. Répondre 40, c’est additionner A et Z au lieu de soustraire : on aurait plus de neutrons que de nucléons."
+    }
+  ],
+  "sources": [
+    {
+      "id": "referentiel-seconde-pc",
+      "title": "Annexe — Programme de physique-chimie de seconde générale et technologique (BO spécial n° 1 du 22 janvier 2019)",
+      "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
+      "accessed": "2026-11-25",
+      "supports": "p. 6, row « Le noyau de l’atome, siège de sa masse et de son identité »: « Numéro atomique, nombre de masse, écriture conventionnelle : A/Z X ou A X » and « Établir l’écriture conventionnelle d’un noyau à partir de sa composition et inversement ». p. 4, cycle 4 box: « constituants de l’atome (noyau et électrons) et du noyau (neutrons et protons) » (electrons are outside the nucleus)."
+    },
+    {
+      "id": "iupac-green-book",
+      "title": "IUPAC — Quantities, Units and Symbols in Physical Chemistry (Green Book), 3rd edition, 2nd printing",
+      "url": "https://iupac.org/wp-content/uploads/2019/05/IUPAC-GB3-2012-2ndPrinting-PDFsearchable.pdf",
+      "accessed": "2026-11-25",
+      "supports": "Section 2.5, p. 22 (PDF p. 36): « nucleon number, mass number A », « proton number, atomic number Z », « neutron number N, N = A − Z » (hence A = Z + N counts protons and neutrons, the nucleons). Section 2.10.1, pp. 49–50 (PDF pp. 63–64): mass number as left superscript, atomic number as left subscript (examples ¹⁴₆C, ¹⁴₇N); a nuclide has a specified atomic number and mass number."
+    },
+    {
+      "id": "nist-li",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Lithium",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Li",
+      "accessed": "2026-11-25",
+      "supports": "Li: atomic number 3; mass numbers 6 (0.0759(4)) and 7 (0.9241(4)). A lithium nucleus with A = 7 has 3 protons and 7 − 3 = 4 neutrons."
+    },
+    {
+      "id": "nist-c",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Carbon",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=C",
+      "accessed": "2026-11-25",
+      "supports": "C: atomic number 6; mass numbers 12 (0.9893(8)) and 13 (0.0107(8)): ¹³₆C exists."
+    },
+    {
+      "id": "nist-o",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Oxygen",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=O",
+      "accessed": "2026-11-25",
+      "supports": "O: atomic number 8; mass numbers 16 (0.997 57(16)), 17, 18: ¹⁶₈O exists."
+    },
+    {
+      "id": "nist-na",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Sodium",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Na",
+      "accessed": "2026-11-25",
+      "supports": "Na: atomic number 11; mass number 23 (isotopic composition 1)."
+    },
+    {
+      "id": "nist-f",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Fluorine",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=F",
+      "accessed": "2026-11-25",
+      "supports": "F: atomic number 9; mass number 19 (isotopic composition 1). Quiz q1."
+    },
+    {
+      "id": "nist-al",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Aluminum",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Al",
+      "accessed": "2026-11-25",
+      "supports": "Al: atomic number 13; mass number 27 (isotopic composition 1). Quiz q3."
+    },
+    {
+      "id": "nist-cl",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Chlorine",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Cl",
+      "accessed": "2026-11-25",
+      "supports": "Cl: atomic number 17; mass numbers 35 (0.7576(10)) and 37 (0.2424(10)). Also Green Book p. 49: « Cl denotes a chlorine atom having 17 protons and 18 or 20 neutrons (giving a mass number of 35 or 37) ». Quiz q2."
+    },
+    {
+      "id": "pubchem-config-cl",
+      "title": "PubChem (NIH) — Chlorine, Electron Configuration",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/element/17/JSON?heading=Electron+Configuration",
+      "accessed": "2026-11-25",
+      "supports": "Cl: [Ne]3s²3p⁵ (Los Alamos National Laboratory). With Ne [He]2s²2p⁶ and He 1s² below: 2 + 2 + 6 + 2 + 5 = 17 electrons in the chlorine atom (quiz q2)."
+    },
+    {
+      "id": "pubchem-config-ne",
+      "title": "PubChem (NIH) — Neon, Electron Configuration",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/element/10/JSON?heading=Electron+Configuration",
+      "accessed": "2026-11-25",
+      "supports": "Ne: [He]2s²2p⁶ (Los Alamos National Laboratory)."
+    },
+    {
+      "id": "pubchem-config-he",
+      "title": "PubChem (NIH) — Helium, Electron Configuration",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/element/2/JSON?heading=Electron+Configuration",
+      "accessed": "2026-11-25",
+      "supports": "He: 1s² (Los Alamos National Laboratory)."
+    }
+  ],
+  "furtherReading": []
+}
