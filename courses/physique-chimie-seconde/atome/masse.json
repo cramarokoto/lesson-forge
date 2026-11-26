@@ -1,0 +1,241 @@
+{
+  "course": "physique-chimie-seconde",
+  "chapter": "atome",
+  "id": "masse",
+  "title": "Masse : le noyau pèse presque tout",
+  "goal": "Calculer le quotient de la masse d’un nucléon par celle d’un électron et en déduire que la masse d’un atome est pratiquement celle de son noyau.",
+  "notation": [
+    "m_{\\mathrm{p}} \\approx 1{,}673 \\times 10^{-27}\\,\\mathrm{kg} \\qquad m_{\\mathrm{n}} \\approx 1{,}675 \\times 10^{-27}\\,\\mathrm{kg}",
+    "m_{\\mathrm{e}} \\approx 9{,}11 \\times 10^{-31}\\,\\mathrm{kg}",
+    "\\dfrac{m_{\\text{nucléon}}}{m_{\\mathrm{e}}} \\approx \\dfrac{1{,}67 \\times 10^{-27}}{9{,}11 \\times 10^{-31}} = \\dfrac{1{,}67}{9{,}11} \\times 10^{-27-(-31)} \\approx 1{,}83 \\times 10^{3}",
+    "-27 - (-31) = +4 \\qquad \\text{et non} \\qquad -31 - (-27) = -4",
+    "m_{\\text{noyau}} \\approx A \\times m_{\\text{nucléon}} \\approx 23 \\times 1{,}67 \\times 10^{-27}\\,\\mathrm{kg} \\approx 3{,}8 \\times 10^{-26}\\,\\mathrm{kg}",
+    "m_{\\text{électrons}} = Z \\times m_{\\mathrm{e}} \\approx 11 \\times 9{,}11 \\times 10^{-31}\\,\\mathrm{kg} \\approx 1{,}0 \\times 10^{-29}\\,\\mathrm{kg}",
+    "m_{\\text{atome}} = m_{\\text{noyau}} + m_{\\text{électrons}} \\approx m_{\\text{noyau}}"
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "tag": "imagine",
+      "title": "Qui porte la masse de l’atome ?",
+      "takeaway": "Les électrons occupent presque tout le volume de l’atome ; pour savoir qui porte sa masse, on compare les masses, pas les volumes.",
+      "text": "Reprenons l’atome de sodium de la leçon précédente : un noyau minuscule en son centre, entouré de 11 électrons. Ce sont les électrons, autour du noyau, qui occupent presque tout le volume de l’atome. Il est tentant d’en conclure qu’ils portent aussi l’essentiel de sa masse. Pourtant, prendre de la place et être lourd, ce n’est pas la même chose. Pour savoir où se trouve la masse de l’atome, il faut comparer les masses de ses particules : proton, neutron, électron.",
+      "sceneDescription": "On the left of one board, the sodium atom from lesson charges-ions, a large pale sphere with a tiny orange nucleus ringed by 11 small blue electrons, carries the note « Pas à l’échelle ». To its right on the same board stands an empty two-pan balance, pans labelled « noyau » and « électrons », its level beam under a large accent question mark.",
+      "notationLine": null,
+      "counters": [
+        { "key": "electrons", "label": "Électrons", "value": 11, "changed": true }
+      ],
+      "sourceIds": ["nist-na", "codata-a0", "codata-rp", "referentiel-seconde-pc"]
+    },
+    {
+      "id": "s2",
+      "tag": "concept",
+      "title": "Proton et neutron, presque jumeaux",
+      "takeaway": "Le proton et le neutron ont presque la même masse, environ $1{,}67 \\times 10^{-27}\\,\\mathrm{kg}$, mais le neutron est un peu plus lourd.",
+      "text": "Posons un proton et un neutron côte à côte. Leurs masses, écrites en écriture scientifique, sont minuscules : $m_{\\mathrm{p}} \\approx 1{,}673 \\times 10^{-27}\\,\\mathrm{kg}$ pour le proton et $m_{\\mathrm{n}} \\approx 1{,}675 \\times 10^{-27}\\,\\mathrm{kg}$ pour le neutron. Elles ne sont pas exactement égales : le neutron est un peu plus lourd, d’environ 0,1 %. Cet écart est si faible que, pour comparer, on retient souvent une seule valeur pour un nucléon : environ $1{,}67 \\times 10^{-27}\\,\\mathrm{kg}$.",
+      "sceneDescription": "The atom and the balance fade; on the same board two tiles stand side by side, a red proton sphere on the left and a grey neutron sphere on the right, each above a mass bar drawn to scale, the neutron’s barely taller. The accent bracket between the two bar tops reads « environ 0,1 % ».",
+      "notationLine": 0,
+      "counters": [
+        { "key": "m-p", "label": "Masse du proton", "value": "1,673 × 10⁻²⁷", "unit": "kg", "changed": true },
+        { "key": "m-n", "label": "Masse du neutron", "value": "1,675 × 10⁻²⁷", "unit": "kg", "changed": true }
+      ],
+      "sourceIds": ["codata-mp", "codata-mn"]
+    },
+    {
+      "id": "s3",
+      "tag": "concept",
+      "title": "L’électron, un poids plume",
+      "takeaway": "L’électron a une masse d’environ $9{,}11 \\times 10^{-31}\\,\\mathrm{kg}$ : l’exposant $-31$ est plus petit que $-27$, il est bien plus léger qu’un nucléon.",
+      "text": "Ajoutons l’électron à la rangée. Sa masse vaut $m_{\\mathrm{e}} \\approx 9{,}11 \\times 10^{-31}\\,\\mathrm{kg}$. Comparons les exposants : $-31$ est plus petit que $-27$. Attention, c’est l’inverse de ce que suggèrent les nombres 31 et 27 : chaque cran d’exposant en moins divise par 10. Donc $10^{-31}\\,\\mathrm{kg}$ est bien plus petit que $10^{-27}\\,\\mathrm{kg}$. Le proton et l’électron n’ont pas du tout des masses du même ordre de grandeur.",
+      "sceneDescription": "A third tile joins the row on the same board, holding a small blue electron sphere; its mass bar, at the same scale as the proton and neutron bars, is too thin to see. The accent arrow points down to its empty place, labelled « 9,11 × 10⁻³¹ kg », while the two tall bars read « 10⁻²⁷ kg ».",
+      "notationLine": 1,
+      "counters": [
+        { "key": "m-p", "label": "Masse du proton", "value": "1,673 × 10⁻²⁷", "unit": "kg" },
+        { "key": "m-n", "label": "Masse du neutron", "value": "1,675 × 10⁻²⁷", "unit": "kg" },
+        { "key": "m-e", "label": "Masse de l’électron", "value": "9,11 × 10⁻³¹", "unit": "kg", "changed": true }
+      ],
+      "sourceIds": ["codata-me", "codata-mp", "codata-mn"]
+    },
+    {
+      "id": "s4",
+      "tag": "calculate",
+      "title": "Combien de fois plus lourd ?",
+      "takeaway": "On divise la masse d’un nucléon par celle d’un électron : le quotient vaut environ $1{,}8 \\times 10^{3}$, un nucléon est environ 1 800 fois plus lourd.",
+      "text": "Pour comparer deux grandeurs, on calcule leur quotient. On sépare les nombres et les puissances de dix : $\\dfrac{1{,}67 \\times 10^{-27}}{9{,}11 \\times 10^{-31}} = \\dfrac{1{,}67}{9{,}11} \\times 10^{-27-(-31)}$. Le premier facteur vaut environ $0{,}183$, le second vaut $10^{4}$. Le quotient vaut donc environ $0{,}183 \\times 10^{4} = 1{,}83 \\times 10^{3}$, soit environ 1 800. Avec des valeurs plus précises, on trouve environ 1 836 pour le proton.",
+      "sceneDescription": "Same three tiles, the neutron tile faded: the accent arrow runs from the top of the tall proton bar down to the electron’s empty place, labelled « ÷ 1 800 environ ».",
+      "notationLine": 2,
+      "counters": [
+        { "key": "m-p", "label": "Masse du proton", "value": "1,673 × 10⁻²⁷", "unit": "kg" },
+        { "key": "m-e", "label": "Masse de l’électron", "value": "9,11 × 10⁻³¹", "unit": "kg" },
+        { "key": "quotient", "label": "Nucléon ÷ électron", "value": "≈ 1,8 × 10³", "changed": true }
+      ],
+      "sourceIds": ["codata-mp", "codata-mn", "codata-me", "codata-mpsme", "referentiel-seconde-pc"]
+    },
+    {
+      "id": "s5",
+      "tag": "caution",
+      "title": "Les exposants dans le bon ordre",
+      "takeaway": "On soustrait l’exposant du dénominateur à celui du numérateur : $-27 - (-31) = 4$ ; un résultat en $10^{-4}$ ferait à tort du nucléon le plus léger.",
+      "text": "Piège fréquent : soustraire les exposants dans le mauvais ordre, $-31 - (-27) = -4$. On trouverait alors un quotient voisin de $10^{-4}$, plus petit que 1. Ce résultat affirmerait que le nucléon est plus léger que l’électron : c’est l’inverse de ce que montre la rangée de masses. La règle : l’exposant du numérateur moins celui du dénominateur, $-27 - (-31) = -27 + 31 = 4$. Repère simple : la plus grande masse divisée par la plus petite donne un quotient plus grand que 1.",
+      "sceneDescription": "Small multiples on one board: on the left, « 10⁻²⁷ ÷ 10⁻³¹ » leads along the accent arrow to « 10⁴ » above a tall nucleon bar beside a nearly invisible electron bar, captioned « nucléon plus lourd : juste »; on the right, the same layout leads along a plain arrow to a faded « 10⁻⁴ » with the two bars swapped, captioned « nucléon plus léger : faux ».",
+      "notationLine": 3,
+      "counters": [
+        { "key": "quotient", "label": "Nucléon ÷ électron", "value": "≈ 1,8 × 10³" },
+        { "key": "exposant", "label": "Exposant de la puissance de dix", "value": "−27 − (−31) = 4", "changed": true }
+      ],
+      "sourceIds": ["codata-mp", "codata-me"]
+    },
+    {
+      "id": "s6",
+      "tag": "calculate",
+      "title": "Le noyau et les électrons du sodium",
+      "takeaway": "Pour le sodium, on multiplie : les 23 nucléons pèsent environ $3{,}8 \\times 10^{-26}$ kg, les 11 électrons environ $1{,}0 \\times 10^{-29}$ kg.",
+      "text": "Revenons à l’atome de sodium, de noyau ${}^{23}_{11}\\mathrm{Na}$. Ce noyau compte $A = 23$ nucléons d’environ $1{,}67 \\times 10^{-27}\\,\\mathrm{kg}$ chacun, donc on multiplie : $m_{\\text{noyau}} \\approx 23 \\times 1{,}67 \\times 10^{-27}\\,\\mathrm{kg} \\approx 3{,}8 \\times 10^{-26}\\,\\mathrm{kg}$. L’atome neutre possède $Z = 11$ électrons : $m_{\\text{électrons}} \\approx 11 \\times 9{,}11 \\times 10^{-31}\\,\\mathrm{kg} \\approx 1{,}0 \\times 10^{-29}\\,\\mathrm{kg}$. Les deux résultats n’ont pas du tout le même exposant.",
+      "sceneDescription": "The tiles shrink to the left edge of the board and the balance from step s1 returns: the accent arrow « × 23 » runs from the nucleon tile to the left pan, now holding a nucleus of 23 spheres labelled « 3,8 × 10⁻²⁶ kg », and a plain arrow « × 11 » runs from the electron tile to the right pan, holding 11 blue electrons labelled « 1,0 × 10⁻²⁹ kg ». The beam tips fully down on the nucleus side.",
+      "notationLine": 4,
+      "counters": [
+        { "key": "nucleons", "label": "Nucléons (A)", "value": 23, "changed": true },
+        { "key": "electrons", "label": "Électrons", "value": 11 },
+        { "key": "m-noyau", "label": "Masse du noyau", "value": "≈ 3,8 × 10⁻²⁶", "unit": "kg", "changed": true },
+        { "key": "m-electrons", "label": "Masse des électrons", "value": "≈ 1,0 × 10⁻²⁹", "unit": "kg", "changed": true }
+      ],
+      "sourceIds": ["nist-na", "codata-mp", "codata-mn", "codata-me", "codata-u"]
+    },
+    {
+      "id": "s7",
+      "tag": "concept",
+      "title": "Le noyau, siège de la masse",
+      "takeaway": "Le noyau est environ 3 800 fois plus lourd que tous les électrons : la masse de l’atome est pratiquement celle de son noyau.",
+      "text": "Comparons par un quotient : $\\dfrac{3{,}8 \\times 10^{-26}}{1{,}0 \\times 10^{-29}} \\approx 3{,}8 \\times 10^{3}$. Le noyau est environ 3 800 fois plus lourd que les 11 électrons réunis. Ajouter ces électrons au noyau ne change pas le résultat arrondi : $m_{\\text{atome}} \\approx 3{,}8 \\times 10^{-26}\\,\\mathrm{kg}$, comme le noyau seul. Les électrons occupent presque tout le volume, mais le noyau porte presque toute la masse : on dit que le noyau est le siège de la masse de l’atome.",
+      "sceneDescription": "The balance gives way to two mass bars side by side on the board, « atome entier » and « noyau seul », of the same height to the eye. On top of the atom bar, the electrons’ share is a sliver too thin to see, pointed at by the accent arrow labelled « électrons : environ 1/3 800 ».",
+      "notationLine": 6,
+      "counters": [
+        { "key": "m-noyau", "label": "Masse du noyau", "value": "≈ 3,8 × 10⁻²⁶", "unit": "kg" },
+        { "key": "m-electrons", "label": "Masse des électrons", "value": "≈ 1,0 × 10⁻²⁹", "unit": "kg" },
+        { "key": "m-atome", "label": "Masse de l’atome", "value": "≈ 3,8 × 10⁻²⁶", "unit": "kg", "changed": true },
+        { "key": "quotient-noyau", "label": "Noyau ÷ électrons", "value": "≈ 3,8 × 10³", "changed": true }
+      ],
+      "sourceIds": ["nist-na", "codata-u", "codata-me", "codata-mp", "referentiel-seconde-pc"]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "question": "Où se trouve l’essentiel de la masse d’un atome ?",
+      "options": [
+        "Dans ses électrons, puisqu’ils occupent presque tout son volume.",
+        "Dans son noyau, qui n’occupe pourtant qu’une infime partie du volume.",
+        "Pour moitié dans le noyau, pour moitié dans les électrons, puisque l’atome a autant d’électrons que de protons."
+      ],
+      "answer": 1,
+      "explanation": "Un nucléon est environ 1 800 fois plus lourd qu’un électron, et le noyau contient tous les nucléons : pour l’atome de sodium, le noyau pèse environ 3 800 fois plus que les 11 électrons réunis. La première réponse est tentante, car les électrons remplissent presque tout l’atome ; mais prendre de la place ne veut pas dire être lourd. Avoir autant d’électrons que de protons rend l’atome neutre, pas sa masse partagée : chaque électron est bien plus léger qu’un proton."
+    },
+    {
+      "id": "q2",
+      "question": "On donne $m_{\\text{nucléon}} \\approx 1{,}67 \\times 10^{-27}\\,\\mathrm{kg}$ et $m_{\\mathrm{e}} \\approx 9{,}11 \\times 10^{-31}\\,\\mathrm{kg}$. Quel est l’ordre de grandeur du quotient $m_{\\text{nucléon}} / m_{\\mathrm{e}}$ ?",
+      "options": [
+        "$10^{3}$",
+        "$10^{-4}$",
+        "$10^{0}$",
+        "$10^{-58}$"
+      ],
+      "answer": 0,
+      "explanation": "On sépare nombres et puissances de dix : $\\dfrac{1{,}67}{9{,}11} \\times 10^{-27-(-31)} \\approx 0{,}183 \\times 10^{4} = 1{,}83 \\times 10^{3}$, d’ordre de grandeur $10^{3}$. Le piège le plus tentant est $10^{-4}$ : on l’obtient en soustrayant les exposants dans le mauvais ordre, $-31 - (-27)$, et il ferait à tort du nucléon la particule la plus légère. $10^{-58}$ vient d’exposants additionnés au lieu d’être soustraits, et $10^{0}$ supposerait des masses du même ordre de grandeur, ce qui est faux."
+    },
+    {
+      "id": "q3",
+      "question": "Que peut-on dire des masses du proton et du neutron ?",
+      "options": [
+        "Elles sont exactement égales.",
+        "Elles sont du même ordre de grandeur que celle de l’électron.",
+        "Elles sont très proches, mais le neutron est un peu plus lourd.",
+        "La masse du neutron vaut environ 1 800 fois celle du proton."
+      ],
+      "answer": 2,
+      "explanation": "$m_{\\mathrm{p}} \\approx 1{,}673 \\times 10^{-27}\\,\\mathrm{kg}$ et $m_{\\mathrm{n}} \\approx 1{,}675 \\times 10^{-27}\\,\\mathrm{kg}$ : elles diffèrent d’environ 0,1 %, le neutron étant le plus lourd. Les croire exactement égales est tentant, car on utilise souvent une seule valeur pour un nucléon ; mais c’est une approximation. Le facteur 1 800 compare un nucléon à un électron, pas le neutron au proton, et l’électron, avec un exposant $-31$, n’a pas une masse du même ordre de grandeur."
+    }
+  ],
+  "sources": [
+    {
+      "id": "referentiel-seconde-pc",
+      "title": "Annexe — Programme de physique-chimie de seconde générale et technologique (BO spécial n° 1 du 22 janvier 2019)",
+      "url": "https://cache.media.education.gouv.fr/file/SP1-MEN-22-1-2019/98/9/spe634_annexe_1062989.pdf",
+      "accessed": "2026-11-25",
+      "supports": "p. 6, 1.B: « Le noyau de l’atome, siège de sa masse et de son identité »; « Masse et charge électrique d’un électron, d’un proton et d’un neutron »; « Comparer la taille et la masse d’un atome et de son noyau »; « effectuer le quotient de deux grandeurs pour les comparer. Utiliser les opérations sur les puissances de 10. Exprimer les valeurs des grandeurs en écriture scientifique »."
+    },
+    {
+      "id": "codata-mp",
+      "title": "NIST CODATA 2022 — proton mass",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mp",
+      "accessed": "2026-11-26",
+      "supports": "m_p = 1.672 621 925 95(52) × 10⁻²⁷ kg (≈ 1,673 × 10⁻²⁷ kg; ≈ 1,67 × 10⁻²⁷ kg)."
+    },
+    {
+      "id": "codata-mn",
+      "title": "NIST CODATA 2022 — neutron mass",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mn",
+      "accessed": "2026-11-26",
+      "supports": "m_n = 1.674 927 500 56(85) × 10⁻²⁷ kg (≈ 1,675 × 10⁻²⁷ kg); (m_n − m_p)/m_p ≈ 0.14 % (environ 0,1 %)."
+    },
+    {
+      "id": "codata-me",
+      "title": "NIST CODATA 2022 — electron mass",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?me",
+      "accessed": "2026-11-26",
+      "supports": "m_e = 9.109 383 7139(28) × 10⁻³¹ kg (≈ 9,11 × 10⁻³¹ kg). With 1,67 × 10⁻²⁷ kg: 1,67/9,11 = 0,1833, quotient ≈ 1,83 × 10³. 11 × 9,11 × 10⁻³¹ = 1,002 × 10⁻²⁹ kg."
+    },
+    {
+      "id": "codata-mpsme",
+      "title": "NIST CODATA 2022 — proton-electron mass ratio",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?mpsme",
+      "accessed": "2026-11-26",
+      "supports": "m_p/m_e = 1836.152 673 426(32) (environ 1 836; environ 1 800 to two significant figures)."
+    },
+    {
+      "id": "codata-u",
+      "title": "NIST CODATA 2022 — atomic mass constant (unified atomic mass unit) in kg",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?ukg",
+      "accessed": "2026-11-26",
+      "supports": "u = 1.660 539 068 92(52) × 10⁻²⁷ kg. Production check only (u is out of scope for learners): sodium atom mass = 22.989 77 × 1.660 54 × 10⁻²⁷ kg ≈ 3.818 × 10⁻²⁶ kg ≈ 3,8 × 10⁻²⁶ kg, consistent with 23 × 1,67 × 10⁻²⁷ kg = 3,841 × 10⁻²⁶ kg and with nucleus/electrons ≈ 3,8 × 10³."
+    },
+    {
+      "id": "nist-na",
+      "title": "NIST — Atomic Weights and Isotopic Compositions, Sodium",
+      "url": "https://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=Na",
+      "accessed": "2026-11-26",
+      "supports": "Na: atomic number 11; single isotope, mass number 23 (isotopic composition 1); relative atomic mass 22.989 769 2820(19)."
+    },
+    {
+      "id": "codata-a0",
+      "title": "NIST CODATA 2022 — Bohr radius",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?bohrrada0",
+      "accessed": "2026-11-26",
+      "supports": "a₀ = 5.291 772 105 44(82) × 10⁻¹¹ m: atom size of order 10⁻¹⁰ m (hydrogen), far larger than the nucleus."
+    },
+    {
+      "id": "codata-rp",
+      "title": "NIST CODATA 2022 — proton rms charge radius",
+      "url": "https://physics.nist.gov/cgi-bin/cuu/Value?rp",
+      "accessed": "2026-11-26",
+      "supports": "r_p = 8.4075(64) × 10⁻¹⁶ m: nucleus size of order 10⁻¹⁵ m (hydrogen), so the nucleus is tiny and the electrons occupy almost all the atom’s volume."
+    }
+  ],
+  "furtherReading": [
+    {
+      "title": "L’atome — Évaluation d’entraînement n° 1 (Seconde)",
+      "url": "https://fabiengoudemand.forge.apps.education.fr/physique-chimie/ressources/seconde/revisions/atome-evaluation-1.html",
+      "provider": "Forge des communs numériques éducatifs (apps.education.fr)",
+      "accessed": "2026-11-26",
+      "kind": "exercises",
+      "why": "Tu peux t’y entraîner à comparer la masse d’un nucléon à celle d’un électron, puis à conclure que la masse de l’atome est celle de son noyau, avec une correction pour chaque question."
+    },
+    {
+      "title": "L’atome : le noyau et le cortège électronique (cours et exercices corrigés)",
+      "url": "https://www.pccl.fr/physique_chimie_college_lycee/lycee/seconde/cours_exercices_corriges/atome_ion_formule_noyau_numero_Z_A_charge_proton_neutron_neutralite_taille.htm",
+      "provider": "PCCL (Physique Chimie au Collège et au Lycée)",
+      "accessed": "2026-11-26",
+      "kind": "course",
+      "why": "Ce cours reprend les masses du nucléon et de l’électron et applique le quotient à d’autres atomes, comme l’aluminium et l’or, pour que tu refasses le même raisonnement."
+    }
+  ]
+}
