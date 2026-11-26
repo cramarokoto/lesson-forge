@@ -20,12 +20,220 @@
       "title": "Qui porte la masse de l’atome ?",
       "takeaway": "Les électrons occupent presque tout le volume de l’atome ; pour savoir qui porte sa masse, on compare les masses, pas les volumes.",
       "text": "Reprenons l’atome de sodium de la leçon précédente : un noyau minuscule en son centre, entouré de 11 électrons. Ce sont les électrons, autour du noyau, qui occupent presque tout le volume de l’atome. Il est tentant d’en conclure qu’ils portent aussi l’essentiel de sa masse. Pourtant, prendre de la place et être lourd, ce n’est pas la même chose. Pour savoir où se trouve la masse de l’atome, il faut comparer les masses de ses particules : proton, neutron, électron.",
-      "sceneDescription": "On the left of one board, the sodium atom from lesson charges-ions, a large pale sphere with a tiny orange nucleus ringed by 11 small blue electrons, carries the note « Pas à l’échelle ». To its right on the same board stands an empty two-pan balance, pans labelled « noyau » and « électrons », its level beam under a large accent question mark.",
+      "sceneDescription": "On one long board with three cells, the sodium atom (a large pale sphere, a small orange nucleus and 11 small blue electrons) floats above the left cell, labelled « atome Na » and marked « Pas à l’échelle ». The two empty cells to its right, labelled « noyau » and « électrons », sit under the accent question about which is heavier.",
+      "scene": [
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "dims": [
+            10,
+            3.4
+          ],
+          "slots": 3,
+          "sideLabels": [
+            "atome Na",
+            "noyau",
+            "électrons"
+          ]
+        },
+        {
+          "key": "atome",
+          "type": "sphere",
+          "role": "atom",
+          "pos": [
+            1.67,
+            5,
+            2.5
+          ],
+          "size": 3.0,
+          "opacity": 0.5
+        },
+        {
+          "key": "noyau-bille",
+          "type": "sphere",
+          "role": "nucleus",
+          "pos": [
+            1.67,
+            5,
+            2.5
+          ],
+          "size": 0.5
+        },
+        {
+          "key": "e1",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            3.17,
+            5,
+            2.5
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e2",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            2.93,
+            5,
+            3.31
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e3",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            2.29,
+            5,
+            3.86
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e4",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            1.46,
+            5,
+            3.98
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e5",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            0.69,
+            5,
+            3.63
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e6",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            0.23,
+            5,
+            2.92
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e7",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            0.23,
+            5,
+            2.08
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e8",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            0.69,
+            5,
+            1.37
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e9",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            1.46,
+            5,
+            1.02
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e10",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            2.29,
+            5,
+            1.14
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "e11",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            2.93,
+            5,
+            1.69
+          ],
+          "size": 0.3,
+          "shadow": false
+        },
+        {
+          "key": "question",
+          "type": "text",
+          "pos": [
+            7.3,
+            5,
+            1.2
+          ],
+          "text": "Qui est le plus lourd ?",
+          "accent": true
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            9.3,
+            8.8,
+            0
+          ],
+          "text": "Pas à l’échelle"
+        }
+      ],
       "notationLine": null,
       "counters": [
-        { "key": "electrons", "label": "Électrons", "value": 11, "changed": true }
+        {
+          "key": "electrons",
+          "label": "Électrons",
+          "value": 11,
+          "changed": true
+        }
       ],
-      "sourceIds": ["nist-na", "codata-a0", "codata-rp", "referentiel-seconde-pc"]
+      "sourceIds": [
+        "nist-na",
+        "codata-a0",
+        "codata-rp",
+        "referentiel-seconde-pc"
+      ]
     },
     {
       "id": "s2",
@@ -33,13 +241,137 @@
       "title": "Proton et neutron, presque jumeaux",
       "takeaway": "Le proton et le neutron ont presque la même masse, environ $1{,}67 \\times 10^{-27}\\,\\mathrm{kg}$, mais le neutron est un peu plus lourd.",
       "text": "Posons un proton et un neutron côte à côte. Leurs masses, écrites en écriture scientifique, sont minuscules : $m_{\\mathrm{p}} \\approx 1{,}673 \\times 10^{-27}\\,\\mathrm{kg}$ pour le proton et $m_{\\mathrm{n}} \\approx 1{,}675 \\times 10^{-27}\\,\\mathrm{kg}$ pour le neutron. Elles ne sont pas exactement égales : le neutron est un peu plus lourd, d’environ 0,1 %. Cet écart est si faible que, pour comparer, on retient souvent une seule valeur pour un nucléon : environ $1{,}67 \\times 10^{-27}\\,\\mathrm{kg}$.",
-      "sceneDescription": "The atom and the balance fade; on the same board two tiles stand side by side, a red proton sphere on the left and a grey neutron sphere on the right, each above a mass bar drawn to scale, the neutron’s barely taller. The accent bracket between the two bar tops reads « environ 0,1 % ».",
+      "sceneDescription": "The atom fades; on the same board a red proton bar and a grey neutron bar stand side by side, each topped by its sphere, with heights drawn to scale so they look identical. An accent arrow from the proton to the neutron is labelled « écart : environ 0,1 % ».",
+      "scene": [
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "dims": [
+            10,
+            3.4
+          ],
+          "slots": 3,
+          "sideLabels": [
+            "proton",
+            "neutron",
+            ""
+          ]
+        },
+        {
+          "key": "barre-p",
+          "type": "tile",
+          "role": "proton",
+          "pos": [
+            1.67,
+            5,
+            0.4
+          ],
+          "dims": [
+            1.4,
+            1.4
+          ],
+          "height": 3.4
+        },
+        {
+          "key": "barre-n",
+          "type": "tile",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            0.4
+          ],
+          "dims": [
+            1.4,
+            1.4
+          ],
+          "height": 3.404
+        },
+        {
+          "key": "bille-p",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            1.67,
+            5,
+            4.25
+          ],
+          "size": 0.9
+        },
+        {
+          "key": "bille-n",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            4.25
+          ],
+          "size": 0.9
+        },
+        {
+          "key": "ecart",
+          "type": "arrow",
+          "pos": [
+            2.5,
+            5,
+            5.2
+          ],
+          "to": [
+            4.4,
+            5,
+            5.2
+          ],
+          "accent": true
+        },
+        {
+          "key": "ecart-txt",
+          "type": "text",
+          "pos": [
+            3.45,
+            5,
+            6.0
+          ],
+          "text": "écart : environ 0,1 %"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            9.3,
+            8.8,
+            0
+          ],
+          "text": "Hauteurs à l’échelle"
+        }
+      ],
       "notationLine": 0,
       "counters": [
-        { "key": "m-p", "label": "Masse du proton", "value": "1,673 × 10⁻²⁷", "unit": "kg", "changed": true },
-        { "key": "m-n", "label": "Masse du neutron", "value": "1,675 × 10⁻²⁷", "unit": "kg", "changed": true }
+        {
+          "key": "m-p",
+          "label": "Masse du proton",
+          "value": "1,673 × 10⁻²⁷",
+          "unit": "kg",
+          "changed": true
+        },
+        {
+          "key": "m-n",
+          "label": "Masse du neutron",
+          "value": "1,675 × 10⁻²⁷",
+          "unit": "kg",
+          "changed": true
+        }
       ],
-      "sourceIds": ["codata-mp", "codata-mn"]
+      "sourceIds": [
+        "codata-mp",
+        "codata-mn"
+      ]
     },
     {
       "id": "s3",
@@ -47,14 +379,174 @@
       "title": "L’électron, un poids plume",
       "takeaway": "L’électron a une masse d’environ $9{,}11 \\times 10^{-31}\\,\\mathrm{kg}$ : l’exposant $-31$ est plus petit que $-27$, il est bien plus léger qu’un nucléon.",
       "text": "Ajoutons l’électron à la rangée. Sa masse vaut $m_{\\mathrm{e}} \\approx 9{,}11 \\times 10^{-31}\\,\\mathrm{kg}$. Comparons les exposants : $-31$ est plus petit que $-27$. Attention, c’est l’inverse de ce que suggèrent les nombres 31 et 27 : chaque cran d’exposant en moins divise par 10. Donc $10^{-31}\\,\\mathrm{kg}$ est bien plus petit que $10^{-27}\\,\\mathrm{kg}$. Le proton et l’électron n’ont pas du tout des masses du même ordre de grandeur.",
-      "sceneDescription": "A third tile joins the row on the same board, holding a small blue electron sphere; its mass bar, at the same scale as the proton and neutron bars, is too thin to see. The accent arrow points down to its empty place, labelled « 9,11 × 10⁻³¹ kg », while the two tall bars read « 10⁻²⁷ kg ».",
+      "sceneDescription": "On the same board a small blue electron joins the third cell; its mass bar, at the same scale as the tall proton and neutron bars, is too thin to see. An accent arrow points down to it from the label « 9,11 × 10⁻³¹ kg », while the two tall bars are labelled « 10⁻²⁷ kg ».",
+      "scene": [
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "dims": [
+            10,
+            3.4
+          ],
+          "slots": 3,
+          "sideLabels": [
+            "proton",
+            "neutron",
+            "électron"
+          ]
+        },
+        {
+          "key": "barre-p",
+          "type": "tile",
+          "role": "proton",
+          "pos": [
+            1.67,
+            5,
+            0.4
+          ],
+          "dims": [
+            1.4,
+            1.4
+          ],
+          "height": 3.4
+        },
+        {
+          "key": "barre-n",
+          "type": "tile",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            0.4
+          ],
+          "dims": [
+            1.4,
+            1.4
+          ],
+          "height": 3.404
+        },
+        {
+          "key": "bille-p",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            1.67,
+            5,
+            4.25
+          ],
+          "size": 0.9
+        },
+        {
+          "key": "bille-n",
+          "type": "sphere",
+          "role": "neutron",
+          "pos": [
+            5,
+            5,
+            4.25
+          ],
+          "size": 0.9
+        },
+        {
+          "key": "val-p",
+          "type": "text",
+          "pos": [
+            1.67,
+            5,
+            5.3
+          ],
+          "text": "10⁻²⁷ kg"
+        },
+        {
+          "key": "val-n",
+          "type": "text",
+          "pos": [
+            5,
+            5,
+            5.3
+          ],
+          "text": "10⁻²⁷ kg"
+        },
+        {
+          "key": "bille-e",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            8.33,
+            5,
+            0.6
+          ],
+          "size": 0.4
+        },
+        {
+          "key": "fleche-e",
+          "type": "arrow",
+          "pos": [
+            8.33,
+            5,
+            3.0
+          ],
+          "to": [
+            8.33,
+            5,
+            1.0
+          ],
+          "accent": true
+        },
+        {
+          "key": "val-e",
+          "type": "text",
+          "pos": [
+            8.33,
+            5,
+            3.6
+          ],
+          "text": "9,11 × 10⁻³¹ kg"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            9.3,
+            8.8,
+            0
+          ],
+          "text": "Hauteurs à l’échelle"
+        }
+      ],
       "notationLine": 1,
       "counters": [
-        { "key": "m-p", "label": "Masse du proton", "value": "1,673 × 10⁻²⁷", "unit": "kg" },
-        { "key": "m-n", "label": "Masse du neutron", "value": "1,675 × 10⁻²⁷", "unit": "kg" },
-        { "key": "m-e", "label": "Masse de l’électron", "value": "9,11 × 10⁻³¹", "unit": "kg", "changed": true }
+        {
+          "key": "m-p",
+          "label": "Masse du proton",
+          "value": "1,673 × 10⁻²⁷",
+          "unit": "kg"
+        },
+        {
+          "key": "m-n",
+          "label": "Masse du neutron",
+          "value": "1,675 × 10⁻²⁷",
+          "unit": "kg"
+        },
+        {
+          "key": "m-e",
+          "label": "Masse de l’électron",
+          "value": "9,11 × 10⁻³¹",
+          "unit": "kg",
+          "changed": true
+        }
       ],
-      "sourceIds": ["codata-me", "codata-mp", "codata-mn"]
+      "sourceIds": [
+        "codata-me",
+        "codata-mp",
+        "codata-mn"
+      ]
     },
     {
       "id": "s4",
@@ -62,14 +554,129 @@
       "title": "Combien de fois plus lourd ?",
       "takeaway": "On divise la masse d’un nucléon par celle d’un électron : le quotient vaut environ $1{,}8 \\times 10^{3}$, un nucléon est environ 1 800 fois plus lourd.",
       "text": "Pour comparer deux grandeurs, on calcule leur quotient. On sépare les nombres et les puissances de dix : $\\dfrac{1{,}67 \\times 10^{-27}}{9{,}11 \\times 10^{-31}} = \\dfrac{1{,}67}{9{,}11} \\times 10^{-27-(-31)}$. Le premier facteur vaut environ $0{,}183$, le second vaut $10^{4}$. Le quotient vaut donc environ $0{,}183 \\times 10^{4} = 1{,}83 \\times 10^{3}$, soit environ 1 800. Avec des valeurs plus précises, on trouve environ 1 836 pour le proton.",
-      "sceneDescription": "Same three tiles, the neutron tile faded: the accent arrow runs from the top of the tall proton bar down to the electron’s empty place, labelled « ÷ 1 800 environ ».",
+      "sceneDescription": "The neutron bar disappears; on the board only the tall red proton bar and the tiny blue electron remain. The accent arrow runs from the proton sphere down to the electron, labelled « ÷ 1 800 environ ».",
+      "scene": [
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "dims": [
+            10,
+            3.4
+          ],
+          "slots": 3,
+          "sideLabels": [
+            "proton",
+            "",
+            "électron"
+          ]
+        },
+        {
+          "key": "barre-p",
+          "type": "tile",
+          "role": "proton",
+          "pos": [
+            1.67,
+            5,
+            0.4
+          ],
+          "dims": [
+            1.4,
+            1.4
+          ],
+          "height": 3.4
+        },
+        {
+          "key": "bille-p",
+          "type": "sphere",
+          "role": "proton",
+          "pos": [
+            1.67,
+            5,
+            4.25
+          ],
+          "size": 0.9
+        },
+        {
+          "key": "bille-e",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            8.33,
+            5,
+            0.6
+          ],
+          "size": 0.4
+        },
+        {
+          "key": "division",
+          "type": "arrow",
+          "pos": [
+            2.8,
+            5,
+            3.6
+          ],
+          "to": [
+            8.0,
+            5,
+            1.0
+          ],
+          "accent": true
+        },
+        {
+          "key": "division-txt",
+          "type": "text",
+          "pos": [
+            5.8,
+            5,
+            4.4
+          ],
+          "text": "÷ 1 800 environ"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            9.3,
+            8.8,
+            0
+          ],
+          "text": "Hauteurs à l’échelle"
+        }
+      ],
       "notationLine": 2,
       "counters": [
-        { "key": "m-p", "label": "Masse du proton", "value": "1,673 × 10⁻²⁷", "unit": "kg" },
-        { "key": "m-e", "label": "Masse de l’électron", "value": "9,11 × 10⁻³¹", "unit": "kg" },
-        { "key": "quotient", "label": "Nucléon ÷ électron", "value": "≈ 1,8 × 10³", "changed": true }
+        {
+          "key": "m-p",
+          "label": "Masse du proton",
+          "value": "1,673 × 10⁻²⁷",
+          "unit": "kg"
+        },
+        {
+          "key": "m-e",
+          "label": "Masse de l’électron",
+          "value": "9,11 × 10⁻³¹",
+          "unit": "kg"
+        },
+        {
+          "key": "quotient",
+          "label": "Nucléon ÷ électron",
+          "value": "≈ 1,8 × 10³",
+          "changed": true
+        }
       ],
-      "sourceIds": ["codata-mp", "codata-mn", "codata-me", "codata-mpsme", "referentiel-seconde-pc"]
+      "sourceIds": [
+        "codata-mp",
+        "codata-mn",
+        "codata-me",
+        "codata-mpsme",
+        "referentiel-seconde-pc"
+      ]
     },
     {
       "id": "s5",
@@ -77,13 +684,172 @@
       "title": "Les exposants dans le bon ordre",
       "takeaway": "On soustrait l’exposant du dénominateur à celui du numérateur : $-27 - (-31) = 4$ ; un résultat en $10^{-4}$ ferait à tort du nucléon le plus léger.",
       "text": "Piège fréquent : soustraire les exposants dans le mauvais ordre, $-31 - (-27) = -4$. On trouverait alors un quotient voisin de $10^{-4}$, plus petit que 1. Ce résultat affirmerait que le nucléon est plus léger que l’électron : c’est l’inverse de ce que montre la rangée de masses. La règle : l’exposant du numérateur moins celui du dénominateur, $-27 - (-31) = -27 + 31 = 4$. Repère simple : la plus grande masse divisée par la plus petite donne un quotient plus grand que 1.",
-      "sceneDescription": "Small multiples on one board: on the left, « 10⁻²⁷ ÷ 10⁻³¹ » leads along the accent arrow to « 10⁴ » above a tall nucleon bar beside a nearly invisible electron bar, captioned « nucléon plus lourd : juste »; on the right, the same layout leads along a plain arrow to a faded « 10⁻⁴ » with the two bars swapped, captioned « nucléon plus léger : faux ».",
+      "sceneDescription": "Two identical cells on one board; left, « −27 − (−31) » leads along the accent arrow to « 4 » above a tall nucleon bar beside a tiny electron, captioned « nucléon plus lourd : juste »; right, faded, « −31 − (−27) » leads along a plain arrow to « −4 » above a tiny nucleon beside a tall electron bar, captioned « nucléon plus léger : faux ».",
+      "scene": [
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "dims": [
+            10,
+            3.4
+          ],
+          "slots": 2,
+          "sideLabels": [
+            "nucléon lourd : juste",
+            "nucléon léger : faux"
+          ]
+        },
+        {
+          "key": "g-op",
+          "type": "text",
+          "pos": [
+            1.0,
+            5,
+            5.0
+          ],
+          "text": "−27 − (−31)"
+        },
+        {
+          "key": "g-fleche",
+          "type": "arrow",
+          "pos": [
+            2.0,
+            5,
+            5.0
+          ],
+          "to": [
+            3.0,
+            5,
+            5.0
+          ],
+          "accent": true
+        },
+        {
+          "key": "g-res",
+          "type": "text",
+          "pos": [
+            4.0,
+            5,
+            5.0
+          ],
+          "text": "4"
+        },
+        {
+          "key": "g-nucleon",
+          "type": "tile",
+          "role": "neutral",
+          "pos": [
+            1.6,
+            5,
+            0.4
+          ],
+          "dims": [
+            1.2,
+            1.2
+          ],
+          "height": 3.0
+        },
+        {
+          "key": "g-e",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            3.4,
+            5,
+            0.6
+          ],
+          "size": 0.4
+        },
+        {
+          "key": "d-op",
+          "type": "text",
+          "pos": [
+            6.0,
+            5,
+            5.0
+          ],
+          "text": "−31 − (−27)",
+          "opacity": 0.5
+        },
+        {
+          "key": "d-fleche",
+          "type": "arrow",
+          "pos": [
+            7.0,
+            5,
+            5.0
+          ],
+          "to": [
+            8.0,
+            5,
+            5.0
+          ],
+          "opacity": 0.5
+        },
+        {
+          "key": "d-res",
+          "type": "text",
+          "pos": [
+            9.0,
+            5,
+            5.0
+          ],
+          "text": "−4",
+          "opacity": 0.5
+        },
+        {
+          "key": "d-nucleon",
+          "type": "sphere",
+          "role": "neutral",
+          "pos": [
+            6.6,
+            5,
+            0.6
+          ],
+          "size": 0.4,
+          "opacity": 0.5
+        },
+        {
+          "key": "d-e",
+          "type": "tile",
+          "role": "electron",
+          "pos": [
+            8.4,
+            5,
+            0.4
+          ],
+          "dims": [
+            1.2,
+            1.2
+          ],
+          "height": 3.0,
+          "opacity": 0.4
+        }
+      ],
       "notationLine": 3,
       "counters": [
-        { "key": "quotient", "label": "Nucléon ÷ électron", "value": "≈ 1,8 × 10³" },
-        { "key": "exposant", "label": "Exposant de la puissance de dix", "value": "−27 − (−31) = 4", "changed": true }
+        {
+          "key": "quotient",
+          "label": "Nucléon ÷ électron",
+          "value": "≈ 1,8 × 10³"
+        },
+        {
+          "key": "exposant",
+          "label": "Exposant de la puissance de dix",
+          "value": "−27 − (−31) = 4",
+          "changed": true
+        }
       ],
-      "sourceIds": ["codata-mp", "codata-me"]
+      "sourceIds": [
+        "codata-mp",
+        "codata-me"
+      ]
     },
     {
       "id": "s6",
@@ -91,15 +857,196 @@
       "title": "Le noyau et les électrons du sodium",
       "takeaway": "Pour le sodium, on multiplie : les 23 nucléons pèsent environ $3{,}8 \\times 10^{-26}$ kg, les 11 électrons environ $1{,}0 \\times 10^{-29}$ kg.",
       "text": "Revenons à l’atome de sodium, de noyau ${}^{23}_{11}\\mathrm{Na}$. Ce noyau compte $A = 23$ nucléons d’environ $1{,}67 \\times 10^{-27}\\,\\mathrm{kg}$ chacun, donc on multiplie : $m_{\\text{noyau}} \\approx 23 \\times 1{,}67 \\times 10^{-27}\\,\\mathrm{kg} \\approx 3{,}8 \\times 10^{-26}\\,\\mathrm{kg}$. L’atome neutre possède $Z = 11$ électrons : $m_{\\text{électrons}} \\approx 11 \\times 9{,}11 \\times 10^{-31}\\,\\mathrm{kg} \\approx 1{,}0 \\times 10^{-29}\\,\\mathrm{kg}$. Les deux résultats n’ont pas du tout le même exposant.",
-      "sceneDescription": "The tiles shrink to the left edge of the board and the balance from step s1 returns: the accent arrow « × 23 » runs from the nucleon tile to the left pan, now holding a nucleus of 23 spheres labelled « 3,8 × 10⁻²⁶ kg », and a plain arrow « × 11 » runs from the electron tile to the right pan, holding 11 blue electrons labelled « 1,0 × 10⁻²⁹ kg ». The beam tips fully down on the nucleus side.",
+      "sceneDescription": "On a four-cell board, an accent arrow « × 23 » leads from a one-nucleon unit to a tall gold nucleus bar labelled « 3,8 × 10⁻²⁶ kg », 23 times higher than the unit, while a plain arrow « × 11 » leads from one electron to the empty 11-electrons cell, labelled « 1,0 × 10⁻²⁹ kg » (their height is too small to see at this scale).",
+      "scene": [
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "dims": [
+            10,
+            3.4
+          ],
+          "slots": 4,
+          "sideLabels": [
+            "1 nucléon",
+            "noyau",
+            "1 électron",
+            "11 électrons"
+          ]
+        },
+        {
+          "key": "u-barre",
+          "type": "tile",
+          "role": "neutral",
+          "pos": [
+            1.25,
+            5,
+            0.4
+          ],
+          "dims": [
+            0.9,
+            0.9
+          ],
+          "height": 0.15
+        },
+        {
+          "key": "u-bille",
+          "type": "sphere",
+          "role": "neutral",
+          "pos": [
+            1.25,
+            5,
+            0.95
+          ],
+          "size": 0.8
+        },
+        {
+          "key": "x23",
+          "type": "arrow",
+          "pos": [
+            1.9,
+            5,
+            1.0
+          ],
+          "to": [
+            2.95,
+            5,
+            1.0
+          ],
+          "accent": true
+        },
+        {
+          "key": "x23-txt",
+          "type": "text",
+          "pos": [
+            1.3,
+            5,
+            2.6
+          ],
+          "text": "× 23"
+        },
+        {
+          "key": "noyau-barre",
+          "type": "tile",
+          "role": "nucleus",
+          "pos": [
+            3.75,
+            5,
+            0.4
+          ],
+          "dims": [
+            1.4,
+            1.4
+          ],
+          "height": 3.45
+        },
+        {
+          "key": "noyau-val",
+          "type": "text",
+          "pos": [
+            3.75,
+            5,
+            4.5
+          ],
+          "text": "3,8 × 10⁻²⁶ kg"
+        },
+        {
+          "key": "e-bille",
+          "type": "sphere",
+          "role": "electron",
+          "pos": [
+            6.25,
+            5,
+            0.6
+          ],
+          "size": 0.4
+        },
+        {
+          "key": "x11",
+          "type": "arrow",
+          "pos": [
+            6.7,
+            5,
+            0.9
+          ],
+          "to": [
+            8.0,
+            5,
+            0.9
+          ]
+        },
+        {
+          "key": "x11-txt",
+          "type": "text",
+          "pos": [
+            6.9,
+            5,
+            1.5
+          ],
+          "text": "× 11"
+        },
+        {
+          "key": "e-val",
+          "type": "text",
+          "pos": [
+            8.9,
+            5,
+            3.2
+          ],
+          "text": "1,0 × 10⁻²⁹ kg"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            9.3,
+            8.8,
+            0
+          ],
+          "text": "Hauteurs à l’échelle"
+        }
+      ],
       "notationLine": 4,
       "counters": [
-        { "key": "nucleons", "label": "Nucléons (A)", "value": 23, "changed": true },
-        { "key": "electrons", "label": "Électrons", "value": 11 },
-        { "key": "m-noyau", "label": "Masse du noyau", "value": "≈ 3,8 × 10⁻²⁶", "unit": "kg", "changed": true },
-        { "key": "m-electrons", "label": "Masse des électrons", "value": "≈ 1,0 × 10⁻²⁹", "unit": "kg", "changed": true }
+        {
+          "key": "nucleons",
+          "label": "Nucléons (A)",
+          "value": 23,
+          "changed": true
+        },
+        {
+          "key": "electrons",
+          "label": "Électrons",
+          "value": 11
+        },
+        {
+          "key": "m-noyau",
+          "label": "Masse du noyau",
+          "value": "≈ 3,8 × 10⁻²⁶",
+          "unit": "kg",
+          "changed": true
+        },
+        {
+          "key": "m-electrons",
+          "label": "Masse des électrons",
+          "value": "≈ 1,0 × 10⁻²⁹",
+          "unit": "kg",
+          "changed": true
+        }
       ],
-      "sourceIds": ["nist-na", "codata-mp", "codata-mn", "codata-me", "codata-u"]
+      "sourceIds": [
+        "nist-na",
+        "codata-mp",
+        "codata-mn",
+        "codata-me",
+        "codata-u"
+      ]
     },
     {
       "id": "s7",
@@ -107,15 +1054,138 @@
       "title": "Le noyau, siège de la masse",
       "takeaway": "Le noyau est environ 3 800 fois plus lourd que tous les électrons : la masse de l’atome est pratiquement celle de son noyau.",
       "text": "Comparons par un quotient : $\\dfrac{3{,}8 \\times 10^{-26}}{1{,}0 \\times 10^{-29}} \\approx 3{,}8 \\times 10^{3}$. Le noyau est environ 3 800 fois plus lourd que les 11 électrons réunis. Ajouter ces électrons au noyau ne change pas le résultat arrondi : $m_{\\text{atome}} \\approx 3{,}8 \\times 10^{-26}\\,\\mathrm{kg}$, comme le noyau seul. Les électrons occupent presque tout le volume, mais le noyau porte presque toute la masse : on dit que le noyau est le siège de la masse de l’atome.",
-      "sceneDescription": "The balance gives way to two mass bars side by side on the board, « atome entier » and « noyau seul », of the same height to the eye. On top of the atom bar, the electrons’ share is a sliver too thin to see, pointed at by the accent arrow labelled « électrons : environ 1/3 800 ».",
+      "sceneDescription": "On a two-cell board, two gold mass bars « atome entier » and « noyau seul » have the same height to the eye, the note « ≈ même masse » floating above the right bar. An accent arrow points to the top of the atom bar from the label « électrons : environ 1/3 800 » (a share too thin to see).",
+      "scene": [
+        {
+          "key": "socle",
+          "type": "board",
+          "role": "neutral",
+          "pos": [
+            5,
+            5,
+            0
+          ],
+          "dims": [
+            10,
+            3.4
+          ],
+          "slots": 2,
+          "sideLabels": [
+            "atome entier",
+            "noyau seul"
+          ]
+        },
+        {
+          "key": "barre-atome",
+          "type": "tile",
+          "role": "nucleus",
+          "pos": [
+            2.5,
+            5,
+            0.4
+          ],
+          "dims": [
+            2.2,
+            2.2
+          ],
+          "height": 3.45
+        },
+        {
+          "key": "barre-noyau",
+          "type": "tile",
+          "role": "nucleus",
+          "pos": [
+            7.5,
+            5,
+            0.4
+          ],
+          "dims": [
+            2.2,
+            2.2
+          ],
+          "height": 3.45
+        },
+        {
+          "key": "egal",
+          "type": "text",
+          "pos": [
+            7.5,
+            5,
+            4.7
+          ],
+          "text": "≈ même masse"
+        },
+        {
+          "key": "part-e",
+          "type": "arrow",
+          "pos": [
+            2.5,
+            5,
+            5.0
+          ],
+          "to": [
+            2.5,
+            5,
+            4.0
+          ],
+          "accent": true
+        },
+        {
+          "key": "part-e-txt",
+          "type": "text",
+          "pos": [
+            2.5,
+            5,
+            5.5
+          ],
+          "text": "électrons : environ 1/3 800"
+        },
+        {
+          "key": "echelle",
+          "type": "text",
+          "pos": [
+            9.3,
+            8.8,
+            0
+          ],
+          "text": "Hauteurs à l’échelle"
+        }
+      ],
       "notationLine": 6,
       "counters": [
-        { "key": "m-noyau", "label": "Masse du noyau", "value": "≈ 3,8 × 10⁻²⁶", "unit": "kg" },
-        { "key": "m-electrons", "label": "Masse des électrons", "value": "≈ 1,0 × 10⁻²⁹", "unit": "kg" },
-        { "key": "m-atome", "label": "Masse de l’atome", "value": "≈ 3,8 × 10⁻²⁶", "unit": "kg", "changed": true },
-        { "key": "quotient-noyau", "label": "Noyau ÷ électrons", "value": "≈ 3,8 × 10³", "changed": true }
+        {
+          "key": "m-noyau",
+          "label": "Masse du noyau",
+          "value": "≈ 3,8 × 10⁻²⁶",
+          "unit": "kg"
+        },
+        {
+          "key": "m-electrons",
+          "label": "Masse des électrons",
+          "value": "≈ 1,0 × 10⁻²⁹",
+          "unit": "kg"
+        },
+        {
+          "key": "m-atome",
+          "label": "Masse de l’atome",
+          "value": "≈ 3,8 × 10⁻²⁶",
+          "unit": "kg",
+          "changed": true
+        },
+        {
+          "key": "quotient-noyau",
+          "label": "Noyau ÷ électrons",
+          "value": "≈ 3,8 × 10³",
+          "changed": true
+        }
       ],
-      "sourceIds": ["nist-na", "codata-u", "codata-me", "codata-mp", "referentiel-seconde-pc"]
+      "sourceIds": [
+        "nist-na",
+        "codata-u",
+        "codata-me",
+        "codata-mp",
+        "referentiel-seconde-pc"
+      ]
     }
   ],
   "quiz": [
@@ -221,14 +1291,6 @@
     }
   ],
   "furtherReading": [
-    {
-      "title": "L’atome — Évaluation d’entraînement n° 1 (Seconde)",
-      "url": "https://fabiengoudemand.forge.apps.education.fr/physique-chimie/ressources/seconde/revisions/atome-evaluation-1.html",
-      "provider": "Forge des communs numériques éducatifs (apps.education.fr)",
-      "accessed": "2026-11-26",
-      "kind": "exercises",
-      "why": "Tu peux t’y entraîner à comparer la masse d’un nucléon à celle d’un électron, puis à conclure que la masse de l’atome est celle de son noyau, avec une correction pour chaque question."
-    },
     {
       "title": "L’atome : le noyau et le cortège électronique (cours et exercices corrigés)",
       "url": "https://www.pccl.fr/physique_chimie_college_lycee/lycee/seconde/cours_exercices_corriges/atome_ion_formule_noyau_numero_Z_A_charge_proton_neutron_neutralite_taille.htm",
