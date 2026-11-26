@@ -8,3 +8,4 @@ playwright-report/
 tests/.build/
 work/*/review/
 work/*/captures/
+work/*/digest/
