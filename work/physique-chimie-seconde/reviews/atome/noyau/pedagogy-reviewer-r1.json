@@ -1,0 +1,13 @@
+{
+ "reviewer": "pedagogy-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/noyau.json",
+ "round": 1,
+ "findings": [],
+ "verified": [
+  "s1–s8: verb/device and start/direction/end/change/conclusion match each takeaway (sheet.png)."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": [
+  "Judged from the contact sheet only; tiny label overlaps not excluded."
+ ]
+}

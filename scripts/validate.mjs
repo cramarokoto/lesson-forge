@@ -186,12 +186,24 @@ for (const courseDir of listDirs(join(ROOT, 'courses'))) {
         for (const d of dupes(keys)) at(`${where}: duplicate scene key ${d}`);
         if (scene.filter((o) => o.accent).length > 1) at(`${where}: more than one accent object (one focus per step)`);
         if (s.widget && !WIDGETS.includes(s.widget.type)) at(`${where}/widget: type ${s.widget.type} is not implemented by the engine (available: ${WIDGETS.join(', ') || 'none'})`);
+        // Solids must not sink into a plate they stand over.
+        const plates = scene.filter((o) => o.type === 'board' || o.type === 'tile');
+        for (const o of scene.filter((x) => (x.type === 'sphere' || x.type === 'cube') && x.pos && !x.parent)) {
+          const bottom = o.pos[2] - (o.type === 'sphere' ? (o.size ?? 1) / 2 : 0);
+          for (const pl of plates.filter((x) => x.pos && !x.parent)) {
+            const dm = pl.dims || [pl.size ?? 1, pl.size ?? 1], top = pl.pos[2] + (pl.height ?? (pl.type === 'board' ? 0.4 : 0.14));
+            const inside = Math.abs(o.pos[0] - pl.pos[0]) < dm[0] / 2 && Math.abs(o.pos[1] - pl.pos[1]) < dm[1] / 2;
+            if (inside && bottom < top - 0.05 && o.pos[2] > pl.pos[2]) at(`${where}/scene/${o.key}: sinks into ${pl.key} (bottom ${bottom.toFixed(2)} < plate top ${top.toFixed(2)})`);
+          }
+        }
         for (const o of scene) {
           if (o.role && !ROLES.includes(o.role)) at(`${where}/scene/${o.key}: unknown role ${o.role} (engine/palette.json: ${ROLES.join(', ')})`);
           if (o.parent && !scene.some((g) => g.key === o.parent && g.type === 'group'))
             at(`${where}/scene/${o.key}: parent ${o.parent} is not a group in this step`);
           if (o.type === 'arrow' && !(o.pos && o.to)) at(`${where}/scene/${o.key}: arrow needs pos and to`);
           if ((o.type === 'label' || o.type === 'text') && !o.text) at(`${where}/scene/${o.key}: ${o.type} needs text`);
+          if (o.text && /[$\\]/.test(o.text)) at(`${where}/scene/${o.key}: scene text is shown as plain text; write « ⁷₃Li », « 10⁻¹⁰ m », not LaTeX`);
+          for (const t of o.sideLabels || []) if (/[$\\]/.test(t)) at(`${where}/scene/${o.key}: sideLabels are plain text, no LaTeX`);
         }
       }
 

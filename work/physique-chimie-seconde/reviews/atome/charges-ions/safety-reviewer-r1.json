@@ -1,0 +1,12 @@
+{
+ "reviewer": "safety-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/charges-ions.json",
+ "round": 1,
+ "findings": [],
+ "verified": [
+  "No physical activity; widget only.",
+  "PhET « Construire un atome »: loads, no ads or sign-up wall seen."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": []
+}

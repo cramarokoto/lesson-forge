@@ -1,0 +1,24 @@
+{
+ "reviewer": "pedagogy-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/charges-ions.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "pr-1",
+   "severity": "AMBIGUOUS",
+   "category": "pedagogy",
+   "location": "charges-ions/s7/text",
+   "quote": "Remets-le, puis retire plutôt un proton : la charge devient $-1\\,e$ et le symbole change, ce n’est plus un noyau de sodium.",
+   "problem": "−1 e after removing a proton can be read as an anion; the step mixes the general formula and the counter-example; the scene arrows stop at labels without showing a result.",
+   "evidence": "Style guide Message first rules 4–5.",
+   "fix": "Remets-le, puis retire plutôt un proton : le noyau n’a plus 11 protons, ce n’est plus du sodium, et la charge $-1\\,e$ affichée ne décrit pas un anion du sodium. Un ion de sodium se forme en changeant les électrons, jamais les protons."
+  }
+ ],
+ "verified": [
+  "s1–s6, s8 match their takeaways (sheet); s7 see pr-1."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": [
+  "Owner found s7 unclear on screen (two operations on one atom, sphere sinking into the plinth, label crossed by an arrow): missed by this review from the contact sheet."
+ ]
+}

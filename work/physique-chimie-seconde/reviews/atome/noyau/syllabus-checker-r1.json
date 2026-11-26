@@ -1,0 +1,14 @@
+{
+ "reviewer": "syllabus-checker",
+ "target": "courses/physique-chimie-seconde/atome/noyau.json",
+ "round": 1,
+ "findings": [],
+ "verified": [
+  "All content in scope (referential p. 6, p. 4); order sound; no later-lesson notion."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": [
+  "« nucléon » not in the referential (standard vocabulary for A).",
+  "Z « fourni » for the short form is a reading of « inversement »."
+ ]
+}

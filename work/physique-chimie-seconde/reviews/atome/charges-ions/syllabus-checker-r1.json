@@ -1,0 +1,22 @@
+{
+ "reviewer": "syllabus-checker",
+ "target": "courses/physique-chimie-seconde/atome/charges-ions.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "sc-1",
+   "severity": "AMBIGUOUS",
+   "category": "level",
+   "location": "charges-ions/s8/text",
+   "quote": "Sans exposant, l’entité est neutre : $\\mathrm{H_2O}$ et $\\mathrm{CO_2}$, qui associent plusieurs atomes, sont des molécules",
+   "problem": "« no exponent = molecule or atom » becomes false for ionic compounds (NaCl), also in 1.B; the restriction to isolated entities is not stated.",
+   "evidence": "Referential p. 5: « citer des formules de composés ioniques »; p. 6 capacity targets « une entité chimique ».",
+   "fix": "Une formule chimique suffit pour qualifier une entité isolée. Sans exposant, l’entité est neutre : $\\mathrm{H_2O}$ et $\\mathrm{CO_2}$, qui associent plusieurs atomes, sont des molécules ; $\\mathrm{Na}$, un symbole seul, désigne un atome. Avec un exposant positif, comme $\\mathrm{Na}^{+}$ ou $\\mathrm{Mg}^{2+}$, c’est un cation. Avec un exposant négatif, comme $\\mathrm{F}^{-}$ ou $\\mathrm{Cl}^{-}$, c’est un anion."
+  }
+ ],
+ "verified": [
+  "Charges, neutrality, cation/anion, the four ions, H₂O/CO₂ in scope; order sound."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": []
+}

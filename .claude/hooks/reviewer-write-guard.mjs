@@ -20,12 +20,14 @@ const target = input.tool_input?.file_path || input.tool_input?.notebook_path ||
 const own = resolve(root, '.claude/agent-memory', input.agent_type);
 const rel = relative(own, resolve(root, target));
 const inside = target && rel !== '' && !rel.startsWith('..') && !isAbsolute(rel);
-if (inside) process.exit(0);
+const relRoot = relative(root, resolve(root, target));
+const ownReview = /^work\/[^/]+\/reviews\/.+\.json$/.test(relRoot.split('\\').join('/')) && relRoot.includes(`${input.agent_type}-r`);
+if (inside || ownReview) process.exit(0);
 
 console.log(JSON.stringify({
   hookSpecificOutput: {
     hookEventName: 'PreToolUse',
     permissionDecision: 'deny',
-    permissionDecisionReason: `${input.agent_type} is a read-only reviewer: it may only write under .claude/agent-memory/${input.agent_type}/. Report findings in your JSON review instead.`,
+    permissionDecisionReason: `${input.agent_type} is a read-only reviewer: it may only write its own review file (work/<slug>/reviews/…/${input.agent_type}-rN.json) or under .claude/agent-memory/${input.agent_type}/. Report findings in your JSON review instead.`,
   },
 }));

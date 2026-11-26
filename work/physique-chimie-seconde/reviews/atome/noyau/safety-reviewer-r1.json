@@ -1,0 +1,12 @@
+{
+ "reviewer": "safety-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/noyau.json",
+ "round": 1,
+ "findings": [],
+ "verified": [
+  "No physical activity; widget only.",
+  "Lycée Louis Barthou PDF: no ads, no login, suitable."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": []
+}

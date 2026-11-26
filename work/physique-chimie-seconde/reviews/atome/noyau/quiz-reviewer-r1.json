@@ -1,0 +1,22 @@
+{
+ "reviewer": "quiz-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/noyau.json",
+ "round": 1,
+ "findings": [
+  {
+   "id": "qr-1",
+   "severity": "ERROR",
+   "category": "quiz",
+   "location": "noyau/quiz/q1/explanation",
+   "quote": "Et 19 protons est impossible, puisque Z ne dépasse jamais A.",
+   "problem": "Wrong justification: with A = 19, Z = 19 does not exceed A. The distractor is false because the symbol gives Z = 9 and 19 + 9 = 28 ≠ 19.",
+   "evidence": "Lesson s5: A = Z + N ≥ Z, so Z = A is allowed.",
+   "fix": "Et 19 protons est faux : le nombre du bas indique Z = 9, et 19 protons avec 9 neutrons feraient 28 nucléons, pas 19."
+  }
+ ],
+ "verified": [
+  "q1–q3 solved blind; keys 1, 0, 2 correct; no giveaway."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": []
+}

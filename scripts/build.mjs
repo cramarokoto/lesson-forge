@@ -61,7 +61,7 @@ function buildCourse(input) {
       if (!l.steps.every((st) => (st.scene || []).length)) return base; // not staged yet
       const w = (p) => `${input.slug}/${ch.id}/${l.id}/${p}`;
       return {
-        id: l.id, index, title: l.title, goal: l.goal, available: true,
+        id: l.id, index, title: l.title, titleHtml: rich(l.title, w('title')), goalHtml: rich(l.goal, w('goal')), available: true,
         search: [l.title, l.goal, ...l.steps.map((st) => `${st.title} ${st.text}`)].join(' ').toLowerCase(),
         notationHtml: l.notation.map((n, i) => tex(n, w(`notation/${i}`))),
         steps: l.steps.map((st) => ({

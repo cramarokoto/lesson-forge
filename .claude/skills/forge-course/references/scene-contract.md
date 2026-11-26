@@ -35,9 +35,15 @@ First find the **verb** of the step's `takeaway`, then use the device it require
 | comparison: smaller, larger, as much as, same order | objects side by side on one common base (`board`), the gap itself drawn (bar, bracket, arrow between them) |
 | sequence or steps | one reading direction (left→right or top→bottom), an arrow between consecutive stages |
 | quantity or size | size or length of the object; if not proportional, a « Pas à l’échelle » text |
+| contrast of two cases or outcomes (this vs that, ion vs other element) | **small multiples**: the same object drawn twice side by side, same layout, only the difference changes, one caption under each. Never apply two operations to one object |
 | definition or naming | the named object with its label, accent on it, everything else faded |
 
 Every diagram must answer, without the text: **where do I start? which way do I go? where do I end? what changes? what do I conclude?** A label alone never gives a direction: use an arrow.
+
+## Clean geometry (checked)
+- Solids rest **on** plates, never inside them (`validate.mjs` fails otherwise). A large atom sphere goes beside or above the plinth, not into it.
+- Objects floating more than 1 unit above a surface cast no shadow (engine default); set `shadow: false` on small satellites (electrons) anyway.
+- No label crossed by an arrow; no text written over shadows or other objects. Put captions under each case, not on top of the drawing.
 
 ## Animation between steps
 

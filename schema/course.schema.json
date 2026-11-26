@@ -517,6 +517,10 @@
         "slotRole": {
           "type": "string",
           "description": "board: role color of the slots (default: the board role)."
+        },
+        "shadow": {
+          "type": "boolean",
+          "description": "sphere/cube: cast a shadow (default: only when resting on a plate or within 1 unit of the floor)."
         }
       }
     },

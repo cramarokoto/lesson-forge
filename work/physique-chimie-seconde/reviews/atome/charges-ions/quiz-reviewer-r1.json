@@ -1,0 +1,11 @@
+{
+ "reviewer": "quiz-reviewer",
+ "target": "courses/physique-chimie-seconde/atome/charges-ions.json",
+ "round": 1,
+ "findings": [],
+ "verified": [
+  "q1–q3 solved blind; keys 1, 0, 2 correct; explanations name the traps."
+ ],
+ "sourcesChecked": [],
+ "unverifiable": []
+}

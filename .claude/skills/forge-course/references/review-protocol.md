@@ -39,7 +39,7 @@ Checks done by `scripts/validate.mjs` (word counts, typography, non-breaking spa
 
 ## Output
 
-Return **one JSON object and nothing else**, matching `review` in `schema/course.schema.json`:
+**Write** one JSON object, matching `review` in `schema/course.schema.json`, to the path given in your prompt (`work/<slug>/reviews/<chapter>/<lesson>/<reviewer>-r<round>.json`), run `node scripts/validate.mjs` on it, and reply with three lines only: counts of ERROR / AMBIGUOUS, the path, and anything the orchestrator must know. If no path is given, return the JSON instead:
 
 ```json
 {

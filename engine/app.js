@@ -212,7 +212,8 @@
     const sh = el.querySelector('.shadowg');
     if (!sh) return;
     const z = o.abs?.[2] ?? 0, r = o.type === 'cube' ? (o.size ?? 1) * 0.75 : (o.size ?? 1) / 2;
-    const show = !o.support && (z > 0.01 || o.type === 'cube');
+    const bottom = z - (o.type === 'sphere' ? (o.size ?? 1) / 2 : 0);
+    const show = o.shadow !== false && !o.support && (o.shadow === true || (bottom <= 1 && (z > 0.01 || o.type === 'cube')));
     sh.style.transform = `translate(0px, ${z * U}px) scale(${r})`;
     sh.style.opacity = show ? String(Math.max(0.08, 0.28 - z * 0.03)) : '0';
   }
@@ -331,7 +332,7 @@
         const dm = pl.dims || [pl.size ?? 1, pl.size ?? 1], top = pl.abs[2] + (pl.height ?? (pl.type === 'board' ? 0.4 : 0.14));
         if (Math.abs(o.abs[0] - pl.abs[0]) <= dm[0] / 2 && Math.abs(o.abs[1] - pl.abs[1]) <= dm[1] / 2 && top <= bottom + 0.05 && (!best || top > best.top)) best = { pl, top };
       }
-      if (best) {
+      if (best && o.shadow !== false && (o.shadow === true || bottom - best.top <= 1)) {
         o.support = best.pl.key;
         const z = o.abs[2] - best.top, r = o.type === 'cube' ? (o.size ?? 1) * 0.75 : (o.size ?? 1) / 2;
         best.pl.shadows.push([o.abs[0] - best.pl.abs[0], o.abs[1] - best.pl.abs[1], r, +Math.max(0.1, 0.3 - z * 0.03).toFixed(2)]);
@@ -494,7 +495,7 @@
     const seen = new Set(store.seen[k] || []);
     const stage = h('div', { class: 'stage' }); stage.append(svg);
     stageCol.replaceChildren(
-      h('div', { class: 'lesson-head' }, h('h1', {}, lesson.title), h('p', {}, lesson.goal)),
+      h('div', { class: 'lesson-head' }, h('h1', { html: lesson.titleHtml }), !quiz && step === 0 ? h('p', { html: lesson.goalHtml }) : null),
       stage,
       h('div', { class: 'timeline', role: 'group', 'aria-label': T.step },
         lesson.steps.map((st, i) => h('button', {
