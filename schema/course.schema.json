@@ -479,6 +479,44 @@
         "parent": {
           "$ref": "#/$defs/id",
           "description": "Key of a group object."
+        },
+        "dims": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "board/tile: [length along x, depth along y] in grid units; default [size, size]."
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "board/tile thickness (default 0.4 / 0.14)."
+        },
+        "radius": {
+          "type": "number",
+          "minimum": 0,
+          "description": "board/tile corner radius (default 0.3 / 0.12)."
+        },
+        "sideLabels": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "description": "board: texts written on the front (y+) face, evenly spaced along x."
+        },
+        "slots": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20,
+          "description": "board: number of inset cells drawn on the top face along x (role color outline)."
+        },
+        "slotRole": {
+          "type": "string",
+          "description": "board: role color of the slots (default: the board role)."
         }
       }
     },

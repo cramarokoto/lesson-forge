@@ -53,3 +53,6 @@ After `snapshot.mjs`, look at each PNG and answer per step: "Start: … / Direct
 
 ## Token budget
 Use `node scripts/snapshot.mjs <slug> <chapter> <lesson> --sheet` and read `sheet.png` (one image for all steps); open a single step's PNG only to fix it. Do not re-read the whole lesson after each edit.
+
+## Plinths
+Prefer one large, long plinth (`board` with `dims`, `slots`, `sideLabels`) as the base of a scene: rows of things sit in its cells, and indexes or values go on its front face rather than as floating labels. Make it big: it should span most of the stage.

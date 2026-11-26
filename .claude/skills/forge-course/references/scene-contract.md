@@ -13,8 +13,8 @@ Implemented by `engine/app.js`; see `engine/README.md`. Allowed `role` values: t
 
 | `type` | Needs | Notes |
 |---|---|---|
-| `board` | `pos`, `size` | Floor plate under a group of objects |
-| `cube`, `sphere`, `tile` | `pos` | |
+| `board` | `pos`, `size` or `dims: [length, depth]` | Rounded, thick plinth under a group of objects. Optional `height` (0.4), `radius` (0.3), `slots` (n inset cells along x, colored by `slotRole` or `role`), `sideLabels` (texts written on the front face, one per cell: indexes, values, names) |
+| `cube`, `sphere`, `tile` | `pos` | `tile` accepts `dims`, `height`, `radius` like `board` |
 | `ring` | `pos`, `size` | Flat circle, e.g. an electron shell |
 | `arrow` | `pos`, `to` | |
 | `label` | `pos`, `text` | Short tag attached to a point, ≤ 4 words |

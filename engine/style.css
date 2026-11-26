@@ -89,6 +89,7 @@ main.stage-col { padding: 18px; display: flex; flex-direction: column; gap: 12px
 .obj { transition: transform .55s cubic-bezier(.3,.7,.2,1), opacity .45s ease; }
 .obj .fill { transition: fill .45s ease; }
 .obj .shadow { pointer-events: none; }
+.obj text.side-label { fill: #f4f6fa; stroke: none; font: 600 11px var(--font); letter-spacing: .04em; }
 .obj .scaler, .obj .shadowg { transition: transform .55s cubic-bezier(.3,.7,.2,1), opacity .45s ease; }
 .obj .arrow { transition: stroke-dashoffset .6s ease .15s; }
 .obj.accent .fill { stroke: var(--accent); stroke-width: 3; vector-effect: non-scaling-stroke; }

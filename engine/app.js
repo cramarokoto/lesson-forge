@@ -145,24 +145,62 @@
   }
   const P = (x, y, z) => proj([x, y, z]).join(',');
   let clipN = 0;
-  function slab(g, sz, th, color, alpha = 1, shadows = []) {
-    const h = sz / 2;
-    const top = [P(-h, -h, th), P(h, -h, th), P(h, h, th), P(-h, h, th)].join(' ');
-    if (shadows.length) {
+  // Rounded rectangle in the plane z = zt, as a list of [x, y] points (counter-clockwise).
+  function roundedRect(w, d, r) {
+    r = Math.max(0, Math.min(r, w / 2, d / 2));
+    const pts = [], n = r > 0 ? 6 : 0;
+    for (const [cx, cy, a0] of [[w / 2 - r, -d / 2 + r, -90], [w / 2 - r, d / 2 - r, 0], [-w / 2 + r, d / 2 - r, 90], [-w / 2 + r, -d / 2 + r, 180]]) {
+      for (let i = 0; i <= n; i++) {
+        const a = ((a0 + (90 * i) / (n || 1)) * Math.PI) / 180;
+        pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]);
+        if (!n) break;
+      }
+    }
+    return pts;
+  }
+  // Extruded rounded plate: dark sides facing the viewer, light top, optional inset cells,
+  // labels on the front face and shadows of resting objects clipped to the top.
+  function plate(g, o, color, kind) {
+    const dims = o.dims || [o.size ?? 1, o.size ?? 1];
+    const th = o.height ?? (kind === 'board' ? 0.4 : 0.14);
+    const rr = o.radius ?? (kind === 'board' ? 0.3 : 0.12);
+    const pts = roundedRect(dims[0], dims[1], rr);
+    const ring = (z) => pts.map(([x, y]) => P(x, y, z)).join(' ');
+    for (let i = 0; i < pts.length; i++) {
+      const [x1, y1] = pts[i], [x2, y2] = pts[(i + 1) % pts.length];
+      const nx = y2 - y1, ny = -(x2 - x1); // outward normal of a CCW polygon in this frame
+      if (nx + ny <= 1e-9) continue; // faces away from the viewer
+      const shade = 0.18 + 0.22 * (ny / Math.hypot(nx, ny) > nx / Math.hypot(nx, ny) ? 1 : 0.4);
+      g.append(s('polygon', { points: [P(x1, y1, th), P(x2, y2, th), P(x2, y2, 0), P(x1, y1, 0)].join(' '), fill: dark(color, kind === 'board' ? 0.55 + shade * 0.4 : shade), stroke: dark(color, 0.75), 'stroke-width': 0.6, 'stroke-linejoin': 'round' }));
+    }
+    const top = ring(th);
+    g.append(s('polygon', { class: 'fill edge', points: top, fill: kind === 'board' ? light(color, 0.72) : light(color, 0.1) }));
+    if (o.slots) {
+      const n = o.slots, cw = dims[0] / n, pad = Math.min(cw, dims[1]) * 0.12;
+      for (let i = 0; i < n; i++) {
+        const cx = -dims[0] / 2 + cw * (i + 0.5);
+        const cell = roundedRect(cw - 2 * pad, dims[1] - 2 * pad, Math.min(cw, dims[1]) * 0.12).map(([x, y]) => P(cx + x, y, th)).join(' ');
+        g.append(s('polygon', { class: 'slot', points: cell, fill: light(roleColor(o.slotRole || o.role), 0.8), stroke: roleColor(o.slotRole || o.role), 'stroke-width': 1, 'vector-effect': 'non-scaling-stroke' }));
+      }
+    }
+    if (o.sideLabels?.length) {
+      const n = o.sideLabels.length, step = dims[0] / n;
+      o.sideLabels.forEach((txt, i) => {
+        const [tx, ty] = proj([-dims[0] / 2 + step * (i + 0.5), dims[1] / 2, th / 2]);
+        const t = s('text', { class: 'side-label', 'text-anchor': 'middle', 'dominant-baseline': 'middle', transform: `matrix(${C30},${S30},0,1,${tx},${ty})` });
+        t.textContent = txt; g.append(t);
+      });
+    }
+    if (o.shadows?.length) {
       const id = `clip${++clipN}`;
       const cp = s('clipPath', { id }); cp.append(s('polygon', { points: top })); defs.append(cp);
       const sg = s('g', { 'clip-path': `url(#${id})` });
-      for (const [dx, dy, r, op] of shadows) {
+      for (const [dx, dy, r, op] of o.shadows) {
         const [cx, cy] = proj([dx, dy, th]);
         sg.append(s('ellipse', { class: 'shadow', cx, cy, rx: r * C30 * U * 1.1, ry: r * S30 * U * 1.1, fill: '#0b1220', 'fill-opacity': op }));
       }
-      queueMicrotask(() => g.append(sg));
+      g.append(sg);
     }
-    const left = [P(-h, h, th), P(h, h, th), P(h, h, 0), P(-h, h, 0)].join(' ');
-    const right = [P(h, -h, th), P(h, h, th), P(h, h, 0), P(h, -h, 0)].join(' ');
-    g.append(s('polygon', { points: left, fill: dark(color, 0.28), 'fill-opacity': alpha }),
-      s('polygon', { points: right, fill: dark(color, 0.14), 'fill-opacity': alpha }),
-      s('polygon', { class: 'fill edge', points: top, fill: light(color, 0.06), 'fill-opacity': alpha }));
   }
   // Floor shadow, drawn at unit radius and scaled, so size and height changes animate.
   function floorShadow(g, o) {
@@ -204,8 +242,8 @@
           s('polygon', { class: 'fill edge face-t', points: top, fill: light(color, 0.12), 'data-color': color }));
         break;
       }
-      case 'tile': slab(g, size, 0.14, color, 1, o.shadows || []); break;
-      case 'board': slab(g, size, 0.4, color, 1, o.shadows || []); break;
+      case 'tile': plate(g, o, color, 'tile'); break;
+      case 'board': plate(g, o, color, 'board'); break;
       case 'ring': {
         const rx = size * Math.SQRT2 * C30 * U, ry = size * Math.SQRT2 * S30 * U;
         g.append(s('ellipse', { rx, ry: ry + 2, cy: 2, fill: 'none', stroke: dark(color, 0.35), 'stroke-width': 2.5, 'stroke-opacity': 0.5, 'vector-effect': 'non-scaling-stroke' }),
@@ -233,7 +271,7 @@
     }
     return g;
   }
-  const signature = (o) => JSON.stringify([o.type, o.role, roleColor(o.role), o.type === 'sphere' || o.type === 'cube' ? 0 : o.size, o.text, o.shadows, o.to && o.pos && proj(o.to).map((v, i) => v - proj(o.pos)[i])]);
+  const signature = (o) => JSON.stringify([o.type, o.role, roleColor(o.role), o.type === 'sphere' || o.type === 'cube' ? 0 : o.size, o.text, o.shadows, o.dims, o.height, o.radius, o.sideLabels, o.slots, o.slotRole, o.to && o.pos && proj(o.to).map((v, i) => v - proj(o.pos)[i])]);
   const typeRank = { board: 0, tile: 1, ring: 2, cube: 3, sphere: 3, arrow: 4, text: 5, label: 6 };
 
   // Frame the whole lesson once, so the camera stays still between steps.
@@ -251,9 +289,8 @@
         const p = at(o.pos || [5, 5, 0]);
         const r = (o.size ?? 1) * U * (o.type === 'ring' || o.type === 'board' || o.type === 'tile' ? 1.25 : 0.75);
         if (o.type === 'board' || o.type === 'tile') {
-          const h = (o.size ?? 1) / 2;
-          for (const [dx, dy] of [[-h, -h], [h, -h], [h, h], [-h, h]]) add(proj([p[0] + dx, p[1] + dy, p[2]]));
-          add(proj([p[0] + h, p[1] + h, p[2] - 0.4]));
+          const dm = o.dims || [o.size ?? 1, o.size ?? 1], hx = dm[0] / 2, hy = dm[1] / 2, th = o.height ?? 0.4;
+          for (const [dx, dy] of [[-hx, -hy], [hx, -hy], [hx, hy], [-hx, hy]]) { add(proj([p[0] + dx, p[1] + dy, p[2] + th])); add(proj([p[0] + dx, p[1] + dy, p[2]])); }
         } else add(proj(p), o.type === 'label' || o.type === 'text' ? 0 : r);
         if (o.type === 'label') add([proj(p)[0], proj(p)[1] - 30], 0);
         if (o.type === 'label' || o.type === 'text') { const w = (o.text || '').length * 4.5; add([proj(p)[0] - w, proj(p)[1]]); add([proj(p)[0] + w, proj(p)[1]]); }
@@ -291,8 +328,8 @@
       const bottom = o.type === 'sphere' ? o.abs[2] - (o.size ?? 1) / 2 : o.abs[2];
       let best = null;
       for (const pl of plates) {
-        const h = (pl.size ?? 1) / 2, top = pl.abs[2] + (pl.type === 'board' ? 0.4 : 0.14);
-        if (Math.abs(o.abs[0] - pl.abs[0]) <= h && Math.abs(o.abs[1] - pl.abs[1]) <= h && top <= bottom + 0.05 && (!best || top > best.top)) best = { pl, top };
+        const dm = pl.dims || [pl.size ?? 1, pl.size ?? 1], top = pl.abs[2] + (pl.height ?? (pl.type === 'board' ? 0.4 : 0.14));
+        if (Math.abs(o.abs[0] - pl.abs[0]) <= dm[0] / 2 && Math.abs(o.abs[1] - pl.abs[1]) <= dm[1] / 2 && top <= bottom + 0.05 && (!best || top > best.top)) best = { pl, top };
       }
       if (best) {
         o.support = best.pl.key;
