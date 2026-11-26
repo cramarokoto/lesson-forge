@@ -232,7 +232,11 @@
         const at = (p) => p.map((v, i) => v + off[i]);
         const p = at(o.pos || [5, 5, 0]);
         const r = (o.size ?? 1) * U * (o.type === 'ring' || o.type === 'board' || o.type === 'tile' ? 1.25 : 0.75);
-        add(proj(p), o.type === 'label' || o.type === 'text' ? 0 : r);
+        if (o.type === 'board' || o.type === 'tile') {
+          const h = (o.size ?? 1) / 2;
+          for (const [dx, dy] of [[-h, -h], [h, -h], [h, h], [-h, h]]) add(proj([p[0] + dx, p[1] + dy, p[2]]));
+          add(proj([p[0] + h, p[1] + h, p[2] - 0.4]));
+        } else add(proj(p), o.type === 'label' || o.type === 'text' ? 0 : r);
         if (o.type === 'label') add([proj(p)[0], proj(p)[1] - 30], 0);
         if (o.type === 'label' || o.type === 'text') { const w = (o.text || '').length * 4.5; add([proj(p)[0] - w, proj(p)[1]]); add([proj(p)[0] + w, proj(p)[1]]); }
         if (o.to) add(proj(at(o.to)));
